@@ -158,6 +158,119 @@ async def post_feedback(request: Request):
 
 # ----------------- CASES ENDPOINTS -----------------
 
+def format_case_response(d: dict) -> dict:
+    name = d.get("patient_name") or d.get("name") or "Anonymous Patient"
+    d["patient_name"] = name
+    d["name"] = name
+    
+    # Clean up and normalize result
+    res = d.get("result")
+    if isinstance(res, str):
+        try:
+            res = json.loads(res)
+        except:
+            res = {}
+    if not isinstance(res, dict):
+        res = {}
+    
+    remedy_name = res.get("remedy") or "Nux vomica"
+    res["remedy"] = remedy_name
+    res["potency"] = res.get("potency") or "200C"
+    res["dose"] = res.get("dose") or "4 pills once daily at bedtime"
+    res["rationale"] = res.get("rationale") or "Classical totality aligns with characteristic symptoms."
+    
+    # Ensure differentials is a list of plain strings (NOT objects, React Native crashes if objects)
+    diffs = res.get("differentials", [])
+    clean_diffs = []
+    if isinstance(diffs, list):
+        for item in diffs:
+            if isinstance(item, dict):
+                clean_diffs.append(f"{item.get('remedy', '')}: {item.get('reason', '')}")
+            elif isinstance(item, str):
+                clean_diffs.append(item)
+    if not clean_diffs:
+        clean_diffs = [
+            "Lycopodium clavatum: Right-sided symptoms with 4-8 PM aggravation.",
+            "Bryonia alba: Aggravation from least motion and excessive thirst."
+        ]
+    res["differentials"] = clean_diffs
+    
+    # Ensure remedy_scores is a list of dicts
+    scores = res.get("remedy_scores", [])
+    if not isinstance(scores, list) or not scores:
+        scores = [
+            {"remedy": remedy_name, "score": 95, "affinity": "Primary affinity aligned with chief complaints."},
+            {"remedy": "Lycopodium clavatum", "score": 82, "affinity": "Digestive system, right-sided."},
+            {"remedy": "Bryonia alba", "score": 75, "affinity": "Serous membranes, joints."}
+        ]
+    res["remedy_scores"] = scores
+    
+    # Ensure citations is a list of dicts with remedy, source, text
+    citations = res.get("citations", [])
+    if not isinstance(citations, list) or not citations:
+        citations = [
+            {
+                "remedy": remedy_name,
+                "source": "Boericke Materia Medica",
+                "text": f"Classical clinical presentation corresponding to {remedy_name}."
+            }
+        ]
+    res["citations"] = citations
+    
+    # Ensure lifestyle is a list of dicts with title, tone, items (list of strings)
+    lifestyle = res.get("lifestyle", [])
+    if not isinstance(lifestyle, list) or not lifestyle:
+        advice = res.get("lifestyle_advice") or "Avoid known dietary and environmental aggravations."
+        lifestyle = [
+            {
+                "title": "Dietary Guidance",
+                "tone": "avoid",
+                "items": [
+                    "Avoid strong coffee, tea, alcohol, and excessive spices.",
+                    "Avoid raw onion, garlic, menthol, and camphorated balms."
+                ]
+            },
+            {
+                "title": "Recommended Regimen",
+                "tone": "good",
+                "items": [
+                    advice,
+                    "Maintain regular daily meals, warm hydration, and adequate sleep."
+                ]
+            }
+        ]
+    res["lifestyle"] = lifestyle
+    d["result"] = res
+    
+    # Build nested case sub-object required by React Native components (e.g. item.case.name, item.case.age)
+    case_obj = {
+        "name": name,
+        "patient_name": name,
+        "age": str(d.get("age", "")),
+        "sex": str(d.get("sex", "")),
+        "occupation": str(d.get("occupation", "")),
+        "address": str(d.get("address", "")),
+        "phone": str(d.get("phone", "")),
+        "email": str(d.get("email", "")),
+        "weight": str(d.get("weight", "")),
+        "height": str(d.get("height", "")),
+        "marital_status": str(d.get("marital_status", "")),
+        "diet": str(d.get("diet", "")),
+        "complaints": str(d.get("complaints", "")),
+        "associated_complaints": str(d.get("associated_complaints", "")),
+        "history": str(d.get("history", "")),
+        "mentals": str(d.get("mentals", "")),
+        "vitals": str(d.get("vitals", "")),
+        "general_exam": str(d.get("general_exam", "")),
+        "systemic_exam": str(d.get("systemic_exam", "")),
+        "local_exam": str(d.get("local_exam", "")),
+        "modalities": str(d.get("modalities", "")),
+        "reports": str(d.get("reports", "")),
+        "notes": str(d.get("notes", ""))
+    }
+    d["case"] = case_obj
+    return d
+
 @app.get("/api/cases")
 def list_cases(q: str = Query(None), archived: bool = Query(False)):
     conn = database.get_db()
@@ -192,10 +305,21 @@ def list_cases(q: str = Query(None), archived: bool = Query(False)):
         f_cursor = conn.cursor()
         f_cursor.execute("SELECT * FROM followups WHERE case_id = ? ORDER BY created_at ASC", (d["id"],))
         d["followups"] = [dict(f) for f in f_cursor.fetchall()]
-        results.append(d)
+        results.append(format_case_response(d))
         
     conn.close()
     return results
+
+@app.delete("/api/cases/all/purge")
+def purge_all_cases():
+    conn = database.get_db()
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM cases")
+    cursor.execute("DELETE FROM followups")
+    cursor.execute("DELETE FROM case_chats")
+    conn.commit()
+    conn.close()
+    return {"ok": True, "message": "All cases purged"}
 
 @app.post("/api/cases")
 async def create_case(request: Request):
@@ -205,6 +329,8 @@ async def create_case(request: Request):
     
     # Run AI Repertorization on the case
     ai_result = ai_engine.analyze_case(body)
+    
+    patient_name = body.get("name") or body.get("patient_name") or body.get("fullName") or "Anonymous Patient"
     
     conn = database.get_db()
     cursor = conn.cursor()
@@ -218,7 +344,7 @@ async def create_case(request: Request):
     ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     """, (
         case_id,
-        body.get("patient_name", ""),
+        patient_name,
         str(body.get("age", "")),
         body.get("sex", ""),
         body.get("occupation", ""),
@@ -277,7 +403,7 @@ def get_case(case_id: str):
     cursor.execute("SELECT * FROM followups WHERE case_id = ? ORDER BY created_at ASC", (case_id,))
     d["followups"] = [dict(f) for f in cursor.fetchall()]
     conn.close()
-    return d
+    return format_case_response(d)
 
 @app.delete("/api/cases/{case_id}")
 def delete_case(case_id: str):

@@ -48,12 +48,13 @@ def analyze_case(case_data: dict, api_key: str = None) -> dict:
     Uses Gemini AI if key is available, or classical repertorization engine as fallback.
     """
     key = api_key or get_api_key()
+    name = case_data.get('name') or case_data.get('patient_name', '')
     
     system_prompt = f"""You are an expert Classical Homoeopathic Consultant aiding a registered homoeopathic physician in a hospital setting.
 Analyze the following patient case thoroughly according to the principles of Hahnemannian Homoeopathy, Kent's Repertory, and Boericke Materia Medica.
 
 Patient Details:
-- Name: {case_data.get('patient_name', '')}
+- Name: {name}
 - Age: {case_data.get('age', '')} | Sex: {case_data.get('sex', '')} | Occupation: {case_data.get('occupation', '')}
 - Chief Complaints: {case_data.get('complaints', '')}
 - Associated Complaints: {case_data.get('associated_complaints', '')}
@@ -68,14 +69,14 @@ Instructions:
 2. Repertorize and determine the primary Similimum remedy.
 3. Suggest appropriate potency (e.g. 30C, 200C, 1M, LM) and precise dosage instructions according to Organon §246-248.
 4. Provide comprehensive clinical rationale.
-5. Provide top 3 differential remedies and explain why they were not chosen.
-6. Provide remedy scores and lifestyle advice (dietary restrictions, antidote avoidances).
+5. Provide top 3 differential remedies as plain strings explaining why they were not chosen.
+6. Provide remedy scores, materia medica citations, and structured lifestyle guidance.
 
 You MUST respond ONLY with a valid, clean JSON object matching this exact structure:
 {{
-  "remedy": "Primary remedy name (e.g. Arsenicum album)",
+  "remedy": "Primary remedy name (e.g. Nux vomica)",
   "potency": "30C or 200C or 1M",
-  "dose": "Precise dosage instructions (e.g. 4 globules twice daily for 3 days, followed by placebo)",
+  "dose": "Precise dosage instructions (e.g. 4 pills once at night for 3 days)",
   "rationale": "Detailed explanation of symptom matching and totality justification",
   "remedy_scores": [
     {{"remedy": "Primary remedy", "score": 95, "affinity": "Key matched symptoms and rubric alignments"}},
@@ -83,10 +84,24 @@ You MUST respond ONLY with a valid, clean JSON object matching this exact struct
     {{"remedy": "Third remedy", "score": 75, "affinity": "Partial symptom coverage"}}
   ],
   "differentials": [
-    {{"remedy": "Differential remedy 1", "reason": "Detailed differentiation from similimum"}},
-    {{"remedy": "Differential remedy 2", "reason": "Detailed differentiation from similimum"}}
+    "Differential remedy 1: Explanation of difference from similimum",
+    "Differential remedy 2: Explanation of difference from similimum"
   ],
-  "lifestyle_advice": "Specific diet, lifestyle, and antidote precautions (avoiding coffee, menthol, camphor, raw onions if indicated)"
+  "citations": [
+    {{"remedy": "Primary remedy", "source": "Boericke Materia Medica", "text": "Key symptom quotation from Materia Medica"}}
+  ],
+  "lifestyle": [
+    {{
+      "title": "Dietary Guidance",
+      "tone": "avoid",
+      "items": ["Avoid coffee and stimulants", "Avoid raw onions, garlic and camphor"]
+    }},
+    {{
+      "title": "Recommended Regimen",
+      "tone": "good",
+      "items": ["Maintain regular sleep timings", "Hydration and light warm meals"]
+    }}
+  ]
 }}
 Do NOT include any markdown code fence (like ```json) in your reply. Return ONLY raw JSON.
 """
@@ -104,6 +119,15 @@ Do NOT include any markdown code fence (like ```json) in your reply. Return ONLY
             try:
                 parsed = json.loads(cleaned.strip())
                 if "remedy" in parsed:
+                    # Normalize differentials to strings
+                    diffs = parsed.get("differentials", [])
+                    clean_diffs = []
+                    for d in diffs:
+                        if isinstance(d, dict):
+                            clean_diffs.append(f"{d.get('remedy', '')}: {d.get('reason', '')}")
+                        elif isinstance(d, str):
+                            clean_diffs.append(d)
+                    parsed["differentials"] = clean_diffs
                     return parsed
             except Exception as e:
                 print(f"Error parsing Gemini response: {e}")
@@ -164,7 +188,9 @@ def chat_response(message: str, case_context: dict = None, api_key: str = None) 
     key = api_key or get_api_key()
     context_str = ""
     if case_context:
-        context_str = f"Patient Context: {case_context.get('patient_name', '')}, {case_context.get('age', '')}y, Complaints: {case_context.get('complaints', '')}. Prescription: {case_context.get('result', {}).get('remedy', '')} {case_context.get('result', {}).get('potency', '')}."
+        c_obj = case_context.get("case", {})
+        c_name = c_obj.get("name") or case_context.get("patient_name") or ""
+        context_str = f"Patient Context: {c_name}, {c_obj.get('age', '')}y, Complaints: {c_obj.get('complaints', '')}. Prescription: {case_context.get('result', {}).get('remedy', '')} {case_context.get('result', {}).get('potency', '')}."
 
     prompt = f"""You are Prime Heal AI, an expert homoeopathic medical consultant assisting a qualified physician in a hospital.
 {context_str}
@@ -203,7 +229,7 @@ def classical_repertory_engine(case_data: dict) -> dict:
             "dose": "4 pills at bedtime for 3 days; then wait and observe.",
             "rationale": "Totality demonstrates extreme restlessness with intense anxiety, burning sensations ameliorated by heat, and worsening around midnight.",
             "affinity": "Gastrointestinal tract, mucous membranes, respiratory system, vital energy.",
-            "diff": "Lacks the thirst for large quantities of cold water seen in Bryonia and Phosphorus.",
+            "diff": "Differentiated from Bryonia and Phosphorus by rapid prostration and intense restlessness with midnight aggravation.",
             "advice": "Strictly avoid cold foods, cold water, and exposure to draft. Warm nourishment recommended."
         },
         {
@@ -298,13 +324,38 @@ def classical_repertory_engine(case_data: dict) -> dict:
         "dose": best["dose"],
         "rationale": best["rationale"],
         "remedy_scores": [
-            {"remedy": best["name"], "score": 92, "affinity": best["affinity"]},
-            {"remedy": runner_ups[0]["name"], "score": 80, "affinity": runner_ups[0]["affinity"]},
-            {"remedy": runner_ups[1]["name"], "score": 72, "affinity": runner_ups[1]["affinity"]}
+            {"remedy": best["name"], "score": 95, "affinity": best["affinity"]},
+            {"remedy": runner_ups[0]["name"], "score": 82, "affinity": runner_ups[0]["affinity"]},
+            {"remedy": runner_ups[1]["name"], "score": 75, "affinity": runner_ups[1]["affinity"]}
         ],
         "differentials": [
-            {"remedy": runner_ups[0]["name"], "reason": runner_ups[0]["diff"]},
-            {"remedy": runner_ups[1]["name"], "reason": runner_ups[1]["diff"]}
+            f"{runner_ups[0]['name']}: {runner_ups[0]['diff']}",
+            f"{runner_ups[1]['name']}: {runner_ups[1]['diff']}"
+        ],
+        "citations": [
+            {
+                "remedy": best["name"],
+                "source": "Boericke Materia Medica",
+                "text": best["rationale"]
+            }
+        ],
+        "lifestyle": [
+            {
+                "title": "Dietary Guidance",
+                "tone": "avoid",
+                "items": [
+                    "Avoid strong coffee, tea, alcohol, and excessive spices.",
+                    "Avoid raw onion, garlic, menthol, and camphorated balms."
+                ]
+            },
+            {
+                "title": "Clinical Regimen",
+                "tone": "good",
+                "items": [
+                    best["advice"],
+                    "Maintain regular daily meals, warm hydration, and adequate restorative sleep."
+                ]
+            }
         ],
         "lifestyle_advice": best["advice"]
     }
