@@ -1,0 +1,126 @@
+{
+  "cached": true,
+  "remedy_key": "abies-nigra",
+  "remedy_display": "Abies Nigra",
+  "schema_version": 1,
+  "card": {
+    "essence": "A powerful remedy for dyspeptic complaints centred on the stomach, especially in the aged. The cardinal feature is a sensation of a lump (as if a hard-boiled egg) lodged at the cardiac end of stomach, with constriction above the pit. Most symptoms associate with gastric disturbance. Functional heart symptoms may accompany. Characteristically worse after eating.",
+    "family": "Coniferae · Black Spruce",
+    "common_name": "Black Spruce",
+    "sides": "",
+    "thermal": "",
+    "keynotes": [
+      {
+        "text": "Sensation of lump at cardiac end of stomach, as if hard-boiled egg lodged there",
+        "sources": [
+          "Boericke",
+          "Nash",
+          "Farrington"
+        ]
+      },
+      {
+        "text": "Continual distressing constriction just above pit of stomach, as if everything knotted up",
+        "sources": [
+          "Boericke"
+        ]
+      },
+      {
+        "text": "Pain in stomach always comes on after eating",
+        "sources": [
+          "Boericke"
+        ]
+      },
+      {
+        "text": "Total loss of appetite in morning, but great craving for food at noon and night",
+        "sources": [
+          "Boericke"
+        ]
+      },
+      {
+        "text": "Dyspepsia of the aged with functional heart symptoms",
+        "sources": [
+          "Boericke"
+        ]
+      }
+    ],
+    "modalities_worse": [
+      {
+        "text": "After eating",
+        "sources": [
+          "Boericke"
+        ]
+      }
+    ],
+    "modalities_better": [],
+    "mentals": [
+      "Low-spirited",
+      "Dull during the day, wakeful at night",
+      "Unable to think"
+    ],
+    "physicals": [
+      "Hot head with flushed cheeks",
+      "Offensive breath; eructations",
+      "Sensation as if something lodged in chest, must be coughed up",
+      "Lungs feel compressed, cannot be fully expanded",
+      "Dyspnoea worse lying down",
+      "Sharp cutting pain in heart; heavy, slow action; tachycardia, bradycardia",
+      "Choking sensation in throat",
+      "Waterbrash succeeds cough",
+      "Pain in small of back; rheumatic pains and aching in bones",
+      "Pain in external meatus",
+      "Constipation",
+      "Wakeful and restless at night with hunger; bad dreams",
+      "Alternate heat and cold; chronic intermittent fever with pain in stomach"
+    ],
+    "clinical": [
+      "Dyspeptic troubles of the aged with functional heart symptoms",
+      "Dyspepsia after tea or tobacco",
+      "Sensation of undigested hard-boiled egg in stomach"
+    ],
+    "differentials": [
+      {
+        "vs": "China",
+        "note": "Compare for lump in stomach sensation",
+        "sources": [
+          "Boericke"
+        ]
+      },
+      {
+        "vs": "Bryonia",
+        "note": "Compare for lump in stomach sensation",
+        "sources": [
+          "Boericke"
+        ]
+      },
+      {
+        "vs": "Pulsatilla",
+        "note": "Compare for lump in stomach sensation",
+        "sources": [
+          "Boericke"
+        ]
+      },
+      {
+        "vs": "Nux vomica",
+        "note": "Compare for gastric complaints",
+        "sources": [
+          "Boericke"
+        ]
+      },
+      {
+        "vs": "Kali carbonicum",
+        "note": "Compare for gastric complaints",
+        "sources": [
+          "Boericke"
+        ]
+      }
+    ],
+    "cautions": []
+  },
+  "source_books": [
+    "Boericke",
+    "Farrington",
+    "Nash"
+  ],
+  "generated_at": "2026-08-26T19:30:17.654019+00:00",
+  "updated_at": "2026-08-26T19:30:17.654019+00:00"
+}

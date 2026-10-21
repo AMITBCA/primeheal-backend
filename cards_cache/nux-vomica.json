@@ -1,0 +1,313 @@
+{
+  "cached": true,
+  "remedy_key": "nux-vomica",
+  "remedy_display": "Nux Vomica",
+  "schema_version": 1,
+  "card": {
+    "essence": "Nux vomica is the premier remedy for modern ailments arising from overstimulation, excess, and sedentary mental work. The typical patient is thin, wiry, irritable, and hypersensitive—a perfectionist driven to extremes by business pressures, late hours, rich food, coffee, alcohol, and stimulants. Over-indulgence leads to gastric disturbance, constipation with ineffectual urging, and a state of tense, spasmodic inharmony. Every trifle—noise, odour, draught, contradiction—offends and angers. Easily chilled, cannot bear uncovering.",
+    "family": "Plant · Loganiaceae (Strychnos nux-vomica)",
+    "common_name": "Poison-nut",
+    "sides": "Right shoulder; otherwise not specified",
+    "thermal": "Chilly",
+    "keynotes": [
+      {
+        "text": "Irritable, oversensitive to noise, odours, light; every harmless word offends",
+        "sources": [
+          "Allen",
+          "Nash",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Chilly; cannot bear uncovering even during fever; least uncovering brings on chill",
+        "sources": [
+          "Boericke",
+          "Nash",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Sleepy early evening, wakes 3–4 A.M., cannot sleep again; wakes tired and worse",
+        "sources": [
+          "Allen",
+          "Nash",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Frequent ineffectual urging for stool; passes little, sensation as if unfinished",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Convulsions with consciousness; worse from touch, emotion, anger",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Antidotes effects of coffee, tobacco, alcohol, aromatics, patent medicines, over-drugging",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Stomach: pressure as from a stone 1–2 hours after eating; must loosen clothing",
+        "sources": [
+          "Allen",
+          "Nash",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Sedentary mental workers with brain-fag, business cares, stimulant use, late hours",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Kent"
+        ]
+      }
+    ],
+    "modalities_worse": [
+      {
+        "text": "Early morning (3–4 A.M. waking, also worse 9 A.M.)",
+        "sources": [
+          "Boger",
+          "Nash",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Cold, dry air; open air; draughts; uncovering",
+        "sources": [
+          "Boericke",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Coffee, alcohol, tobacco, stimulants, condiments, rich food, overeating",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Mental exertion, worry, sedentary habits, disturbed sleep, late hours",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Noise, odours, light, music, touch, slight causes, anger, vexation",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Pressure of clothes, especially at waist",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "After eating; mental work after meals",
+        "sources": [
+          "Allen",
+          "Nash",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Dry weather",
+        "sources": [
+          "Nash"
+        ]
+      }
+    ],
+    "modalities_better": [
+      {
+        "text": "Free discharges (vomiting, stool)",
+        "sources": [
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Short naps",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Wrapping head; warm room; hot drinks; milk",
+        "sources": [
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Moist air; resting",
+        "sources": [
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "After stool (though urging remains)",
+        "sources": [
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Evening (for headache)",
+        "sources": [
+          "Clarke"
+        ]
+      }
+    ],
+    "mentals": [
+      "Irritable, impatient, fault-finding, disposed to reproach others; sullen",
+      "Zealous, fiery temperament; very particular, careful, perfectionist",
+      "Quarrelsome, spiteful, malicious; ugly impulses; impulse to destroy or throw child into fire",
+      "Oversensitive; trifling ailments unbearable; time passes too slowly",
+      "Anxiety with suicidal thoughts but afraid to die; melancholy hypochondriasis",
+      "Brain-fag from business details, mental strain; can't use mind after meals",
+      "Gets mad at inanimate objects (kicks chair, tears clothing if it catches)",
+      "Nagging, critical; nervous and excitable; fears poverty"
+    ],
+    "physicals": [
+      "Stomach: pressure as from stone 1–2 hours after eating; must loosen clothing; sleepy after dinner",
+      "Nausea constant, worse morning; 'if I could only vomit I'd feel better'",
+      "Constipation with frequent ineffectual urging; sensation as if unfinished; small quantities; alternate constipation/diarrhoea",
+      "Coryza: fluent by day and in open air, stuffed at night and in warm room",
+      "Headache: in occiput or over eyes, vertex (as if nail driven in); worse morning, sunshine, mental exertion, coffee",
+      "Backache: as if breaking in lumbar region; must sit up to turn over in bed",
+      "Menses: too early, profuse, prolonged, or intermittent; aggravation of all symptoms during menses",
+      "Labour pains violent, spasmodic; cause urging to stool or urinate; worse in back",
+      "Photophobia much worse in morning; infra-orbital neuralgia",
+      "Twitchings, jerks, spasms; lightning-like pains; crawling along spine",
+      "Violent cough throwing patient down; paroxysmal, whooping",
+      "Eructations sour, bitter; heart-burn; water-brash; violent vomiting bilious-sour",
+      "Haemorrhoids itching, better cool bathing; congestive headache associated with piles",
+      "Liver sore, sticking, enlarged; gall-stone colic; portal congestion",
+      "Offensive breath; taste bitter-sour, bad in morning",
+      "Stiff neck; acute lumbago; cramps in calves and soles",
+      "Jaundice; sour sweat; takes colds easily"
+    ],
+    "clinical": [
+      "Digestive disturbances, dyspepsia, gastritis in business men with sedentary habits, stimulant use",
+      "Portal congestion, liver complaints, biliousness, jaundice",
+      "Constipation in those who've taken purgatives all their lives; alternate constipation/diarrhoea",
+      "Haemorrhoids with congestive headache",
+      "Catarrh, snuffles of infants; chronic rhinitis from cold dry air",
+      "Migraine, headache in sunshine, congestive headache",
+      "Neuralgias (infra-orbital, prodromal); optic neuritis from alcohol/tobacco",
+      "Brain-fag, insomnia from mental overwork, broken sleep patterns",
+      "Dysmenorrhoea with cramps spreading over whole body",
+      "Strangulated hernia, especially umbilical",
+      "One of the best 'antidote' remedies for cases drugged by mixtures, bitters, nostrums—if symptoms correspond",
+      "Convulsive disorders with retained consciousness; traumatic tetanus-like states",
+      "Effects of debauchery, high living, coffee, alcohol, tobacco",
+      "Lumbago; acute back pain requiring patient to sit up to turn in bed"
+    ],
+    "differentials": [
+      {
+        "vs": "Ignatia",
+        "note": "Ignatia more hysteric, contradictory symptoms, sighing; Nux more angry, businesslike, portal congestion. Both contain Strychnine/Brucia",
+        "sources": [
+          "Farrington"
+        ]
+      },
+      {
+        "vs": "Sulphur",
+        "note": "Sulphur acts better in morning; Nux at night. Both have alternate constipation/diarrhoea, aggravation during menses",
+        "sources": [
+          "Nash",
+          "Allen"
+        ]
+      },
+      {
+        "vs": "Bryonia",
+        "note": "Bryonia has no desire for stool (inactive); Nux has constant ineffectual urging. Both have gastric complaints",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "vs": "Kali bichromicum",
+        "note": "Kali-bi has pressure immediately after eating; Nux 1–2 hours after",
+        "sources": [
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Phosphorus",
+        "note": "Nux is complementary to Phosphorus",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "vs": "Lycopodium",
+        "note": "Related remedy; both have liver/digestive focus but Lycopodium is less angry, more cowardly",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "vs": "Chamomilla",
+        "note": "Both oversensitive and irritable; Chamomilla more in children, one cheek red; Nux in sedentary adults",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "vs": "Nitric acid",
+        "note": "Both have impulses and irritability; Nit-ac more splinter-like pains, fissures",
+        "sources": [
+          "Kent"
+        ]
+      },
+      {
+        "vs": "Strychnia",
+        "note": "Strychnia (pure alkaloid) has more tetanic spasms, less relaxation between fits; higher temp in true tetanus",
+        "sources": [
+          "Farrington"
+        ]
+      }
+    ],
+    "cautions": [
+      "Do not prescribe routinely as 'antidote' to prior drugging without confirming symptom similarity",
+      "Give at night during repose of mind and body for best action",
+      "Overdrugged patients may need Nux to settle symptoms before reliable case-taking is possible",
+      "In acute Strychnia poisoning: convulsions re-excited by slightest touch; distinguish from true tetanus (trismus late, muscles relax between spasms)"
+    ]
+  },
+  "source_books": [
+    "Allen",
+    "Boericke",
+    "Boger",
+    "Clarke",
+    "Farrington",
+    "Kent",
+    "Nash"
+  ],
+  "generated_at": "2026-08-03T10:42:33.766611+00:00",
+  "updated_at": "2026-08-03T10:42:33.766611+00:00"
+}

@@ -1,0 +1,262 @@
+{
+  "cached": true,
+  "remedy_key": "apis-mellifica",
+  "remedy_display": "Apis Mellifica",
+  "schema_version": 1,
+  "card": {
+    "essence": "Apis is the remedy of stinging, burning pains and rapid oedematous swellings affecting cellular tissues, serous membranes, and skin. The patient is intensely aggravated by heat in any form and ameliorated by cold applications. Erysipelas, dropsical effusions, and suppressed eruptions with bag-like swellings, especially around eyes, characterise its sphere. Thirstlessness during fever and dropsy is marked.",
+    "family": "Animal · Hymenoptera (Honey Bee venom)",
+    "common_name": "Honey Bee",
+    "sides": "Right-sided; right to left extension",
+    "thermal": "Hot",
+    "keynotes": [
+      {
+        "text": "Stinging, burning pains like bee stings; sharp and sudden",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Nash",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Bag-like, puffy oedema; eyelids like water bags",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger",
+          "Nash",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Extreme aggravation from heat; relief from cold applications",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger",
+          "Nash",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Thirstlessness in dropsy and during fever",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Sudden shrill, piercing screams (cri encéphalique) in brain disease",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Erysipelas with rosy-red hue, swelling, and sensitiveness",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Anus feels wide open; involuntary diarrhoea on motion",
+        "sources": [
+          "Allen",
+          "Nash"
+        ]
+      }
+    ],
+    "modalities_worse": [
+      {
+        "text": "Heat in any form: warm room, hot weather, warm drinks, fire, bed, hot bath",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Touch; extreme sensitiveness even to hair",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "After sleep",
+        "sources": [
+          "Allen",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "4 p.m. (afternoon)",
+        "sources": [
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Pressure",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Suppressed eruptions",
+        "sources": [
+          "Allen",
+          "Boger",
+          "Nash"
+        ]
+      }
+    ],
+    "modalities_better": [
+      {
+        "text": "Cold: open air, cold bathing, cold applications, uncovering",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Motion; walking or changing position",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "text": "Sitting erect",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "text": "Slight expectoration",
+        "sources": [
+          "Boger"
+        ]
+      }
+    ],
+    "mentals": [
+      "Irritable, nervous, fidgety, hard to please",
+      "Jealous, foolishly suspicious",
+      "Weeping disposition; cannot help crying; tearful without cause",
+      "Discouraged, despondent, apathetic, indifferent",
+      "Awkward; drops things readily (women, widows, children, girls)",
+      "Cannot concentrate when reading or studying",
+      "Ailments from jealousy, fright, rage, vexation, grief, bad news"
+    ],
+    "physicals": [
+      "Rapid oedematous swelling; pits upon pressure",
+      "Eyelids swollen like water bags; conjunctiva bright red, puffy",
+      "Uvula hangs down sac-like, translucent",
+      "Tongue fiery red, swollen, raw, vesicles; feels scalded",
+      "Throat: constricted, glossy as if varnished, inside and out swollen",
+      "Right ovary especially affected; ovarian tumours, cysts",
+      "Urine: scanty, bloody, frequent, involuntary; burning on urination; suppressed with casts",
+      "Incontinence; cannot retain urine a moment; scalds severely",
+      "Constipation with sensation as if something tight would break on straining",
+      "Suffocation; dyspnoea, feels as if cannot draw another breath",
+      "Hydrothorax, oedema of larynx",
+      "Ascites, peritonitis; abdomen extremely tender",
+      "Styes; prevents their recurrence",
+      "Felon in beginning",
+      "Erysipelas extending right to left"
+    ],
+    "clinical": [
+      "Erysipelas of face with rosy-red hue and rapid swelling",
+      "Diphtheria with rapid oedematous closure of throat; painless or stinging",
+      "Scarlatinal nephritis; albuminuria after exanthemata",
+      "Hydrocephalus, cerebro-spinal meningitis with cri encéphalique",
+      "Ovarian cysts and tumours, especially right",
+      "Urticaria; hives with intolerable itching",
+      "Panaritium (felon) in early stages",
+      "Anasarca, general dropsy without thirst",
+      "Keratitis with intense chemosis; perforating corneal ulcer",
+      "Pericarditis, pleuritic effusion with serous inflammation",
+      "Acute nephritis; dropsy of kidneys",
+      "Mastitis with stinging pains",
+      "Imperfectly developed or suppressed exanthemata"
+    ],
+    "differentials": [
+      {
+        "vs": "Arsenicum",
+        "note": "Arsenicum has burning relieved by heat; Apis burning relieved by cold. Arsenicum thirsty; Apis thirstless in dropsy.",
+        "sources": [
+          "Nash",
+          "Kent"
+        ]
+      },
+      {
+        "vs": "Rhus toxicodendron",
+        "note": "Disagrees when used before or after Apis. Both have oedema but Rhus worse from cold/damp, better warmth; Apis opposite.",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "vs": "Phosphorus",
+        "note": "Phosphorus has oedema of whole face; Apis especially around and under eyes. Both have involuntary diarrhoea.",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Kali carbonicum",
+        "note": "Kali carb. has oedema of upper lids; Apis lower lids like water bags.",
+        "sources": [
+          "Nash",
+          "Boger"
+        ]
+      },
+      {
+        "vs": "Pulsatilla",
+        "note": "Both weepy and thirstless. Apis more stinging pains, worse heat; Pulsatilla mild, yielding, changeable.",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "vs": "Baptisia",
+        "note": "Baptisia painless throat but swelling not as rapid as Apis and no oedema.",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Opium",
+        "note": "Both worse from warm bath in brain congestion with convulsions.",
+        "sources": [
+          "Kent"
+        ]
+      }
+    ],
+    "cautions": [
+      "Disagrees when used either before or after Rhus toxicodendron",
+      "Warm bathing contraindicated in convulsions needing Apis; may precipitate fits",
+      "In suppressed eruptions with brain symptoms, act promptly to prevent meningitis"
+    ]
+  },
+  "source_books": [
+    "Allen",
+    "Boericke",
+    "Boger",
+    "Kent",
+    "Nash"
+  ],
+  "generated_at": "2026-07-24T09:45:25.442373+00:00",
+  "updated_at": "2026-07-24T09:45:25.442373+00:00"
+}

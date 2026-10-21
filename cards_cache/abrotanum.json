@@ -1,0 +1,217 @@
+{
+  "cached": true,
+  "remedy_key": "abrotanum",
+  "remedy_display": "Abrotanum",
+  "schema_version": 1,
+  "card": {
+    "essence": "Abrotanum is primarily indicated in marasmus (wasting) beginning in lower limbs and ascending, with paradoxical ravenous appetite yet progressive emaciation. Marked metastasis: symptoms shift from one location to another, notably rheumatism alternating with diarrhoea or haemorrhoids. Suppressed secretions (checked diarrhoea, skin eruptions) trigger serious sequelae—cardiac distress, rheumatic pain, bleeding. The patient is chilly, irritable, and presents with an old, wrinkled face despite youth.",
+    "family": "Plant · Compositae",
+    "common_name": "Southernwood",
+    "sides": "",
+    "thermal": "Chilly",
+    "keynotes": [
+      {
+        "text": "Marasmus beginning in lower extremities and ascending (opposite of Lycopodium)",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Ravenous hunger with progressive emaciation despite eating well",
+        "sources": [
+          "Allen",
+          "Boericke"
+        ]
+      },
+      {
+        "text": "Metastasis: rheumatism alternates with diarrhoea or haemorrhoids; mumps to testes",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Suppressed secretions (diarrhoea, skin) followed by serious sequelae (cardiac, rheumatic)",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Skin flabby, hangs loose in folds; face old, wrinkled, pale",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Head weak, cannot hold it up (in marasmus)",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Rheumatism: pain before swelling appears; from checked diarrhoea",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Kent",
+          "Nash"
+        ]
+      }
+    ],
+    "modalities_worse": [
+      {
+        "text": "Cold air, cold damp weather",
+        "sources": [
+          "Boericke",
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Night",
+        "sources": [
+          "Boericke",
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Checked secretions (diarrhoea, skin eruptions, other discharges)",
+        "sources": [
+          "Boericke",
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Wet, fogs",
+        "sources": [
+          "Boger"
+        ]
+      }
+    ],
+    "modalities_better": [
+      {
+        "text": "Motion",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Loose stool",
+        "sources": [
+          "Boger"
+        ]
+      }
+    ],
+    "mentals": [
+      "Cross, irritable, anxious, depressed",
+      "Violent, inhuman; would like to do something cruel",
+      "Ill-natured, despondent children"
+    ],
+    "physicals": [
+      "Legs greatly emaciated; marasmus of lower extremities only",
+      "Stomach feels as if swimming in water, feels cold",
+      "Gnawing hunger and whining; food passes undigested",
+      "Alternate constipation and diarrhoea; lineteria",
+      "Haemorrhoids aggravated when rheumatism improves; bloody stools",
+      "Nosebleed, especially in boys and youths; hydrocele in boys",
+      "Joints stiff, swollen, lame; gout with pricking sensation in wrists and ankles",
+      "Very lame and sore all over; painful contraction of limbs",
+      "Back lame, weak, painful; neck so weak cannot hold head up",
+      "Itching chilblains; pricking and coldness in fingers and feet",
+      "Oozing from umbilicus (infants); bleeding from navel",
+      "Great weakness and prostration; hectic fever; unable to stand",
+      "Blue rings around dull-looking eyes; face old, pale, wrinkled"
+    ],
+    "clinical": [
+      "Marasmus in children with ascending emaciation (legs first, face last)",
+      "Tuberculous peritonitis; exudative pleurisy and processes",
+      "Post-operative chest pressure after hydrothorax or empyema drainage",
+      "Metastatic conditions: rheumatism following checked diarrhoea, mumps to testes/mammae",
+      "Cardiac symptoms following suddenly suppressed diarrhoea",
+      "Hydrocele in boys",
+      "Furuncles (after Hepar); pleurisy (after Aconite and Bryonia) with residual pressure",
+      "Great weakness after influenza"
+    ],
+    "differentials": [
+      {
+        "vs": "Iodine",
+        "note": "Both have ravenous hunger with emaciation and marasmus of legs, but Abrotanum has ascending wasting pattern and marked metastasis; Iodine more thyroid-related",
+        "sources": [
+          "Allen",
+          "Boericke"
+        ]
+      },
+      {
+        "vs": "Natrum muriaticum",
+        "note": "Both marasmus with good appetite, skin hanging in folds (neck). Nat-m emaciation starts upper body; Abrot. starts lower limbs ascending",
+        "sources": [
+          "Allen",
+          "Boericke"
+        ]
+      },
+      {
+        "vs": "Sanicula",
+        "note": "Both marasmus with flabby skin in folds and hunger. Sanicula has obstinate constipation; Abrotanum more diarrhoea-rheumatism alternation",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "vs": "Lycopodium",
+        "note": "Lycopodium emaciation descends (upper to lower); Abrotanum ascends (lower to upper). Both have good appetite with wasting",
+        "sources": [
+          "Kent"
+        ]
+      },
+      {
+        "vs": "Tuberculinum",
+        "note": "Both marasmus with emaciation of legs and ravenous hunger despite wasting. Tub. more respiratory focus; Abrot. more metastasis and rheumatic",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "vs": "Bryonia",
+        "note": "Abrotanum follows Bryonia in pleurisy when pressing sensation persists impeding respiration. Abrot. has more metastasis and suppression sequelae",
+        "sources": [
+          "Allen",
+          "Kent"
+        ]
+      },
+      {
+        "vs": "Rhus toxicodendron",
+        "note": "Both rheumatic with restlessness better motion. Abrot. rheumatism alternates with diarrhoea/piles, follows suppression; Rhus more ligamentous",
+        "sources": [
+          "Kent"
+        ]
+      }
+    ],
+    "cautions": [
+      "Metastasis: watch for sudden shift of symptoms from one organ to another after suppression",
+      "Cardiac symptoms may follow abrupt cessation of diarrhoea or skin eruptions—requires prompt attention"
+    ]
+  },
+  "source_books": [
+    "Allen",
+    "Boericke",
+    "Boger",
+    "Kent",
+    "Nash"
+  ],
+  "generated_at": "2026-07-24T09:38:10.869187+00:00",
+  "updated_at": "2026-07-24T09:38:10.869187+00:00"
+}

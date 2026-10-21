@@ -1,0 +1,319 @@
+{
+  "cached": true,
+  "remedy_key": "silicea-terra",
+  "remedy_display": "Silicea Terra",
+  "schema_version": 1,
+  "card": {
+    "essence": "Silica is the remedy for defective assimilation and imperfect nutrition leading to chronic weakness, suppuration, and fibrotic change. The patient is chilly, sweaty (especially head), oversensitive mentally and physically, and lacks vital stamina—yet can perform when forced. It ripens abscesses, absorbs scar tissue, and promotes expulsion of foreign bodies. Scrofulous children with large heads, open fontanelles, and weak ankles typify its picture.",
+    "family": "Minerals · Silica (Pure Flint)",
+    "common_name": "Pure Flint; Silicic Oxide",
+    "sides": "Right-sided (headache settles over right eye)",
+    "thermal": "Chilly",
+    "keynotes": [
+      {
+        "text": "Imperfect assimilation despite adequate food; defective nutrition",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Nash",
+          "Farrington"
+        ]
+      },
+      {
+        "text": "Lack of vital heat; always chilly, hugs fire, worse in winter",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Profuse, offensive sweat of head extending to neck",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Nash",
+          "Farrington"
+        ]
+      },
+      {
+        "text": "Open fontanelles and sutures; large head; distended abdomen; slow to walk",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Nash",
+          "Farrington"
+        ]
+      },
+      {
+        "text": "Suppurative processes: ripens abscesses, promotes expulsion of foreign bodies",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Nash",
+          "Farrington"
+        ]
+      },
+      {
+        "text": "Unhealthy skin: every little injury suppurates",
+        "sources": [
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Yielding, faint-hearted; wants to shirk; dreads failure yet performs well when forced",
+        "sources": [
+          "Boericke",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Stool partly expelled then recedes again; great straining as if rectum paralysed",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Constipation always before and during menses",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Headache from occiput over head to eyes; worse uncovering head, better wrapping warmly",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Ill effects of vaccination: abscesses, convulsions",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Nash",
+          "Farrington"
+        ]
+      },
+      {
+        "text": "Fistulae: fistula in ano, lachrymal duct, breast; all fistulous burrowings",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Intolerance of alcoholic stimulants",
+        "sources": [
+          "Boericke"
+        ]
+      },
+      {
+        "text": "Fixed ideas: thinks only of pins, fears them, counts them",
+        "sources": [
+          "Boericke"
+        ]
+      }
+    ],
+    "modalities_worse": [
+      {
+        "text": "Cold, drafts, uncovering (especially head)",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "During menses",
+        "sources": [
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "New moon",
+        "sources": [
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Lying down",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "text": "Motion, open air",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "text": "Suppressed foot-sweat",
+        "sources": [
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "After bathing",
+        "sources": [
+          "Kent"
+        ]
+      },
+      {
+        "text": "Cold, damp weather",
+        "sources": [
+          "Kent"
+        ]
+      }
+    ],
+    "modalities_better": [
+      {
+        "text": "Warmth, wrapping up (especially head)",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Profuse urination (headache)",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "text": "Magnetism",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "text": "Cold food (gastric symptoms only)",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "text": "Lying on left side (vertigo)",
+        "sources": [
+          "Boericke"
+        ]
+      }
+    ],
+    "mentals": [
+      "Yielding, faint-hearted, anxious; wants to give up",
+      "Nervous, excitable, oversensitive to all impressions",
+      "Dread of failure; fears undertaking anything yet does well when forced",
+      "Brain-fag from mental labour; reading and writing fatigue",
+      "Obstinate, headstrong children who cry when spoken to kindly",
+      "Abstracted; fixed ideas (pins)",
+      "Irritable when aroused, but timid and retiring when left alone"
+    ],
+    "physicals": [
+      "Scrofulous, rachitic children: large head, open fontanelles, weak ankles, distended abdomen",
+      "Profuse, offensive head sweat extending to neck",
+      "Unhealthy skin: every injury suppurates",
+      "Suppuration slow, persistent; thin, watery, foul-smelling pus",
+      "Abscesses, boils, carbuncles, fistulae; promotes ripening and expulsion",
+      "Constipation: stool recedes after partial expulsion; great straining",
+      "Headache from occiput to eyes (right); as if from spine",
+      "Vertigo ascending from nape; worse looking up",
+      "Sweat of hands, feet, axillae offensive",
+      "Crippled nails on fingers and toes",
+      "Takes cold from exposure of feet",
+      "Slow, deep action; organic changes"
+    ],
+    "clinical": [
+      "Scrofulous and rachitic children with defective assimilation",
+      "Abscesses, boils, carbuncles, whitlows (panaritium)",
+      "Fistulae: in ano, lachrymal duct, breast, all fistulous tracts",
+      "Suppurative glandular swellings (cervical, axillary, parotid, mammary, inguinal)",
+      "Chronic suppurative processes; promotes maturation or reduces excessive suppuration",
+      "Removal of foreign bodies: splinters, needles, fish bones, imbedded missiles",
+      "Keloid and fibrotic tissue: stimulates absorption of scar tissue and indurations",
+      "Ill effects of vaccination",
+      "Spinal headaches, cerebro-spinal affections",
+      "Complaints of stonecutters with loss of strength",
+      "Chronic sick headaches since youth",
+      "Ingrowing toenails",
+      "Pyorrhoea, dental abscesses",
+      "Corneal ulcers, iritis with pus in anterior chamber",
+      "Slow recovery after pneumonia; chronic lung complaints (use with caution in advanced phthisis)"
+    ],
+    "differentials": [
+      {
+        "vs": "Calcarea",
+        "note": "Both sweaty-headed children, but Calc is fat, torpid, obesic; Silicea is thin, over-sensitive, imperfectly nourished with shrunken limbs",
+        "sources": [
+          "Nash",
+          "Farrington"
+        ]
+      },
+      {
+        "vs": "Hepar sulph",
+        "note": "Hepar expedites discharge of pus already formed; Silicea comes later for healing after discharge, or to ripen indolent abscesses",
+        "sources": [
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Pulsatilla",
+        "note": "Silicea is the chronic of Puls; both yielding, mild, tearful, but Silicea deeper, more profound, with defective assimilation and suppuration",
+        "sources": [
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Lycopodium",
+        "note": "Lyc dread from actual inability; Silicea dread is imaginary, performs well when forced",
+        "sources": [
+          "Kent"
+        ]
+      },
+      {
+        "vs": "Mercurius",
+        "note": "Symptomatologies similar, but do not follow each other well; Silicea antidotes some Mercury effects, but as potentized medicines they disagree",
+        "sources": [
+          "Farrington"
+        ]
+      },
+      {
+        "vs": "Thuja",
+        "note": "Thuja complementary for vaccination effects (high fever, pustular rash); Silicea for later sequelae (convulsions, diarrhoea, abscesses)",
+        "sources": [
+          "Allen",
+          "Farrington"
+        ]
+      }
+    ],
+    "cautions": [
+      "Use with care in phthisis: may cause absorption of scar tissue and liberate walled-in disease to new activity",
+      "Danger of repeating in advanced phthisis: may cause suppurative pneumonia if lung is tubercular",
+      "Fluoric acid antidotes over-use of Silicea in bone affections",
+      "Mercurius does not follow well after Silicea"
+    ]
+  },
+  "source_books": [
+    "Allen",
+    "Boericke",
+    "Farrington",
+    "Kent",
+    "Nash"
+  ],
+  "generated_at": "2026-10-05T07:21:44.202265+00:00",
+  "updated_at": "2026-10-05T07:21:44.202265+00:00"
+}

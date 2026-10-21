@@ -1,0 +1,259 @@
+{
+  "cached": true,
+  "remedy_key": "arnica-montana",
+  "remedy_display": "Arnica Montana",
+  "schema_version": 1,
+  "card": {
+    "essence": "Pre-eminent trauma remedy for mechanical injuries, blows, falls, overexertion—recent or remote. Sore, bruised aching pervades the whole body; bed feels too hard, patient constantly shifts position. Morose, fears touch or approach, says 'nothing wrong with me' when seriously ill. Tendency to haemorrhage, ecchymosis, septic states. Apoplexy with hot red face and cool body. Unconscious, answers correctly then relapses into stupor.",
+    "family": "Plant · Compositae (Asteraceae)",
+    "common_name": "Leopard's Bane",
+    "sides": "Left upper extremity and right chest affinity",
+    "thermal": "Chilly (hot head/face with cool body)",
+    "keynotes": [
+      {
+        "text": "Bed feels too hard; must constantly change position seeking a soft spot",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Says 'there is nothing the matter with me' in serious illness",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Fears touch or approach of anyone; morose, wants to be let alone",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Unconscious; answers correctly when spoken to, then relapses into stupor",
+        "sources": [
+          "Boericke",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Sore, lame, bruised feeling all through body as if beaten",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Hot head/face with cold body or extremities",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Black and blue spots; ecchymosis and tendency to haemorrhage",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Trauma—physical or emotional (grief, remorse, financial loss)",
+        "sources": [
+          "Boericke",
+          "Allen"
+        ]
+      },
+      {
+        "text": "Septic conditions, putrid phenomena; foul breath, taste, stool",
+        "sources": [
+          "Boericke",
+          "Boger",
+          "Nash"
+        ]
+      }
+    ],
+    "modalities_worse": [
+      {
+        "text": "Touch or jarring; injuries, bruises, shocks",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "At rest, lying down",
+        "sources": [
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "After sleep",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Motion (when not ameliorating)",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Wine, alcohol",
+        "sources": [
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Overexertion, strains, labor",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      }
+    ],
+    "modalities_better": [
+      {
+        "text": "Lying with head low or outstretched",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "From contact (paradoxically)",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "text": "Motion (in some cases)",
+        "sources": [
+          "Allen"
+        ]
+      }
+    ],
+    "mentals": [
+      "Morose, irritable, repellant; wants to be let alone",
+      "Fears touch, being struck, sudden death, instant death on waking",
+      "Indifference; says nothing ails him when seriously ill",
+      "Cannot bear pain; whole body oversensitive",
+      "Agoraphobia (fear of space)",
+      "Mental strain or shock; traumatism of grief, remorse, financial loss",
+      "Horrors at night; wakes grasping heart with fear of sudden death",
+      "Dreams of muddy water, robbers, nightmares; falls asleep mid-sentence"
+    ],
+    "physicals": [
+      "Sore, bruised aching everywhere; joints as if sprained",
+      "Hot red face, apoplexy, cerebral congestion; cool body below",
+      "Haemorrhages: retinal, conjunctival, epistaxis, haematemesis, haemoptysis",
+      "Ecchymosis, black and blue spots from minor injuries",
+      "Septic conditions, abscesses that do not mature, putrid phenomena",
+      "Fetid breath, taste like rotten eggs, offensive flatus and stool",
+      "Involuntary stool and urine in stupor states",
+      "Muscular and tendinous rheumatism, especially back and shoulders",
+      "Sore nipples, bruised parts after labour; violent after-pains",
+      "Hoarseness from overuse of voice; cough from weeping or cardiac lesion",
+      "Child cries before coughing (whooping-cough)",
+      "Angina pectoris with pain severe in left elbow",
+      "Small painful boils, one after another; crops of boils",
+      "Cold spot on forehead; cold nose; tinnitus aurium"
+    ],
+    "clinical": [
+      "Injuries, falls, blows, contusions—recent or remote sequelae",
+      "Post-traumatic concussion, meningitis, stupor with involuntary evacuations",
+      "Apoplexy with full red face; controls haemorrhage, aids absorption",
+      "Typhoid states with stupor, mottled skin, putrid odour",
+      "Scarlet fever when eruption does not appear; dusky mottled skin",
+      "Labour: soreness after delivery, prevents post-partum haemorrhage",
+      "Retention or incontinence of urine after labour",
+      "Sore nipples, mastitis from injury",
+      "Bruised sore throat in diphtheria (consider Phytolacca if marked)",
+      "Pneumonia, pleurodynia, all chest bones and cartilages painful",
+      "Cardiac dropsy with distressing dyspnoea; weakened heart muscle",
+      "Malignant or congestive intermittent fevers in malarial regions",
+      "Compound fractures with profuse suppuration (use with Calendula)",
+      "Retinal or conjunctival haemorrhage from injury or cough",
+      "Gout and rheumatism with fear of being touched",
+      "Dysentery with ischuria, fruitless urging, long intervals between stools"
+    ],
+    "differentials": [
+      {
+        "vs": "Baptisia",
+        "note": "Both stupor answering then relapsing, dark tongue streak, hard bed. Baptisia: tosses about, cannot get himself together, extremely offensive discharges. Arnica: involuntary stool/urine, ecchymoses under skin.",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Rhus toxicodendron",
+        "note": "Both soreness, restlessness. Rhus: stiffness < initial motion, > continued motion, damp conditions cause. Arnica: trauma origin, bed feels hard, wants to be let alone.",
+        "sources": [
+          "Nash",
+          "Allen"
+        ]
+      },
+      {
+        "vs": "Phytolacca",
+        "note": "Both sore bruised all over head to foot. Phytolacca: diphtheritic throat, heat of head with cool body. Arnica: trauma history, ecchymosis, stupor states.",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Opium",
+        "note": "Both fear after shock. Opium: fear persists daytime, painlessness. Arnica: fear in nightmares, extreme soreness, morose irritability.",
+        "sources": [
+          "Kent"
+        ]
+      },
+      {
+        "vs": "Ruta",
+        "note": "Both bruised soreness, restlessness in bed. Ruta: cartilages, tendons, periosteum; eyestrain. Arnica: muscles, trauma, haemorrhage tendency.",
+        "sources": [
+          "Nash",
+          "Allen"
+        ]
+      },
+      {
+        "vs": "Sulphuric acid",
+        "note": "Related remedy; follows well after Arnica in certain cases.",
+        "sources": [
+          "Allen"
+        ]
+      }
+    ],
+    "cautions": [
+      "Acts feebly in debilitated persons with impoverished blood and soft flesh",
+      "Local use may produce extraordinary hair growth (Ussher)",
+      "Should not be given for bruises indiscriminately—symptom picture must match",
+      "Misused remedy when limited only to bruises without constitutional indications"
+    ]
+  },
+  "source_books": [
+    "Allen",
+    "Boericke",
+    "Boger",
+    "Clarke",
+    "Kent",
+    "Nash"
+  ],
+  "generated_at": "2026-08-25T18:31:40.320187+00:00",
+  "updated_at": "2026-08-25T18:31:40.320187+00:00"
+}

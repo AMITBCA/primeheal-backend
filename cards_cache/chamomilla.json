@@ -1,0 +1,322 @@
+{
+  "cached": true,
+  "remedy_key": "chamomilla",
+  "remedy_display": "Chamomilla",
+  "schema_version": 1,
+  "card": {
+    "essence": "The irritable, oversensitive remedy par excellence. Patient is snappish, intolerant of pain, and driven to frenzy by suffering—especially children during dentition and nervous women. Cross and uncivil, yet aware of their rudeness. Piteous moaning, demands to be carried constantly, rejects what they just asked for. Pains seem unbearable, often with numbness or one cheek red, one pale. Indicated after anger, chagrin, or abuse of coffee and narcotics.",
+    "family": "Plant · Compositae (Asteraceae)",
+    "common_name": "German Chamomile",
+    "sides": "Left-sided tendency (particularly rheumatic pains)",
+    "thermal": "Chilly, yet easily overheated; sensitive to cold air and wind",
+    "keynotes": [
+      {
+        "text": "Exceedingly irritable; cross, snappish, uncivil—cannot return a civil answer",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Child quiet only when carried about constantly; wants things then rejects them when offered",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Nash"
+        ]
+      },
+      {
+        "text": "One cheek red and hot, the other pale and cold",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Pain seems unendurable, drives to despair; patient oversensitive to every pain",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Numbness alternates with or attends the pains",
+        "sources": [
+          "Allen",
+          "Nash",
+          "Kent",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Toothache worse from anything warm in mouth; better cold (exception to general heat amelioration)",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Green, watery, hot stool like chopped eggs and spinach; smells like rotten eggs; during dentition",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Complaints from anger, chagrin, or mortification; convulsions in child after anger in mother",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Violent rheumatic pains drive out of bed at night; must walk about",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Burning of soles at night; puts feet out of bed",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Nash"
+        ]
+      }
+    ],
+    "modalities_worse": [
+      {
+        "text": "Anger, vexation, chagrin",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Night, especially before midnight",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Open air, wind, especially about ears",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Heat (for toothache and jaw pains)",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Coffee",
+        "sources": [
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Eructations",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "text": "Cold, damp, taking cold",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Dentition period",
+        "sources": [
+          "Allen",
+          "Boger",
+          "Nash"
+        ]
+      }
+    ],
+    "modalities_better": [
+      {
+        "text": "Being carried about constantly",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Warm, wet weather",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Heat (for general pains and rheumatism)",
+        "sources": [
+          "Kent",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Sweating",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Fasting",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "text": "Cold applications (for toothache)",
+        "sources": [
+          "Boger",
+          "Nash"
+        ]
+      }
+    ],
+    "mentals": [
+      "Extreme irritability, peevish, snappish—cannot be civil even when trying",
+      "Oversensitive, intolerant of being spoken to or interrupted",
+      "Whining restlessness; piteous moaning because cannot have what they want",
+      "Child wants many things, refuses them when offered; 'too ugly to live'",
+      "Impatient, spiteful, quarrelsome; vexed at every trifle",
+      "Averse to company, being touched, or spoken to",
+      "Mental calmness contra-indicates Chamomilla",
+      "Driven to frenzy by pain; feels she cannot endure it"
+    ],
+    "physicals": [
+      "Teething troubles with fever, diarrhea, convulsions",
+      "Hot, clammy sweat on forehead and scalp; high fever with one red cheek",
+      "Earache with swelling, heat, stitching pain—drives frantic",
+      "Toothache worse warm drinks, coffee, at night, during menses/pregnancy",
+      "Flatulent colic after anger, with red cheeks and hot sweat",
+      "Diarrhea hot, green, watery, slimy, fetid—like chopped eggs and spinach; corroding",
+      "Labor pains spasmodic, press upward, tearing down legs; patient intolerant of pain",
+      "Nipples inflamed, tender to touch; infant's breasts tender",
+      "Convulsions from nursing after anger in mother; from teething",
+      "Hoarseness, dry tickling cough, suffocative tightness, worse at night",
+      "Rheumatic pains drive out of bed, must walk about",
+      "Burning soles at night, uncovers feet",
+      "Numb on waking, after pains, or when grasping objects",
+      "Sleepy but cannot sleep; anxious, frightened dreams"
+    ],
+    "clinical": [
+      "Dentition disorders with irritability, fever, diarrhea, convulsions",
+      "Colic in infants and children—green stools, cross, only quiet when carried",
+      "Neuralgias (especially facial, dental) with unbearable pain and numbness",
+      "Acute earache in children—frantic with pain",
+      "Labour pains ineffectual, spasmodic, or patient intolerant of normal labour",
+      "Post-partum conditions: haemorrhage, after-pains, mastitis with inflamed nipples",
+      "Rheumatism driving patient out of bed to walk at night",
+      "Ailments from anger, chagrin, mortification (headaches, colic, convulsions)",
+      "Abuse or overuse of coffee, narcotics, or opium—oversensitivity results",
+      "Insomnia from narcotic abuse or pain"
+    ],
+    "differentials": [
+      {
+        "vs": "Belladonna",
+        "note": "Bell. for cranial/brain symptoms, suddenness, intense heat, delirium; Cham. for abdominal nerves, irritability, colic. Complementary in children's diseases.",
+        "sources": [
+          "Allen",
+          "Boericke"
+        ]
+      },
+      {
+        "vs": "Coffea",
+        "note": "Both oversensitive to pain. Coff. more excitable, sleepless from mental activity, joy; Cham. from anger, cross and ugly.",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Kent"
+        ]
+      },
+      {
+        "vs": "Pulsatilla",
+        "note": "Puls. mild, yielding, weepy, wants company, ameliorated cold air; Cham. irritable, snappish, worse open air/wind, better being carried.",
+        "sources": [
+          "Allen",
+          "Boericke"
+        ]
+      },
+      {
+        "vs": "Bryonia",
+        "note": "Bry. wants to lie still, worse motion, irritable if disturbed; Cham. must be carried, restless, snappish unprovoked. Child rejects what it asks for in Cham., not Bry.",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "vs": "Cina",
+        "note": "Cina cross, doesn't want to be touched or carried, grinds teeth, worms; Cham. wants constant carrying, teething troubles, no worm emphasis.",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "vs": "Aconite",
+        "note": "Acon. restless from fear, sudden fright, inflammatory fevers; Cham. from anger, oversensitivity to pain, colic, teething.",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Nux vomica",
+        "note": "Nux irritable, oversensitive, chilly, stimulant abuse; Cham. more for women/children, intolerant of pain, anger-driven, better being carried.",
+        "sources": [
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Staphisagria",
+        "note": "Both ailments from anger/indignation. Staph. suppressed anger, 'too dignified to fight back'; Cham. explosive irritability, snappish outbursts.",
+        "sources": [
+          "Nash"
+        ]
+      }
+    ],
+    "cautions": [
+      "Mental calmness, mild disposition, or constipated bowels contra-indicate Chamomilla",
+      "In cases spoiled by opium or morphine in children's complaints; antidotes narcotic abuse",
+      "Camomile tea given for colic can provoke convulsions in infants—ironic iatrogenic proving",
+      "Not for sluggish, calm, gentle temperaments—only for irritable, oversensitive states"
+    ]
+  },
+  "source_books": [
+    "Allen",
+    "Boericke",
+    "Boger",
+    "Kent",
+    "Nash"
+  ],
+  "generated_at": "2026-07-24T10:06:59.571712+00:00",
+  "updated_at": "2026-07-24T10:06:59.571712+00:00"
+}

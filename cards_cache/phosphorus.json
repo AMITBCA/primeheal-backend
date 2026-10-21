@@ -1,0 +1,348 @@
+{
+  "cached": true,
+  "remedy_key": "phosphorus",
+  "remedy_display": "Phosphorus",
+  "schema_version": 1,
+  "card": {
+    "essence": "Phosphorus suits tall, slender, rapidly-growing persons of sanguine temperament with delicate features, fair skin, and oversensitive nerves. It addresses states of nervous exhaustion, haemorrhagic diathesis (even small wounds bleed profusely), and destructive metabolism leading to fatty degeneration. Burning sensations pervade—especially in chest, spine, palms—alongside intense weakness, trembling, and a characteristic empty, gone sensation in head, chest, and abdomen.",
+    "family": "Elements · Non-metal",
+    "common_name": "Phosphorus (the element)",
+    "sides": "Right-sided (especially right lower lung); left-sided aggravation when lying",
+    "thermal": "Ambithermal (head and stomach > cold; body and chest < cold, > warmth)",
+    "keynotes": [
+      {
+        "text": "Tall, slender, rapidly-growing persons; delicate eyelashes, fair/red hair, sanguine temperament",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Haemorrhagic diathesis: small wounds bleed profusely; vicarious menses from nose/stomach/anus",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Burning sensations everywhere—spine (heat running up back), palms, chest, stomach",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Weak, empty, all-gone sensation in head, chest, stomach, entire abdomen",
+        "sources": [
+          "Allen",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Oversensitiveness to external impressions: light, sound, odours, touch, thunder storms",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Craves cold food/drinks/ice cream (> gastric pains), but vomits water once warm in stomach",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Restless, fidgety all over; cannot sit or stand still a moment",
+        "sources": [
+          "Allen",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Cough < twilight to midnight, going warm→cold air, lying left side; > lying right side",
+        "sources": [
+          "Allen",
+          "Nash",
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Phosphorus removes bad effects of iodine and excessive salt",
+        "sources": [
+          "Allen",
+          "Boericke"
+        ]
+      }
+    ],
+    "modalities_worse": [
+      {
+        "text": "Evening, before midnight; twilight",
+        "sources": [
+          "Allen",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Lying on left or painful side",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Weather changes (hot or cold); thunderstorms",
+        "sources": [
+          "Allen",
+          "Boger",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Cold air (aggravates chest, throat, neck)",
+        "sources": [
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Warm ingesta (warm food/drinks)",
+        "sources": [
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Putting hands in warm water",
+        "sources": [
+          "Allen",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Mental or physical exertion; talking, laughing, reading",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Touch, slight pressure (especially intercostal spaces)",
+        "sources": [
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "After loss of vital fluids; puberty; sexual excesses",
+        "sources": [
+          "Allen",
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Being alone; in the dark",
+        "sources": [
+          "Kent",
+          "Nash",
+          "Boger"
+        ]
+      }
+    ],
+    "modalities_better": [
+      {
+        "text": "Cold food, cold water, ice (until warm in stomach)",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Cold applications to face and head",
+        "sources": [
+          "Allen",
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Lying on right side",
+        "sources": [
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Rubbing; being magnetised",
+        "sources": [
+          "Allen",
+          "Boger",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "In the dark (mental symptoms)",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "text": "After sleep (generally)",
+        "sources": [
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Eating (temporarily)",
+        "sources": [
+          "Boger"
+        ]
+      }
+    ],
+    "mentals": [
+      "Anxious, fearful—fears being alone, dark, twilight, thunderstorms, death, something will happen",
+      "Restless, fidgety all over; cannot sit or stand still",
+      "Apathetic, indifferent to friends/family; answers slowly, unwilling to talk",
+      "Great lowness of spirits; weary of life, gloomy forebodings",
+      "Clairvoyant state; excitable to ecstasy; wild thoughts and imaginations",
+      "Over-sensitive to impressions; easily vexed; startles easily",
+      "Brain-fag from mental effort; loss of memory; ideas come slowly",
+      "Fear/anxiety begins at pit of stomach",
+      "Delirium: low muttering, mania à potu; violent maniacal attacks during sleep"
+    ],
+    "physicals": [
+      "Tall, slender persons who grow too rapidly; narrow-chested; phthisical habit",
+      "Dandruff, hair falls out in bunches; bald spots",
+      "Eyes: hollow, blue rings; puffy oedematous lids (all around eyes); green halo around candlelight",
+      "Nose: fan-like motion of alae; epistaxis (instead of menses); chronic bloody catarrh",
+      "Constipation: stools slender, long, dry, tough, hard (like a dog's); great straining",
+      "Diarrhoea: profuse, pouring as from hydrant; watery with sago-like particles; painless; involuntary; anus feels open",
+      "Larynx painful; cannot talk; hoarseness worse evenings; aphonia; clergyman's sore throat",
+      "Pneumonia: especially right lower lobe; oppression worse lying left side; rusty/bloody expectoration",
+      "Regurgitation of food in mouthfuls; vomiting as soon as water warms in stomach",
+      "Ravenous hunger soon after eating; must eat often or faints; hungry at night",
+      "Burning in oesophagus, stomach, chest; tightness across chest",
+      "Violent palpitation with anxiety, lying left side; heart dilated (especially right)",
+      "Perspiration has odour of sulphur",
+      "Necrosis of lower jaw (or other bones)",
+      "Fatty degeneration: liver, heart, kidneys, blood vessels",
+      "Jaundice; yellow spots on abdomen"
+    ],
+    "clinical": [
+      "Pneumonia (especially right lower lobe) with oppression, rusty sputa, circumscribed red cheek",
+      "Tuberculosis in tall, rapidly-growing young people (use high potency, infrequently)",
+      "Haemoptysis; vicarious menstruation via epistaxis or haematemesis",
+      "Chronic bronchitis with bloody expectoration; nervous cough provoked by strangers or strong odours",
+      "Fatty degeneration of liver (acute hepatitis, yellow atrophy); pancreatic disease",
+      "Acute/chronic nephritis with haematuria; albuminuria (periodical or with retinitis)",
+      "Purpura haemorrhagica; petechiae in typhoid",
+      "Post-operative vomiting; vomiting in pregnancy (cannot drink water, sight of it causes vomiting)",
+      "Vertigo of the aged (especially after rising)",
+      "Chlorosis; pernicious anaemia; green sickness in rapidly-growing girls",
+      "Necrosis of lower jaw or tibia; caries of bones",
+      "Glaucoma; retinal degeneration; thrombosis of retinal vessels; optic atrophy",
+      "Paralysis: post-diphtheritic; ascending sensory/motor from fingers/toes; locomotor ataxia",
+      "Brain-fag; mental exhaustion from overwork; cerebral softening",
+      "Tertiary syphilis with skin lesions and nervous debility"
+    ],
+    "differentials": [
+      {
+        "vs": "Arsenicum",
+        "note": "Both burn intensely and have anxiety/restlessness. Ars. chilly, wants heat (except head); restless midnight–3am. Phos. ambithermal; restless evening, before midnight; craves cold drinks.",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Bryonia",
+        "note": "Both have chest symptoms. Bry. < motion, wants absolute rest; < warm room; cough < entering warm room. Phos. cough < going warm→cold; < lying left; > cold drinks initially.",
+        "sources": [
+          "Allen",
+          "Boericke"
+        ]
+      },
+      {
+        "vs": "Sulphur",
+        "note": "Both have burning sensations. Sulph. hot patient, wants cool; offensive discharges; feet burn at night. Phos. ambithermal; haemorrhagic; tall, slender; dandruff in clouds.",
+        "sources": [
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Lachesis",
+        "note": "Both have left-sided chest symptoms; haemorrhagic tendency. Lach. < after sleep, cannot bear tight clothing. Phos. > after sleep; clothing not prominent; craves cold drinks.",
+        "sources": [
+          "Boericke",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Causticum",
+        "note": "Incompatible—must not be used before or after Phos. Caust. right-sided paralysis, hoarseness, urinary incontinence < coughing.",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "vs": "Sanguinaria",
+        "note": "Both have right-sided pneumonia with circumscribed red cheek. Sang. periodic sick headaches; menopausal flushes; < motion. Phos. broader haemorrhagic picture; craves cold food.",
+        "sources": [
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Allium cepa",
+        "note": "Its vegetable analogue per Allen. Both have nasal symptoms; watery discharges. Cepa more acute coryza with laryngeal symptoms; onion-like tearing sensation.",
+        "sources": [
+          "Allen"
+        ]
+      }
+    ],
+    "cautions": [
+      "Do not give too low or too frequently in tuberculosis—may hasten destructive degeneration of tubercular masses",
+      "Incompatible with Causticum: must not be used before or after",
+      "In advanced paralytic states with complete apathy, ensure remedy picture still matches (may need follow-up remedies)",
+      "Haemorrhagic diathesis: bleeding from slight wounds can be dangerous; monitor surgical/dental procedures",
+      "In fatty degeneration of organs, ensure regular follow-up for serious pathology (liver, heart, kidneys)"
+    ]
+  },
+  "source_books": [
+    "Allen",
+    "Boericke",
+    "Boger",
+    "Kent",
+    "Nash"
+  ],
+  "generated_at": "2026-07-24T09:33:37.095677+00:00",
+  "updated_at": "2026-07-24T09:33:37.095677+00:00"
+}

@@ -1,0 +1,250 @@
+{
+  "cached": true,
+  "remedy_key": "calcarea-carbonica",
+  "remedy_display": "Calcarea Carbonica",
+  "schema_version": 1,
+  "card": {
+    "essence": "Calcarea carbonica addresses the leucophlegmatic constitution with impaired calcium metabolism, manifesting as deficient bone development, glandular swellings, and profuse sour discharges. The typical patient is fair, fat, flabby, pale, and cold—mentally sluggish yet anxious, physically torpid yet easily fatigued, with characteristic profuse head sweats during sleep that soak the pillow far around.",
+    "family": "Minerals · Calcium Carbonate (middle layer of oyster shell)",
+    "common_name": "Carbonate of Lime",
+    "sides": "Right upper lung affinity; right-sided head coldness",
+    "thermal": "Chilly",
+    "keynotes": [
+      {
+        "text": "Leucophlegmatic: fair, fat, flabby, pale—tendency to obesity in youth",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Head sweats profusely during sleep, wetting pillow far around",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Open fontanelles, delayed dentition, soft bones developing slowly",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Cold, damp feet—as if wearing cold, damp stockings",
+        "sources": [
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Sour: taste, eructations, vomiting, stools, body odour",
+        "sources": [
+          "Allen",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Craves eggs and indigestible things (chalk, coal, pencils); aversion to meat",
+        "sources": [
+          "Allen",
+          "Boericke"
+        ]
+      },
+      {
+        "text": "Feels better when constipated; stool must be removed mechanically",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "text": "Takes cold easily, especially in chest; sensitive to cold, damp air",
+        "sources": [
+          "Allen",
+          "Boger",
+          "Boericke"
+        ]
+      },
+      {
+        "text": "Pit of stomach swollen like inverted saucer",
+        "sources": [
+          "Allen",
+          "Boger"
+        ]
+      }
+    ],
+    "modalities_worse": [
+      {
+        "text": "Cold air, wet weather, cold water, washing",
+        "sources": [
+          "Allen",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Mental or physical exertion, ascending stairs",
+        "sources": [
+          "Boericke",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "During full moon",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "text": "Morning; on awakening",
+        "sources": [
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Dentition, puberty",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Pressure of tight clothing around waist",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Milk",
+        "sources": [
+          "Boger"
+        ]
+      }
+    ],
+    "modalities_better": [
+      {
+        "text": "Dry weather",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "text": "Lying on painful side",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "text": "When constipated",
+        "sources": [
+          "Allen"
+        ]
+      }
+    ],
+    "mentals": [
+      "Apprehensive, worse towards evening; fears loss of reason, misfortune, contagious diseases",
+      "Fears people will observe her mental confusion",
+      "Forgetful, confused, low-spirited; depressed melancholic mood",
+      "Obstinacy; slight mental effort produces hot head",
+      "Averse to work or exertion; apathetic, indolent"
+    ],
+    "physicals": [
+      "Large head and abdomen; fontanelles and sutures remain open",
+      "Curvature of spine and long bones; extremities crooked, deformed",
+      "Children have no disposition to walk or stand; tardy learning to walk",
+      "Swelling of glands: cervical, mesenteric, submaxillary",
+      "Profuse perspiration on back of head and neck, or chest and upper body",
+      "Girls fleshy, plethoric, growing too rapidly",
+      "Menses too early, too profuse, too long; least mental excitement causes profuse return of flow",
+      "Painless hoarseness worse in morning",
+      "Gets out of breath easily; short of breath on ascending or exertion",
+      "Rawness of soles from perspiration; blisters and offensive foot sweat",
+      "Difficult, delayed dentition with head sweats",
+      "Goitre; parotid fistula",
+      "Polypi: nasal, uterine, bladder",
+      "Crusta lactea; milk-crust on scalp"
+    ],
+    "clinical": [
+      "Rickets and scrofulous conditions in children with delayed bone development",
+      "Incipient phthisis, especially upper third of right lung in tall, slender, rapidly growing youth",
+      "Hydrocephalus in infants with profuse head sweats",
+      "Dentition troubles with open fontanelles and head sweats",
+      "Marasmus and malnutrition from inability to assimilate lime",
+      "Leucorrhoea: thick, milky, gushing",
+      "Eczema, psoriasis, crusta lactea",
+      "Chlorosis and anaemia in pale, plump, leucophlegmatic subjects",
+      "Diseases arising from working in cold water or standing on cold, damp pavements",
+      "Gall-stone colic; biliary complaints",
+      "Umbilical hernia in children",
+      "Chronic catarrh with polypi formation"
+    ],
+    "differentials": [
+      {
+        "vs": "Sulphur",
+        "note": "Sulphur is lean, stooped, active, nervous, burning, hot; Calcarea is fat, flabby, sluggish, cold. Calcarea follows Sulphur well, especially if pupils dilated.",
+        "sources": [
+          "Allen",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Lycopodium",
+        "note": "Lycopodium is bilious, swarthy, yellowish; Calcarea is pale, chalky, white. Both have digestive weakness but different temperaments.",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Silica",
+        "note": "Both have head sweats, open fontanelles, take cold easily. Silica more delicate, yielding, chilly; similar sphere but different constitutional picture. Calcarea acts best before Silica.",
+        "sources": [
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "vs": "Phosphorus",
+        "note": "Phosphorus more often indicated in lung disease of tall, slender youth, but Calcarea oftener the true constitutional remedy in such cases; Phosphorus burning, desires cold.",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "vs": "Belladonna",
+        "note": "Belladonna is the acute of Calcarea; complementary relationship.",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "vs": "Graphites",
+        "note": "Graphites also has obesity but with characteristic skin eruptions (eczema, fissures); Calcarea obesity more primary constitutional feature.",
+        "sources": [
+          "Nash"
+        ]
+      }
+    ],
+    "cautions": [
+      "In aged people should not be repeated; if first dose benefited, repetition will usually do harm",
+      "According to Hahnemann, must not be used before Nitric acid and Sulphur—may produce unnecessary complications",
+      "In children may be repeated often, but use carefully in elderly"
+    ]
+  },
+  "source_books": [
+    "Allen",
+    "Boericke",
+    "Boger",
+    "Kent",
+    "Nash"
+  ],
+  "generated_at": "2026-07-24T09:54:39.403742+00:00",
+  "updated_at": "2026-07-24T09:54:39.403742+00:00"
+}

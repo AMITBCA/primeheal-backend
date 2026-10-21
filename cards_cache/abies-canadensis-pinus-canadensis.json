@@ -1,0 +1,85 @@
+{
+  "cached": true,
+  "remedy_key": "abies-canadensis-pinus-canadensis",
+  "remedy_display": "Abies Canadensis - Pinus Canadensis",
+  "schema_version": 1,
+  "card": {
+    "essence": "A remedy primarily for mucous membrane affections with marked gastric symptoms producing a catarrhal stomach condition. Characterised by peculiar cravings, profound chilliness, and debility—especially in women with uterine displacement due to defective nutrition. The patient is faint, wants to lie down constantly, with cold clammy skin and laboured respiration.",
+    "family": "Coniferae · Pinaceae",
+    "common_name": "Hemlock Spruce",
+    "sides": "Right-sided (right shoulder-blade pain, right lung feels small)",
+    "thermal": "Chilly",
+    "keynotes": [
+      {
+        "text": "Canine hunger with craving for meat, pickles, radishes, coarse food—eats beyond digestive capacity",
+        "sources": [
+          "Boericke"
+        ]
+      },
+      {
+        "text": "Cold shivering as if blood were ice-water; chills run down back",
+        "sources": [
+          "Boericke"
+        ]
+      },
+      {
+        "text": "Wants to lie down all the time; profound prostration with cold, clammy skin",
+        "sources": [
+          "Boericke"
+        ]
+      },
+      {
+        "text": "Uterine displacement with sore fundus relieved by pressure; thinks womb is soft and feeble",
+        "sources": [
+          "Boericke"
+        ]
+      },
+      {
+        "text": "Cold water feeling between shoulders",
+        "sources": [
+          "Boericke"
+        ]
+      },
+      {
+        "text": "Flatulence disturbs heart action; respiration and heart action laboured",
+        "sources": [
+          "Boericke"
+        ]
+      }
+    ],
+    "modalities_worse": [],
+    "modalities_better": [
+      {
+        "text": "Pressure to fundus of uterus",
+        "sources": [
+          "Boericke"
+        ]
+      }
+    ],
+    "mentals": [
+      "Feels light-headed, tipsy",
+      "Irritable"
+    ],
+    "physicals": [
+      "Gnawing, hungry, faint feeling at epigastrium",
+      "Burning and distention of stomach and abdomen with palpitation",
+      "Pain in right shoulder-blade with constipation and burning in rectum",
+      "Right lung and liver feel small and hard",
+      "Hands cold, skin clammy and sticky",
+      "Night-sweat",
+      "Gleet"
+    ],
+    "clinical": [
+      "Catarrhal gastritis with ravenous appetite and peculiar food cravings",
+      "Uterine displacements with debility in women",
+      "Dyspepsia with flatulence affecting cardiac function"
+    ],
+    "differentials": [],
+    "cautions": []
+  },
+  "source_books": [
+    "Boericke"
+  ],
+  "generated_at": "2026-07-24T14:54:52.293362+00:00",
+  "updated_at": "2026-07-24T14:54:52.293362+00:00"
+}

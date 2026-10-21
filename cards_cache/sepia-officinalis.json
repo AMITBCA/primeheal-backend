@@ -1,0 +1,336 @@
+{
+  "cached": true,
+  "remedy_key": "sepia-officinalis",
+  "remedy_display": "Sepia Officinalis",
+  "schema_version": 1,
+  "card": {
+    "essence": "Sepia acts primarily on the portal venous system and female pelvic organs, causing marked stasis, prolapse, and bearing-down sensations. A remedy of deep-seated weakness with indifference to loved ones, bearing-down pains ameliorated by crossing legs, and characteristic yellow discolouration (saddle across nose, moth patches). Suited to dark-haired, slender women with rigid fibre but weak pelvic support, suffering from circulatory sluggishness and profound mental and physical exhaustion.",
+    "family": "Mollusca · Cuttlefish",
+    "common_name": "Inky juice of cuttlefish",
+    "sides": "Left-sided predominance (headache, ovarian pains shooting backward)",
+    "thermal": "Chilly",
+    "keynotes": [
+      {
+        "text": "Bearing-down sensation as if everything would escape through vulva; must cross limbs or sit close to prevent protrusion",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Nash",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Indifferent to those loved best, even to family; no affection despite knowing she ought to love them",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Yellow saddle across upper cheeks and nose; moth patches; sallow, waxy complexion",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Sensation of a ball in inner parts (rectum, anus, uterus); during menses, pregnancy, constipation",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Painful emptiness, 'all-gone' feeling at epigastrium, not relieved by eating",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Flushes of heat ascending from pelvis with weakness, perspiration, and faintness; climacteric",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Nash",
+          "Farrington"
+        ]
+      },
+      {
+        "text": "Faints easily: from extremes of temperature, riding in carriage, kneeling at church",
+        "sources": [
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Enuresis during first sleep; bed wet almost as soon as child falls asleep",
+        "sources": [
+          "Allen",
+          "Boger",
+          "Nash"
+        ]
+      }
+    ],
+    "modalities_worse": [
+      {
+        "text": "Cold air, north wind, getting wet",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Before menses, during pregnancy, after lactation",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Morning and evening",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "After first sleep",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Standing",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "text": "Mental labour, sexual excesses",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "text": "Jar, after sleep, laundry work",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "text": "Boiled milk (causes diarrhoea)",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Lying on painful side (headache)",
+        "sources": [
+          "Boericke"
+        ]
+      },
+      {
+        "text": "Indoors",
+        "sources": [
+          "Boericke"
+        ]
+      },
+      {
+        "text": "Sitting (dyspnoea)",
+        "sources": [
+          "Allen",
+          "Nash"
+        ]
+      }
+    ],
+    "modalities_better": [
+      {
+        "text": "Violent motion, continued hard motion, dancing or walking rapidly",
+        "sources": [
+          "Boericke",
+          "Boger",
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Warmth (of room)",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Cold drinks",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "External pressure (headache)",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "text": "Sitting with legs crossed, sitting close",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "text": "Loosening clothes",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "text": "Open air",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "text": "Lying on right side (liver pain)",
+        "sources": [
+          "Boericke"
+        ]
+      }
+    ],
+    "mentals": [
+      "Indifferent to occupation, to family, to those loved best",
+      "Weeps when telling symptoms; very sad, dreads being alone",
+      "Irritable, easily offended, spiteful to those she loves",
+      "Averse to sympathy, to company, yet dreads solitude",
+      "Miserly, greedy",
+      "Anxious toward evening; anxiety with fear, flushes of heat",
+      "Indolent, does not want to do anything; even thinking is an exertion",
+      "Poor memory, thinks slowly, forgetful, stupid",
+      "Stifled affections; lack of ability to feel or express natural love",
+      "Permits no opposition to her opinions",
+      "Taciturn; answers in monosyllables when pressed",
+      "Absence of all joy; life has nothing in it for her"
+    ],
+    "physicals": [
+      "Portal venous congestion with ptosis of viscera",
+      "Pulsating headache in cerebellum; coldness of vertex",
+      "Headache in terrific shocks at menstrual nisus with scanty flow",
+      "Hair falls out; roots of hair sensitive",
+      "Chronic post-nasal catarrh; thick greenish plugs and crusts",
+      "Muscular asthenopia; ptosis; tarsal tumours",
+      "Tongue white, clears during menses, returns when flow ceases",
+      "Taste salty, putrid; everything tastes too salty",
+      "Swelling and cracking of lower lip",
+      "Nausea at smell or sight of food; in morning before eating",
+      "Longing for vinegar, acids, pickles; loathes fat",
+      "Liver sore and painful",
+      "Constipation with large hard balls glued with mucus; feeling of ball in rectum",
+      "Prolapsus ani; almost constant oozing from anus",
+      "Urine with red adhesive sand; reddish clay-coloured sediment adherent to vessel",
+      "Leucorrhoea yellow, greenish with much itching",
+      "Menses irregular: too late and scanty or early and profuse",
+      "Violent stitches upward in vagina from uterus to umbilicus",
+      "Prolapsus of uterus and vagina",
+      "Tendency to abortion; sub-involution",
+      "Morning sickness: sight or thought of food sickens; smell of cooking nauseates",
+      "Ringworm in isolated spots on upper body",
+      "Herpes circinatus; herpes behind ears",
+      "Brown spots on abdomen, chest; liver spots",
+      "Itching of skin, genitalia, better scratching, changes to burning"
+    ],
+    "clinical": [
+      "Uterine prolapse and pelvic organ relaxation in tall, slender women with narrow pelvis",
+      "Menopausal flushes with weakness and perspiration",
+      "Chronic hepatic troubles with uterine reflexes in tubercular patients",
+      "Laundry-woman's remedy; complaints brought on or aggravated by laundry work",
+      "Ulceration and congestion of os and cervix uteri (supersedes local applications)",
+      "Chronic cystitis with bearing-down above pubis",
+      "Gleet, painless, yellowish, staining linen; obstinate, long-standing",
+      "Atrophic nasal catarrh with greenish crusts",
+      "Constipation during pregnancy",
+      "Infantile diarrhoea from boiled milk with rapid exhaustion",
+      "Climacteric disorders with erethism and irregular circulation",
+      "Headaches in delicate, sensitive, hysterical women",
+      "Post-partum and post-haemorrhagic weakness with indifference"
+    ],
+    "differentials": [
+      {
+        "vs": "Pulsatilla",
+        "note": "Puls. weepy, yielding, craves sympathy and company; Sepia indifferent, irritable, averse to sympathy. Both have changeable menses but Sepia has bearing-down and crossing legs.",
+        "sources": [
+          "Allen",
+          "Kent"
+        ]
+      },
+      {
+        "vs": "Lachesis",
+        "note": "Both climacteric with flushes, but Lach. left-sided, loquacious, jealous, worse tight clothing especially at neck; Sepia right-sided liver, indifferent, taciturn. Inimical; should not be used before or after.",
+        "sources": [
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "vs": "Natrum muriaticum",
+        "note": "Complementary remedy. Both have sadness, but Nat-m dwells on past grievances, consolation aggravates; Sepia indifferent to loved ones, weeps when telling symptoms.",
+        "sources": [
+          "Boger",
+          "Allen"
+        ]
+      },
+      {
+        "vs": "Lilium tigrinum",
+        "note": "Both have bearing-down with need to cross legs, prolapsus, but Lil-t. more hurried, frantic, fearful of insanity with cardiac symptoms.",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "vs": "Belladonna",
+        "note": "Both have bearing-down, but Bell. acute, sudden, violent onset with heat and redness; Sepia chronic, passive congestion with weakness.",
+        "sources": [
+          "Boericke"
+        ]
+      },
+      {
+        "vs": "Sulphur",
+        "note": "Both have flushes and venous congestion, but Sulph. more burning sensations, standing aggravates, generally hot; Sepia chilly with less burning, better violent motion.",
+        "sources": [
+          "Nash"
+        ]
+      }
+    ],
+    "cautions": [
+      "Inimical to Lachesis; should not be used before or after (Allen, Boger)",
+      "Inimical to Pulsatilla; should never be alternated with it (Allen)",
+      "Acts best on brunettes with dark hair and rigid fibre (Allen, Kent)",
+      "Suited to chronic cases with portal stasis and pelvic relaxation, not acute inflammatory states",
+      "Tongue clears during menses, returns when flow ceases — a peculiar keynote requiring observation (Allen, Boger)"
+    ]
+  },
+  "source_books": [
+    "Allen",
+    "Boericke",
+    "Boger",
+    "Farrington",
+    "Kent",
+    "Nash"
+  ],
+  "generated_at": "2026-09-29T12:35:55.964024+00:00",
+  "updated_at": "2026-09-29T12:35:55.964024+00:00"
+}

@@ -1,0 +1,259 @@
+{
+  "cached": true,
+  "remedy_key": "mercurius-solubilis",
+  "remedy_display": "Mercurius Solubilis",
+  "schema_version": 1,
+  "card": {
+    "essence": "Mercury transforms healthy cells into inflamed, necrotic wrecks, producing profound anaemia and decomposing blood. The lymphatic system, glands, mucous membranes, bones, and all tissues are affected. The patient is a 'human thermometer'—sensitive to both heat and cold, with profuse, offensive sweats that bring no relief, and all symptoms markedly worse at night. Tremors, weakness, and foul secretions pervade the clinical picture.",
+    "family": "Metals · Mercury (Quicksilver)",
+    "common_name": "Quicksilver",
+    "sides": "Right-sided (lying on right side aggravates respiratory symptoms; right lower chest; pain below right breast to scapula)",
+    "thermal": "Ambithermal (sensitive to both heat and cold)",
+    "keynotes": [
+      {
+        "text": "Profuse, oily perspiration without relief; patient worse during sweating",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "All symptoms worse at night, from warmth of bed, and from damp cold weather",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Sensitive to both heat and cold; 'human thermometer'",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Breath, excretions, and body smell foul; offensive odour pervades",
+        "sources": [
+          "Boericke",
+          "Boger",
+          "Clarke"
+        ]
+      },
+      {
+        "text": "Tremors everywhere; trembling from least exertion, especially hands",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Tongue heavy, thick, yellow, flabby, teeth-indented",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Salivary secretions greatly increased; fetid, bloody, coppery, metallic taste",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Never-get-done feeling with stools; painful tenesmus worse at night",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Greenish, bloody, slimy discharges; pus thin, greenish, putrid, streaked with blood",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Glands swell every time patient takes cold; glandular swellings",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      }
+    ],
+    "modalities_worse": [
+      {
+        "text": "Night",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Warmth of bed",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Damp, cold, rainy weather",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "During perspiration",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Lying on right side",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Warm room",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Heated (from bed or fire)",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Drafts to head",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Night air",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Firelight",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Wet feet",
+        "sources": [
+          "Boger"
+        ]
+      }
+    ],
+    "modalities_better": [
+      {
+        "text": "Moderate temperature",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Cold water (itching and burning of female parts)",
+        "sources": [
+          "Boericke"
+        ]
+      }
+    ],
+    "mentals": [
+      "Slow in answering questions",
+      "Memory weakened, loss of will-power",
+      "Weary of life, mistrustful",
+      "Thinks he is losing his reason",
+      "Hurried, nervous, stammering",
+      "Violent impulses (homicidal)",
+      "Restless and sweaty",
+      "Filthy in mind and body",
+      "Senses impending evil, forgetful"
+    ],
+    "physicals": [
+      "Parts much swollen with raw, sore feeling",
+      "Tendency to suppuration; pus thin, greenish, putrid",
+      "Ulceration of mucous membranes; irregular edges, bleeding",
+      "Gums spongy, recede, bleed easily; teeth loose, tender, elongated",
+      "Stool greenish, bloody, slimy with pain and tenesmus; never-get-done feeling",
+      "Cough worse at night, from warmth of bed; yellow muco-purulent expectoration",
+      "Cannot lie on right side (respiratory)",
+      "Bone pains worse at night",
+      "Trembling extremities, paralysis agitans",
+      "Leucorrhoea excoriating, greenish and bloody",
+      "Skin almost constantly moist; vesicular and pustular eruptions",
+      "Jaundice; liver enlarged, sore to touch",
+      "Speech difficult due to trembling tongue",
+      "Band-feeling about head"
+    ],
+    "clinical": [
+      "Secondary syphilis with febrile chloro-anaemia, mouth/throat ulcerations, falling hair",
+      "Hereditary syphilis: bullae, abscesses, snuffles, marasmus, stomatitis",
+      "Suppurative processes with thin, greenish, fetid pus",
+      "Stomatitis, aphthae, alveolar abscess",
+      "Rheumatic fever with profuse unrelieving sweat worse at night",
+      "Quinsy after pus has formed",
+      "Gonorrhoea with greenish urethral discharge",
+      "Iritis with hypopyon; parenchymatous keratitis of syphilitic origin",
+      "Dysentery with bloody, slimy stools and tenesmus",
+      "Glandular swellings from every cold",
+      "Mumps, parotitis",
+      "Catarrhal conditions with acrid, profuse, greenish discharges"
+    ],
+    "differentials": [
+      {
+        "vs": "Lycopodium",
+        "note": "Lycopodium cannot lie on left side (respiratory); Merc. cannot lie on right side",
+        "sources": [
+          "Boericke"
+        ]
+      },
+      {
+        "vs": "Hepar sulph",
+        "note": "Both have suppuration and chilliness, but Hepar more sensitive to cold air and touch; less profuse sweat",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "vs": "Nitric acid",
+        "note": "Both have splinter-like pains and syphilitic manifestations; Nit-ac has more irritability and fears death",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "vs": "Pulsatilla",
+        "note": "Both have changeability and glandular swellings, but Puls. is warm-blooded, thirstless, mild; Merc. has foul odours and profuse salivation",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      }
+    ],
+    "cautions": [
+      "Persistent dryness of skin contra-indicates Mercurius",
+      "Lesions produced by Mercury very similar to those of syphilis; indicated in secondary and hereditary syphilis",
+      "All Mercury symptoms worse at night and during perspiration",
+      "Powerful drug affecting every organ and tissue; transforms healthy cells into inflamed necrotic wrecks"
+    ]
+  },
+  "source_books": [
+    "Boericke",
+    "Boger",
+    "Clarke"
+  ],
+  "generated_at": "2026-08-01T10:47:05.525869+00:00",
+  "updated_at": "2026-08-01T10:47:05.525869+00:00"
+}

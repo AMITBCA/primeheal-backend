@@ -1,0 +1,312 @@
+{
+  "cached": true,
+  "remedy_key": "sulphur",
+  "remedy_display": "Sulphur",
+  "schema_version": 1,
+  "card": {
+    "essence": "Sulphur is Hahnemann's great anti-psoric remedy, characterised by centrifugal action from within outward with elective affinity for the skin. The typical patient is lean, stoop-shouldered, dirty, and averse to bathing, with burning sensations (especially vertex and soles), weak feeble reaction, and all orifices intensely red. Particularly indicated when carefully-selected remedies fail to act or in complaints that continually relapse, it arouses the reactive powers of the organism.",
+    "family": "Element · Sulphur",
+    "common_name": "Sublimated Sulphur; Flowers of Sulphur; Brimstone",
+    "sides": "",
+    "thermal": "Hot",
+    "keynotes": [
+      {
+        "text": "Standing is the worst position; every standing posture uncomfortable",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Dirty, filthy people prone to skin affections; aversion to being washed",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Kent"
+        ]
+      },
+      {
+        "text": "All orifices intensely red (lips, ears, nostrils, eyelids, anus, urethra)",
+        "sources": [
+          "Boericke",
+          "Nash",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Burning on vertex; cold feet by day, burning soles at night—sticks feet out of bed",
+        "sources": [
+          "Allen",
+          "Nash",
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Weak, empty, faint feeling at stomach about 11 a.m.; must eat something",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "When carefully-selected remedies fail to act, especially in acute diseases",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Nash",
+          "Farrington"
+        ]
+      },
+      {
+        "text": "Morning diarrhoea, painless, drives out of bed early (5 a.m.)",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Complaints that relapse; patient seems well then disease returns again",
+        "sources": [
+          "Boericke",
+          "Allen"
+        ]
+      },
+      {
+        "text": "Itching voluptuous; scratching feels good but causes burning; worse heat of bed",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Nash"
+        ]
+      }
+    ],
+    "modalities_worse": [
+      {
+        "text": "Standing position",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Heat of bed, being heated, exertion",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Bathing, washing, water",
+        "sources": [
+          "Allen",
+          "Boger",
+          "Kent",
+          "Farrington"
+        ]
+      },
+      {
+        "text": "11 a.m. (weakness, chest symptoms)",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Suppressions (eruptions, discharges)",
+        "sources": [
+          "Allen",
+          "Boger",
+          "Farrington"
+        ]
+      },
+      {
+        "text": "Milk",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Atmospheric changes, close room",
+        "sources": [
+          "Allen",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Periodically; climacteric; full moon",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "5 a.m. (diarrhoea)",
+        "sources": [
+          "Nash"
+        ]
+      }
+    ],
+    "modalities_better": [
+      {
+        "text": "Open air, doors and windows open",
+        "sources": [
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Motion",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Warm applications, dry heat",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Sweating",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Sitting or lying",
+        "sources": [
+          "Nash"
+        ]
+      }
+    ],
+    "mentals": [
+      "Very forgetful, difficult thinking; busy all the time",
+      "Childish peevishness in grown people; irritable, selfish, no regard for others",
+      "Religious melancholy; averse to business, too lazy to rouse himself",
+      "Delusions: thinks rags beautiful, imagines immense wealth",
+      "The 'ragged philosopher'—untidy scholar in threadbare clothes, disordered study",
+      "Philosophical mania from sedentary life, meditation, insufficient nutrition",
+      "Hopeful dreamers; ecstatic, religious, philosophic",
+      "Tired of life, too unhappy to live",
+      "False philosophy; disappointed world doesn't recognise him as greatest",
+      "Happy dreams, wakes up singing"
+    ],
+    "physicals": [
+      "Lean, stoop-shouldered, walks stooping like old men",
+      "Emaciation with good appetite; atrophy of children",
+      "Constant heat on top of head (vertex)",
+      "Halo around lamp-light; black motes before eyes",
+      "Nose stuffed indoors; chronic dry catarrh, dry scabs, readily bleeding",
+      "Tongue white with red tip and borders; lips dry, bright red, burning",
+      "Sinking feeling at stomach 11 a.m.; drinks much, eats little",
+      "Great desire for sweets; craving for alcoholic drinks (especially beer, whiskey)",
+      "Rectum: itching and burning of anus; child afraid on account of pain",
+      "Constipation: hard, knotty, insufficient; alternating with diarrhoea",
+      "Enuresis especially in scrofulous, untidy children",
+      "Menses too late, short, scanty, difficult; thick, black, acrid",
+      "Burning in chest rising to face; rattling at 11 a.m.",
+      "Cramps in calves and soles at night",
+      "Hot flushes with weak faint spells passing off with moisture",
+      "Skin: dry, rough, wrinkled; itching violently at night; breaks out, festers, won't heal",
+      "Offensive odor from body not removed by washing",
+      "Sleeps in cat-naps; drowsy by day, wakeful at night; unrefreshing sleep",
+      "Scrofulous, psoric, chronic diseases from suppressed eruptions"
+    ],
+    "clinical": [
+      "Deficient reaction; when system refuses to respond to well-selected remedy",
+      "To facilitate absorption of serous or inflammatory exudates (brain, pleura, lungs, joints)",
+      "Chronic diseases that result from suppressed eruptions (itch, eczema)",
+      "Scrofula, psora; particularly applicable after suppression of itch",
+      "Boils coming in crops or single boil succeeded by another",
+      "Hæmorrhoids dependent upon abdominal plethora; especially those treated with ointments",
+      "Skin affections treated by medicated soaps and washes",
+      "Chronic alcoholism; dropsy and ailments of drunkards who reform but relapse",
+      "Children: big-bellied, emaciated, restless, kick off clothes; have worms but best remedy fails",
+      "Venous congestion especially of portal system",
+      "Beginning treatment of chronic cases and finishing acute ones",
+      "Sick headache recurring periodically (weekly or fortnightly)",
+      "Puerperal sepsis",
+      "Pneumonia when indicated remedy fails",
+      "Ophthalmia; parenchymatous keratitis; corneal ulceration",
+      "Especially suited to treatment of the negro"
+    ],
+    "differentials": [
+      {
+        "vs": "Psorinum",
+        "note": "Both anti-psorics for suppressed eruptions; Psorinum more chilly, hopeless, despairs of recovery; Sulphur more irritable, hopeful dreamer",
+        "sources": [
+          "Boger",
+          "Nash",
+          "Farrington"
+        ]
+      },
+      {
+        "vs": "Arsenicum",
+        "note": "Both have burning sensations; Arsenicum restless, anxious, chilly, < after midnight; Sulphur lazy, hot, < 11 a.m., better open air",
+        "sources": [
+          "Boericke",
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Graphites",
+        "note": "Both for eczema and constipation; Graphites more chilly, cautious, indecisive; Sulphur hot, philosophical, irritable",
+        "sources": [
+          "Nash",
+          "Farrington"
+        ]
+      },
+      {
+        "vs": "Nux vomica",
+        "note": "Both for portal congestion, irritability; Nux more fastidious, chilly, worse morning; Sulphur dirty, hot, worse 11 a.m.",
+        "sources": [
+          "Boericke",
+          "Farrington"
+        ]
+      },
+      {
+        "vs": "Calcarea",
+        "note": "Both for scrofula, sweat; Calcarea chilly, fat, cautious; Sulphur hot, lean, philosophical; Calcarea complementary to Sulphur",
+        "sources": [
+          "Boger",
+          "Farrington"
+        ]
+      },
+      {
+        "vs": "Pulsatilla",
+        "note": "Both worse heat, better open air; Pulsatilla mild, tearful, yielding; Sulphur selfish, irritable, dirty",
+        "sources": [
+          "Boericke",
+          "Farrington"
+        ]
+      }
+    ],
+    "cautions": [
+      "Do not use indiscriminately despite its wide sphere; select on symptoms as with any remedy",
+      "Avoid in cleanly, fastidious people—seldom indicated",
+      "Not for acute psoric eruptions where suppression is recent; works best in chronic cases",
+      "Give single dose at new moon in menorrhagia (Lippe)"
+    ]
+  },
+  "source_books": [
+    "Allen",
+    "Boericke",
+    "Boger",
+    "Farrington",
+    "Kent",
+    "Nash"
+  ],
+  "generated_at": "2026-08-02T17:37:43.849495+00:00",
+  "updated_at": "2026-08-02T17:37:43.849495+00:00"
+}

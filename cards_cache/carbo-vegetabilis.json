@@ -1,0 +1,251 @@
+{
+  "cached": true,
+  "remedy_key": "carbo-vegetabilis",
+  "remedy_display": "Carbo Vegetabilis",
+  "schema_version": 1,
+  "card": {
+    "essence": "Carbo vegetabilis addresses states of profound collapse and imperfect oxidation, where vital force is nearly exhausted. The patient presents with cold, blue extremities yet craves air and fanning; blood stagnates in capillaries causing cyanosis, passive oozing haemorrhages, and decomposition. Weakness follows exhausting disease, drugging, or loss of vital fluids; even the simplest food disagrees and everything turns to flatulence. This remedy revives patients from the very jaws of death when coldness, sepsis, and air hunger dominate.",
+    "family": "Vegetable Charcoal",
+    "common_name": "Vegetable Charcoal",
+    "sides": "",
+    "thermal": "Chilly",
+    "keynotes": [
+      {
+        "text": "Vital force exhausted; icy cold surface, yet craves air and must be fanned hard",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Blood stagnates in capillaries; blueness, coldness, ecchymosis; venous turgescence",
+        "sources": [
+          "Boericke",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Everything turns to gas; excessive flatulence in stomach and abdomen",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Passive haemorrhage from any mucous surface; dark, oozing, decomposed blood",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Hippocratic face; pale, grayish-yellow, cold with cold sweat",
+        "sources": [
+          "Allen",
+          "Boericke"
+        ]
+      },
+      {
+        "text": "Never recovered from exhausting effects of previous illness, injury, or drugging",
+        "sources": [
+          "Allen",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Cold knees at night; icy coldness of extremities, breath, tongue",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Eructations give temporary relief; belchings rancid, loud",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger",
+          "Nash"
+        ]
+      }
+    ],
+    "modalities_worse": [
+      {
+        "text": "Butter, pork, fat food; rich food",
+        "sources": [
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Abuse of quinine, mercury, salt",
+        "sources": [
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Warm, damp weather; humidity",
+        "sources": [
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Lying down",
+        "sources": [
+          "Allen",
+          "Boericke"
+        ]
+      },
+      {
+        "text": "After eating or drinking",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "text": "Singing or reading aloud",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "text": "Tight clothing around waist and abdomen",
+        "sources": [
+          "Boericke"
+        ]
+      },
+      {
+        "text": "Exhausting diseases, depletions, loss of vital fluids",
+        "sources": [
+          "Boger",
+          "Nash"
+        ]
+      }
+    ],
+    "modalities_better": [
+      {
+        "text": "Eructations, belching",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Being fanned; cool air",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Elevating feet",
+        "sources": [
+          "Boger"
+        ]
+      }
+    ],
+    "mentals": [
+      "Aversion to darkness; fear of ghosts",
+      "Sudden loss of memory; weakness of memory and slowness of thought",
+      "Mental operations slow; stupid, lazy, sluggish; cannot rouse to activity",
+      "Wants to lie down and doze"
+    ],
+    "physicals": [
+      "Varicose veins; veins distended, lazy, paralysed; vaso-motor paralysis",
+      "Burning sensations internally with external coldness",
+      "Looseness of teeth, easily bleeding gums; pyorrhoea",
+      "Epistaxis in daily attacks for weeks, worse from exertion; face pale before and after",
+      "Hoarseness in evenings, damp evening air; fails when voice exerted",
+      "Frequent involuntary cadaverous-smelling stools, followed by burning",
+      "Cold breath, cold tongue; body becomes blue, icy-cold",
+      "Mucous membranes break down, become spongy, bleed, ulcerate and become putrid",
+      "Hair falls off easily; scalp itches when warm in bed",
+      "Head feels heavy, constricted; hat like a heavy weight"
+    ],
+    "clinical": [
+      "Collapse in cholera, typhoid, or terminal stages of disease with cold sweat, cold breath, voice lost",
+      "Neglected pneumonia, especially in old alcoholics; threatened paralysis from inability to expectorate",
+      "Asthma dating from childhood measles or whooping cough; senile asthma",
+      "Indigestion from a drunken debauch; dyspepsia of nursing women with excessive flatulence",
+      "Cachexia in old persons or those whose vitality weakened by disease",
+      "Septic states; gangrene; putrid ulceration with decomposition",
+      "Weak digestion; simplest food disagrees; all food turns to gas",
+      "Burning, bluish piles; white haemorrhoids with excoriation",
+      "Destructive lung diseases with copious expectoration and decomposition"
+    ],
+    "differentials": [
+      {
+        "vs": "China",
+        "note": "Both have flatulence and debility from fluid loss; Carbo has coldness, air hunger, and fanning desire; China has bloating without relief from eructation",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Antimonium tartaricum",
+        "note": "Both in threatened paralysis from inability to expectorate; Ant-t has rattling mucus, drowsiness; Carbo has icy coldness and air hunger",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "vs": "Phosphorus",
+        "note": "Both have easily bleeding ulcers and passive haemorrhage; Phos more active bleeding, desires cold drinks which are vomited when warm",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "vs": "Pulsatilla",
+        "note": "Both affected by fat food and pastry; Puls weeps, wants sympathy, thirstless; Carbo has flatulence, coldness, craves air",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "vs": "Opium",
+        "note": "Both show lack of reaction and want of susceptibility to remedies; Opium has stupor, painlessness; Carbo has air hunger and coldness",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "vs": "Sulphur",
+        "note": "Both have venous stasis; Sulph hot patient, burning feet wants them uncovered; Carbo icy cold, wants fanning",
+        "sources": [
+          "Allen"
+        ]
+      }
+    ],
+    "cautions": [
+      "Want of susceptibility to well-selected remedies may indicate Carbo veg (or Opium, Valeriana)",
+      "Carbo animalis and Carbo veg do not follow each other well; they are inimical"
+    ]
+  },
+  "source_books": [
+    "Allen",
+    "Boericke",
+    "Boger",
+    "Farrington",
+    "Kent",
+    "Nash"
+  ],
+  "generated_at": "2026-07-24T09:57:51.622245+00:00",
+  "updated_at": "2026-07-24T09:57:51.622245+00:00"
+}

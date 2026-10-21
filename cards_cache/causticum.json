@@ -1,0 +1,267 @@
+{
+  "cached": true,
+  "remedy_key": "causticum",
+  "remedy_display": "Causticum",
+  "schema_version": 1,
+  "card": {
+    "essence": "A profound remedy for progressive paralytic states, contractures, and chronic rheumatic deformities in dark-haired, rigid-fibered persons with sallow complexions. Characterised by gradual loss of muscular power affecting single parts (vocal cords, eyelids, bladder, limbs), rawness and soreness of mucous membranes, and profound weakness progressing to paralysis. The mental state features intense sympathy for others' suffering, hopelessness from long-lasting grief, and anxious forebodings at twilight.",
+    "family": "Hahnemann preparation · Tinctura acris sine Kali (exact composition unknown)",
+    "common_name": "Hahnemann's Tinctura acris sine Kali",
+    "sides": "Right-sided paralysis and facial paralysis; left-sided sciatica",
+    "thermal": "Ambithermal — sensitive to both heat and cold; pains better warmth, but patient aggravated by extremes",
+    "keynotes": [
+      {
+        "text": "Progressive paralysis of single parts: vocal cords, eyelids, tongue, bladder, face, extremities",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Rawness and soreness: scalp, throat, larynx, rectum, anus, urethra — as if bruised",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Contractures of flexor tendons and muscles; joints become ankylosed",
+        "sources": [
+          "Boericke",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Urine involuntary when coughing, sneezing, blowing nose",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Cough with inability to expectorate, sputa must be swallowed; relieved by cold water",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Warts large, jagged, bleeding easily, pedunculated; on fingertips, nose, face",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Menses cease at night, flow only during day",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Never well since a burn; old burns re-open and become sore again",
+        "sources": [
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Children slow to learn to walk; unsteady walking and easy falling",
+        "sources": [
+          "Boericke",
+          "Allen"
+        ]
+      },
+      {
+        "text": "Hoarseness with rawness and aphonia worse in morning",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger"
+        ]
+      }
+    ],
+    "modalities_worse": [
+      {
+        "text": "Dry, cold, clear weather; cold dry winds and drafts",
+        "sources": [
+          "Allen",
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Coming from air into warm room",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "text": "Evening or 3–4 a.m.",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Stooping",
+        "sources": [
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Coffee",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Thinking of complaints aggravates, especially haemorrhoids",
+        "sources": [
+          "Boericke"
+        ]
+      },
+      {
+        "text": "Suppressions; extremes of temperature",
+        "sources": [
+          "Boger"
+        ]
+      }
+    ],
+    "modalities_better": [
+      {
+        "text": "Damp, wet weather",
+        "sources": [
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Warmth of bed; warmth generally (for pains)",
+        "sources": [
+          "Boericke",
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Cold drink, even during chills; swallowing cold water relieves cough",
+        "sources": [
+          "Allen",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Gentle motion",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Washing",
+        "sources": [
+          "Boger"
+        ]
+      }
+    ],
+    "mentals": [
+      "Child does not want to go to bed alone; afraid of the dark",
+      "Least thing makes child cry; intensely sympathetic to others' suffering",
+      "Sad, hopeless, melancholy — from long-lasting grief, care, or sorrow",
+      "Anxious forebodings, especially at twilight when shadows lengthen",
+      "Mental fatigue; reticent; conscience-stricken as if committed a crime",
+      "Ailments from sudden emotions: fear, fright, joy, anger, or suppressed eruptions"
+    ],
+    "physicals": [
+      "Gradual decrease of muscular power ending in paralysis; faint-like sinking of strength",
+      "Paralysis after exposure to cold wind, diphtheria, or typhoid; ptosis of upper eyelids",
+      "Contractures: tendons shorten (flexors, palms, hamstrings); muscles harden into ridges",
+      "Rheumatic deformities of joints with stiffness, ankylosis; worse dry weather",
+      "Tearing, drawing pains in muscles and fibrous tissues; burning in joints",
+      "Stool small, tough, covered with mucus, shines like grease; passes better standing",
+      "Cough dry, with rawness in chest; expectoration scanty, must be swallowed",
+      "Voice re-echoes in ears; hoarseness of singers and public speakers",
+      "Retention of urine after surgical operations; loss of sensation passing urine",
+      "Old burns freshen up, become sore again; patients never well since that burn",
+      "Left-sided sciatica with numbness; restless legs at night",
+      "Cracking and tension in knees; weak ankles, cannot walk without suffering"
+    ],
+    "clinical": [
+      "Chronic progressive paralysis: vocal cords (aphonia), bladder, facial, eyelids (ptosis)",
+      "Rheumatic affections with contractures and arthritic deformities",
+      "Stress incontinence: urine spurts on coughing, sneezing, laughing",
+      "Chronic laryngitis and hoarseness in professional voice users",
+      "Facial paralysis after exposure to cold wind (Bell's palsy)",
+      "Post-diphtheritic or post-typhoid paralysis",
+      "Haemorrhoids sore and raw, worse walking, with constipation",
+      "Warts: large, jagged, pedunculated, bleeding; on face, fingers, nose",
+      "Never well since burns or scalds; keloid scars, old injuries re-open",
+      "Chorea at puberty; epilepsy; locomotor ataxia",
+      "Nocturnal enuresis in children with dark hair and rigid fibre"
+    ],
+    "differentials": [
+      {
+        "vs": "Phosphorus",
+        "note": "Incompatible — must not use before/after. Phos has haemorrhagic tendency, burning pains, right lung affinity; Caust more paralytic, contractures, bladder weakness.",
+        "sources": [
+          "Allen",
+          "Farrington"
+        ]
+      },
+      {
+        "vs": "Gelsemium",
+        "note": "Both have ptosis and progressive muscular weakness. Gels acute, from heat/sun, drowsy, trembling; Caust chronic, from cold wind, hopeless, contractures.",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Sepia",
+        "note": "Both have ptosis. Sep has bearing-down uterine pains, aversion to family, yellow saddle on nose; Caust more paralytic with rawness and sympathetic nature.",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Rhus tox",
+        "note": "Both have tearing pains, restlessness, better warmth. Rhus > continued motion, worse initial motion; Caust has contractures, paralysis, not > motion.",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "vs": "Carbo veg",
+        "note": "Complementary remedy. Carbo has flatulent dyspepsia, wants to be fanned, coldness; both have hoarseness worse evening (Caust worse morning).",
+        "sources": [
+          "Allen",
+          "Boger"
+        ]
+      }
+    ],
+    "cautions": [
+      "Incompatible with Phosphorus — must not be used before or after; always disagrees",
+      "Incompatible with acids and Coffea",
+      "Patient may improve for a time then come to a 'standstill' — consider Psorinum or Sulphur"
+    ]
+  },
+  "source_books": [
+    "Allen",
+    "Boericke",
+    "Boger",
+    "Farrington",
+    "Kent",
+    "Nash"
+  ],
+  "generated_at": "2026-09-03T07:41:29.547946+00:00",
+  "updated_at": "2026-09-03T07:41:29.547946+00:00"
+}

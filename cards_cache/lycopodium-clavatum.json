@@ -1,0 +1,334 @@
+{
+  "cached": true,
+  "remedy_key": "lycopodium-clavatum",
+  "remedy_display": "Lycopodium Clavatum",
+  "schema_version": 1,
+  "card": {
+    "essence": "Lycopodium suits intellectually keen but physically weak individuals with digestive and urinary disturbances. The picture centres on flatulent distension (\"full of gas\"), hepatic dysfunction, lithic acid diathesis (red sand in urine), and right-sided symptoms progressing left. Patients often appear prematurely aged—thin above, dropsical below—with a characteristic 4-8 PM aggravation. Temperamentally they are anxious, lacking self-confidence, yet domineering when ill.",
+    "family": "Plant · Lycopodiaceae (Club Moss)",
+    "common_name": "Club Moss / Wolf's Foot",
+    "sides": "Right-sided, or right to left progression",
+    "thermal": "Chilly (craves warmth; cold extremities; lacks vital heat)",
+    "keynotes": [
+      {
+        "text": "Quick satiety: a few mouthfuls fill up to the throat despite good appetite",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Red sand in urine (lithic acid diathesis); child cries before urinating",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Right-sided complaints or symptoms travel right to left",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Aggravation 4-8 PM (fevers, cough, pain, restlessness)",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Emaciation above (neck, face), semi-dropsical or bloated below",
+        "sources": [
+          "Allen",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Fan-like motion of alae nasi",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Excessive flatulence with loud rumbling, especially lower abdomen; bloated but not relieved by belching",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "One foot hot, the other cold",
+        "sources": [
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Prematurely aged appearance: sallow, wrinkled forehead, looks older than years",
+        "sources": [
+          "Allen",
+          "Kent",
+          "Nash"
+        ]
+      }
+    ],
+    "modalities_worse": [
+      {
+        "text": "4-8 PM (nearly all diseases)",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Pressure of clothes / tight garments",
+        "sources": [
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Warmth (of room, bed) for head and spine symptoms",
+        "sources": [
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "text": "After eating; eating to satiety",
+        "sources": [
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Cold drinks (throat, diphtheria)",
+        "sources": [
+          "Boericke",
+          "Allen"
+        ]
+      },
+      {
+        "text": "Awakening (angry, sad, anxious on waking)",
+        "sources": [
+          "Boericke",
+          "Boger",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Lying down (headache)",
+        "sources": [
+          "Boericke",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Indigestion",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Stooping (headache)",
+        "sources": [
+          "Boericke"
+        ]
+      }
+    ],
+    "modalities_better": [
+      {
+        "text": "Warm food and drinks (stomach, throat)",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Uncovering the head",
+        "sources": [
+          "Boericke",
+          "Allen"
+        ]
+      },
+      {
+        "text": "Loosening garments",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "text": "Motion (rheumatic pains, restlessness)",
+        "sources": [
+          "Boger",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Eructations (though may not fully relieve)",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Urinating (backache, renal colic)",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Cool / cold air (head symptoms)",
+        "sources": [
+          "Kent"
+        ]
+      },
+      {
+        "text": "Cold applications (locally)",
+        "sources": [
+          "Boger"
+        ]
+      }
+    ],
+    "mentals": [
+      "Lacks self-confidence; apprehensive of new tasks or breaking down under stress",
+      "Irritable, peevish, cross on waking; domineering, exacting, haughty when sick",
+      "Averse to being alone; fear of solitude; sensitive to noise",
+      "Weak memory, confused thoughts; spells or writes wrong words/syllables",
+      "Weeps easily, very sensitive; even cries when thanked",
+      "Avaricious, greedy, miserly; seeks disputes, cannot endure contradiction",
+      "Failing brain-power; cannot bear to see anything new",
+      "Little things annoy; mentally active but physically weak"
+    ],
+    "physicals": [
+      "Flatulent distension unrelieved by belching; loud rumbling/croaking in lower abdomen",
+      "Red sand in urine; child cries before urinating; backache better after urination",
+      "Hepatic affections; yellowish spots on skin, earthy complexion",
+      "Fan-like motion of alae nasi; snuffles; nose stopped at night, must mouth-breathe",
+      "Premature baldness and grey hair; great hair loss; dandruff",
+      "Constipation since puberty or confinement; ineffectual urging, rectum contracts/protrudes",
+      "Diphtheria: deposits spread right to left; worse cold drinks, after sleep",
+      "Deep furrows on forehead; complexion pale, dirty, sallow; looks older than age",
+      "Pneumonia (right base, lower lobe); unresolved pneumonia; deep hollow cough",
+      "Impotence in young men (onanism, excess) or old men; penis small, cold, relaxed",
+      "Dryness of vagina; burning during/after coition; discharge of blood from genitals during stool",
+      "One foot hot, other cold; feet asleep especially heels; acrid foot sweat",
+      "Right-sided hernia (especially children)",
+      "Waking at night feeling hungry",
+      "Eyes half open during sleep; day-blindness or night-blindness; sees only half an object",
+      "Dropping lower jaw in typhoid; mouth hangs open",
+      "Toothache with swelling of cheeks, better warm application",
+      "Eczema behind ears; moist oozing; otorrhoea after scarlatina",
+      "Ulceration of tonsils beginning right side",
+      "Canine hunger: the more he eats, the more he craves; headache if does not eat"
+    ],
+    "clinical": [
+      "Chronic digestive disorders with flatulence, hepatic dysfunction, lithic acid diathesis",
+      "Right-sided or right-to-left pneumonia (especially base/lower lobe); aids absorption/expectoration",
+      "Diphtheria spreading right to left; brownish-red fauces",
+      "Renal colic (right-sided); red sand in urine; uric acid diathesis",
+      "Impotence from sexual excess or onanism; premature emissions",
+      "Constipation (chronic, since puberty or confinement); piles",
+      "Nasal catarrh with crusts and elastic plugs; ozaena",
+      "Precocious, weakly children or pre-senile adults; extremes of life",
+      "Typhoid or scarlet fever with 4-8 PM exacerbation",
+      "Chronic skin eruptions; suppurating eruptions, boils",
+      "Gastric affections with quick satiety and fermentation",
+      "Tubercular laryngitis with ulceration; unresolved lung conditions"
+    ],
+    "differentials": [
+      {
+        "vs": "Carbo vegetabilis",
+        "note": "Carbo veg. flatulence upper abdomen; Lyc. lower abdomen, croaking rumbling, red sand in urine, right-sided",
+        "sources": [
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "vs": "China",
+        "note": "China bloats entire abdomen; Lyc. lower abdomen predominantly; Lyc. has 4-8 PM aggravation, right-sided tendency",
+        "sources": [
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Nux vomica",
+        "note": "Both have constipation with ineffectual urging; Nux from irregular peristalsis, portal congestion; Lyc. with flatulence, hepatic disease, 4-8 PM worse",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Sulphur",
+        "note": "Both antipsoric, chronic; Sulphur hotter, offensive, < warmth generally; Lyc. chilly (except head), 4-8 PM aggravation, right-sided",
+        "sources": [
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Calcarea carbonica",
+        "note": "Both extremes of life, digestive weakness; Calc. sweaty head, sour, fat, flabby; Lyc. thin above, flatulent, red sand in urine, 4-8 PM",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Lachesis",
+        "note": "Both < after sleep, left-sided or right-to-left; Lach. < warm drinks, Lyc. > warm drinks; Lyc. 4-8 PM aggravation",
+        "sources": [
+          "Boericke",
+          "Allen"
+        ]
+      },
+      {
+        "vs": "Phosphorus",
+        "note": "Both lean, intellectual, hepatic affinity; Phos. haemorrhagic, desires cold drinks (Lyc. warm), no 4-8 PM aggravation",
+        "sources": [
+          "Allen"
+        ]
+      }
+    ],
+    "cautions": [
+      "Rarely advisable to begin treatment of chronic disease with Lycopodium unless clearly indicated; better to give another antipsoric first",
+      "Deep-seated, long-acting remedy; should rarely be repeated after improvement begins",
+      "Sensitive to onions, bread, wine, spirituous liquors, tobacco (smoking/chewing)"
+    ]
+  },
+  "source_books": [
+    "Allen",
+    "Boericke",
+    "Boger",
+    "Farrington",
+    "Kent",
+    "Nash"
+  ],
+  "generated_at": "2026-09-28T19:41:39.606322+00:00",
+  "updated_at": "2026-09-28T19:41:39.606322+00:00"
+}

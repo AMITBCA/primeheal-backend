@@ -1,0 +1,291 @@
+{
+  "cached": true,
+  "remedy_key": "pulsatilla-pratensis",
+  "remedy_display": "Pulsatilla Pratensis",
+  "schema_version": 1,
+  "card": {
+    "essence": "The 'weather-cock among remedies' — mild, gentle, tearful disposition with symptoms as changeable as the wind. Pre-eminently a female remedy for plethoric, yielding individuals who crave open air and sympathy yet are chilly and thirstless. Thick, bland, yellowish-green discharges from all mucous membranes. Often indicated after puberty disturbances, suppressed menses, or abuse of iron tonics.",
+    "family": "Plant · Ranunculaceae (Anemone)",
+    "common_name": "Wind Flower",
+    "sides": "Right-sided (neuralgia, ear complaints)",
+    "thermal": "Chilly",
+    "keynotes": [
+      {
+        "text": "Mild, gentle, yielding disposition; weeps easily, seeks sympathy",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Nash",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Thirstless with nearly all complaints",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Craves open air; always feels better there, though chilly",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Thick, bland, yellowish-green discharges from all mucous membranes",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Symptoms ever changing; no two stools alike, no two chills alike",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Nash",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Pains shift rapidly; accompanied by constant chilliness",
+        "sources": [
+          "Allen",
+          "Nash",
+          "Boger"
+        ]
+      },
+      {
+        "text": "First serious impairment of health referred to puberty; 'never been well since'",
+        "sources": [
+          "Boericke",
+          "Allen"
+        ]
+      }
+    ],
+    "modalities_worse": [
+      {
+        "text": "Warm room, warm air, warm applications",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Evening and twilight",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Rich, fat food (pork, pastry, cakes, ice-cream)",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Nash",
+          "Farrington"
+        ]
+      },
+      {
+        "text": "Rest; beginning motion; lying on left or painless side",
+        "sources": [
+          "Allen",
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Getting feet wet; suppressions",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "After eating; long after meals",
+        "sources": [
+          "Boericke",
+          "Boger",
+          "Kent",
+          "Farrington"
+        ]
+      }
+    ],
+    "modalities_better": [
+      {
+        "text": "Cold, fresh, open air",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Cold applications, cold food and drink",
+        "sources": [
+          "Allen",
+          "Boger",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Gentle, continued motion; slow walking",
+        "sources": [
+          "Boericke",
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Lying on painful side",
+        "sources": [
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "After a good cry",
+        "sources": [
+          "Boger"
+        ]
+      }
+    ],
+    "mentals": [
+      "Weeps easily; tearful, timid, irresolute; can hardly give symptoms for weeping",
+      "Craves sympathy and consolation; children like fuss and caresses",
+      "Easily discouraged; full of anxiety with forebodings",
+      "Mild, gentle, yielding — yet peevish, touchy, easily offended",
+      "Changeable mood: irritable, then tearful, then mild again",
+      "Fears evening, dark, being alone, ghosts; morbid dread of opposite sex",
+      "Religious melancholy, fanatical; given to extremes of pleasure and pain",
+      "Puerperal or menopausal insanity: sits taciturn, answers only 'yes' or 'no'"
+    ],
+    "physicals": [
+      "Thick, bland, yellowish-green mucus from eyes, nose, vagina, chest",
+      "Menses: too late, scanty, suppressed from wet feet; irregular, intermittent flow",
+      "Dysmenorrhoea with intense pain, restlessness, tossing; flows more during day",
+      "Threatened abortion: flow ceases then returns with increased force",
+      "Gastric disturbances: averse to fat, warm food; thirstless; all-gone sensation",
+      "Bad taste in morning; dry mouth without thirst; wants mouth washed frequently",
+      "Toothache relieved by cold water in mouth",
+      "Diarrhoea: watery, changeable, worse night; after fruit, ice-cream, rich food",
+      "Coryza: stoppage in evening or in warm room; loss of smell",
+      "Styes, especially upper lid; ophthalmia neonatorum; thick yellow eye discharge",
+      "Otorrhoea: thick, bland, offensive; diminished hearing",
+      "Cough: dry evening, loose morning; from tickling in epigastrium; must sit up",
+      "Air hunger; cannot breathe in warm room; worse lying on left side",
+      "Pains: drawing, tearing, erratic; appear suddenly, leave gradually",
+      "Veins full, varicose; venous congestion; passive haemorrhages",
+      "Lies with hands above head; wants head high; uncomfortable with one pillow"
+    ],
+    "clinical": [
+      "Chlorosis, anaemia at puberty ('never well since'); delayed first menstruation",
+      "Measles: badly managed; otitis, ophthalmia, or bronchitis after suppressed eruption",
+      "Mumps with metastasis to mammae or testicles",
+      "Gastric derangements from iron tonics, quinine, chamomile, tea-drinking",
+      "Subacute conjunctivitis with dyspepsia; gonorrhoeal ophthalmia",
+      "Catarrhal otitis; diminished hearing as if ear stuffed",
+      "Dysmenorrhoea, amenorrhoea, leucorrhoea (milky, acrid)",
+      "Retained placenta; weak labour pains; after-pains",
+      "Rheumatism: pains shift from joint to joint with swelling and redness",
+      "Cholera infantum, entero-colitis in hot weather; no two stools alike",
+      "Phlegmasia alba dolens; varicose ulcers with hard glistening areolae",
+      "Orchitis (gonorrhoeal); prostate enlargement",
+      "Nocturnal enuresis; involuntary micturition with cough or flatus"
+    ],
+    "differentials": [
+      {
+        "vs": "Nux vomica",
+        "note": "Nux: irritable, irascible, chilly yet warm room comfortable. Pulsatilla: mild, weepy, warm room intolerable despite chilliness.",
+        "sources": [
+          "Nash",
+          "Farrington"
+        ]
+      },
+      {
+        "vs": "Sepia",
+        "note": "Sepia: tearful but with marked irritability, anger, indifference to loved ones. Pulsatilla: mild, seeks consolation.",
+        "sources": [
+          "Farrington"
+        ]
+      },
+      {
+        "vs": "Natrum muriaticum",
+        "note": "Nat-m: tearful but consolation aggravates; patient hides grief. Pulsatilla: consolation ameliorates; seeks sympathy.",
+        "sources": [
+          "Farrington"
+        ]
+      },
+      {
+        "vs": "Chamomilla",
+        "note": "Cham: violent anger, snappish, spiteful. Pulsatilla: peevish but never irascible; mild temperament.",
+        "sources": [
+          "Farrington"
+        ]
+      },
+      {
+        "vs": "Ignatia",
+        "note": "Ignatia: sad but hides grief from others; contradictory, hysterical. Pulsatilla: seeks sympathy openly; changeableness more somatic.",
+        "sources": [
+          "Farrington",
+          "Allen"
+        ]
+      },
+      {
+        "vs": "Silica",
+        "note": "Silica is the chronic of Pulsatilla in nearly all ailments.",
+        "sources": [
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Lycopodium",
+        "note": "Lyc: weeps when thanked. Pulsatilla: weeps easily, almost impossible to detail ailments without weeping.",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "vs": "Stannum",
+        "note": "Stannum: tearful, discouraged over chest symptoms, fears decline. Pulsatilla: broader tearfulness with gastric/menstrual focus.",
+        "sources": [
+          "Farrington"
+        ]
+      }
+    ],
+    "cautions": [
+      "Often abused; do not prescribe on gender or hair colour alone — mental state must match",
+      "Antidote to chamomile, iron, quinine, mercury, sulphur (chronic abuse)",
+      "Complementary to Kali muriaticum, Lycopodium, Silicea, Sulphuricum acidum",
+      "Silicea is the chronic; one of the best remedies to begin treatment of a chronic case"
+    ]
+  },
+  "source_books": [
+    "Allen",
+    "Boericke",
+    "Boger",
+    "Farrington",
+    "Kent",
+    "Nash"
+  ],
+  "generated_at": "2026-08-04T08:19:51.706881+00:00",
+  "updated_at": "2026-08-04T08:19:51.706881+00:00"
+}

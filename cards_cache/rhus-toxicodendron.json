@@ -1,0 +1,290 @@
+{
+  "cached": true,
+  "remedy_key": "rhus-toxicodendron",
+  "remedy_display": "Rhus Toxicodendron",
+  "schema_version": 1,
+  "card": {
+    "essence": "Poison-ivy. A premier remedy for rheumatic, typhoid and septic states. Affects fibrous tissues (joints, tendons, sheaths) producing tearing pains and marked stiffness. The cardinal feature: symptoms worse on initial motion but ameliorated by continued movement—the patient 'limbers up'. Extreme restlessness drives constant position changes. Suited to ailments from strains, overlifting, or getting wet while perspiring. Characterised by vesicular eruptions, stuporous delirium with triangular red-tipped tongue, and nightly aggravation.",
+    "family": "Plant · Anacardiaceae",
+    "common_name": "Poison-ivy; Poison Oak",
+    "sides": "Right-sided, or left to right",
+    "thermal": "Chilly",
+    "keynotes": [
+      {
+        "text": "Lameness, stiffness, pain on FIRST moving after rest, ameliorated by walking or continued motion",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Nash",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Great restlessness; cannot remain in bed; must change position often to obtain relief",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Nash",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Tongue dry, red, cracked with triangular red tip; may be coated except at tip",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Nash",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Ailments from strains, overlifting, getting wet while perspiring, or lying on damp ground",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Pains tearing, as if sprained, as if muscle torn from attachment; worse after midnight and wet weather",
+        "sources": [
+          "Allen",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Great sensitiveness to open air; putting hand from under bedcover brings on cough",
+        "sources": [
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Vesicular eruptions with intense itching, burning; erysipelas left to right",
+        "sources": [
+          "Allen",
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Typhoid states: cloudy sensorium, muttering delirium, dry tongue, stupefaction",
+        "sources": [
+          "Nash",
+          "Kent",
+          "Boericke"
+        ]
+      }
+    ],
+    "modalities_worse": [
+      {
+        "text": "Beginning motion; initial movement after rest",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Nash",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Rest; keeping still; lying quietly",
+        "sources": [
+          "Allen",
+          "Nash",
+          "Kent",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Cold, wet, rainy weather; before storms; getting wet when perspiring",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Nash",
+          "Kent",
+          "Boger"
+        ]
+      },
+      {
+        "text": "After midnight; at night",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Nash",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Uncovering; exposing parts to air",
+        "sources": [
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Sprains, overexertion, overlifting",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger"
+        ]
+      }
+    ],
+    "modalities_better": [
+      {
+        "text": "Continued motion; walking about; change of position",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Nash",
+          "Kent",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Warmth; warm, dry weather; wrapping up; hot applications",
+        "sources": [
+          "Allen",
+          "Nash",
+          "Kent",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Rubbing; hard pressure",
+        "sources": [
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Lying on something hard (for backache)",
+        "sources": [
+          "Nash",
+          "Boger"
+        ]
+      }
+    ],
+    "mentals": [
+      "Extreme restlessness, anxiety, apprehension; worse at night; cannot remain in bed",
+      "Listless, sad, despondent; thoughts of suicide yet fear of death",
+      "Great apprehension at night; fears being poisoned",
+      "Delirium: mild, muttering, persistent; continual tossing about",
+      "Stupefaction; cloudy sensorium; slow to answer questions",
+      "Dreams of great exertion (rowing, swimming, working hard); awakes tired"
+    ],
+    "physicals": [
+      "Board-like pressure or strapped sensation in forehead; brain feels loose, struck against skull on walking",
+      "Scalp sensitive, worse on side lain on; humid itching eruptions",
+      "Eyes: swollen, red, oedematous lids agglutinated; profuse hot scalding tears on opening; orbital cellulitis",
+      "Tip of nose red, sore, ulcerated; nosebleed on stooping; sneezing, coryza from getting wet",
+      "Jaws crack when chewing; easy dislocation of jaw",
+      "Corners of mouth ulcerated; fever-blisters around mouth and chin",
+      "Parotitis, especially left side",
+      "Great thirst with dry mouth and throat; desire for milk; drowsy after eating",
+      "Abdomen: violent pains relieved by lying on abdomen; rumbling flatus on first rising, disappears with motion",
+      "Diarrhoea: bloody, slimy, reddish mucus; frothy, painless; cadaverous odour; with tearing pains down thighs",
+      "Urine dark, turbid, high-coloured, scanty with white sediment",
+      "Genitals: swelling with intense itching; scrotum thick, swollen, oedematous; dark-red erysipelatous",
+      "Dry teasing cough from midnight until morning, during chill, or when putting hands out of bed",
+      "Haemoptysis from overexertion; blood bright red",
+      "Hoarseness from overstraining voice",
+      "Heart: hypertrophy from overexertion; numbness/aching in left arm; palpitation better from motion",
+      "Back: pain between shoulders on swallowing; pain and stiffness in small of back worse sitting/lying, better motion",
+      "Stiff neck; interscapular pain worse swallowing",
+      "Sciatica left side; pains down back of thighs worse during stool",
+      "Legs feel dead, wooden; cramp in calves",
+      "Palms dry, hot, cracked, sore; washing causes burning",
+      "Skin: vesicular, crusty, eczematous eruptions; erysipelas left to right; intense itching, burning worse warmth",
+      "Cellulitis; carbuncles in early stages; septic conditions"
+    ],
+    "clinical": [
+      "Rheumatic conditions: fibrous tissue, joints, tendons; worse cold damp weather, better continued motion",
+      "Typhoid fever with triangular red-tipped tongue, restlessness, stupefaction",
+      "Influenza with aching in all bones",
+      "Septic states: cellulitis, carbuncles, septicaemia",
+      "Erysipelas: vesicular, left to right progression, with characteristic restlessness",
+      "Scarlatina with vesicular eruption and restlessness",
+      "Post-operative complications",
+      "Infantile paralysis from exposure to cold damp ground",
+      "Rhus dermatitis (poison-ivy reaction); baker's itch",
+      "Hypertrophy of heart from overexertion in athletes, machinists",
+      "Intermittent, remittent fevers with restlessness and characteristic tongue",
+      "Dysentery in beginning typhoid states",
+      "Sciatica, especially left-sided",
+      "Old injured eyes; iritis from cold, damp exposure"
+    ],
+    "differentials": [
+      {
+        "vs": "Bryonia",
+        "note": "Complementary. Bryonia worse any motion, wants absolute rest; Rhus worse initial motion, better continued movement. Bryonia dry mucous membranes, wants large drinks; both have typhoid states.",
+        "sources": [
+          "Allen",
+          "Nash",
+          "Kent",
+          "Farrington"
+        ]
+      },
+      {
+        "vs": "Arsenicum",
+        "note": "Both intensely restless, but Arsenicum from anxiety/fear, worse after midnight, with profound prostration; Rhus restlessness from pain seeking relief in motion. Both in typhoid states.",
+        "sources": [
+          "Nash",
+          "Kent"
+        ]
+      },
+      {
+        "vs": "Aconite",
+        "note": "Both restless, but Aconite's is agonising with intense fear, no relief from position changes; Rhus relieved temporarily by movement. Aconite seldom in typhoid.",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Apis",
+        "note": "Inimical—must not be used before or after Rhus. Both have oedema, but Apis ameliorated by cold, worse warmth; Rhus opposite.",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "vs": "Baptisia",
+        "note": "Both in typhoid with stupefaction and sore bruised feeling, but Baptisia more profound mental confusion, falls asleep mid-sentence; less restlessness than Rhus.",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Nux moschata",
+        "note": "Similar stupefaction in typhoid, but Nux moschata has extreme drowsiness, dryness of mouth without thirst; Rhus has great thirst.",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Sepia",
+        "note": "Sepia often quickly ameliorates itching and burning of Rhus vesicles, drying them up in a few days.",
+        "sources": [
+          "Allen"
+        ]
+      }
+    ],
+    "cautions": [
+      "Inimical to Apis—must not be used before or after",
+      "Dermatitis from Rhus should never be treated by topical medicated applications; they suppress, never cure; use potentised remedy internally",
+      "Continued exertion exhausts the Rhus patient despite initial amelioration from motion",
+      "In heart hypertrophy, must be given persistently for days or weeks to effect absorption of surplus cardiac muscle"
+    ]
+  },
+  "source_books": [
+    "Allen",
+    "Boericke",
+    "Boger",
+    "Farrington",
+    "Kent",
+    "Nash"
+  ],
+  "generated_at": "2026-09-04T11:57:22.338563+00:00",
+  "updated_at": "2026-09-04T11:57:22.338563+00:00"
+}

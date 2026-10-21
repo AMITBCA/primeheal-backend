@@ -1,0 +1,318 @@
+{
+  "cached": true,
+  "remedy_key": "arsenicum-album",
+  "remedy_display": "Arsenicum Album",
+  "schema_version": 1,
+  "card": {
+    "essence": "Profound prostration with anxious restlessness drives the patient from place to place despite extreme weakness. Burning pains paradoxically relieved by heat. Fastidious, fearful, and despairing, convinced of impending death. Characteristic midnight aggravation (1–2 am). Discharges are thin, acrid, putrid—cadaveric odours pervade. A remedy of malignant, gangrenous states and gradual wasting.",
+    "family": "Metals · Arsenic (As₂O₃)",
+    "common_name": "White Oxide of Arsenic",
+    "sides": "Right-sided (especially right lung apex)",
+    "thermal": "Chilly",
+    "keynotes": [
+      {
+        "text": "Extreme anxiety, restlessness, fear of death; changing places continually despite exhaustion",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Burning pains like fire or hot coals, paradoxically > heat",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Great prostration; sudden sinking of vital forces; exhaustion from slightest exertion",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Cadaveric aspect: pale, cold, clammy skin, putrid odours from all discharges",
+        "sources": [
+          "Boericke",
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Intense thirst for cold water; drinks often but little at a time; water lies like stone in stomach",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Midnight aggravation (1–2 am or 1–2 pm); periodicity marked",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Cannot bear sight or smell of food",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Fastidious, exacting, fault-finding; miserly and malicious",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Thin, acrid, scanty secretions; excoriating discharges from all orifices",
+        "sources": [
+          "Boger",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Must sit or bend forward; springs out of bed at night for air; fears suffocation",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger"
+        ]
+      }
+    ],
+    "modalities_worse": [
+      {
+        "text": "After midnight (1–2 am or pm)",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Cold: cold air, cold drinks, cold food, ice-cream, ice-water",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Lying on affected side or with head low",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "text": "Exertion, least movement",
+        "sources": [
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "After eating or drinking",
+        "sources": [
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Vegetables, watery fruits, melons, alcoholic drinks, spoiled meat, bad sausage",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Seashore, wet weather",
+        "sources": [
+          "Boericke"
+        ]
+      },
+      {
+        "text": "Tobacco (chewing), alcoholism",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Suppressed eruptions",
+        "sources": [
+          "Boger",
+          "Nash"
+        ]
+      }
+    ],
+    "modalities_better": [
+      {
+        "text": "Heat in general: hot applications, hot drinks, hot food, warm room",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Head elevated, sitting erect with head raised by pillows",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Motion, walking about (despite weakness)",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Company",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Sweating",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Headache temporarily > cold bathing (opposite of general)",
+        "sources": [
+          "Allen",
+          "Kent"
+        ]
+      }
+    ],
+    "mentals": [
+      "Great anguish and anxious restlessness; changes place continually",
+      "Fear of death when alone or going to bed; thinks it useless to take medicine, is incurable",
+      "Despair drives from place to place; suicidal impulses",
+      "Fastidious, oversensitive, exacting, fault-finding",
+      "Miserly, malicious, selfish, lacks courage",
+      "Irritable, peevish, easily vexed",
+      "Attacks of anxiety at night driving out of bed, < after midnight",
+      "Hallucinations of smell and sight; delirium tremens with cursing and raving"
+    ],
+    "physicals": [
+      "Rapid emaciation; marasmus of affected parts",
+      "Cold, clammy sweat; body cold as ice externally with internal burning",
+      "Skin dry, scaly, rough, wrinkled like parchment; white and pasty or earth-coloured",
+      "Black vesicles; gangrenous inflammations; malignant pustules; anthrax",
+      "Anasarca; pale, waxy, puffy, baggy swelling; dropsy",
+      "Cannot lie down; must sit up or bend forward for air",
+      "Asthmatic breathing worse midnight; wheezing, whistling respiration",
+      "Haemorrhages of dark, offensive blood from any orifice",
+      "Diarrhoea scanty, dark, offensive; rice-water or small acrid burning stools",
+      "Vomiting and stool simultaneous; worse after eating or drinking",
+      "Headache relieved by cold (scalp sensitive, cannot brush hair)",
+      "Neuralgias > heat (face, eyes) but headache > cold",
+      "Albuminuria; Bright's disease; diabetes with gangrene",
+      "Periodicity: complaints return annually; paroxysms incomplete with exhaustion"
+    ],
+    "clinical": [
+      "Typhoid and septic fevers with cadaveric aspect, putrid odours, midnight aggravation",
+      "Malignant conditions: gangrenous pneumonia, diphtheria, erysipelas, epithelioma, scirrhus",
+      "Ptomaine poisoning; ill effects of decayed food, spoiled meat, dissecting wounds",
+      "Intermittent fevers after abuse of quinine; malarial cachexia",
+      "Asthma worse midnight; must sit up, fears suffocation; receding eruptions",
+      "Gastralgia from ice-cream, ice-water, vinegar, fruits; burning > hot drinks",
+      "Cholera with intense agony, prostration, burning thirst",
+      "Haemorrhoids burning like fire, relieved by heat",
+      "Skin affections: psoriasis, eczema with intense itching and burning, ulcers with putrid discharge",
+      "Diabetic gangrene; peripheral neuritis; sciatica",
+      "Infantile Kala-azar; degeneration; wasting in malignancy regardless of location",
+      "Hay-fever with thin, excoriating discharge; worse open air, better indoors",
+      "Gives quiet and ease in last moments of life when given in high potency"
+    ],
+    "differentials": [
+      {
+        "vs": "Aconite",
+        "note": "Aconite restless in early fever with high grade; Arsenic in later stages with prostration. Aconite tosses in agony; Arsenic too weak to toss, wants to be moved.",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Secale",
+        "note": "Both: tympanites, offensive clots, burning, prostration. Secale wants cold, uncovered, windows open. Arsenic wants heat, warmth, wrapping.",
+        "sources": [
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Allium cepa",
+        "note": "Both: fluent acrid coryza. Arsenic more burning, ameliorated by hot drinks; Cepa less burning modality.",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Mercurius",
+        "note": "Both: fluent coryza. Arsenic burnings > heat; often follows Mercurius if only partial relief.",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Phosphorus",
+        "note": "Arsenic right-sided (esp. lung apex); burning > heat; chilly; restless weakness. Phosphorus left then right; burning desires cold; sympathetic.",
+        "sources": [
+          "Boger",
+          "Boericke"
+        ]
+      },
+      {
+        "vs": "Sulphur",
+        "note": "Sulphur leads for burnings in chronic cases generally; Arsenic in acute/malignant states with prostration and periodicity.",
+        "sources": [
+          "Nash"
+        ]
+      }
+    ],
+    "cautions": [
+      "Extensively abused in Old School as Fowler's solution",
+      "Do not prescribe in anticipation of malignant development; treat the case as it presents",
+      "After urinating, feeling of weakness in abdomen",
+      "Complaints return annually; inveterate neuralgias require constitutional follow-up"
+    ]
+  },
+  "source_books": [
+    "Allen",
+    "Boericke",
+    "Boger",
+    "Kent",
+    "Nash"
+  ],
+  "generated_at": "2026-07-24T09:34:17.517061+00:00",
+  "updated_at": "2026-07-24T09:34:17.517061+00:00"
+}

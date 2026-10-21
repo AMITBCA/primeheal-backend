@@ -1,0 +1,310 @@
+{
+  "cached": true,
+  "remedy_key": "natrium-muriaticum",
+  "remedy_display": "Natrium Muriaticum",
+  "schema_version": 1,
+  "card": {
+    "essence": "A profound remedy for nutritive derangement with emaciation (especially neck), anæmia, and marked dryness of mucous membranes. The mental picture centres on deep, silent grief aggravated by consolation, coupled with irritability and a desire to be alone. Physical symptoms follow periodicity (10–11 a.m.), with throbbing headaches, palpitation, and craving for salt. The patient appears greasy, sallow, and prostrated.",
+    "family": "Mineral · Sodium chloride",
+    "common_name": "Common salt (NaCl)",
+    "sides": "",
+    "thermal": "Chilly",
+    "keynotes": [
+      {
+        "text": "Great emaciation, especially of neck, despite eating well",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Consolation aggravates grief and irritability",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Throbbing headache as if a thousand hammers, sunrise to sunset",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Tears stream down face on coughing",
+        "sources": [
+          "Boericke",
+          "Allen"
+        ]
+      },
+      {
+        "text": "Mapped tongue with red insular patches",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Craving for salt; aversion to bread and fats",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Face oily, shiny, greasy, sallow",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Dry, crumbling stool; anus contracted, torn, bleeding",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Periodicity at 10–11 a.m. (headache, fever, malarial paroxysms)",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Palpitation shakes whole body; worse lying down or on left side",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Kent",
+          "Nash"
+        ]
+      }
+    ],
+    "modalities_worse": [
+      {
+        "text": "10–11 a.m. (periodicity)",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Heat of sun or summer; seashore air",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Mental exertion; consolation",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Kent"
+        ]
+      },
+      {
+        "text": "After menses",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Lying down, especially on left side",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Violent emotions, grief, anger, fright",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Abuse of quinine",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Puberty",
+        "sources": [
+          "Boger"
+        ]
+      }
+    ],
+    "modalities_better": [
+      {
+        "text": "Open air",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "text": "Cold bathing",
+        "sources": [
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Perspiration, sweating",
+        "sources": [
+          "Boericke",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Lying on right side",
+        "sources": [
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Going without regular meals; before breakfast",
+        "sources": [
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Deep breathing",
+        "sources": [
+          "Boger"
+        ]
+      }
+    ],
+    "mentals": [
+      "Depressed, particularly in chronic disease; weeps alone, aggravated by consolation",
+      "Irritable, gets into a passion about trifles; awkward, hasty",
+      "Desires to be alone to cry; tears with laughter; hysterical alternations",
+      "Ill effects of grief, fright, anger, unrequited affection",
+      "Forgetful; cannot concentrate; loses thread of reading or conversation",
+      "Dreams of robbers in the house, searches on waking",
+      "Hypochondria; joyless even with cheering circumstances"
+    ],
+    "physicals": [
+      "Anæmia and chlorosis with debility worst in morning in bed",
+      "Dryness of mucous membranes (lips, mouth, throat, rectum, vagina)",
+      "Lips and corners of mouth dry, ulcerated, cracked; deep crack middle lower lip",
+      "Herpes and vesicles like pearls about lips, at edge of hair, around anus",
+      "Hay fever with squirming sensation as of small worm in nostril; from hot sun",
+      "Violent fluent coryza with thin, watery discharge like raw egg white; violent sneezing",
+      "Eyes give out on reading or writing; letters run together; lachrymation acrid",
+      "Constipation with anus contracted, torn, bleeding; stitches in rectum",
+      "Urine involuntary when walking, coughing, laughing; must wait if others present",
+      "Menses irregular, usually profuse; vagina dry; bearing-down worse morning",
+      "Cough from tickling in pit of stomach with spurting of urine",
+      "Heart fluttering, palpitation shakes body; intermits lying down",
+      "Hangnails; skin around nails dry, cracked",
+      "Warts on palms of hands, sore to touch",
+      "Eczema raw, red, inflamed at edges of hair; worse too much salt, seashore",
+      "Urticaria over whole body after violent exercise"
+    ],
+    "clinical": [
+      "Intermittent fever: paroxysm 10–11 a.m., old chronic cases after quinine suppression",
+      "Anæmic headache of schoolgirls; discouraged, nervous, broken down",
+      "Frontal sinus inflammation",
+      "Stricture of lachrymal duct with suppuration",
+      "Incipient cataract",
+      "Hyperthyroidism; goitre; Addison's disease; diabetes",
+      "Prolapsus uteri with cutting in urethra; bearing-down worse morning",
+      "Chronic headache semi-lateral, congestive, sunrise to sunset, from eyestrain or menses",
+      "Asthenopia due to insufficiency of internal recti muscles",
+      "Summer complaint with rapid emaciation of throat and neck in children"
+    ],
+    "differentials": [
+      {
+        "vs": "Ignatia",
+        "note": "Ignatia is the acute vegetable analogue; Natrum mur. is its chronic. If Ignatia only temporarily benefits without deep cure, give Natrum mur.",
+        "sources": [
+          "Allen",
+          "Boger",
+          "Kent"
+        ]
+      },
+      {
+        "vs": "Sepia",
+        "note": "Both have bearing-down worse morning, prolapsus. Sepia follows Natrum mur. well. Natrum mur. more emaciation of neck, craves salt, grief aggravated by consolation.",
+        "sources": [
+          "Boericke",
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "vs": "Pulsatilla",
+        "note": "Both weep easily, but Pulsatilla is soothed and comforted by consolation, while Natrum mur. is aggravated. Pulsatilla warm-blooded, thirstless; Natrum chilly, great thirst.",
+        "sources": [
+          "Allen",
+          "Kent",
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Phosphorus",
+        "note": "Both have palpitation shaking body. Phosphorus craves cold drinks, ice, sympathetic; Natrum mur. craves salt, averse to consolation.",
+        "sources": [
+          "Boericke"
+        ]
+      },
+      {
+        "vs": "Calcarea phosphorica",
+        "note": "Both cure headaches of schoolgirls in anæmic states. Calcarea phos. more suited to delayed dentition, open fontanelles, growing pains.",
+        "sources": [
+          "Nash"
+        ]
+      }
+    ],
+    "cautions": [
+      "Should never be given during fever paroxysm (give intercurrently)",
+      "Cannot often be repeated in chronic cases without an intercurrent remedy",
+      "If vertigo and headache persist or prostration prolonged after Natrum, use Nux vomica",
+      "Aggravation from abuse of silver nitrate (cauterization); antidote with Natrum mur."
+    ]
+  },
+  "source_books": [
+    "Allen",
+    "Boericke",
+    "Boger",
+    "Kent",
+    "Nash"
+  ],
+  "generated_at": "2026-09-26T19:36:27.695286+00:00",
+  "updated_at": "2026-09-26T19:36:27.695286+00:00"
+}

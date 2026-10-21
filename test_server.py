@@ -47,8 +47,23 @@ print("\n4. Testing /api/chat/general (Ask AI):")
 s, chat_res = test_endpoint(f"{base}/api/chat/general", method="POST", body={"message": "What is the difference between Bryonia and Rhus tox in joint pain?"})
 print(f"Status {s}: AI Reply = {chat_res.get('reply')[:120]}...")
 
-print("\n5. Testing /api/materia-medica:")
-s, mm = test_endpoint(f"{base}/api/materia-medica?q=Bryonia")
-print(f"Status {s}: Remedies found = {len(mm.get('remedies', []))}")
-if mm.get('remedies'):
-    print(f"   Keynotes: {mm['remedies'][0]['keynotes']}")
+print("\n5. Testing /api/materia-medica/corpus:")
+s, corpus = test_endpoint(f"{base}/api/materia-medica/corpus")
+print(f"Status {s}: remedies = {corpus.get('remedies')}, books count = {len(corpus.get('books', []))}")
+for b in corpus.get('books', []):
+    print(f"   Source: {b.get('display')} ({b.get('remedies')} remedies)")
+
+print("\n6. Testing /api/materia-medica (All 758 remedies & search):")
+s, mm_all = test_endpoint(f"{base}/api/materia-medica")
+print(f"Status {s}: Total remedies in Materia Medica = {len(mm_all.get('results', []))}")
+
+s, mm_search = test_endpoint(f"{base}/api/materia-medica?q=arsenicum")
+print(f"Status {s}: Search 'arsenicum' found = {len(mm_search.get('results', []))}")
+
+print("\n7. Testing /api/materia-medica/arsenicum-album (Card Detail):")
+s, card = test_endpoint(f"{base}/api/materia-medica/arsenicum-album")
+print(f"Status {s}: Remedy = {card.get('remedy_display')}")
+print(f"   Common name: {card.get('card', {}).get('common_name')}")
+print(f"   Thermal: {card.get('card', {}).get('thermal')}, Sides: {card.get('card', {}).get('sides')}")
+print(f"   Essence: {card.get('card', {}).get('essence')[:100]}...")
+print(f"   Keynotes count: {len(card.get('card', {}).get('keynotes', []))}")

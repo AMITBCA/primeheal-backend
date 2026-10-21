@@ -1,0 +1,277 @@
+{
+  "cached": true,
+  "remedy_key": "aconitum-napellus",
+  "remedy_display": "Aconitum Napellus",
+  "schema_version": 1,
+  "card": {
+    "essence": "Aconite is the remedy for sudden, violent onset of illness in robust, plethoric individuals after exposure to dry, cold winds. The picture is dominated by intense fear (especially of death), extreme restlessness, agonised anxiety, and a dry, burning heat. Like a great storm, the attack is fierce but passes quickly—suited to vigorous constitutions who fall ill violently but recover just as rapidly.",
+    "family": "Plant · Ranunculaceae",
+    "common_name": "Monkshood",
+    "sides": "",
+    "thermal": "Hot",
+    "keynotes": [
+      {
+        "text": "Intense FEAR of death; predicts the day/hour he will die",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Kent",
+          "Nash",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Sudden, violent onset from exposure to dry, cold wind; plethoric, robust individuals",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Kent",
+          "Nash",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Extreme restlessness, tosses about in agony; pains intolerable, drive him crazy",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Kent",
+          "Nash",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Dry, hot, burning skin; burning thirst for large quantities cold water",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Short-acting remedy; storm that soon blows over; no chronic sequelae",
+        "sources": [
+          "Kent",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Face red, but turns deathly pale on rising; faintness or vertigo on sitting up",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Nash",
+          "Boger"
+        ]
+      },
+      {
+        "text": "One cheek red, the other pale",
+        "sources": [
+          "Boericke",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Music unbearable, makes her sad",
+        "sources": [
+          "Allen",
+          "Boericke",
+          "Boger"
+        ]
+      }
+    ],
+    "modalities_worse": [
+      {
+        "text": "Evening and night; pains insupportable at night",
+        "sources": [
+          "Allen",
+          "Nash",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Warm room; warm covering (wants to uncover)",
+        "sources": [
+          "Allen",
+          "Nash",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Lying on affected side (especially left side)",
+        "sources": [
+          "Allen",
+          "Nash",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Rising from bed or from recumbent position",
+        "sources": [
+          "Allen",
+          "Boericke"
+        ]
+      },
+      {
+        "text": "Noise, light, touch, being touched",
+        "sources": [
+          "Boericke",
+          "Boger",
+          "Nash"
+        ]
+      },
+      {
+        "text": "Violent emotions: fright, shock, vexation",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "During dentition",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "During menses",
+        "sources": [
+          "Boger"
+        ]
+      }
+    ],
+    "modalities_better": [
+      {
+        "text": "Open air",
+        "sources": [
+          "Allen",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Uncovering; kicks covers off",
+        "sources": [
+          "Nash",
+          "Boger"
+        ]
+      },
+      {
+        "text": "Repose, rest",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "text": "Warm sweat (once it appears)",
+        "sources": [
+          "Boger"
+        ]
+      }
+    ],
+    "mentals": [
+      "Terror, anguish of mind and body; anxiety with every ailment however trivial",
+      "Forebodings; predicts time of death; fears future, crowds, crossing street",
+      "Restlessness, tossing about; beside himself; frantic from pain intensity",
+      "Everything startles him; must do everything in haste; must change position often",
+      "Lost affection for friends; indifference; clairvoyance; acute imagination",
+      "Music unbearable, makes her sad",
+      "Delirium characterized by unhappiness, worry, fear, raving (rarely unconsciousness)",
+      "Screams, moans, gnaws fist, bites nails in agony"
+    ],
+    "physicals": [
+      "Sudden congestions before localization; inflammation of serous membranes and muscles",
+      "Burning in internal parts; tingling, coldness, numbness; parts feel big",
+      "Tearing, cutting, shooting pains; neuralgia with tingling and numbness",
+      "Bright red haemorrhage",
+      "Dry, hot skin; high fever with hard, full, bounding pulse",
+      "Thirst for large quantities of cold water; craves acids, beer",
+      "Croup: dry, hoarse, suffocating; child grasps throat every time he coughs",
+      "Cough worse on inspiration; barking, ringing, whistling",
+      "Pneumonia, pleurisy, carditis in early, congestive stage",
+      "Violent rushes of blood to head, chest; palpitation with pain down left arm",
+      "Retention of urine with screaming, restlessness, handling of genitals",
+      "Convulsions in teething children; skin hot and dry, high fever, jerks and twitches",
+      "Green, chopped-herb stools; or white stools with red urine; watery diarrhoea in children"
+    ],
+    "clinical": [
+      "First remedy in acute inflammations and inflammatory fevers (before pathological change sets in)",
+      "Influenza, especially after exposure to dry cold winds",
+      "Croup, laryngitis, bronchitis, pneumonia (early congestive stage)",
+      "Neuralgias (especially left-sided) with restlessness, tingling, numbness",
+      "Acute cystitis with agonising dysuria and retention",
+      "Amenorrhoea in plethoric young girls after fright",
+      "After-effects of fright, shock (with Opium as differential)",
+      "Conjunctivitis after foreign body removal, snow reflection, dry cold wind",
+      "Acute rheumatism of joints",
+      "Carditis, pericarditis with extreme anxiety and fear"
+    ],
+    "differentials": [
+      {
+        "vs": "Belladonna",
+        "note": "Aconite: dry skin, no sweat, distress in heart/chest, fear of death with little delirium. Bell: sweats on covered parts, semi-stupor, everything centres in head, fears imaginary things with delirium.",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Arsenicum",
+        "note": "Aconite: restlessness from fear and pain, plethoric, vigorous constitution, sudden onset. Ars: restlessness from extreme prostration, reduced vitality, anxious but not such intense fear.",
+        "sources": [
+          "Nash",
+          "Kent"
+        ]
+      },
+      {
+        "vs": "Rhus toxicodendron",
+        "note": "Aconite: pains predominate, tearing/cutting, with fear. Rhus tox: numbness predominates, dull aching/soreness, restless for temporary relief from movement.",
+        "sources": [
+          "Nash"
+        ]
+      },
+      {
+        "vs": "Chamomilla",
+        "note": "Both have intolerable pains. Cham: anger, 'cannot bear it', one cheek red/one pale (like Aconite), but lacks the intense fear of death.",
+        "sources": [
+          "Nash",
+          "Boericke"
+        ]
+      },
+      {
+        "vs": "Coffea",
+        "note": "Complementary to Aconite in fever, sleeplessness, intolerance of pain. Coffea lacks the fear and violent inflammatory picture.",
+        "sources": [
+          "Allen"
+        ]
+      },
+      {
+        "vs": "Opium",
+        "note": "Opium for remote effects of fright (chronic), often painless. Aconite for immediate, acute effects of fright with intense pain and fear.",
+        "sources": [
+          "Boger"
+        ]
+      },
+      {
+        "vs": "Sulphur",
+        "note": "Aconite is the acute of Sulphur. Sulphur is complementary; precedes and follows Aconite in acute inflammatory conditions.",
+        "sources": [
+          "Allen"
+        ]
+      }
+    ],
+    "cautions": [
+      "Never give simply to control fever; never alternate with other drugs. If Aconite is indicated, no other drug is needed.",
+      "Rarely indicated in fevers which bring out eruptions.",
+      "Nearly always injurious in first stages of typhoid fever unless indicated by exciting cause.",
+      "Action is brief, shows no periodicity; produces only functional disturbance, no tissue change.",
+      "Not to be continued after pathological change/exudation sets in; its sphere is the beginning of acute disease."
+    ]
+  },
+  "source_books": [
+    "Allen",
+    "Boericke",
+    "Boger",
+    "Kent",
+    "Nash"
+  ],
+  "generated_at": "2026-07-24T09:39:04.108763+00:00",
+  "updated_at": "2026-07-24T09:39:04.108763+00:00"
+}

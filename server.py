@@ -7,6 +7,7 @@ from fastapi.responses import JSONResponse, HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
 import database
 import ai_engine
+import materia_medica
 
 app = FastAPI(title="Prime Heal Unlimited Hospital Backend", version="1.5.0")
 
@@ -596,41 +597,29 @@ def clear_general_chat(session_id: str):
     conn.close()
     return {"ok": True}
 
-# ----------------- MATERIA MEDICA ENDPOINT -----------------
+# ----------------- MATERIA MEDICA ENDPOINTS -----------------
+
+@app.get("/api/materia-medica/corpus")
+@app.get("/materia-medica/corpus")
+def get_materia_medica_corpus():
+    return materia_medica.get_corpus()
 
 @app.get("/api/materia-medica")
-def search_materia_medica(q: str = Query(None), limit: int = Query(50)):
-    remedies = [
-        {"name": "Aconitum napellus", "common_name": "Monkshood", "affinity": "Nerves, blood vessels", "keynotes": "Sudden violent onset from dry cold wind. Intense fear of death, restless anxiety."},
-        {"name": "Apis mellifica", "common_name": "Honey Bee", "affinity": "Cellular tissue, skin, kidneys", "keynotes": "Stinging burning pains, puffiness, bag-like swelling under eyes. Thirstless, worse from heat."},
-        {"name": "Arnica montana", "common_name": "Leopard's Bane", "affinity": "Muscles, blood vessels", "keynotes": "Trauma, contusions, bed feels too hard. Says nothing is wrong when severely ill."},
-        {"name": "Arsenicum album", "common_name": "White Arsenic", "affinity": "Gastrointestinal, respiration", "keynotes": "Extreme prostration with anguish and restlessness. Burning pains relieved by heat, midnight aggravation."},
-        {"name": "Belladonna", "common_name": "Deadly Nightshade", "affinity": "Brain, circulation", "keynotes": "Sudden violent onset, throbbing headache, dilated pupils, red hot flushed face, dry skin."},
-        {"name": "Bryonia alba", "common_name": "White Bryony", "affinity": "Serous membranes, joints", "keynotes": "Aggravation from least motion, relief from absolute rest. Dryness with intense thirst for large quantities."},
-        {"name": "Calcarea carbonica", "common_name": "Calcium Carbonate", "affinity": "Glands, bones, nutrition", "keynotes": "Fair, fat, flabby, chilly individuals. Head sweats profuse during sleep. Craving for eggs."},
-        {"name": "Carbo vegetabilis", "common_name": "Vegetable Charcoal", "affinity": "Venous circulation, digestion", "keynotes": "Collapse state, cold breath and cold knees, desire for continuous fanning. Upper abdominal flatulence."},
-        {"name": "Causticum", "common_name": "Tinctura acris sine Kali", "affinity": "Nerves, muscles, larynx", "keynotes": "Paralytic weakness, hoarseness in morning, sympathetic nature, involuntary urine on coughing."},
-        {"name": "Chamomilla", "common_name": "German Chamomile", "affinity": "Nervous system, teething", "keynotes": "Extreme irritability, unbearable pains, child demands to be carried constantly. One cheek red, one pale."},
-        {"name": "China officinalis", "common_name": "Peruvian Bark", "affinity": "Blood, fluids", "keynotes": "Weakness from loss of vital fluids (hemorrhage, diarrhea). Periodicity, sensitive to light touch."},
-        {"name": "Gelsemium sempervirens", "common_name": "Yellow Jasmine", "affinity": "Nerves, motor muscles", "keynotes": "Dullness, Drowsiness, Dizziness. Paralytic trembling from anticipatory anxiety or fright."},
-        {"name": "Ignatia amara", "common_name": "St. Ignatius Bean", "affinity": "Nervous system", "keynotes": "Acute grief, silent sorrow, contradictory symptoms, frequent involuntary sighing, lump in throat."},
-        {"name": "Lachesis muta", "common_name": "Bushmaster Snake", "affinity": "Blood, circulation", "keynotes": "Left-sided complaints, intolerance of tight clothing around neck/waist, loquacity, worse after sleep."},
-        {"name": "Lycopodium clavatum", "common_name": "Club Moss", "affinity": "Digestive, right side", "keynotes": "4 PM to 8 PM aggravation, right to left direction, severe gas and flatulence, desire for warm drinks."},
-        {"name": "Mercurius solubilis", "common_name": "Quicksilver", "affinity": "Mucous membranes, glands", "keynotes": "Profuse night sweats without relief, metallic taste in mouth, flabby indented tongue with salivation."},
-        {"name": "Natrum muriaticum", "common_name": "Common Salt", "affinity": "Blood, nutrition, skin", "keynotes": "Introverted, worse from consolation and sun exposure. 10 AM headache, craving for salt, mapped tongue."},
-        {"name": "Nux vomica", "common_name": "Poison Nut", "affinity": "Nervous, digestive system", "keynotes": "Hypersensitive, chilly, ambitious, irritable sedentary life. Ineffectual urging for stool, morning aggravation."},
-        {"name": "Phosphorus", "common_name": "Phosphorus", "affinity": "Nerves, lungs, blood", "keynotes": "Tall slender affectionate individuals, craving for ice-cold water, tendency to easy hemorrhages, burning palms."},
-        {"name": "Pulsatilla nigricans", "common_name": "Wind Flower", "affinity": "Venous system, mucous membranes", "keynotes": "Gentle, weeping disposition seeking sympathy. Better in open air, worse in warm rooms, thirstlessness."},
-        {"name": "Rhus toxicodendron", "common_name": "Poison Ivy", "affinity": "Fibrous tissue, joints", "keynotes": "Pain worse beginning of motion, better continued motion. Worse in cold damp weather. Restlessness."},
-        {"name": "Sepia succus", "common_name": "Cuttlefish Ink", "affinity": "Pelvic organs, veins", "keynotes": "Bearing down sensation, indifference to loved ones, yellow saddle across nose, ameliorated by vigorous exercise."},
-        {"name": "Silicea terra", "common_name": "Pure Flint", "affinity": "Bones, glands, skin", "keynotes": "Lack of vital grit, chilly, profuse offensive foot sweat, suppuration, expulsion of foreign bodies."},
-        {"name": "Sulphur", "common_name": "Sublimed Sulphur", "affinity": "Skin, portal system", "keynotes": "Philosophical, untidy, burning of soles and crown, morning 11 AM hunger, aversion to bathing, skin eruptions."}
-    ]
-    if q:
-        q_low = q.lower()
-        remedies = [r for r in remedies if q_low in r["name"].lower() or q_low in r["keynotes"].lower() or q_low in r["affinity"].lower()]
-        
-    return {"remedies": remedies[:limit]}
+@app.get("/materia-medica")
+def search_materia_medica(q: str = Query(None), limit: int = Query(1000)):
+    q_val = q if isinstance(q, str) else None
+    limit_val = limit if isinstance(limit, int) else 1000
+    data = materia_medica.search(q_val, limit_val)
+    return {
+        "results": data.get("results", []),
+        "remedies": data.get("results", [])
+    }
+
+@app.get("/api/materia-medica/{remedy_key}")
+@app.get("/materia-medica/{remedy_key}")
+def get_materia_medica_card(remedy_key: str, force: bool = Query(False)):
+    force_val = bool(force) if not hasattr(force, "default") else False
+    return materia_medica.get_card(remedy_key, force=force_val)
 
 # ----------------- ADMIN DASHBOARD -----------------
 
@@ -676,6 +665,10 @@ def admin_dashboard():
             <div class="stat">
                 <div class="stat-val" id="caseCount">Loading...</div>
                 <div class="stat-lbl">Total Patient Cases</div>
+            </div>
+            <div class="stat">
+                <div class="stat-val" style="color: #8ee0b7;">758 Remedies</div>
+                <div class="stat-lbl">7 Classical Sources Active</div>
             </div>
             <div class="stat">
                 <div class="stat-val" style="color: #8ee0b7;">UNLIMITED</div>

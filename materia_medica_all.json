@@ -1,0 +1,6303 @@
+{
+  "results": [
+    {
+      "key": "abies-canadensis-pinus-canadensis",
+      "display": "Abies Canadensis - Pinus Canadensis",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "abies-nigra",
+      "display": "Abies Nigra",
+      "books": [
+        "boericke",
+        "farrington",
+        "nash"
+      ]
+    },
+    {
+      "key": "abrotanum",
+      "display": "Abrotanum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "abrus-precatorius-jequirity",
+      "display": "Abrus Precatorius -- Jequirity",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "absinthium",
+      "display": "Absinthium",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "acalypha-indica",
+      "display": "Acalypha Indica",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "acetanilidum",
+      "display": "Acetanilidum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "aceticum-acidum",
+      "display": "Aceticum Acidum",
+      "books": [
+        "allen",
+        "boericke",
+        "kent"
+      ]
+    },
+    {
+      "key": "aconitum-napellus",
+      "display": "Aconitum Napellus",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "actaea-spicata",
+      "display": "Actaea Spicata",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "actea-racemosa-black-cohosh",
+      "display": "Actea Racemosa (Black Cohosh)",
+      "books": [
+        "kent"
+      ]
+    },
+    {
+      "key": "adonis-vernalis",
+      "display": "Adonis Vernalis",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "adrenalinum",
+      "display": "Adrenalinum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "aesculus-hippocastanum",
+      "display": "Aesculus Hippocastanum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent"
+      ]
+    },
+    {
+      "key": "aethiops-mineralis",
+      "display": "Aethiops Mineralis",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "aethusa-cynapium",
+      "display": "Aethusa Cynapium",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent"
+      ]
+    },
+    {
+      "key": "agaricus-muscarius",
+      "display": "Agaricus Muscarius",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "agave-americana",
+      "display": "Agave Americana",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "agnus-castus",
+      "display": "Agnus Castus",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent"
+      ]
+    },
+    {
+      "key": "agraphis-nutans",
+      "display": "Agraphis Nutans",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "ailanthus-glandulosa",
+      "display": "Ailanthus Glandulosa",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke",
+        "kent"
+      ]
+    },
+    {
+      "key": "aletris-farinosa",
+      "display": "Aletris Farinosa",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "alfalfa",
+      "display": "Alfalfa",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "allium-cepa",
+      "display": "Allium Cepa",
+      "books": [
+        "allen",
+        "boericke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "allium-sativum",
+      "display": "Allium Sativum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "alnus-rubra",
+      "display": "Alnus Rubra",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "aloe-socotrina",
+      "display": "Aloe Socotrina",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "alstonia-scholaris",
+      "display": "Alstonia Scholaris",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "alumen",
+      "display": "Alumen",
+      "books": [
+        "boericke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "alumina",
+      "display": "Alumina",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "alumina-silicata",
+      "display": "Alumina Silicata",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "ambra-grisea",
+      "display": "Ambra Grisea",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent"
+      ]
+    },
+    {
+      "key": "ambrosia-artemisiaefolia",
+      "display": "Ambrosia Artemisiaefolia",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "ammoniacum-gummi",
+      "display": "Ammoniacum Gummi",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "ammonium-benzoicum",
+      "display": "Ammonium Benzoicum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "ammonium-bromatum",
+      "display": "Ammonium Bromatum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "ammonium-carbonicum",
+      "display": "Ammonium Carbonicum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "ammonium-causticum",
+      "display": "Ammonium Causticum",
+      "books": [
+        "boericke",
+        "farrington"
+      ]
+    },
+    {
+      "key": "ammonium-iodatum",
+      "display": "Ammonium Iodatum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "ammonium-muriaticum",
+      "display": "Ammonium Muriaticum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "ammonium-phosphoricum",
+      "display": "Ammonium Phosphoricum",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "ammonium-picricum",
+      "display": "Ammonium Picricum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "ammonium-valerianicum",
+      "display": "Ammonium Valerianicum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "ampelopsis-quinquefolia",
+      "display": "Ampelopsis Quinquefolia",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "amygdalus-persica",
+      "display": "Amygdalus Persica",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "amylenum-nitrosum",
+      "display": "Amylenum Nitrosum",
+      "books": [
+        "allen",
+        "boericke"
+      ]
+    },
+    {
+      "key": "amylis-nitris",
+      "display": "Amylis Nitris",
+      "books": [
+        "nash"
+      ]
+    },
+    {
+      "key": "amylium-nitrosum",
+      "display": "Amylium Nitrosum",
+      "books": [
+        "boger"
+      ]
+    },
+    {
+      "key": "anacardium-orientale",
+      "display": "Anacardium Orientale",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "anagallis-arvensis",
+      "display": "Anagallis Arvensis",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "anantherum-muricatum",
+      "display": "Anantherum Muricatum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "anemopsis-californica",
+      "display": "Anemopsis Californica",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "angustura-vera",
+      "display": "Angustura Vera",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "anhalonium-lewinii",
+      "display": "Anhalonium Lewinii",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "anilinum",
+      "display": "Anilinum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "anisum-stellatum",
+      "display": "Anisum Stellatum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "anthemis-nobilis",
+      "display": "Anthemis Nobilis",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "anthracinum",
+      "display": "Anthracinum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "anthracokali",
+      "display": "Anthracokali",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "antimonium-arsenicosum",
+      "display": "Antimonium Arsenicosum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "antimonium-crudum",
+      "display": "Antimonium Crudum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "antimonium-sulphuratum-auratum",
+      "display": "Antimonium Sulphuratum Auratum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "antimonium-tartaricum",
+      "display": "Antimonium Tartaricum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "farrington",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "antipyrinum",
+      "display": "Antipyrinum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "aphis-chenopodii-glauci",
+      "display": "Aphis Chenopodii Glauci",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "apis-mellifica",
+      "display": "Apis Mellifica",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "apium-graveolens",
+      "display": "Apium Graveolens",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "apocynum-androsaemifolium",
+      "display": "Apocynum Androsaemifolium",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "apocynum-cannabinum",
+      "display": "Apocynum Cannabinum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "apomorphinum",
+      "display": "Apomorphinum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "aquilegia-vulgaris",
+      "display": "Aquilegia Vulgaris",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "aragallus-lamberti",
+      "display": "Aragallus Lamberti",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "aralia-racemosa",
+      "display": "Aralia Racemosa",
+      "books": [
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "aranea-diadema",
+      "display": "Aranea Diadema",
+      "books": [
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "arbutus-andrachne",
+      "display": "Arbutus Andrachne",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "areca-catechu",
+      "display": "Areca Catechu",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "argemone-mexicana",
+      "display": "Argemone Mexicana",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "argentum-metallicum",
+      "display": "Argentum Metallicum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "farrington",
+        "kent"
+      ]
+    },
+    {
+      "key": "argentum-nitricum",
+      "display": "Argentum Nitricum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "aristolochia-milhomens",
+      "display": "Aristolochia Milhomens",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "arnica-montana",
+      "display": "Arnica Montana",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "arsenicum-album",
+      "display": "Arsenicum Album",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "arsenicum-bromatum",
+      "display": "Arsenicum Bromatum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "arsenicum-hydrogenisatum",
+      "display": "Arsenicum Hydrogenisatum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "arsenicum-iodatum",
+      "display": "Arsenicum Iodatum",
+      "books": [
+        "boericke",
+        "boger",
+        "kent"
+      ]
+    },
+    {
+      "key": "arsenicum-metallicum",
+      "display": "Arsenicum Metallicum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "arsenicum-sulphuratum-flavum",
+      "display": "Arsenicum Sulphuratum Flavum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "artemisia-vulgaris",
+      "display": "Artemisia Vulgaris",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "arum-dracontium",
+      "display": "Arum Dracontium",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "arum-triphyllum",
+      "display": "Arum Triphyllum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "arundo-mauritanica",
+      "display": "Arundo Mauritanica",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "asa-foetida",
+      "display": "Asa Foetida",
+      "books": [
+        "boericke",
+        "boger",
+        "kent"
+      ]
+    },
+    {
+      "key": "asarum-europaeum",
+      "display": "Asarum Europaeum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "asclepias-cornuti",
+      "display": "Asclepias Cornuti",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "asclepias-tuberosa",
+      "display": "Asclepias Tuberosa",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "asimina-triloba",
+      "display": "Asimina Triloba",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "asparagus-officinalis",
+      "display": "Asparagus Officinalis",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "astacus-fluviatilis",
+      "display": "Astacus Fluviatilis",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "asterias-rubens",
+      "display": "Asterias Rubens",
+      "books": [
+        "allen",
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "astragalus-mollissimus",
+      "display": "Astragalus Mollissimus",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "aurum-metallicum",
+      "display": "Aurum Metallicum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "aurum-muriaticum",
+      "display": "Aurum Muriaticum",
+      "books": [
+        "clarke",
+        "farrington",
+        "kent"
+      ]
+    },
+    {
+      "key": "aurum-muriaticum-natronatum",
+      "display": "Aurum Muriaticum Natronatum",
+      "books": [
+        "boericke",
+        "clarke",
+        "nash"
+      ]
+    },
+    {
+      "key": "avena-sativa",
+      "display": "Avena Sativa",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "azadirachta-indica",
+      "display": "Azadirachta Indica",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "bacillinum-burnett",
+      "display": "Bacillinum Burnett",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "badiaga",
+      "display": "Badiaga",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "balsamum-peruvianum",
+      "display": "Balsamum Peruvianum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "baptisia-tinctoria",
+      "display": "Baptisia Tinctoria",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "barosma-crenulatum",
+      "display": "Barosma Crenulatum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "baryta-acetica",
+      "display": "Baryta Acetica",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "baryta-carbonica",
+      "display": "Baryta Carbonica",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "baryta-iodata",
+      "display": "Baryta Iodata",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "baryta-muriatica",
+      "display": "Baryta Muriatica",
+      "books": [
+        "boericke",
+        "kent"
+      ]
+    },
+    {
+      "key": "belladonna",
+      "display": "Belladonna",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "farrington",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "bellis-perennis",
+      "display": "Bellis Perennis",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "benzoicum-acidum",
+      "display": "Benzoicum Acidum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "benzolum",
+      "display": "Benzolum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "berberis",
+      "display": "Berberis",
+      "books": [
+        "kent"
+      ]
+    },
+    {
+      "key": "berberis-aquifolium",
+      "display": "Berberis Aquifolium",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "berberis-vulgaris",
+      "display": "Berberis Vulgaris",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "beta-vulgaris",
+      "display": "Beta Vulgaris",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "bismuthum-subnitricum",
+      "display": "Bismuthum Subnitricum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "blatta-americana",
+      "display": "Blatta Americana",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "blatta-orientalis",
+      "display": "Blatta Orientalis",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "boletus-laricis",
+      "display": "Boletus Laricis",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "borax-veneta",
+      "display": "Borax Veneta",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "boricum-acidum",
+      "display": "Boricum Acidum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "bothrops-lanceolatus",
+      "display": "Bothrops Lanceolatus",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "botulinum",
+      "display": "Botulinum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "bovista-lycoperdon",
+      "display": "Bovista Lycoperdon",
+      "books": [
+        "allen",
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "brachyglottis-repens",
+      "display": "Brachyglottis Repens",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "bromine",
+      "display": "Bromine",
+      "books": [
+        "farrington",
+        "nash"
+      ]
+    },
+    {
+      "key": "bromium",
+      "display": "Bromium",
+      "books": [
+        "allen",
+        "boericke",
+        "kent"
+      ]
+    },
+    {
+      "key": "bromum",
+      "display": "Bromum",
+      "books": [
+        "boger"
+      ]
+    },
+    {
+      "key": "bryonia-alba",
+      "display": "Bryonia Alba",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "farrington",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "bufo-rana",
+      "display": "Bufo Rana",
+      "books": [
+        "boericke",
+        "clarke",
+        "kent"
+      ]
+    },
+    {
+      "key": "butyricum-acidum",
+      "display": "Butyricum Acidum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "cactus-grandiflorus",
+      "display": "Cactus Grandiflorus",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "cadmium-sulphuratum",
+      "display": "Cadmium Sulphuratum",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke",
+        "kent"
+      ]
+    },
+    {
+      "key": "cainca",
+      "display": "Cainca",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "cajuputum",
+      "display": "Cajuputum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "caladium",
+      "display": "Caladium",
+      "books": [
+        "allen",
+        "kent"
+      ]
+    },
+    {
+      "key": "caladium-seguinum",
+      "display": "Caladium Seguinum",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke"
+      ]
+    },
+    {
+      "key": "calcarea-acetica",
+      "display": "Calcarea Acetica",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "calcarea-arsenica",
+      "display": "Calcarea Arsenica",
+      "books": [
+        "allen"
+      ]
+    },
+    {
+      "key": "calcarea-arsenicosa",
+      "display": "Calcarea Arsenicosa",
+      "books": [
+        "boericke",
+        "kent"
+      ]
+    },
+    {
+      "key": "calcarea-carbonica",
+      "display": "Calcarea Carbonica",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "calcarea-fluorica",
+      "display": "Calcarea Fluorica",
+      "books": [
+        "boericke",
+        "boger",
+        "farrington",
+        "kent"
+      ]
+    },
+    {
+      "key": "calcarea-hypophosphorica",
+      "display": "Calcarea Hypophosphorica",
+      "books": [
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "calcarea-iodata",
+      "display": "Calcarea Iodata",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "calcarea-phosphorica",
+      "display": "Calcarea Phosphorica",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "calcarea-silicata",
+      "display": "Calcarea Silicata",
+      "books": [
+        "boericke",
+        "farrington"
+      ]
+    },
+    {
+      "key": "calcarea-sulphurica",
+      "display": "Calcarea Sulphurica",
+      "books": [
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "calendula",
+      "display": "Calendula",
+      "books": [
+        "allen"
+      ]
+    },
+    {
+      "key": "calendula-officinalis",
+      "display": "Calendula Officinalis",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke"
+      ]
+    },
+    {
+      "key": "calotropis-gigantea",
+      "display": "Calotropis Gigantea",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "caltha-palustris",
+      "display": "Caltha Palustris",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "camphora",
+      "display": "Camphora",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "camphora-bromata",
+      "display": "Camphora Bromata",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "cancer-fluviatilis",
+      "display": "Cancer Fluviatilis",
+      "books": [
+        "boger"
+      ]
+    },
+    {
+      "key": "canchalagua",
+      "display": "Canchalagua",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "cannabis",
+      "display": "Cannabis",
+      "books": [
+        "boger"
+      ]
+    },
+    {
+      "key": "cannabis-indica",
+      "display": "Cannabis Indica",
+      "books": [
+        "allen",
+        "boericke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "cannabis-sativa",
+      "display": "Cannabis Sativa",
+      "books": [
+        "allen",
+        "boericke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "cantharides",
+      "display": "Cantharides",
+      "books": [
+        "allen"
+      ]
+    },
+    {
+      "key": "cantharis-vesicatoria",
+      "display": "Cantharis Vesicatoria",
+      "books": [
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "capsicum-annuum",
+      "display": "Capsicum Annuum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "carbo-animalis",
+      "display": "Carbo Animalis",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "farrington",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "carbo-vegetabilis",
+      "display": "Carbo Vegetabilis",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "farrington",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "carbolicum-acidum",
+      "display": "Carbolicum Acidum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "carboneum-hydrogenisatum",
+      "display": "Carboneum Hydrogenisatum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "carboneum-oxygenisatum",
+      "display": "Carboneum Oxygenisatum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "carboneum-sulphuratum",
+      "display": "Carboneum Sulphuratum",
+      "books": [
+        "boericke",
+        "clarke",
+        "kent"
+      ]
+    },
+    {
+      "key": "carcinosinum",
+      "display": "Carcinosinum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "carduus-marianus",
+      "display": "Carduus Marianus",
+      "books": [
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "carlsbad-aqua",
+      "display": "Carlsbad Aqua",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "cascara-sagrada",
+      "display": "Cascara Sagrada",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "cascarilla",
+      "display": "Cascarilla",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "castanea-vesca",
+      "display": "Castanea Vesca",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "castor-equi",
+      "display": "Castor Equi",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "castoreum-canadense",
+      "display": "Castoreum Canadense",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "cataria-nepeta",
+      "display": "Cataria Nepeta",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "caulophyllum",
+      "display": "Caulophyllum",
+      "books": [
+        "allen"
+      ]
+    },
+    {
+      "key": "caulophyllum-thalictroides",
+      "display": "Caulophyllum Thalictroides",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke",
+        "nash"
+      ]
+    },
+    {
+      "key": "causticum",
+      "display": "Causticum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "farrington",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "ceanothus-americanus",
+      "display": "Ceanothus Americanus",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "cedron",
+      "display": "Cedron",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "cenchris-contortrix",
+      "display": "Cenchris Contortrix",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "cepa-vulgaris",
+      "display": "Cepa Vulgaris",
+      "books": [
+        "boger"
+      ]
+    },
+    {
+      "key": "cereus-bonplandii",
+      "display": "Cereus Bonplandii",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "cerium-oxalicum",
+      "display": "Cerium Oxalicum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "chamomilla",
+      "display": "Chamomilla",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "chaparro-amargoso",
+      "display": "Chaparro Amargoso",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "chelidonium-majus",
+      "display": "Chelidonium Majus",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "chelone-glabra",
+      "display": "Chelone Glabra",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "chenopodium-anthelminticum",
+      "display": "Chenopodium Anthelminticum",
+      "books": [
+        "boericke",
+        "nash"
+      ]
+    },
+    {
+      "key": "chimaphila-umbellata",
+      "display": "Chimaphila Umbellata",
+      "books": [
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "china-officinalis",
+      "display": "China Officinalis",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "chininum-arsenicosum",
+      "display": "Chininum Arsenicosum",
+      "books": [
+        "boericke",
+        "kent"
+      ]
+    },
+    {
+      "key": "chininum-sulphuricum",
+      "display": "Chininum Sulphuricum",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "chionanthus-virginica",
+      "display": "Chionanthus Virginica",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "chloralum-hydratum",
+      "display": "Chloralum Hydratum",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "chloroformium",
+      "display": "Chloroformium",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "chlorum",
+      "display": "Chlorum",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "cholesterinum",
+      "display": "Cholesterinum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "chromicum-acidum",
+      "display": "Chromicum Acidum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "chrysarobinum",
+      "display": "Chrysarobinum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "cicuta-virosa",
+      "display": "Cicuta Virosa",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "cimex-lectularius",
+      "display": "Cimex Lectularius",
+      "books": [
+        "boericke",
+        "clarke",
+        "nash"
+      ]
+    },
+    {
+      "key": "cimicifuga-racemosa",
+      "display": "Cimicifuga Racemosa",
+      "books": [
+        "allen",
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "cina",
+      "display": "Cina",
+      "books": [
+        "allen",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "cina-maritima",
+      "display": "Cina Maritima",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "cinchona-china",
+      "display": "Cinchona (China)",
+      "books": [
+        "allen",
+        "farrington",
+        "kent"
+      ]
+    },
+    {
+      "key": "cinchona-officinalis",
+      "display": "Cinchona Officinalis",
+      "books": [
+        "clarke",
+        "nash"
+      ]
+    },
+    {
+      "key": "cineraria-maritima",
+      "display": "Cineraria Maritima",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "cinnabaris",
+      "display": "Cinnabaris",
+      "books": [
+        "boericke",
+        "boger",
+        "kent"
+      ]
+    },
+    {
+      "key": "cinnamomum-ceylanicum",
+      "display": "Cinnamomum Ceylanicum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "cistus-canadensis",
+      "display": "Cistus Canadensis",
+      "books": [
+        "boericke",
+        "boger",
+        "kent"
+      ]
+    },
+    {
+      "key": "citrus-vulgaris",
+      "display": "Citrus Vulgaris",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "clematis-erecta",
+      "display": "Clematis Erecta",
+      "books": [
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "cobaltum-metallicum",
+      "display": "Cobaltum Metallicum",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "coca-erythroxylon-coca",
+      "display": "Coca-Erythroxylon Coca",
+      "books": [
+        "allen",
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "cocainum-hydrochloricum",
+      "display": "Cocainum Hydrochloricum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "coccinella-septempunctata",
+      "display": "Coccinella Septempunctata",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "cocculus-indicus",
+      "display": "Cocculus Indicus",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "coccus-cacti",
+      "display": "Coccus Cacti",
+      "books": [
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "cochlearia-armoracia",
+      "display": "Cochlearia Armoracia",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "codeinum",
+      "display": "Codeinum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "coffea-cruda",
+      "display": "Coffea Cruda",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "colchicum-autumnale",
+      "display": "Colchicum Autumnale",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "collinsonia-canadensis",
+      "display": "Collinsonia Canadensis",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "nash"
+      ]
+    },
+    {
+      "key": "colocynthis",
+      "display": "Colocynthis",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "comocladia-dentata",
+      "display": "Comocladia Dentata",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke"
+      ]
+    },
+    {
+      "key": "conclusion",
+      "display": "Conclusion",
+      "books": [
+        "kent"
+      ]
+    },
+    {
+      "key": "conium-maculatum",
+      "display": "Conium Maculatum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "farrington",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "convallaria-majalis",
+      "display": "Convallaria Majalis",
+      "books": [
+        "boericke",
+        "nash"
+      ]
+    },
+    {
+      "key": "copaiva-officinalis",
+      "display": "Copaiva Officinalis",
+      "books": [
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "corallium-rubrum",
+      "display": "Corallium Rubrum",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke",
+        "nash"
+      ]
+    },
+    {
+      "key": "corallorhiza-odontorhiza",
+      "display": "Corallorhiza Odontorhiza",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "cornus-circinata",
+      "display": "Cornus Circinata",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "cornus-florida",
+      "display": "Cornus Florida",
+      "books": [
+        "boger",
+        "clarke"
+      ]
+    },
+    {
+      "key": "corydalis-formosa",
+      "display": "Corydalis Formosa",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "cotyledon-umbilicus",
+      "display": "Cotyledon Umbilicus",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "crataegus-oxyacantha",
+      "display": "Crataegus Oxyacantha",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke"
+      ]
+    },
+    {
+      "key": "crocus-sativus",
+      "display": "Crocus Sativus",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "nash"
+      ]
+    },
+    {
+      "key": "crotalus-horridus",
+      "display": "Crotalus Horridus",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "croton-tiglium",
+      "display": "Croton Tiglium",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "cubeba-officinalis",
+      "display": "Cubeba Officinalis",
+      "books": [
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "cucurbita-citrullus",
+      "display": "Cucurbita Citrullus",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "cucurbita-pepo",
+      "display": "Cucurbita Pepo",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "culex-musca",
+      "display": "Culex Musca",
+      "books": [
+        "boger",
+        "clarke"
+      ]
+    },
+    {
+      "key": "cundurango",
+      "display": "Cundurango",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "cuphea-viscosissima",
+      "display": "Cuphea Viscosissima",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "cuprum-aceticum",
+      "display": "Cuprum Aceticum",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "cuprum-arsenicosum",
+      "display": "Cuprum Arsenicosum",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke",
+        "farrington"
+      ]
+    },
+    {
+      "key": "cuprum-metallicum",
+      "display": "Cuprum Metallicum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "curare",
+      "display": "Curare",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "cyclamen-europaeum",
+      "display": "Cyclamen Europaeum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "cypripedium-pubescens",
+      "display": "Cypripedium Pubescens",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "cytisus-laburnum",
+      "display": "Cytisus Laburnum",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "damiana",
+      "display": "Damiana",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "daphne-indica",
+      "display": "Daphne Indica",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "dictamnus-albus",
+      "display": "Dictamnus Albus",
+      "books": [
+        "boger"
+      ]
+    },
+    {
+      "key": "digitalis-purpurea",
+      "display": "Digitalis Purpurea",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "farrington",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "dioscorea-villosa",
+      "display": "Dioscorea Villosa",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "nash"
+      ]
+    },
+    {
+      "key": "diosma-lincaris",
+      "display": "Diosma Lincaris",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "diphtericum",
+      "display": "Diphtericum",
+      "books": [
+        "boger"
+      ]
+    },
+    {
+      "key": "diphtherinum",
+      "display": "Diphtherinum",
+      "books": [
+        "allen",
+        "boericke"
+      ]
+    },
+    {
+      "key": "dolichos-pruriens",
+      "display": "Dolichos Pruriens",
+      "books": [
+        "boericke",
+        "clarke",
+        "nash"
+      ]
+    },
+    {
+      "key": "doryphora-decemlineata",
+      "display": "Doryphora Decemlineata",
+      "books": [
+        "boericke",
+        "clarke",
+        "farrington"
+      ]
+    },
+    {
+      "key": "drosera-rotundifolia",
+      "display": "Drosera Rotundifolia",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "kent"
+      ]
+    },
+    {
+      "key": "duboisia-myoporoides",
+      "display": "Duboisia Myoporoides",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "dulcamara",
+      "display": "Dulcamara",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "echinacea-angustifolia",
+      "display": "Echinacea Angustifolia",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke"
+      ]
+    },
+    {
+      "key": "elaps-corallinus",
+      "display": "Elaps Corallinus",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "elaterium-officinarum",
+      "display": "Elaterium Officinarum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "eosinum",
+      "display": "Eosinum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "epigea-repens",
+      "display": "Epigea Repens",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "epiphegus-virginiana",
+      "display": "Epiphegus Virginiana",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke",
+        "nash"
+      ]
+    },
+    {
+      "key": "equisetum-hyemale",
+      "display": "Equisetum Hyemale",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "nash"
+      ]
+    },
+    {
+      "key": "erechthites-hieracifolia",
+      "display": "Erechthites Hieracifolia",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "erigeron-canadense",
+      "display": "Erigeron Canadense",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke"
+      ]
+    },
+    {
+      "key": "erigeron-trillium-millefolium",
+      "display": "Erigeron Trillium Millefolium",
+      "books": [
+        "nash"
+      ]
+    },
+    {
+      "key": "eriodyction-californicum",
+      "display": "Eriodyction Californicum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "eryngium-aquaticum",
+      "display": "Eryngium Aquaticum",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "eschscholtzia-californica",
+      "display": "Eschscholtzia Californica",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "eucalyptus-globulus",
+      "display": "Eucalyptus Globulus",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke"
+      ]
+    },
+    {
+      "key": "eugenia-jambos",
+      "display": "Eugenia Jambos",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "euonymus-atropurpurea",
+      "display": "Euonymus Atropurpurea",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "eupatorium-aromaticum",
+      "display": "Eupatorium Aromaticum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "eupatorium-perfoliatum",
+      "display": "Eupatorium Perfoliatum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "eupatorium-purpureum",
+      "display": "Eupatorium Purpureum",
+      "books": [
+        "boericke",
+        "clarke",
+        "nash"
+      ]
+    },
+    {
+      "key": "euphorbia-lathyris",
+      "display": "Euphorbia Lathyris",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "euphorbia-polycarpa",
+      "display": "Euphorbia Polycarpa",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "euphorbium-officinarum",
+      "display": "Euphorbium Officinarum",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke"
+      ]
+    },
+    {
+      "key": "euphrasia-officinalis",
+      "display": "Euphrasia Officinalis",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "eupionum",
+      "display": "Eupionum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "evonymus-europaeus-euonymus-europaeus",
+      "display": "Evonymus Europæus (=Euonymus Europaeus)",
+      "books": [
+        "boger"
+      ]
+    },
+    {
+      "key": "fabiana-imbricata",
+      "display": "Fabiana Imbricata",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "fagopyrum-esculentum",
+      "display": "Fagopyrum Esculentum",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke"
+      ]
+    },
+    {
+      "key": "fel-tauri",
+      "display": "Fel Tauri",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "ferrum-iodatum",
+      "display": "Ferrum Iodatum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "ferrum-magneticum",
+      "display": "Ferrum Magneticum",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "ferrum-metallicum",
+      "display": "Ferrum Metallicum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "ferrum-phosphoricum",
+      "display": "Ferrum Phosphoricum",
+      "books": [
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "ferrum-picricum",
+      "display": "Ferrum Picricum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "ficus-religiosa",
+      "display": "Ficus Religiosa",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "filix-mas",
+      "display": "Filix Mas",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "fluoricum-acidum",
+      "display": "Fluoricum Acidum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "formalinum",
+      "display": "Formalinum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "formica-rufa",
+      "display": "Formica Rufa",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke",
+        "farrington"
+      ]
+    },
+    {
+      "key": "fragaria-vesca",
+      "display": "Fragaria Vesca",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "franciscea-uniflora",
+      "display": "Franciscea Uniflora",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "fraxinus-americana",
+      "display": "Fraxinus Americana",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "fuchsinum",
+      "display": "Fuchsinum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "fucus-vesiculosus",
+      "display": "Fucus Vesiculosus",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "fuligo-ligni",
+      "display": "Fuligo Ligni",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "galanthus-nivalis",
+      "display": "Galanthus Nivalis",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "galium-aparine",
+      "display": "Galium Aparine",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "gallicum-acidum",
+      "display": "Gallicum Acidum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "gambogia",
+      "display": "Gambogia",
+      "books": [
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "gaultheria-procumbens",
+      "display": "Gaultheria Procumbens",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "gelsemium-sempervirens",
+      "display": "Gelsemium Sempervirens",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "gentiana-lutea",
+      "display": "Gentiana Lutea",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "geranium-maculatum",
+      "display": "Geranium Maculatum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "gettysburg-water",
+      "display": "Gettysburg Water",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "ginseng-quinquefolium",
+      "display": "Ginseng Quinquefolium",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "glonoine",
+      "display": "Glonoine",
+      "books": [
+        "nash"
+      ]
+    },
+    {
+      "key": "glonoinum",
+      "display": "Glonoinum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent"
+      ]
+    },
+    {
+      "key": "glycerinum",
+      "display": "Glycerinum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "gnaphalium-polycephalum",
+      "display": "Gnaphalium Polycephalum",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke"
+      ]
+    },
+    {
+      "key": "gossypium-herbaceum",
+      "display": "Gossypium Herbaceum",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke"
+      ]
+    },
+    {
+      "key": "granatum",
+      "display": "Granatum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "graphites",
+      "display": "Graphites",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "gratiola-officinalis",
+      "display": "Gratiola Officinalis",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke",
+        "kent"
+      ]
+    },
+    {
+      "key": "grindelia-robusta",
+      "display": "Grindelia Robusta",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke",
+        "nash"
+      ]
+    },
+    {
+      "key": "guaco",
+      "display": "Guaco",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "guaiacum",
+      "display": "Guaiacum",
+      "books": [
+        "boger",
+        "kent"
+      ]
+    },
+    {
+      "key": "guajacum-officinale",
+      "display": "Guajacum Officinale",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "guarana",
+      "display": "Guarana",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "guarea-trichiloides",
+      "display": "Guarea Trichiloides",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "gymnocladus-canadensis",
+      "display": "Gymnocladus Canadensis",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke"
+      ]
+    },
+    {
+      "key": "haematoxylon-campechianum",
+      "display": "Haematoxylon Campechianum",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "hamamelis-virginiana",
+      "display": "Hamamelis Virginiana",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "hecla-lava",
+      "display": "Hecla Lava",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "hedeoma-pulegioides",
+      "display": "Hedeoma Pulegioides",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "helianthus-annuus",
+      "display": "Helianthus Annuus",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "helleborus-niger",
+      "display": "Helleborus Niger",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "farrington",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "heloderma",
+      "display": "Heloderma",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "helonias-dioica",
+      "display": "Helonias Dioica",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "nash"
+      ]
+    },
+    {
+      "key": "hepar-sulphur",
+      "display": "Hepar Sulphur",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "farrington",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "hepatica-triloba",
+      "display": "Hepatica Triloba",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "heracleum-sphondylium",
+      "display": "Heracleum Sphondylium",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "hippomanes",
+      "display": "Hippomanes",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "hippozaeninum",
+      "display": "Hippozaeninum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "hippuricum-acidum",
+      "display": "Hippuricum Acidum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "homarus",
+      "display": "Homarus",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "hura-brasiliensis",
+      "display": "Hura Brasiliensis",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "hydrangea-arborescens",
+      "display": "Hydrangea Arborescens",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "hydrastis-canadensis",
+      "display": "Hydrastis Canadensis",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "hydrocotyle-asiatica",
+      "display": "Hydrocotyle Asiatica",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "hydrocyanicum-acidum",
+      "display": "Hydrocyanicum Acidum",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke"
+      ]
+    },
+    {
+      "key": "hyoscyamus-niger",
+      "display": "Hyoscyamus Niger",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "hypericum-perforatum",
+      "display": "Hypericum Perforatum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "iberis-amara",
+      "display": "Iberis Amara",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "ichthyolum",
+      "display": "Ichthyolum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "ictodes-foetida",
+      "display": "Ictodes Foetida",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "ignatia-amara",
+      "display": "Ignatia Amara",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "ilex-aquifolium",
+      "display": "Ilex Aquifolium",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "indigo-tinctoria",
+      "display": "Indigo Tinctoria",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "indium-metallicum",
+      "display": "Indium Metallicum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "indolum",
+      "display": "Indolum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "insulinum",
+      "display": "Insulinum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "inula-helenium",
+      "display": "Inula Helenium",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "iodine",
+      "display": "Iodine",
+      "books": [
+        "kent"
+      ]
+    },
+    {
+      "key": "iodium",
+      "display": "Iodium",
+      "books": [
+        "boericke",
+        "nash"
+      ]
+    },
+    {
+      "key": "iodoformium",
+      "display": "Iodoformium",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "iodum",
+      "display": "Iodum",
+      "books": [
+        "allen",
+        "boger"
+      ]
+    },
+    {
+      "key": "ipecacuanha",
+      "display": "Ipecacuanha",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "farrington",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "iridium-metallicum",
+      "display": "Iridium Metallicum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "iris-versicolor",
+      "display": "Iris Versicolor",
+      "books": [
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "jaborandi",
+      "display": "Jaborandi",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "jacaranda-caroba",
+      "display": "Jacaranda Caroba",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "jalapa",
+      "display": "Jalapa",
+      "books": [
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "jatropha-curcas",
+      "display": "Jatropha Curcas",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke"
+      ]
+    },
+    {
+      "key": "joanesia-asoca",
+      "display": "Joanesia Asoca",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "juglans-cinerea",
+      "display": "Juglans Cinerea",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "juglans-regia",
+      "display": "Juglans Regia",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "juncus-effusus",
+      "display": "Juncus Effusus",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "juniperus-communis",
+      "display": "Juniperus Communis",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "justicia-adhatoda",
+      "display": "Justicia Adhatoda",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "kalicarbonicum",
+      "display": "Kalicarbonicum",
+      "books": [
+        "nash"
+      ]
+    },
+    {
+      "key": "kalium-arsenicosum",
+      "display": "Kalium Arsenicosum",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "kalium-bichromicum",
+      "display": "Kalium Bichromicum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "kalium-bromatum",
+      "display": "Kalium Bromatum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "kalium-carbonicum",
+      "display": "Kalium Carbonicum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent"
+      ]
+    },
+    {
+      "key": "kalium-chloricum",
+      "display": "Kalium Chloricum",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "kalium-cyanatum",
+      "display": "Kalium Cyanatum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "kalium-iodatum",
+      "display": "Kalium Iodatum",
+      "books": [
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "kalium-muriaticum",
+      "display": "Kalium Muriaticum",
+      "books": [
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "kalium-nitricum",
+      "display": "Kalium Nitricum",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "kalium-permanganatum",
+      "display": "Kalium Permanganatum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "kalium-phosphoricum",
+      "display": "Kalium Phosphoricum",
+      "books": [
+        "boericke",
+        "boger",
+        "kent"
+      ]
+    },
+    {
+      "key": "kalium-silicicum",
+      "display": "Kalium Silicicum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "kalium-sulphuricum",
+      "display": "Kalium Sulphuricum",
+      "books": [
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "kalmia-latifolia",
+      "display": "Kalmia Latifolia",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "kaolinum",
+      "display": "Kaolinum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "kola",
+      "display": "Kola",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "kousso",
+      "display": "Kousso",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "kreosotum",
+      "display": "Kreosotum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "lac-caninum",
+      "display": "Lac Caninum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "lac-defloratum",
+      "display": "Lac Defloratum",
+      "books": [
+        "allen",
+        "boger"
+      ]
+    },
+    {
+      "key": "lac-vaccinum-defloratum",
+      "display": "Lac Vaccinum Defloratum",
+      "books": [
+        "boericke",
+        "kent"
+      ]
+    },
+    {
+      "key": "lachesis-mutus",
+      "display": "Lachesis Mutus",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "farrington",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "lachnanthes-tinctoria",
+      "display": "Lachnanthes Tinctoria",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "lacticum-acidum",
+      "display": "Lacticum Acidum",
+      "books": [
+        "boericke",
+        "nash"
+      ]
+    },
+    {
+      "key": "lactuca-virosa",
+      "display": "Lactuca Virosa",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "lamium-album",
+      "display": "Lamium Album",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "lapis-albus",
+      "display": "Lapis Albus",
+      "books": [
+        "boericke",
+        "nash"
+      ]
+    },
+    {
+      "key": "lappa-arctium",
+      "display": "Lappa Arctium",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "lathyrus-sativus",
+      "display": "Lathyrus Sativus",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "latrodectus-mactans",
+      "display": "Latrodectus Mactans",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "laurocerasus",
+      "display": "Laurocerasus",
+      "books": [
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "lecithinum",
+      "display": "Lecithinum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "ledum-palustre",
+      "display": "Ledum Palustre",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "lemna-minor",
+      "display": "Lemna Minor",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "lepidium-bonariense",
+      "display": "Lepidium Bonariense",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "leptandra-virginica",
+      "display": "Leptandra Virginica",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke",
+        "nash"
+      ]
+    },
+    {
+      "key": "liatris-spicata",
+      "display": "Liatris Spicata",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "lilium-tigrinum",
+      "display": "Lilium Tigrinum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "limulus-cyclops",
+      "display": "Limulus Cyclops",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "linaria-vulgaris",
+      "display": "Linaria Vulgaris",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "linum-usitatissimum",
+      "display": "Linum Usitatissimum",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "lithium-carbonicum",
+      "display": "Lithium Carbonicum",
+      "books": [
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "lobelia-inflata",
+      "display": "Lobelia Inflata",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "lobelia-purpurascens",
+      "display": "Lobelia Purpurascens",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "loleum-temulentum",
+      "display": "Loleum Temulentum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "lonicera-xylosteum",
+      "display": "Lonicera Xylosteum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "lupulus-humulus",
+      "display": "Lupulus Humulus",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "lycopersicum-esculentum",
+      "display": "Lycopersicum Esculentum",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "lycopodium-clavatum",
+      "display": "Lycopodium Clavatum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "farrington",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "lycopus-virginicus",
+      "display": "Lycopus Virginicus",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "lyssin",
+      "display": "Lyssin",
+      "books": [
+        "allen"
+      ]
+    },
+    {
+      "key": "lyssinum",
+      "display": "Lyssinum",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "magnesium-carbonicum",
+      "display": "Magnesium Carbonicum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "magnesium-muriaticum",
+      "display": "Magnesium Muriaticum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "magnesium-phosphoricum",
+      "display": "Magnesium Phosphoricum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "magnesium-sulphuricum",
+      "display": "Magnesium Sulphuricum",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "magnolia-grandiflora",
+      "display": "Magnolia Grandiflora",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "malandrinum",
+      "display": "Malandrinum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "mancinella",
+      "display": "Mancinella",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "manganum",
+      "display": "Manganum",
+      "books": [
+        "kent"
+      ]
+    },
+    {
+      "key": "manganum-aceticum",
+      "display": "Manganum Aceticum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "manganum-metallicum",
+      "display": "Manganum Metallicum",
+      "books": [
+        "boger"
+      ]
+    },
+    {
+      "key": "mangifera-indica",
+      "display": "Mangifera Indica",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "marum-verum-teucrium",
+      "display": "Marum Verum Teucrium",
+      "books": [
+        "nash"
+      ]
+    },
+    {
+      "key": "medorrhinum",
+      "display": "Medorrhinum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "medusa",
+      "display": "Medusa",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "mel-cum-sale",
+      "display": "Mel Cum Sale",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "melilotus-officinalis",
+      "display": "Melilotus Officinalis",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "nash"
+      ]
+    },
+    {
+      "key": "menispermum-canadense",
+      "display": "Menispermum Canadense",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "mentha-piperita",
+      "display": "Mentha Piperita",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "mentholum",
+      "display": "Mentholum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "menyanthes-trifoliata",
+      "display": "Menyanthes Trifoliata",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "nash"
+      ]
+    },
+    {
+      "key": "mephitis-putorius",
+      "display": "Mephitis Putorius",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke"
+      ]
+    },
+    {
+      "key": "mercurialis-perennis",
+      "display": "Mercurialis Perennis",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "mercurius",
+      "display": "Mercurius",
+      "books": [
+        "allen",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "mercurius-biniodide",
+      "display": "Mercurius Biniodide",
+      "books": [
+        "allen"
+      ]
+    },
+    {
+      "key": "mercurius-corrosivus",
+      "display": "Mercurius Corrosivus",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "mercurius-cyanatus",
+      "display": "Mercurius Cyanatus",
+      "books": [
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "mercurius-cyanide",
+      "display": "Mercurius Cyanide",
+      "books": [
+        "allen"
+      ]
+    },
+    {
+      "key": "mercurius-dulcis",
+      "display": "Mercurius Dulcis",
+      "books": [
+        "allen",
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "mercurius-iodatus-flavus",
+      "display": "Mercurius Iodatus Flavus",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "mercurius-iodatus-flavus-proto",
+      "display": "Mercurius Iodatus Flavus (Proto",
+      "books": [
+        "kent"
+      ]
+    },
+    {
+      "key": "mercurius-iodatus-flavus-proto-iodatus",
+      "display": "Mercurius Iodatus Flavus (Proto-Iodatus)",
+      "books": [
+        "boger"
+      ]
+    },
+    {
+      "key": "mercurius-iodatus-ruber",
+      "display": "Mercurius Iodatus Ruber",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "mercurius-iodatus-ruber-bi-iodatus",
+      "display": "Mercurius Iodatus Ruber (Bi-Iodatus)",
+      "books": [
+        "boger"
+      ]
+    },
+    {
+      "key": "mercurius-iodatus-ruber-bin",
+      "display": "Mercurius Iodatus Ruber (Bin",
+      "books": [
+        "kent"
+      ]
+    },
+    {
+      "key": "mercurius-proto-iodide",
+      "display": "Mercurius Proto Iodide",
+      "books": [
+        "allen"
+      ]
+    },
+    {
+      "key": "mercurius-protoiodide",
+      "display": "Mercurius Protoiodide",
+      "books": [
+        "nash"
+      ]
+    },
+    {
+      "key": "mercurius-praecipitatus-ruber",
+      "display": "Mercurius Præcipitatus Ruber",
+      "books": [
+        "boger"
+      ]
+    },
+    {
+      "key": "mercurius-solubilis",
+      "display": "Mercurius Solubilis",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke"
+      ]
+    },
+    {
+      "key": "mercurius-sulphuricus",
+      "display": "Mercurius Sulphuricus",
+      "books": [
+        "allen"
+      ]
+    },
+    {
+      "key": "mercurius-sulphuricus-sulphate-of-mercury-turpeth-mineral",
+      "display": "Mercurius Sulphuricus (Sulphate Of Mercury. Turpeth Mineral.)",
+      "books": [
+        "kent"
+      ]
+    },
+    {
+      "key": "mercurius-sulphuricus-drarg-oxyd-sub-sulph",
+      "display": "Mercurius Sulphuricus, Drarg, Oxyd, Sub-Sulph",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "methylenum-coeruleum",
+      "display": "Methylenum Coeruleum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "mezereum",
+      "display": "Mezereum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "micromeria-douglasii",
+      "display": "Micromeria Douglasii",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "millefolium",
+      "display": "Millefolium",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent"
+      ]
+    },
+    {
+      "key": "mitchella-repens",
+      "display": "Mitchella Repens",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "momordica-balsamica",
+      "display": "Momordica Balsamica",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "morphinum",
+      "display": "Morphinum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "moschus",
+      "display": "Moschus",
+      "books": [
+        "boericke",
+        "boger",
+        "farrington",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "murex-purpurea",
+      "display": "Murex Purpurea",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "nash"
+      ]
+    },
+    {
+      "key": "muriaticum-acidum",
+      "display": "Muriaticum Acidum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "mygale-lasiodora",
+      "display": "Mygale Lasiodora",
+      "books": [
+        "boericke",
+        "boger",
+        "farrington",
+        "nash"
+      ]
+    },
+    {
+      "key": "myosotis-symphytifolia",
+      "display": "Myosotis Symphytifolia",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "myrica-cerifera",
+      "display": "Myrica Cerifera",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke"
+      ]
+    },
+    {
+      "key": "myristica-sebifera",
+      "display": "Myristica Sebifera",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "myrtus-communis",
+      "display": "Myrtus Communis",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "naja-tripudians",
+      "display": "Naja Tripudians",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "naphthalinum",
+      "display": "Naphthalinum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "narcissus-pseudonarcissus",
+      "display": "Narcissus Pseudonarcissus",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "natrium-arsenicosum",
+      "display": "Natrium Arsenicosum",
+      "books": [
+        "boericke",
+        "kent"
+      ]
+    },
+    {
+      "key": "natrium-carbonicum",
+      "display": "Natrium Carbonicum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "natrium-hypochlorosum",
+      "display": "Natrium Hypochlorosum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "natrium-muriaticum",
+      "display": "Natrium Muriaticum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "natrium-nitricum",
+      "display": "Natrium Nitricum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "natrium-phosphoricum",
+      "display": "Natrium Phosphoricum",
+      "books": [
+        "boericke",
+        "boger",
+        "kent"
+      ]
+    },
+    {
+      "key": "natrium-salicylicum",
+      "display": "Natrium Salicylicum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "natrium-sulphuricum",
+      "display": "Natrium Sulphuricum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "natrium-phos",
+      "display": "Natrum Phos",
+      "books": [
+        "nash"
+      ]
+    },
+    {
+      "key": "niccolum-metallicum",
+      "display": "Niccolum Metallicum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "niccolum-sulphuricum",
+      "display": "Niccolum Sulphuricum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "nitri-spiritus-dulcis",
+      "display": "Nitri Spiritus Dulcis",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "nitricum-acidum",
+      "display": "Nitricum Acidum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "nitromuriaticum-acidum",
+      "display": "Nitromuriaticum Acidum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "nuphar-luteum",
+      "display": "Nuphar Luteum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "nux-moschata",
+      "display": "Nux Moschata",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "nux-vomica",
+      "display": "Nux Vomica",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "farrington",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "nyctanthes-arbor-tristis",
+      "display": "Nyctanthes Arbor Tristis",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "ocimum-canum",
+      "display": "Ocimum Canum",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke"
+      ]
+    },
+    {
+      "key": "oenanthe-crocata",
+      "display": "Oenanthe Crocata",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "oleander",
+      "display": "Oleander",
+      "books": [
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "oleum-animale",
+      "display": "Oleum Animale",
+      "books": [
+        "boger"
+      ]
+    },
+    {
+      "key": "oleum-animale-aethereum",
+      "display": "Oleum Animale Aethereum",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "oleum-jecoris-aselli",
+      "display": "Oleum Jecoris Aselli",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke"
+      ]
+    },
+    {
+      "key": "oleum-santali",
+      "display": "Oleum Santali",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "oniscus-asellus",
+      "display": "Oniscus Asellus",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "onosmodium-virginianum",
+      "display": "Onosmodium Virginianum",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke"
+      ]
+    },
+    {
+      "key": "operculina-turpenthum",
+      "display": "Operculina Turpenthum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "opium",
+      "display": "Opium",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "opuntia-ficus",
+      "display": "Opuntia Ficus",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "oreodaphne-californica",
+      "display": "Oreodaphne Californica",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "origanum-majorana",
+      "display": "Origanum Majorana",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "ornithogalum-umbellatum",
+      "display": "Ornithogalum Umbellatum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "osmium",
+      "display": "Osmium",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "ostrya-virginica",
+      "display": "Ostrya Virginica",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "ovi-gallinae-pellicula",
+      "display": "Ovi Gallinae Pellicula",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "ovininum",
+      "display": "Ovininum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "oxalicum-acidum",
+      "display": "Oxalicum Acidum",
+      "books": [
+        "boericke",
+        "boger",
+        "kent"
+      ]
+    },
+    {
+      "key": "oxydendron-arboreum",
+      "display": "Oxydendron Arboreum",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "oxytropis-lamberti",
+      "display": "Oxytropis Lamberti",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "paeonia-officinalis",
+      "display": "Paeonia Officinalis",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke"
+      ]
+    },
+    {
+      "key": "palladium-metallicum",
+      "display": "Palladium Metallicum",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "paraffinum",
+      "display": "Paraffinum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "pareira-brava",
+      "display": "Pareira Brava",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke",
+        "nash"
+      ]
+    },
+    {
+      "key": "paris-quadrifolia",
+      "display": "Paris Quadrifolia",
+      "books": [
+        "boericke",
+        "boger",
+        "clarke"
+      ]
+    },
+    {
+      "key": "parthenium-hysterophorus",
+      "display": "Parthenium Hysterophorus",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "passiflora-incarnata",
+      "display": "Passiflora Incarnata",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "penthorum-sedoides",
+      "display": "Penthorum Sedoides",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "pertussinum",
+      "display": "Pertussinum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "petroleum",
+      "display": "Petroleum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "petroselinum-sativum",
+      "display": "Petroselinum Sativum",
+      "books": [
+        "allen",
+        "boericke",
+        "nash"
+      ]
+    },
+    {
+      "key": "phaseolus-nanus",
+      "display": "Phaseolus Nanus",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "phellandrium-aquaticum",
+      "display": "Phellandrium Aquaticum",
+      "books": [
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "phosphoricum-acidum",
+      "display": "Phosphoricum Acidum",
+      "books": [
+        "allen",
+        "boericke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "phosphorus",
+      "display": "Phosphorus",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "physalis-alkekengi",
+      "display": "Physalis Alkekengi",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "physostigma-venenosum",
+      "display": "Physostigma Venenosum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke"
+      ]
+    },
+    {
+      "key": "phytolacca-decandra",
+      "display": "Phytolacca Decandra",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "picricum-acidum",
+      "display": "Picricum Acidum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "pinus-silvestris",
+      "display": "Pinus Silvestris",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "piper-methysticum",
+      "display": "Piper Methysticum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "piper-nigrum",
+      "display": "Piper Nigrum",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "pituitaria-glandula",
+      "display": "Pituitaria Glandula",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "pix-liquida",
+      "display": "Pix Liquida",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "plantago-major",
+      "display": "Plantago Major",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "platanus-occidentalis",
+      "display": "Platanus Occidentalis",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "platina",
+      "display": "Platina",
+      "books": [
+        "nash"
+      ]
+    },
+    {
+      "key": "platinum-metallicum",
+      "display": "Platinum Metallicum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent"
+      ]
+    },
+    {
+      "key": "plumbum-metallicum",
+      "display": "Plumbum Metallicum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "podophyllinum",
+      "display": "Podophyllinum",
+      "books": [
+        "allen",
+        "boericke"
+      ]
+    },
+    {
+      "key": "podophyllum",
+      "display": "Podophyllum",
+      "books": [
+        "kent"
+      ]
+    },
+    {
+      "key": "podophyllum-peltatum",
+      "display": "Podophyllum Peltatum",
+      "books": [
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "polygonum-hydropiperoides",
+      "display": "Polygonum Hydropiperoides",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "polygonum-sagittatum",
+      "display": "Polygonum Sagittatum",
+      "books": [
+        "boger"
+      ]
+    },
+    {
+      "key": "polyporus-pinicola",
+      "display": "Polyporus Pinicola",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "populus-candicans",
+      "display": "Populus Candicans",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "populus-tremuloides",
+      "display": "Populus Tremuloides",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "primula-obconica",
+      "display": "Primula Obconica",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "primula-veris",
+      "display": "Primula Veris",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "propylaminum",
+      "display": "Propylaminum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "prunus-spinosa",
+      "display": "Prunus Spinosa",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "psorinum",
+      "display": "Psorinum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "ptelea-trifoliata",
+      "display": "Ptelea Trifoliata",
+      "books": [
+        "boericke",
+        "nash"
+      ]
+    },
+    {
+      "key": "pulex-irritans",
+      "display": "Pulex Irritans",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "pulsatilla-pratensis",
+      "display": "Pulsatilla Pratensis",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "farrington",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "pyrogenium",
+      "display": "Pyrogenium",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "quassia-amara",
+      "display": "Quassia Amara",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "quebracho",
+      "display": "Quebracho",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "quercus-e-glandibus",
+      "display": "Quercus E Glandibus",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "quillaya-saponaria",
+      "display": "Quillaya Saponaria",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "radium-bromatum",
+      "display": "Radium Bromatum",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "rana-bufo-buf-bufo",
+      "display": "Rana Bufo (=Buf. : Bufo)",
+      "books": [
+        "boger"
+      ]
+    },
+    {
+      "key": "ranunculus-bulbosus",
+      "display": "Ranunculus Bulbosus",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent"
+      ]
+    },
+    {
+      "key": "ranunculus-sceleratus",
+      "display": "Ranunculus Sceleratus",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "raphanus-sativus",
+      "display": "Raphanus Sativus",
+      "books": [
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "ratanhia-peruviana",
+      "display": "Ratanhia Peruviana",
+      "books": [
+        "allen",
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "rhamnus-californica",
+      "display": "Rhamnus Californica",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "rheum-palmatum",
+      "display": "Rheum Palmatum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "rhodium-metallicum",
+      "display": "Rhodium Metallicum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "rhododendron-ferrugineum",
+      "display": "Rhododendron Ferrugineum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "rhus-aromatica",
+      "display": "Rhus Aromatica",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "rhus-glabra",
+      "display": "Rhus Glabra",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "rhus-toxicodendron",
+      "display": "Rhus Toxicodendron",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "farrington",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "rhus-venenata",
+      "display": "Rhus Venenata",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "ricinus-communis",
+      "display": "Ricinus Communis",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "robinia-pseudacacia",
+      "display": "Robinia Pseudacacia",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "rosa-damascena",
+      "display": "Rosa Damascena",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "rumex-crispus",
+      "display": "Rumex Crispus",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "ruta-graveolens",
+      "display": "Ruta Graveolens",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "sabadilla",
+      "display": "Sabadilla",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent"
+      ]
+    },
+    {
+      "key": "sabal-serrulata",
+      "display": "Sabal Serrulata",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "sabina",
+      "display": "Sabina",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "saccharum-officinale",
+      "display": "Saccharum Officinale",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "salicylicum-acidum",
+      "display": "Salicylicum Acidum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "salix-nigra",
+      "display": "Salix Nigra",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "salvia-officinalis",
+      "display": "Salvia Officinalis",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "sambucus-nigra",
+      "display": "Sambucus Nigra",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "sanguinaria-canadensis",
+      "display": "Sanguinaria Canadensis",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "farrington",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "sanguinarinum-nitricum",
+      "display": "Sanguinarinum Nitricum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "sanicula-aqua",
+      "display": "Sanicula Aqua",
+      "books": [
+        "allen",
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "santoninum",
+      "display": "Santoninum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "saponaria-officinalis",
+      "display": "Saponaria Officinalis",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "sarcolacticum-acidum",
+      "display": "Sarcolacticum Acidum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "sarothamnus-scoparius",
+      "display": "Sarothamnus Scoparius",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "sarracenia-purpurea",
+      "display": "Sarracenia Purpurea",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "sarsaparilla-officinalis",
+      "display": "Sarsaparilla Officinalis",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "scilla-maritima",
+      "display": "Scilla Maritima",
+      "books": [
+        "boger"
+      ]
+    },
+    {
+      "key": "scoparius-genista",
+      "display": "Scoparius Genista",
+      "books": [
+        "boger"
+      ]
+    },
+    {
+      "key": "scrophularia-nodosa",
+      "display": "Scrophularia Nodosa",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "scutellaria-laterifolia",
+      "display": "Scutellaria Laterifolia",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "secale-cornutum",
+      "display": "Secale Cornutum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "farrington",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "sedum-acre",
+      "display": "Sedum Acre",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "selenium-metallicum",
+      "display": "Selenium Metallicum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "sempervivum-tectorum",
+      "display": "Sempervivum Tectorum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "senecio-aureus",
+      "display": "Senecio Aureus",
+      "books": [
+        "boericke",
+        "boger",
+        "kent"
+      ]
+    },
+    {
+      "key": "senega",
+      "display": "Senega",
+      "books": [
+        "boericke",
+        "boger",
+        "kent"
+      ]
+    },
+    {
+      "key": "senna",
+      "display": "Senna",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "sepia-officinalis",
+      "display": "Sepia Officinalis",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "farrington",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "serum-anguillae",
+      "display": "Serum Anguillae",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "silica",
+      "display": "Silica",
+      "books": [
+        "boger"
+      ]
+    },
+    {
+      "key": "silicea-terra",
+      "display": "Silicea Terra",
+      "books": [
+        "allen",
+        "boericke",
+        "farrington",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "silphium-lacinatum",
+      "display": "Silphium Lacinatum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "sinapis-nigra",
+      "display": "Sinapis Nigra",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "skatolum",
+      "display": "Skatolum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "skookum-chuck-aqua",
+      "display": "Skookum Chuck Aqua",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "solanum-nigrum",
+      "display": "Solanum Nigrum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "solidago-virgaurea",
+      "display": "Solidago Virgaurea",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "spigelia-anthelmia",
+      "display": "Spigelia Anthelmia",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "spiraea-ulmaria",
+      "display": "Spiraea Ulmaria",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "spiranthes-autumnalis",
+      "display": "Spiranthes Autumnalis",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "spongia-tosta",
+      "display": "Spongia Tosta",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "squilla-maritima",
+      "display": "Squilla Maritima",
+      "books": [
+        "boericke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "stachys-betonica",
+      "display": "Stachys Betonica",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "stannum-metallicum",
+      "display": "Stannum Metallicum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "staphisagria",
+      "display": "Staphisagria",
+      "books": [
+        "nash"
+      ]
+    },
+    {
+      "key": "staphysagria",
+      "display": "Staphysagria",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent"
+      ]
+    },
+    {
+      "key": "stellaria-media",
+      "display": "Stellaria Media",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "sticta-pulmonaria",
+      "display": "Sticta Pulmonaria",
+      "books": [
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "stigmata-maydis",
+      "display": "Stigmata Maydis",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "stillingia-silvatica",
+      "display": "Stillingia Silvatica",
+      "books": [
+        "boericke",
+        "nash"
+      ]
+    },
+    {
+      "key": "stramonium",
+      "display": "Stramonium",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "farrington",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "strontium-carbonicum",
+      "display": "Strontium Carbonicum",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "strophanthus-hispidus",
+      "display": "Strophanthus Hispidus",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "strychninum-phosphoricum",
+      "display": "Strychninum Phosphoricum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "strychninum-purum",
+      "display": "Strychninum Purum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "strychnos-gaultheriana",
+      "display": "Strychnos Gaultheriana",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "succinum",
+      "display": "Succinum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "sulfonalum",
+      "display": "Sulfonalum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "sulphur",
+      "display": "Sulphur",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "farrington",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "sulphur-iodatum",
+      "display": "Sulphur Iodatum",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "sulphuricum-acidum",
+      "display": "Sulphuricum Acidum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "sulphurosum-acidum",
+      "display": "Sulphurosum Acidum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "sumbulus-moschatus",
+      "display": "Sumbulus Moschatus",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "symphoricarpus-racemosus",
+      "display": "Symphoricarpus Racemosus",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "symphytum-officinale",
+      "display": "Symphytum Officinale",
+      "books": [
+        "allen",
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "syphilinum",
+      "display": "Syphilinum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent"
+      ]
+    },
+    {
+      "key": "syzygium-jambolanum",
+      "display": "Syzygium Jambolanum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "tabacum",
+      "display": "Tabacum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "farrington"
+      ]
+    },
+    {
+      "key": "tanacetum-vulgare",
+      "display": "Tanacetum Vulgare",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "tannicum-acidum",
+      "display": "Tannicum Acidum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "tarantula-cubensis",
+      "display": "Tarantula Cubensis",
+      "books": [
+        "nash"
+      ]
+    },
+    {
+      "key": "tarantula-hispania",
+      "display": "Tarantula Hispania",
+      "books": [
+        "nash"
+      ]
+    },
+    {
+      "key": "taraxacum-officinale",
+      "display": "Taraxacum Officinale",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "tarentula",
+      "display": "Tarentula",
+      "books": [
+        "allen"
+      ]
+    },
+    {
+      "key": "tarentula-cubensis",
+      "display": "Tarentula Cubensis",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "tarentula-hispana",
+      "display": "Tarentula Hispana",
+      "books": [
+        "boger"
+      ]
+    },
+    {
+      "key": "tarentula-hispanica",
+      "display": "Tarentula Hispanica",
+      "books": [
+        "boericke",
+        "kent"
+      ]
+    },
+    {
+      "key": "tartaricum-acidum",
+      "display": "Tartaricum Acidum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "taxus-baccata",
+      "display": "Taxus Baccata",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "tellurium-metallicum",
+      "display": "Tellurium Metallicum",
+      "books": [
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "terebinthina",
+      "display": "Terebinthina",
+      "books": [
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "terebinthiniae-oleum",
+      "display": "Terebinthiniae Oleum",
+      "books": [
+        "allen",
+        "boericke"
+      ]
+    },
+    {
+      "key": "teucrium-marum-verum",
+      "display": "Teucrium Marum Verum",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "thallium-metallicum",
+      "display": "Thallium Metallicum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "thea-chinensis",
+      "display": "Thea Chinensis",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "theridion-curassavicum",
+      "display": "Theridion Curassavicum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "thiosinaminum",
+      "display": "Thiosinaminum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "thlaspi-bursa-pastoris",
+      "display": "Thlaspi Bursa Pastoris",
+      "books": [
+        "allen",
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "thuja-occidentalis",
+      "display": "Thuja Occidentalis",
+      "books": [
+        "allen",
+        "boericke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "thuya-occidentalis",
+      "display": "Thuya Occidentalis",
+      "books": [
+        "boger"
+      ]
+    },
+    {
+      "key": "thymolum",
+      "display": "Thymolum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "thymus-serpyllum",
+      "display": "Thymus Serpyllum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "thyroidinum",
+      "display": "Thyroidinum",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "tilia-europaea",
+      "display": "Tilia Europaea",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "titanium-metallicum",
+      "display": "Titanium Metallicum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "tongo-dipterix-odorata",
+      "display": "Tongo-Dipterix Odorata",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "torula-cerevisiae",
+      "display": "Torula Cerevisiae",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "tribulus-terrestris",
+      "display": "Tribulus Terrestris",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "trifolium-pratense",
+      "display": "Trifolium Pratense",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "trillium-pendulum",
+      "display": "Trillium Pendulum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "trinitrotoluenum",
+      "display": "Trinitrotoluenum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "triosteum-perfoliatum",
+      "display": "Triosteum Perfoliatum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "triticum-repens-agropyron-repens",
+      "display": "Triticum Repens-Agropyron Repens",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "trombidium-muscae-domesticae",
+      "display": "Trombidium Muscae Domesticae",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "tuberculinum",
+      "display": "Tuberculinum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "tussilago-petasites",
+      "display": "Tussilago Petasites",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "upas-tieut",
+      "display": "Upas Tieut",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "uranium-nitricum",
+      "display": "Uranium Nitricum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "urea-pura",
+      "display": "Urea Pura",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "urtica-urens",
+      "display": "Urtica Urens",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "usnea-barbata",
+      "display": "Usnea Barbata",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "ustilago-maydis",
+      "display": "Ustilago Maydis",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "uva-ursi",
+      "display": "Uva Ursi",
+      "books": [
+        "boericke",
+        "clarke"
+      ]
+    },
+    {
+      "key": "vaccininum",
+      "display": "Vaccininum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "valeriana-officinalis",
+      "display": "Valeriana Officinalis",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent"
+      ]
+    },
+    {
+      "key": "vanadium-metallicum",
+      "display": "Vanadium Metallicum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "vanilla-aromatica",
+      "display": "Vanilla Aromatica",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "variolinum",
+      "display": "Variolinum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "veratrum-album",
+      "display": "Veratrum Album",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "clarke",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "veratrum-viride",
+      "display": "Veratrum Viride",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "verbascum-thapsus",
+      "display": "Verbascum Thapsus",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "verbena-urticaefolia",
+      "display": "Verbena Urticaefolia",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "vespa-crabro",
+      "display": "Vespa Crabro",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "viburnum-opulus",
+      "display": "Viburnum Opulus",
+      "books": [
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "vinca-minor",
+      "display": "Vinca Minor",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "viola-odorata",
+      "display": "Viola Odorata",
+      "books": [
+        "boericke",
+        "boger",
+        "nash"
+      ]
+    },
+    {
+      "key": "viola-tricolor",
+      "display": "Viola Tricolor",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "vipera-berus",
+      "display": "Vipera Berus",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "vipera-torva",
+      "display": "Vipera Torva",
+      "books": [
+        "boger"
+      ]
+    },
+    {
+      "key": "viscum-album",
+      "display": "Viscum Album",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "wyethia-helenoides",
+      "display": "Wyethia Helenoides",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "x-ray",
+      "display": "X-Ray",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "xanthoxylum-fraxineum",
+      "display": "Xanthoxylum Fraxineum",
+      "books": [
+        "boger"
+      ]
+    },
+    {
+      "key": "xantoxylum-fraxineum",
+      "display": "Xantoxylum Fraxineum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "xerophyllum",
+      "display": "Xerophyllum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "yohimbinum",
+      "display": "Yohimbinum",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "yucca-filamentosa",
+      "display": "Yucca Filamentosa",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "zincum-arsenicicum",
+      "display": "Zincum Arsenicicum",
+      "books": [
+        "boger"
+      ]
+    },
+    {
+      "key": "zincum-chromatum",
+      "display": "Zincum Chromatum",
+      "books": [
+        "boger"
+      ]
+    },
+    {
+      "key": "zincum-iodatum",
+      "display": "Zincum Iodatum",
+      "books": [
+        "boger"
+      ]
+    },
+    {
+      "key": "zincum-metallicum",
+      "display": "Zincum Metallicum",
+      "books": [
+        "allen",
+        "boericke",
+        "boger",
+        "kent",
+        "nash"
+      ]
+    },
+    {
+      "key": "zincum-valerianicum",
+      "display": "Zincum Valerianicum",
+      "books": [
+        "boericke",
+        "boger"
+      ]
+    },
+    {
+      "key": "zingiber-officinale",
+      "display": "Zingiber Officinale",
+      "books": [
+        "boericke"
+      ]
+    },
+    {
+      "key": "zizia-aurea",
+      "display": "Zizia Aurea",
+      "books": [
+        "boericke"
+      ]
+    }
+  ]
+}
