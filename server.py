@@ -379,12 +379,25 @@ def format_case_response(d: dict, conn=None) -> dict:
 def list_cases(q: str = Query(None), archived: bool = Query(False)):
     conn = database.get_db()
     cursor = conn.cursor()
-    archived_val = 1 if archived else 0
     
-    if q:
+    is_archived = False
+    if isinstance(archived, bool):
+        is_archived = archived
+    elif isinstance(archived, str):
+        is_archived = archived.lower() in ("true", "1", "yes")
+    elif hasattr(archived, "default"):
+        is_archived = bool(archived.default)
+        
+    archived_val = 1 if is_archived else 0
+    
+    q_val = None
+    if isinstance(q, str) and q.strip():
+        q_val = q.strip()
+    
+    if q_val:
         cursor.execute(
             "SELECT * FROM cases WHERE archived = ? AND (patient_name LIKE ? OR complaints LIKE ?) ORDER BY created_at DESC",
-            (archived_val, f"%{q}%", f"%{q}%")
+            (archived_val, f"%{q_val}%", f"%{q_val}%")
         )
     else:
         cursor.execute("SELECT * FROM cases WHERE archived = ? ORDER BY created_at DESC", (archived_val,))
@@ -425,6 +438,72 @@ def purge_all_cases():
     conn.commit()
     conn.close()
     return {"ok": True, "message": "All cases purged"}
+
+@app.get("/api/system/status")
+@app.get("/system/status")
+def system_status():
+    return database.get_engine_info()
+
+@app.get("/api/cases/export")
+@app.get("/cases/export")
+def export_cases_backup():
+    return database.export_all_data()
+
+@app.post("/api/cases/import")
+@app.post("/cases/import")
+async def import_cases_backup(request: Request):
+    data = await request.json()
+    count = database.import_all_data(data)
+    return {"ok": True, "imported_cases": count, "message": f"Successfully restored {count} cases into database."}
+
+@app.post("/api/cases/sync")
+@app.post("/cases/sync")
+async def sync_case(request: Request):
+    c_dict = await request.json()
+    conn = database.get_db()
+    cursor = conn.cursor()
+    case_id = c_dict.get("id") or str(uuid.uuid4())
+    now = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    cursor.execute("DELETE FROM cases WHERE id = ?", (case_id,))
+    cursor.execute("""
+    INSERT INTO cases (
+        id, patient_name, age, sex, occupation, address, phone, email,
+        weight, height, complaints, associated_complaints, history,
+        mentals, vitals, general_exam, systemic_exam, local_exam,
+        modalities, reports, notes, result, doctor_override, archived,
+        created_at, updated_at
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    """, (
+        case_id,
+        c_dict.get("patient_name") or c_dict.get("name") or "Anonymous Patient",
+        str(c_dict.get("age", "")),
+        c_dict.get("sex", ""),
+        c_dict.get("occupation", ""),
+        c_dict.get("address", ""),
+        c_dict.get("phone", ""),
+        c_dict.get("email", ""),
+        str(c_dict.get("weight", "")),
+        str(c_dict.get("height", "")),
+        c_dict.get("complaints", ""),
+        c_dict.get("associated_complaints", ""),
+        c_dict.get("history", ""),
+        c_dict.get("mentals", ""),
+        c_dict.get("vitals", ""),
+        c_dict.get("general_exam", ""),
+        c_dict.get("systemic_exam", ""),
+        c_dict.get("local_exam", ""),
+        c_dict.get("modalities", ""),
+        c_dict.get("reports", ""),
+        c_dict.get("notes", ""),
+        json.dumps(c_dict.get("result")) if isinstance(c_dict.get("result"), dict) else c_dict.get("result", "{}"),
+        json.dumps(c_dict.get("doctor_override")) if isinstance(c_dict.get("doctor_override"), dict) else c_dict.get("doctor_override"),
+        1 if c_dict.get("archived") else 0,
+        c_dict.get("created_at") or now,
+        c_dict.get("updated_at") or now
+    ))
+    conn.commit()
+    conn.close()
+    return get_case(case_id)
 
 @app.post("/api/cases")
 @app.post("/cases")
@@ -846,6 +925,29 @@ def admin_dashboard():
                 <div class="stat-val" style="color: #8ee0b7;">LIFETIME</div>
                 <div class="stat-lbl">Hospital License Validity</div>
             </div>
+            <div class="stat">
+                <div class="stat-val" id="dbEngine" style="font-size: 18px; color: #a3f7cb;">Checking...</div>
+                <div class="stat-lbl">Active Storage Engine</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Lifetime Cloud Storage & Backup</h2>
+            <p style="color: #8fa59c; font-size: 14px; line-height: 1.5; margin-bottom: 16px;">
+                All hospital patient cases, follow-ups, and chat consultations can be backed up and restored in 1 click. Connect a free cloud PostgreSQL database (Render Postgres, Supabase, or Neon) for 100% permanent lifetime data safety.
+            </p>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 18px;">
+                <button onclick="downloadBackup()">📥 Download Complete Backup (JSON)</button>
+                <input type="file" id="backupFileInput" accept=".json" style="display:none;" onchange="uploadBackup(event)" />
+                <button onclick="document.getElementById('backupFileInput').click()" style="background:#1b4d3e; color:#a3f7cb;">📤 Restore from Backup File</button>
+                <span id="backupStatus" style="align-self: center; font-size: 13px; color: #8ee0b7;"></span>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid #23322d; margin: 18px 0;" />
+            <label style="font-size: 13px; color: #a3f7cb;">Connect PostgreSQL Database (Render / Supabase / Neon):</label>
+            <input type="text" id="postgresUrl" placeholder="postgres://user:password@host.render.com/dbname" />
+            <button onclick="savePostgresUrl()">Connect Cloud Database</button>
+            <span id="pgStatus" style="margin-left: 14px; font-size: 13px; color: #8ee0b7;"></span>
         </div>
 
         <div class="card">
@@ -887,21 +989,51 @@ def admin_dashboard():
                 const tbody = document.getElementById('casesTable');
                 if (data.length === 0) {
                     tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; color: #8fa59c;">No cases recorded yet. Create a case from the Prime Heal app!</td></tr>';
-                    return;
+                } else {
+                    tbody.innerHTML = data.map(c => `
+                        <tr>
+                            <td><b>${c.patient_name || 'Anonymous'}</b></td>
+                            <td>${c.age || '-'} / ${c.sex || '-'}</td>
+                            <td style="max-width: 250px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${c.complaints || '-'}</td>
+                            <td><span style="color:#8ee0b7; font-weight:600;">${c.result && c.result.remedy ? c.result.remedy : (c.doctor_override && c.doctor_override.remedy ? c.doctor_override.remedy : 'Pending')}</span> (${(c.result && c.result.potency) || ''})</td>
+                            <td style="color:#8fa59c; font-size:12px;">${c.created_at ? c.created_at.substring(0, 10) : '-'}</td>
+                        </tr>
+                    `).join('');
                 }
-                tbody.innerHTML = data.map(c => `
-                    <tr>
-                        <td><b>${c.patient_name || 'Anonymous'}</b></td>
-                        <td>${c.age || '-'} / ${c.sex || '-'}</td>
-                        <td style="max-width: 250px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${c.complaints || '-'}</td>
-                        <td><span style="color:#8ee0b7; font-weight:600;">${c.result && c.result.remedy ? c.result.remedy : (c.doctor_override && c.doctor_override.remedy ? c.doctor_override.remedy : 'Pending')}</span> (${(c.result && c.result.potency) || ''})</td>
-                        <td style="color:#8fa59c; font-size:12px;">${c.created_at ? c.created_at.substring(0, 10) : '-'}</td>
-                    </tr>
-                `).join('');
+
+                // Check storage engine
+                const statusRes = await fetch('/api/system/status');
+                const statusData = await statusRes.json();
+                document.getElementById('dbEngine').innerText = statusData.is_postgres ? 'PostgreSQL (Cloud)' : 'SQLite (Tracked)';
             } catch(e) {
                 console.error(e);
             }
         }
+
+        function downloadBackup() {
+            window.location.href = '/api/cases/export';
+        }
+
+        async function uploadBackup(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const text = await file.text();
+            try {
+                const json = JSON.parse(text);
+                const res = await fetch('/api/cases/import', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(json)
+                });
+                const r = await res.json();
+                document.getElementById('backupStatus').innerText = '✓ ' + (r.message || 'Restored successfully!');
+                loadCases();
+                setTimeout(() => document.getElementById('backupStatus').innerText = '', 4000);
+            } catch(err) {
+                alert('Invalid JSON backup file: ' + err.message);
+            }
+        }
+
         function saveKey() {
             const key = document.getElementById('geminiKey').value;
             fetch('/api/admin/set-key', {
@@ -913,6 +1045,20 @@ def admin_dashboard():
                 setTimeout(() => document.getElementById('saveStatus').innerText = '', 3000);
             });
         }
+
+        function savePostgresUrl() {
+            const url = document.getElementById('postgresUrl').value.trim();
+            fetch('/api/admin/set-postgres', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({url})
+            }).then(r => r.json()).then(data => {
+                document.getElementById('pgStatus').innerText = '✓ Connected to ' + data.engine + '!';
+                loadCases();
+                setTimeout(() => document.getElementById('pgStatus').innerText = '', 4000);
+            });
+        }
+
         loadCases();
     </script>
 </body>
@@ -927,6 +1073,22 @@ async def set_admin_key(request: Request):
     if key:
         os.environ["GEMINI_API_KEY"] = key
     return {"ok": True}
+
+@app.post("/api/admin/set-postgres")
+@app.post("/admin/set-postgres")
+async def set_admin_postgres(request: Request):
+    body = await request.json()
+    url = body.get("url", "").strip()
+    if url:
+        with open(database.PG_CONFIG_FILE, "w", encoding="utf-8") as f:
+            f.write(url)
+    else:
+        if os.path.exists(database.PG_CONFIG_FILE):
+            os.remove(database.PG_CONFIG_FILE)
+    database.init_db()
+    info = database.get_engine_info()
+    return {"ok": True, "engine": info["engine"], "is_postgres": info["is_postgres"]}
+
 
 if __name__ == "__main__":
     import uvicorn

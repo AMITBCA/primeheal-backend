@@ -3,13 +3,194 @@ import json
 import uuid
 import datetime
 import os
+import sys
 
+# Local SQLite DB Path
 DB_PATH = os.path.join(os.path.dirname(__file__), "primeheal.db")
+PG_CONFIG_FILE = os.path.join(os.path.dirname(__file__), "postgres_url.txt")
+
+try:
+    import psycopg2
+    import psycopg2.extras
+    HAS_PSYCOPG2 = True
+except ImportError:
+    HAS_PSYCOPG2 = False
+
+
+def get_database_url():
+    """Retrieve PostgreSQL connection URL from environment or local config."""
+    url = os.environ.get("DATABASE_URL") or os.environ.get("POSTGRES_URL") or os.environ.get("RENDER_POSTGRES_URL")
+    if not url and os.path.exists(PG_CONFIG_FILE):
+        try:
+            with open(PG_CONFIG_FILE, "r", encoding="utf-8") as f:
+                url = f.read().strip()
+        except:
+            url = None
+    if url:
+        url = url.strip()
+        # Normalize postgres:// to postgresql:// for psycopg2
+        if url.startswith("postgres://"):
+            url = url.replace("postgres://", "postgresql://", 1)
+    return url or None
+
+
+class PgCursorWrapper:
+    """Wrapper around psycopg2 cursor to translate '?' parameter placeholders to '%s'."""
+    def __init__(self, cursor):
+        self._cursor = cursor
+
+    def execute(self, query, params=None):
+        clean_query = query.replace("?", "%s")
+        if params is not None:
+            return self._cursor.execute(clean_query, params)
+        return self._cursor.execute(clean_query)
+
+    def executemany(self, query, seq_of_params):
+        clean_query = query.replace("?", "%s")
+        return self._cursor.executemany(clean_query, seq_of_params)
+
+    def fetchone(self):
+        row = self._cursor.fetchone()
+        if row is not None:
+            return dict(row)
+        return None
+
+    def fetchall(self):
+        rows = self._cursor.fetchall()
+        return [dict(r) for r in rows]
+
+    def __getattr__(self, name):
+        return getattr(self._cursor, name)
+
+
+class PgConnectionWrapper:
+    """Wrapper around psycopg2 connection matching sqlite3 connection interface."""
+    def __init__(self, conn):
+        self._conn = conn
+
+    def cursor(self):
+        cur = self._conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+        return PgCursorWrapper(cur)
+
+    def commit(self):
+        return self._conn.commit()
+
+    def rollback(self):
+        return self._conn.rollback()
+
+    def close(self):
+        return self._conn.close()
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        if exc_type:
+            self.rollback()
+        else:
+            self.commit()
+        self.close()
+
 
 def get_db():
+    """Get active database connection (PostgreSQL if configured, else SQLite)."""
+    db_url = get_database_url()
+    if db_url and HAS_PSYCOPG2:
+        try:
+            pg_conn = psycopg2.connect(db_url)
+            return PgConnectionWrapper(pg_conn)
+        except Exception as e:
+            print(f"[Database] Warning: PostgreSQL connection failed ({e}), falling back to SQLite.", file=sys.stderr)
+            
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     return conn
+
+
+def get_engine_info():
+    """Returns metadata about the active storage engine."""
+    db_url = get_database_url()
+    is_pg = bool(db_url and HAS_PSYCOPG2)
+    engine = "PostgreSQL (Cloud Persistent)" if is_pg else "SQLite (Local/Tracked)"
+    
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT COUNT(*) FROM cases")
+    cnt_row = cursor.fetchone()
+    cases_cnt = list(cnt_row.values())[0] if isinstance(cnt_row, dict) else (cnt_row[0] if cnt_row else 0)
+    conn.close()
+    
+    return {
+        "engine": engine,
+        "is_postgres": is_pg,
+        "persistent": True,
+        "cases_count": cases_cnt,
+        "database_url_configured": bool(db_url)
+    }
+
+
+def migrate_sqlite_to_pg_if_needed():
+    """If connected to PostgreSQL and cases table is empty, auto-migrate cases from SQLite primeheal.db."""
+    if not (get_database_url() and HAS_PSYCOPG2 and os.path.exists(DB_PATH)):
+        return
+
+    try:
+        # Check PG cases count
+        pg_conn = get_db()
+        cursor = pg_conn.cursor()
+        cursor.execute("SELECT COUNT(*) FROM cases")
+        cnt_row = cursor.fetchone()
+        pg_cnt = list(cnt_row.values())[0] if isinstance(cnt_row, dict) else (cnt_row[0] if cnt_row else 0)
+        
+        if pg_cnt == 0:
+            print("[Database] Migrating existing cases from local primeheal.db into cloud PostgreSQL...")
+            local_conn = sqlite3.connect(DB_PATH)
+            local_conn.row_factory = sqlite3.Row
+            l_cur = local_conn.cursor()
+            
+            l_cur.execute("SELECT * FROM cases")
+            cases_rows = [dict(r) for r in l_cur.fetchall()]
+            for c in cases_rows:
+                cursor.execute("""
+                INSERT INTO cases (
+                    id, patient_name, age, sex, occupation, address, phone, email,
+                    weight, height, complaints, associated_complaints, history,
+                    mentals, vitals, general_exam, systemic_exam, local_exam,
+                    modalities, reports, notes, result, doctor_override, archived,
+                    created_at, updated_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ON CONFLICT (id) DO NOTHING
+                """, (
+                    c.get("id"), c.get("patient_name"), str(c.get("age", "")), c.get("sex"),
+                    c.get("occupation"), c.get("address"), c.get("phone"), c.get("email"),
+                    str(c.get("weight", "")), str(c.get("height", "")), c.get("complaints"),
+                    c.get("associated_complaints"), c.get("history"), c.get("mentals"),
+                    c.get("vitals"), c.get("general_exam"), c.get("systemic_exam"),
+                    c.get("local_exam"), c.get("modalities"), c.get("reports"),
+                    c.get("notes"), c.get("result"), c.get("doctor_override"),
+                    1 if c.get("archived") else 0, c.get("created_at"), c.get("updated_at")
+                ))
+            
+            # Followups
+            l_cur.execute("SELECT * FROM followups")
+            for f in [dict(r) for r in l_cur.fetchall()]:
+                cursor.execute("""
+                INSERT INTO followups (id, case_id, date, complaints, assessment, remedy, potency, dose, rationale, changes, created_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ON CONFLICT (id) DO NOTHING
+                """, (
+                    f.get("id"), f.get("case_id"), f.get("date"), f.get("complaints"),
+                    f.get("assessment"), f.get("remedy"), f.get("potency"), f.get("dose"),
+                    f.get("rationale"), f.get("changes"), f.get("created_at")
+                ))
+                
+            pg_conn.commit()
+            local_conn.close()
+            print(f"[Database] Migrated {len(cases_rows)} cases into PostgreSQL successfully!")
+        pg_conn.close()
+    except Exception as e:
+        print(f"[Database] Migration note: {e}")
+
 
 def init_db():
     conn = get_db()
@@ -60,8 +241,7 @@ def init_db():
         dose TEXT,
         rationale TEXT,
         changes TEXT,
-        created_at TEXT,
-        FOREIGN KEY (case_id) REFERENCES cases (id)
+        created_at TEXT
     )
     """)
     
@@ -97,7 +277,110 @@ def init_db():
     
     conn.commit()
     conn.close()
+    
+    # Run auto-migration if PG is active
+    migrate_sqlite_to_pg_if_needed()
+
+
+def export_all_data():
+    """Exports entire database as a portable JSON structure for 1-click lifetime backup."""
+    conn = get_db()
+    cursor = conn.cursor()
+    
+    cursor.execute("SELECT * FROM cases ORDER BY created_at DESC")
+    cases = cursor.fetchall()
+    
+    cursor.execute("SELECT * FROM followups ORDER BY created_at ASC")
+    followups = cursor.fetchall()
+    
+    cursor.execute("SELECT * FROM case_chats ORDER BY created_at ASC")
+    case_chats = cursor.fetchall()
+    
+    cursor.execute("SELECT * FROM general_chats ORDER BY created_at ASC")
+    general_chats = cursor.fetchall()
+    
+    conn.close()
+    
+    return {
+        "version": "1.0",
+        "exported_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        "cases": cases,
+        "followups": followups,
+        "case_chats": case_chats,
+        "general_chats": general_chats
+    }
+
+
+def import_all_data(data: dict) -> int:
+    """Restores all cases and related data from a JSON backup. Returns count of cases imported."""
+    cases = data.get("cases", [])
+    followups = data.get("followups", [])
+    case_chats = data.get("case_chats", [])
+    general_chats = data.get("general_chats", [])
+    
+    conn = get_db()
+    cursor = conn.cursor()
+    
+    count = 0
+    for c in cases:
+        c_dict = dict(c)
+        cursor.execute("DELETE FROM cases WHERE id = ?", (c_dict.get("id"),))
+        cursor.execute("""
+        INSERT INTO cases (
+            id, patient_name, age, sex, occupation, address, phone, email,
+            weight, height, complaints, associated_complaints, history,
+            mentals, vitals, general_exam, systemic_exam, local_exam,
+            modalities, reports, notes, result, doctor_override, archived,
+            created_at, updated_at
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, (
+            c_dict.get("id"), c_dict.get("patient_name") or c_dict.get("name"), str(c_dict.get("age", "")),
+            c_dict.get("sex", ""), c_dict.get("occupation", ""), c_dict.get("address", ""),
+            c_dict.get("phone", ""), c_dict.get("email", ""), str(c_dict.get("weight", "")),
+            str(c_dict.get("height", "")), c_dict.get("complaints", ""), c_dict.get("associated_complaints", ""),
+            c_dict.get("history", ""), c_dict.get("mentals", ""), c_dict.get("vitals", ""),
+            c_dict.get("general_exam", ""), c_dict.get("systemic_exam", ""), c_dict.get("local_exam", ""),
+            c_dict.get("modalities", ""), c_dict.get("reports", ""), c_dict.get("notes", ""),
+            json.dumps(c_dict.get("result")) if isinstance(c_dict.get("result"), dict) else c_dict.get("result", "{}"),
+            json.dumps(c_dict.get("doctor_override")) if isinstance(c_dict.get("doctor_override"), dict) else c_dict.get("doctor_override"),
+            1 if c_dict.get("archived") else 0,
+            c_dict.get("created_at") or datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            c_dict.get("updated_at") or datetime.datetime.now(datetime.timezone.utc).isoformat()
+        ))
+        count += 1
+        
+    for f in followups:
+        f_dict = dict(f)
+        cursor.execute("DELETE FROM followups WHERE id = ?", (f_dict.get("id"),))
+        cursor.execute("""
+        INSERT INTO followups (id, case_id, date, complaints, assessment, remedy, potency, dose, rationale, changes, created_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, (
+            f_dict.get("id"), f_dict.get("case_id"), f_dict.get("date"), f_dict.get("complaints"),
+            f_dict.get("assessment"), f_dict.get("remedy"), f_dict.get("potency"), f_dict.get("dose"),
+            f_dict.get("rationale"), f_dict.get("changes"), f_dict.get("created_at")
+        ))
+        
+    for ch in case_chats:
+        ch_dict = dict(ch)
+        cursor.execute("DELETE FROM case_chats WHERE id = ?", (ch_dict.get("id"),))
+        cursor.execute("INSERT INTO case_chats (id, case_id, role, message, created_at) VALUES (?, ?, ?, ?, ?)",
+                       (ch_dict.get("id"), ch_dict.get("case_id"), ch_dict.get("role"), ch_dict.get("message") or ch_dict.get("content"), ch_dict.get("created_at")))
+                       
+    for gc in general_chats:
+        gc_dict = dict(gc)
+        cursor.execute("DELETE FROM general_chats WHERE id = ?", (gc_dict.get("id"),))
+        cursor.execute("INSERT INTO general_chats (id, session_id, role, message, created_at) VALUES (?, ?, ?, ?, ?)",
+                       (gc_dict.get("id"), gc_dict.get("session_id"), gc_dict.get("role"), gc_dict.get("message") or gc_dict.get("content"), gc_dict.get("created_at")))
+                       
+    conn.commit()
+    conn.close()
+    return count
+
 
 if __name__ == "__main__":
     init_db()
-    print("Database initialized at", DB_PATH)
+    info = get_engine_info()
+    print("Database initialized successfully!")
+    print(f"Active Engine: {info['engine']}")
+    print(f"Total Cases: {info['cases_count']}")
