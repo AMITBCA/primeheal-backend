@@ -2,6 +2,7 @@ import os
 import json
 import uuid
 import datetime
+import re
 from fastapi import FastAPI, Request, HTTPException, Query
 from fastapi.responses import JSONResponse, HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -19,8 +20,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-import re
 
 # Normalize consecutive slashes middleware (handles URLs like https://host/////api/...)
 @app.middleware("http")
@@ -40,6 +39,8 @@ database.init_db()
 
 @app.get("/api/auth/me")
 @app.post("/api/auth/me")
+@app.get("/auth/me")
+@app.post("/auth/me")
 def get_auth_me():
     """
     Returns the user profile with lifetime unlimited status and admin rights.
@@ -70,14 +71,17 @@ def get_auth_me():
     }
 
 @app.post("/api/auth/consent")
+@app.post("/auth/consent")
 def post_consent():
     return {"ok": True}
 
 @app.post("/api/auth/logout")
+@app.post("/auth/logout")
 def post_logout():
     return {"ok": True}
 
 @app.get("/api/plans")
+@app.get("/plans")
 def get_plans():
     return {
         "plans": [
@@ -100,11 +104,11 @@ def get_plans():
             },
             {
                 "id": "practitioner",
-                "name": "Hospital Edition",
-                "sub": "Full multi-doctor hospital deployment",
+                "name": "Lifetime Hospital Edition",
+                "sub": "Full classical Repertory & Materia Medica with zero limits",
                 "price_inr": 0,
                 "duration_days": 99999,
-                "billing": "lifetime",
+                "billing": "one-time",
                 "available_now": True,
                 "device_limit": 999,
                 "family": "practitioner",
@@ -119,12 +123,16 @@ def get_plans():
     }
 
 @app.post("/api/me/plan")
+@app.post("/me/plan")
 async def select_plan(request: Request):
     return {"ok": True, "plan": "lifetime_unlimited", "status": "active"}
 
 @app.get("/api/me/usage")
+@app.get("/me/usage")
 def get_usage():
     return {
+        "plan": "lifetime_unlimited",
+        "plan_status": "active",
         "unlimited": True,
         "cases_used": 0,
         "cases_limit": 999999,
@@ -137,32 +145,70 @@ def get_usage():
     }
 
 @app.get("/api/app/latest-version")
+@app.get("/app/latest-version")
 def get_latest_version():
     return {
-        "version": "1.0.28",
-        "update_available": False,
-        "force_update": False,
-        "download_url": None
+        "version": "1.5.0",
+        "build": 150,
+        "mandatory": False,
+        "changelog": "Lifetime hospital edition with complete offline clinical repertoire & all 758 remedies."
     }
 
+@app.post("/api/billing/subscribe")
+@app.post("/billing/subscribe")
+def billing_subscribe():
+    return {"order_id": f"order_free_{uuid.uuid4().hex[:8]}", "amount": 0, "currency": "INR"}
+
+@app.post("/api/billing/verify")
+@app.post("/billing/verify")
+def billing_verify():
+    return {"ok": True, "verified": True, "plan": "lifetime_unlimited"}
+
+@app.get("/api/billing/subscription")
+@app.get("/billing/subscription")
+def get_billing_subscription():
+    return {
+        "status": "active",
+        "plan": "lifetime_unlimited",
+        "sku": "hospital_lifetime",
+        "auto_renew": False,
+        "expires_at": None,
+        "renews_at": None
+    }
+
+@app.post("/api/billing/cancel")
+@app.post("/billing/cancel")
+def cancel_subscription():
+    return {"ok": True}
+
 @app.get("/api/invoices")
-def get_invoices():
+@app.get("/invoices")
+def list_invoices():
     return []
 
-@app.get("/api/feedback")
-def get_feedback():
-    return []
+@app.get("/api/invoices/{invoice_id}/pdf")
+@app.get("/invoices/{invoice_id}/pdf")
+def get_invoice_pdf(invoice_id: str):
+    return {"url": "https://primeheal.app"}
 
 @app.post("/api/feedback")
-async def post_feedback(request: Request):
+@app.post("/feedback")
+async def submit_feedback(request: Request):
     return {"ok": True}
+
+@app.get("/api/feedback")
+@app.get("/feedback")
+def list_feedback():
+    return []
+
 
 # ----------------- CASES ENDPOINTS -----------------
 
-def format_case_response(d: dict) -> dict:
+def format_case_response(d: dict, conn=None) -> dict:
     name = d.get("patient_name") or d.get("name") or "Anonymous Patient"
     d["patient_name"] = name
     d["name"] = name
+    case_id = d.get("id")
     
     # Clean up and normalize result
     res = d.get("result")
@@ -180,7 +226,36 @@ def format_case_response(d: dict) -> dict:
     res["dose"] = res.get("dose") or "4 pills once daily at bedtime"
     res["rationale"] = res.get("rationale") or "Classical totality aligns with characteristic symptoms."
     
-    # Ensure differentials is a list of plain strings (NOT objects, React Native crashes if objects)
+    # Ensure diagnosis exists
+    diagnosis_str = res.get("diagnosis") or d.get("diagnosis") or "Clinical Homoeopathic Evaluation"
+    res["diagnosis"] = diagnosis_str
+    d["diagnosis"] = diagnosis_str
+    
+    # Check doctor override
+    if d.get("doctor_override"):
+        doc_ovr = d.get("doctor_override")
+        if isinstance(doc_ovr, str):
+            try:
+                doc_ovr = json.loads(doc_ovr)
+            except:
+                doc_ovr = {}
+        if isinstance(doc_ovr, dict):
+            res["is_overridden"] = True
+            d["is_overridden"] = True
+            res["ai_remedy"] = remedy_name
+            res["ai_potency"] = res["potency"]
+            res["ai_dose"] = res["dose"]
+            if doc_ovr.get("remedy"):
+                res["remedy"] = doc_ovr.get("remedy")
+            if doc_ovr.get("potency"):
+                res["potency"] = doc_ovr.get("potency")
+            if doc_ovr.get("dose"):
+                res["dose"] = doc_ovr.get("dose")
+    else:
+        res["is_overridden"] = False
+        d["is_overridden"] = False
+
+    # Ensure differentials is a list of plain strings (React Native expects string items)
     diffs = res.get("differentials", [])
     clean_diffs = []
     if isinstance(diffs, list):
@@ -192,11 +267,11 @@ def format_case_response(d: dict) -> dict:
     if not clean_diffs:
         clean_diffs = [
             "Lycopodium clavatum: Right-sided symptoms with 4-8 PM aggravation.",
-            "Bryonia alba: Aggravation from least motion and excessive thirst."
+            "Bryonia alba: Aggravation from least motion and excessive thirst for large quantities."
         ]
     res["differentials"] = clean_diffs
     
-    # Ensure remedy_scores is a list of dicts
+    # Ensure remedy_scores is a list of dicts with remedy, score, affinity
     scores = res.get("remedy_scores", [])
     if not isinstance(scores, list) or not scores:
         scores = [
@@ -218,29 +293,27 @@ def format_case_response(d: dict) -> dict:
         ]
     res["citations"] = citations
     
-    # Ensure lifestyle is a list of dicts with title, tone, items (list of strings)
-    lifestyle = res.get("lifestyle", [])
-    if not isinstance(lifestyle, list) or not lifestyle:
-        advice = res.get("lifestyle_advice") or "Avoid known dietary and environmental aggravations."
-        lifestyle = [
-            {
-                "title": "Dietary Guidance",
-                "tone": "avoid",
-                "items": [
-                    "Avoid strong coffee, tea, alcohol, and excessive spices.",
-                    "Avoid raw onion, garlic, menthol, and camphorated balms."
-                ]
-            },
-            {
-                "title": "Recommended Regimen",
-                "tone": "good",
-                "items": [
-                    advice,
-                    "Maintain regular daily meals, warm hydration, and adequate sleep."
-                ]
-            }
-        ]
-    res["lifestyle"] = lifestyle
+    # Ensure lifestyle is the exact 4-part dictionary required by React Native LifestyleBlock:
+    # { "diet_do": [...], "diet_avoid": [...], "exercises": [...], "lifestyle": [...] }
+    raw_l = res.get("lifestyle")
+    if isinstance(raw_l, dict) and "diet_do" in raw_l and "diet_avoid" in raw_l and "exercises" in raw_l and "lifestyle" in raw_l:
+        lifestyle_obj = {
+            "diet_do": list(raw_l.get("diet_do") or []),
+            "diet_avoid": list(raw_l.get("diet_avoid") or []),
+            "exercises": list(raw_l.get("exercises") or []),
+            "lifestyle": list(raw_l.get("lifestyle") or [])
+        }
+        # If any list is empty, fill with standard guidance
+        if not lifestyle_obj["diet_do"] or not lifestyle_obj["diet_avoid"] or not lifestyle_obj["exercises"] or not lifestyle_obj["lifestyle"]:
+            fallback_l = ai_engine.build_homoeopathic_lifestyle(res.get("remedy"), d)
+            for k in ["diet_do", "diet_avoid", "exercises", "lifestyle"]:
+                if not lifestyle_obj[k]:
+                    lifestyle_obj[k] = fallback_l[k]
+    else:
+        # Build tailored homoeopathic lifestyle object
+        lifestyle_obj = ai_engine.build_homoeopathic_lifestyle(res.get("remedy"), d)
+    
+    res["lifestyle"] = lifestyle_obj
     d["result"] = res
     
     # Build nested case sub-object required by React Native components (e.g. item.case.name, item.case.age)
@@ -270,9 +343,39 @@ def format_case_response(d: dict) -> dict:
         "notes": str(d.get("notes", ""))
     }
     d["case"] = case_obj
+    
+    # Attach case chat messages if connection or id available
+    if case_id:
+        should_close = False
+        if conn is None:
+            conn = database.get_db()
+            should_close = True
+        try:
+            cursor = conn.cursor()
+            cursor.execute("SELECT id, case_id, role, message, created_at FROM case_chats WHERE case_id = ? ORDER BY created_at ASC", (case_id,))
+            c_rows = cursor.fetchall()
+            c_msgs = []
+            for cr in c_rows:
+                crd = dict(cr)
+                content = crd.get("message") or crd.get("content") or ""
+                c_msgs.append({
+                    "id": crd.get("id") or str(uuid.uuid4()),
+                    "role": crd.get("role", "assistant"),
+                    "content": content,
+                    "message": content,
+                    "created_at": crd.get("created_at") or datetime.datetime.now(datetime.timezone.utc).isoformat()
+                })
+            d["messages"] = c_msgs
+        finally:
+            if should_close:
+                conn.close()
+    else:
+        d["messages"] = []
+        
     return d
 
 @app.get("/api/cases")
+@app.get("/cases")
 def list_cases(q: str = Query(None), archived: bool = Query(False)):
     conn = database.get_db()
     cursor = conn.cursor()
@@ -306,12 +409,13 @@ def list_cases(q: str = Query(None), archived: bool = Query(False)):
         f_cursor = conn.cursor()
         f_cursor.execute("SELECT * FROM followups WHERE case_id = ? ORDER BY created_at ASC", (d["id"],))
         d["followups"] = [dict(f) for f in f_cursor.fetchall()]
-        results.append(format_case_response(d))
+        results.append(format_case_response(d, conn=conn))
         
     conn.close()
     return results
 
 @app.delete("/api/cases/all/purge")
+@app.delete("/cases/all/purge")
 def purge_all_cases():
     conn = database.get_db()
     cursor = conn.cursor()
@@ -323,6 +427,7 @@ def purge_all_cases():
     return {"ok": True, "message": "All cases purged"}
 
 @app.post("/api/cases")
+@app.post("/cases")
 async def create_case(request: Request):
     body = await request.json()
     case_id = str(uuid.uuid4())
@@ -378,6 +483,7 @@ async def create_case(request: Request):
     return get_case(case_id)
 
 @app.get("/api/cases/{case_id}")
+@app.get("/cases/{case_id}")
 def get_case(case_id: str):
     conn = database.get_db()
     cursor = conn.cursor()
@@ -403,10 +509,13 @@ def get_case(case_id: str):
     # Attach followups
     cursor.execute("SELECT * FROM followups WHERE case_id = ? ORDER BY created_at ASC", (case_id,))
     d["followups"] = [dict(f) for f in cursor.fetchall()]
+    
+    formatted = format_case_response(d, conn=conn)
     conn.close()
-    return format_case_response(d)
+    return formatted
 
 @app.delete("/api/cases/{case_id}")
+@app.delete("/cases/{case_id}")
 def delete_case(case_id: str):
     conn = database.get_db()
     cursor = conn.cursor()
@@ -418,6 +527,7 @@ def delete_case(case_id: str):
     return {"ok": True}
 
 @app.post("/api/cases/{case_id}/archive")
+@app.post("/cases/{case_id}/archive")
 def archive_case(case_id: str):
     conn = database.get_db()
     cursor = conn.cursor()
@@ -427,6 +537,7 @@ def archive_case(case_id: str):
     return get_case(case_id)
 
 @app.post("/api/cases/{case_id}/unarchive")
+@app.post("/cases/{case_id}/unarchive")
 def unarchive_case(case_id: str):
     conn = database.get_db()
     cursor = conn.cursor()
@@ -436,6 +547,7 @@ def unarchive_case(case_id: str):
     return get_case(case_id)
 
 @app.post("/api/cases/{case_id}/prescription")
+@app.post("/cases/{case_id}/prescription")
 async def edit_prescription(case_id: str, request: Request):
     body = await request.json()
     conn = database.get_db()
@@ -446,6 +558,7 @@ async def edit_prescription(case_id: str, request: Request):
     return get_case(case_id)
 
 @app.post("/api/cases/{case_id}/prescription/revert")
+@app.post("/cases/{case_id}/prescription/revert")
 def revert_prescription(case_id: str):
     conn = database.get_db()
     cursor = conn.cursor()
@@ -454,9 +567,11 @@ def revert_prescription(case_id: str):
     conn.close()
     return get_case(case_id)
 
+
 # ----------------- FOLLOW-UP ENDPOINTS -----------------
 
 @app.post("/api/cases/{case_id}/followups")
+@app.post("/cases/{case_id}/followups")
 async def add_followup(case_id: str, request: Request):
     body = await request.json()
     followup_id = str(uuid.uuid4())
@@ -492,6 +607,7 @@ async def add_followup(case_id: str, request: Request):
     return get_case(case_id)
 
 @app.post("/api/cases/{case_id}/followups/{followup_id}/analyze")
+@app.post("/cases/{case_id}/followups/{followup_id}/analyze")
 def analyze_followup_endpoint(case_id: str, followup_id: str):
     case = get_case(case_id)
     followups = case.get("followups", [])
@@ -522,6 +638,7 @@ def analyze_followup_endpoint(case_id: str, followup_id: str):
     return get_case(case_id)
 
 @app.delete("/api/cases/{case_id}/followups/{followup_id}")
+@app.delete("/cases/{case_id}/followups/{followup_id}")
 def delete_followup(case_id: str, followup_id: str):
     conn = database.get_db()
     cursor = conn.cursor()
@@ -530,72 +647,122 @@ def delete_followup(case_id: str, followup_id: str):
     conn.close()
     return get_case(case_id)
 
+
 # ----------------- CHAT ENDPOINTS -----------------
 
 @app.post("/api/cases/{case_id}/chat")
+@app.post("/cases/{case_id}/chat")
 async def case_chat(case_id: str, request: Request):
     body = await request.json()
-    message = body.get("message", "")
+    message = body.get("message") or body.get("content") or ""
     case = get_case(case_id)
     reply = ai_engine.chat_response(message, case)
     
     conn = database.get_db()
     cursor = conn.cursor()
     now = datetime.datetime.now(datetime.timezone.utc).isoformat()
-    cursor.execute("INSERT INTO case_chats (id, case_id, role, message, created_at) VALUES (?, ?, ?, ?, ?)",
-                   (str(uuid.uuid4()), case_id, "user", message, now))
+    if message.strip():
+        cursor.execute("INSERT INTO case_chats (id, case_id, role, message, created_at) VALUES (?, ?, ?, ?, ?)",
+                       (str(uuid.uuid4()), case_id, "user", message, now))
     cursor.execute("INSERT INTO case_chats (id, case_id, role, message, created_at) VALUES (?, ?, ?, ?, ?)",
                    (str(uuid.uuid4()), case_id, "assistant", reply, now))
     conn.commit()
     conn.close()
     
-    return {"reply": reply, "message": reply}
+    # Return updated case object with messages included
+    updated_case = get_case(case_id)
+    updated_case["reply"] = reply
+    updated_case["message"] = reply
+    return updated_case
 
 @app.delete("/api/cases/{case_id}/chat")
+@app.delete("/cases/{case_id}/chat")
 def clear_case_chat(case_id: str):
     conn = database.get_db()
     cursor = conn.cursor()
     cursor.execute("DELETE FROM case_chats WHERE case_id = ?", (case_id,))
     conn.commit()
     conn.close()
-    return {"ok": True}
+    updated_case = get_case(case_id)
+    updated_case["messages"] = []
+    return updated_case
 
 @app.post("/api/chat/general")
+@app.post("/chat/general")
 async def general_chat(request: Request):
     body = await request.json()
     session_id = body.get("session_id", "default")
-    message = body.get("message", "")
+    message = body.get("message") or body.get("content") or ""
+    
     reply = ai_engine.chat_response(message)
     
     conn = database.get_db()
     cursor = conn.cursor()
     now = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    msg_id = str(uuid.uuid4())
+    reply_id = str(uuid.uuid4())
+    
+    if message.strip():
+        cursor.execute("INSERT INTO general_chats (id, session_id, role, message, created_at) VALUES (?, ?, ?, ?, ?)",
+                       (msg_id, session_id, "user", message, now))
     cursor.execute("INSERT INTO general_chats (id, session_id, role, message, created_at) VALUES (?, ?, ?, ?, ?)",
-                   (str(uuid.uuid4()), session_id, "user", message, now))
-    cursor.execute("INSERT INTO general_chats (id, session_id, role, message, created_at) VALUES (?, ?, ?, ?, ?)",
-                   (str(uuid.uuid4()), session_id, "assistant", reply, now))
+                   (reply_id, session_id, "assistant", reply, now))
     conn.commit()
+    
+    # Fetch all messages in the session formatted with id, role, content, message, created_at
+    cursor.execute("SELECT id, session_id, role, message, created_at FROM general_chats WHERE session_id = ? ORDER BY created_at ASC", (session_id,))
+    rows = cursor.fetchall()
+    messages = []
+    for r in rows:
+        rd = dict(r)
+        content = rd.get("message") or rd.get("content") or ""
+        messages.append({
+            "id": rd.get("id") or str(uuid.uuid4()),
+            "role": rd.get("role", "assistant"),
+            "content": content,
+            "message": content,
+            "created_at": rd.get("created_at") or now
+        })
     conn.close()
     
-    return {"reply": reply, "message": reply}
+    return {
+        "messages": messages,
+        "reply": reply,
+        "message": reply,
+        "ok": True
+    }
 
 @app.get("/api/chat/general/{session_id}")
+@app.get("/chat/general/{session_id}")
 def get_general_chat(session_id: str):
     conn = database.get_db()
     cursor = conn.cursor()
-    cursor.execute("SELECT role, message, created_at FROM general_chats WHERE session_id = ? ORDER BY created_at ASC", (session_id,))
-    messages = [dict(r) for r in cursor.fetchall()]
+    cursor.execute("SELECT id, session_id, role, message, created_at FROM general_chats WHERE session_id = ? ORDER BY created_at ASC", (session_id,))
+    rows = cursor.fetchall()
+    messages = []
+    for r in rows:
+        rd = dict(r)
+        content = rd.get("message") or rd.get("content") or ""
+        messages.append({
+            "id": rd.get("id") or str(uuid.uuid4()),
+            "role": rd.get("role", "assistant"),
+            "content": content,
+            "message": content,
+            "created_at": rd.get("created_at") or datetime.datetime.now(datetime.timezone.utc).isoformat()
+        })
     conn.close()
     return {"messages": messages}
 
 @app.delete("/api/chat/general/{session_id}")
+@app.delete("/chat/general/{session_id}")
 def clear_general_chat(session_id: str):
     conn = database.get_db()
     cursor = conn.cursor()
     cursor.execute("DELETE FROM general_chats WHERE session_id = ?", (session_id,))
     conn.commit()
     conn.close()
-    return {"ok": True}
+    return {"ok": True, "messages": []}
+
 
 # ----------------- MATERIA MEDICA ENDPOINTS -----------------
 
@@ -620,6 +787,7 @@ def search_materia_medica(q: str = Query(None), limit: int = Query(1000)):
 def get_materia_medica_card(remedy_key: str, force: bool = Query(False)):
     force_val = bool(force) if not hasattr(force, "default") else False
     return materia_medica.get_card(remedy_key, force=force_val)
+
 
 # ----------------- ADMIN DASHBOARD -----------------
 
@@ -752,6 +920,7 @@ def admin_dashboard():
 """
 
 @app.post("/api/admin/set-key")
+@app.post("/admin/set-key")
 async def set_admin_key(request: Request):
     body = await request.json()
     key = body.get("key", "").strip()
@@ -764,4 +933,3 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
     print(f"Starting Prime Heal Hospital Backend on port {port}...")
     uvicorn.run(app, host="0.0.0.0", port=port)
-
