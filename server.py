@@ -564,6 +564,31 @@ def purge_all_cases():
 def system_status():
     return database.get_engine_info()
 
+@app.get("/api/settings/ai")
+@app.get("/settings/ai")
+def get_ai_settings():
+    key = ai_engine.get_api_key()
+    return {
+        "has_gemini_key": bool(key),
+        "model": "gemini-2.0-flash",
+        "status": "ready" if key else "master_repertory_fallback",
+        "provider": "Google DeepMind Gemini 2.0 Flash" if key else "PrimeHeal Master Clinical Repertory (35 Polychrests)"
+    }
+
+@app.post("/api/settings/ai")
+@app.post("/settings/ai")
+async def save_ai_settings(request: Request):
+    data = await request.json()
+    key = (data.get("gemini_api_key") or data.get("api_key") or "").strip()
+    if key:
+        os.environ["GEMINI_API_KEY"] = key
+        key_file = os.path.join(os.path.dirname(__file__), "gemini_api_key.txt")
+        with open(key_file, "w", encoding="utf-8") as f:
+            f.write(key)
+        return {"ok": True, "message": "Gemini AI Key saved successfully! All cases will now be analyzed by Gemini 2.0 Flash."}
+    return {"ok": False, "message": "Key cannot be empty"}
+
+
 @app.get("/api/cases/export")
 @app.get("/cases/export")
 def export_cases_backup():

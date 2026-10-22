@@ -20,7 +20,19 @@ except ImportError:
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
 
 def get_api_key():
-    return os.environ.get("GEMINI_API_KEY", "")
+    key = os.environ.get("GEMINI_API_KEY", "")
+    if key:
+        return key.strip()
+    key_file = os.path.join(os.path.dirname(__file__), "gemini_api_key.txt")
+    if os.path.exists(key_file):
+        try:
+            with open(key_file, "r", encoding="utf-8") as f:
+                k = f.read().strip()
+                if k:
+                    return k
+        except:
+            pass
+    return ""
 
 def call_gemini(prompt: str, api_key: str = None) -> str:
     key = api_key or get_api_key()
@@ -640,6 +652,246 @@ MASTER_REMEDIES = [
                 "text": "Great craving for stimulants, spices, sweets. Averse to warm covers, wants windows open. Morning aggravation; weak, faint 11 AM."
             }
         ]
+    },
+    {
+        "name": "Calcarea Carbonica",
+        "keywords": ["head sweat", "sweat on head", "cold damp feet", "craves eggs", "craving eggs", "chilly", "flabby", "sour stool", "sour vomiting", "sluggish", "cold feet", "fat flabby"],
+        "potency": "200C",
+        "dose": "Single dose 200C early morning; observe for 21-28 days without repetition.",
+        "diagnosis": "Constitutional calcium metabolic dyscrasia with lymphatic sluggishness, cranial hyperhidrosis, and delayed vitality.",
+        "rationale": "Keynote triad: profuse cold perspiration on head wetting pillow during sleep, strong craving for boiled eggs, cold damp feet, and chilly flabby sluggish constitution.",
+        "coverage": "Profuse head sweat in sleep, cold damp feet, craving for eggs, chilly flabby constitution, sour stomach",
+        "base_score": 93,
+        "diff_reason": "chilly and sluggish with cold damp head sweat and egg cravings, but lacks burning vertex or violent cerebral storm",
+        "citations": [{"remedy": "Calcarea Carbonica", "source": "Boericke's Materia Medica", "quote": "Head sweats profusely while sleeping, wetting pillows. Craving for eggs. Cold, damp feet.", "text": "Head sweats profusely while sleeping, wetting pillows. Craving for eggs. Cold, damp feet."}]
+    },
+    {
+        "name": "Silicea",
+        "keywords": ["suppuration", "pus", "abscess", "offensive foot sweat", "cold feet sweat", "ingrown nail", "fistula", "chilly wraps head", "splinter sensation", "lack of grit", "boil"],
+        "potency": "200C",
+        "dose": "Single dose 200C, observe for 2-3 weeks.",
+        "diagnosis": "Chronic suppurative diathesis with defective connective tissue assimilation and profound thermal chilliness.",
+        "rationale": "Keynotes: tendency to prolonged suppuration and abscess formation; offensive, acrid foot sweat; extreme chilliness wanting head wrapped warmly; sharp splinter-like pricking pains.",
+        "coverage": "Suppurative tendency, offensive foot sweat, chilly wanting head wrapped, splinter sensations, timidity",
+        "base_score": 92,
+        "diff_reason": "chilly with offensive foot sweat and suppurative tendency, but lacks acute vascular throbbing delirium",
+        "citations": [{"remedy": "Silicea", "source": "Kent's Lectures on Homoeopathic Materia Medica", "quote": "Want of vital warmth; always chilly. Offensive foot sweat. Every little injury suppurates.", "text": "Want of vital warmth; always chilly. Offensive foot sweat. Every little injury suppurates."}]
+    },
+    {
+        "name": "Thuja Occidentalis",
+        "keywords": ["wart", "warts", "polyp", "sycosis", "vaccination", "bad effects vaccination", "forked stream", "tea drinker", "sweat uncovered parts", "fixed ideas", "condyloma"],
+        "potency": "200C",
+        "dose": "Single dose 200C; repeat once after 14 days if required.",
+        "diagnosis": "Chronic sycotic dyscrasia with epithelial overgrowths, papillomatous diathesis, and post-vaccinal dyscrasia.",
+        "rationale": "Supreme anti-sycotic remedy: cauliflower-like or fig-warts, soft pedunculated polypi; ailments dating from vaccination or excessive tea; split or forked urinary stream.",
+        "coverage": "Warts and papillomas, ill-effects of vaccination, sycotic constitution, forked urinary stream, left-sided affinity",
+        "base_score": 93,
+        "diff_reason": "sycotic diathesis with warts and history of vaccinosis, but lacks acute febrile or inflammatory excitement",
+        "citations": [{"remedy": "Thuja", "source": "Boericke's Materia Medica", "quote": "The main action of Thuja is on the skin and genito-urinary organs. Fig-warts, condylomata, polypi. Ill-effects of vaccination.", "text": "The main action of Thuja is on the skin and genito-urinary organs. Fig-warts, condylomata, polypi. Ill-effects of vaccination."}]
+    },
+    {
+        "name": "Natrum Muriaticum",
+        "keywords": ["sun headache", "headache sun", "salt craving", "craves salt", "mapped tongue", "grief", "silent grief", "worse consolation", "introvert", "emaciation neck", "herpes lips", "dry lips cracked"],
+        "potency": "200C",
+        "dose": "Single dose 200C morning; observe for 3-4 weeks.",
+        "diagnosis": "Chronic chlorotic-nutritional dyscrasia with suppressed affective grief, fluid dysregulation, and solar cephalalgia.",
+        "rationale": "Keynotes: bursting hammer-like headache aggravated by 10 AM to 3 PM sun; deep unexpressed silent grief with intense resentment of consolation; craving for salt; cracked lower lip in middle; mapped tongue.",
+        "coverage": "Sun headache 10 AM, craving for salt, silent grief worse consolation, cracked lower lip, mapped tongue",
+        "base_score": 94,
+        "diff_reason": "chronic grief and thirst, but aggravated by sun and heat with marked salt craving and aversion to consolation",
+        "citations": [{"remedy": "Natrum Mur", "source": "Allen's Keynotes", "quote": "Consolation aggravates. Craving for salt. Headache from sunrise to sunset, worse at noon. Great emaciation of neck.", "text": "Consolation aggravates. Craving for salt. Headache from sunrise to sunset, worse at noon. Great emaciation of neck."}]
+    },
+    {
+        "name": "Sepia Officinalis",
+        "keywords": ["bearing down", "pelvic bearing down", "crosses legs", "chloasma", "saddle nose", "indifference family", "loved ones", "weeping", "aversion sex", "prolapse", "empty sinking stomach", "better vigorous exercise"],
+        "potency": "200C",
+        "dose": "Single dose 200C; observe for 4 weeks.",
+        "diagnosis": "Chronic venous-portal congestion with pelvic floor ligamentous relaxation, hormonal dyscrasia, and emotional affective torpor.",
+        "rationale": "Keynotes: constant bearing-down sensation in pelvis compelling patient to cross legs; brown chloasma saddle across nose and cheeks; indifference to dearest loved ones and family; empty sinking feeling in epigastrium relieved by eating; amelioration from rapid, violent exertion.",
+        "coverage": "Pelvic bearing down crossing legs, indifference to loved ones, chloasma mask on face, empty sinking epigastrium",
+        "base_score": 93,
+        "diff_reason": "pelvic stasis and emotional apathy, but characterized by bearing down and relief from vigorous exercise",
+        "citations": [{"remedy": "Sepia", "source": "Kent's Lectures on Homoeopathic Materia Medica", "quote": "Bearing down in the pelvis, must cross legs to prevent protrusion. Indifference to those she loves best. Brown saddle across nose.", "text": "Bearing down in the pelvis, must cross legs to prevent protrusion. Indifference to those she loves best. Brown saddle across nose."}]
+    },
+    {
+        "name": "Ignatia Amara",
+        "keywords": ["grief", "acute grief", "sighing", "frequent sighing", "sobbing", "globus hystericus", "lump in throat", "contradictory", "paradoxical", "spasmodic", "mood swings", "bereavement"],
+        "potency": "200C",
+        "dose": "4 pills single dose during acute grief crisis; repeat once next morning if sobbing continues.",
+        "diagnosis": "Acute neuro-affective hysteria following severe grief, emotional shock, or bereavement with paradoxical somatic conversions.",
+        "rationale": "Keynotes: acute grief with involuntary deep sighing and sobbing; sensation of a lump or ball in throat (globus hystericus) not relieved by swallowing; entirely paradoxical symptoms (sore throat better swallowing solids, cough worse coughing).",
+        "coverage": "Acute bereavement grief, deep sighing, globus hystericus lump in throat, contradictory symptoms, emotional volatility",
+        "base_score": 95,
+        "diff_reason": "emotional grief and nervous excitement, but marked by involuntary sighing, paradoxical modalities, and globus hystericus",
+        "citations": [{"remedy": "Ignatia", "source": "Nash's Leaders in Homoeopathic Therapeutics", "quote": "The remedy of paradoxical and contradictory symptoms. Deep involuntary sighing. Inward weeping, grief, bereavement.", "text": "The remedy of paradoxical and contradictory symptoms. Deep involuntary sighing. Inward weeping, grief, bereavement."}]
+    },
+    {
+        "name": "Staphysagria",
+        "keywords": ["suppressed anger", "indignation", "mortification", "honeymoon cystitis", "stye", "styes recurrent", "trembling anger", "throwing things", "sensitive to slight", "incised wounds", "teeth black"],
+        "potency": "200C",
+        "dose": "Single dose 200C; repeat after 10-14 days if required.",
+        "diagnosis": "Neuro-somatic dyscrasia secondary to suppressed indignation, humiliated honour, and urinary sphincter hyperesthesia.",
+        "rationale": "Keynotes: ailments following suppressed anger or mortification where patient trembled with indignation but suppressed utterance; burning in urethra when not urinating (honeymoon cystitis); recurrent styes leaving hard chalazia.",
+        "coverage": "Suppressed indignation and anger, honeymoon cystitis burning when not urinating, recurrent styes, exquisite sensitivity",
+        "base_score": 93,
+        "diff_reason": "ailments from indignation and anger, but quiet suppressed resentment rather than active screaming delirium",
+        "citations": [{"remedy": "Staphysagria", "source": "Allen's Keynotes", "quote": "Ailments from indignation, anger, mortification. Sensation as if a drop of urine rolled continuously along the channel. Recurrent styes.", "text": "Ailments from indignation, anger, mortification. Sensation as if a drop of urine rolled continuously along the channel. Recurrent styes."}]
+    },
+    {
+        "name": "Lachesis Muta",
+        "keywords": ["left sided", "left to right", "worse sleep", "worse waking", "tight collar", "neck constriction", "cannot bear tight", "purplish throat", "bluish", "loquacity", "suspicious", "jealousy", "hot flushes menopause"],
+        "potency": "200C",
+        "dose": "Single dose 200C; observe for 14-21 days without repetition.",
+        "diagnosis": "Ophidian hemorrhagic-septic dyscrasia with profound vascular decomposition, left-sided cervical predilection, and autonomic asphyxiation during sleep.",
+        "rationale": "Keynotes: left-sided tonsillitis/pharyngitis with dark purplish dusky mucous membranes; absolute intolerance of tight clothing around neck or waist; patient sleeps into aggravation (wakes choking or distressed); intense loquacity with jumping from topic to topic; relief from open discharges.",
+        "coverage": "Left-sided tonsillitis to right, worse waking from sleep, intolerance of neck touch/collar, purplish throat, loquacity",
+        "base_score": 95,
+        "diff_reason": "severe throat inflammation, but left-sided, dark purplish, worse after sleep, and intolerant of touch to neck",
+        "citations": [{"remedy": "Lachesis", "source": "Boericke's Materia Medica", "quote": "Left-sided affections. Sleeps into an aggravation. Cannot bear anything tight around neck or waist. Purplish, dusky tissues.", "text": "Left-sided affections. Sleeps into an aggravation. Cannot bear anything tight around neck or waist. Purplish, dusky tissues."}]
+    },
+    {
+        "name": "Hepar Sulphuris",
+        "keywords": ["splinter", "splinter in throat", "fish bone", "extremely chilly", "cold air worse", "uncovered chilly", "violent temper", "abusive", "yellow thick pus", "croupy cough", "pain to ear"],
+        "potency": "200C",
+        "dose": "4 pills twice daily for 2 days during acute suppurative phase.",
+        "diagnosis": "Acute suppurative tonsillar perichondritis with extreme neuro-sensory hyperesthesia to cold air and touch.",
+        "rationale": "Keynotes: sticking, splinter-like or fish-bone sensation in throat extending to ears on swallowing; extreme sensitiveness to slightest cold draft or uncovering; violent, hurried, abusive temper; tendency to rapid suppurative breakdown.",
+        "coverage": "Splinter sensation in throat radiating to ears, extreme chilliness worse draft, acute suppuration, abusive irritability",
+        "base_score": 94,
+        "diff_reason": "splinter sensation and ear pain on swallowing, but extreme chilliness (worse cold draft) and marked suppuration",
+        "citations": [{"remedy": "Hepar Sulph", "source": "Nash's Leaders in Homoeopathic Therapeutics", "quote": "Hypersensitive to cold air, pain, and touch. Sensation of a splinter, fish-bone or stick in throat. Rapid suppuration.", "text": "Hypersensitive to cold air, pain, and touch. Sensation of a splinter, fish-bone or stick in throat. Rapid suppuration."}]
+    },
+    {
+        "name": "Colocynthis",
+        "keywords": ["bending double", "bends double", "hard pressure better", "cramping colic", "abdominal colic", "anger colic", "cutting belly pain", "indignation colic"],
+        "potency": "200C",
+        "dose": "4 pills in warm water every 30 minutes during acute colic until relieved.",
+        "diagnosis": "Acute neuro-spasmodic visceral colic of splanchnic plexus induced by indignant anger and motor muscular spasm.",
+        "rationale": "Keynotes: agonising cramping abdominal pain compelling patient to bend completely double and press firmly with fists against abdomen; ameliorated by hard external pressure and heat; brought on by suppressed anger or indignation.",
+        "coverage": "Cramping abdominal colic relieved by bending double and hard pressure, brought on by indignation/anger",
+        "base_score": 96,
+        "diff_reason": "severe abdominal pain, but relieved by hard pressure and bending double rather than aggravated by motion or touch",
+        "citations": [{"remedy": "Colocynthis", "source": "Boericke's Materia Medica", "quote": "Agonizing cutting pain in abdomen, causing patient to bend double and press firmly on abdomen. Better by hard pressure.", "text": "Agonizing cutting pain in abdomen, causing patient to bend double and press firmly on abdomen. Better by hard pressure."}]
+    },
+    {
+        "name": "Magnesia Phosphorica",
+        "keywords": ["warmth better", "hot applications", "cramping pain", "dysmenorrhoea", "spasmodic cramps", "neuralgia", "radiating pain", "warm drinks better"],
+        "potency": "200C",
+        "dose": "4 pills dissolved in hot water sipped every 15 minutes during acute spasm.",
+        "diagnosis": "Acute neuromuscular spasmodic hyperesthesia characterized by magnesium-phosphate cellular depletion and thermal amelioration.",
+        "rationale": "The great anti-spasmodic and neuralgic remedy: cramping, lightning-like, radiating pains rapidly and unmistakably ameliorated by hot applications, local warmth, and hard pressure.",
+        "coverage": "Spasmodic cramping dysmenorrhoea, neuralgic pains completely relieved by hot applications and pressure",
+        "base_score": 94,
+        "diff_reason": "cramping neuralgic pains, but dramatically relieved by heat and hot applications",
+        "citations": [{"remedy": "Magnesia Phos", "source": "Boericke's Materia Medica", "quote": "The great anti-spasmodic remedy. Cramping pains relieved by warmth and pressure. Menstrual colic.", "text": "The great anti-spasmodic remedy. Cramping pains relieved by warmth and pressure. Menstrual colic."}]
+    },
+    {
+        "name": "Cantharis Vesicatoria",
+        "keywords": ["burning urination", "dysuria", "drop by drop", "tenesmus urinary", "scalding urine", "cystitis", "hematuria", "vesicular burns", "furious burning"],
+        "potency": "200C",
+        "dose": "4 pills in water every 1-2 hours during acute dysuria phase.",
+        "diagnosis": "Acute violent urogenital urothelial inflammation with unyielding tenesmic vesical spasms and scalding dysuria.",
+        "rationale": "Keynotes: intolerable, constant, agonizing urge to urinate with burning, cutting pains passing only a few drops like boiling water; severe vesical tenesmus before, during, and after micturition.",
+        "coverage": "Intolerable burning dysuria drop by drop, violent vesical tenesmus, severe burning before/during/after urination",
+        "base_score": 96,
+        "diff_reason": "intense burning and pain, but localized to urinary tract with constant agonizing drop-by-drop tenesmus",
+        "citations": [{"remedy": "Cantharis", "source": "Boericke's Materia Medica", "quote": "Intolerable constant urging to urinate; violent burning and cutting in urethra. Urine passed drop by drop like scalding water.", "text": "Intolerable constant urging to urinate; violent burning and cutting in urethra. Urine passed drop by drop like scalding water."}]
+    },
+    {
+        "name": "Drosera Rotundifolia",
+        "keywords": ["whooping cough", "paroxysmal cough", "midnight cough", "cough lying down", "vomiting cough", "barking paroxysms", "holds chest cough", "tickling throat"],
+        "potency": "200C",
+        "dose": "Single dose 200C, observe for 7 days without repetition.",
+        "diagnosis": "Acute spasmodic pertussis-like broncho-laryngeal affection with nocturnal paroxysmal periodicity.",
+        "rationale": "Keynotes: violent paroxysms of deep, barking, spasmodic cough following each other so rapidly patient can scarcely breathe; aggravated immediately on lying down and after midnight; holding sides/chest with hands.",
+        "coverage": "Paroxysmal spasmodic cough worse lying down and past midnight, barking suffocative fits, vomiting with cough",
+        "base_score": 95,
+        "diff_reason": "severe spasmodic cough, but characterized by rapid-fire nocturnal paroxysms immediately on lying down",
+        "citations": [{"remedy": "Drosera", "source": "Hahnemann's Materia Medica Pura", "quote": "Paroxysms of whooping cough following rapidly on each other, worse lying down and after midnight.", "text": "Paroxysms of whooping cough following rapidly on each other, worse lying down and after midnight."}]
+    },
+    {
+        "name": "Spongia Tosta",
+        "keywords": ["croup", "barking cough", "saw through pine", "dry cough", "suffocative cough", "worse before midnight", "sweets worse", "drinking warm better", "larynx dry"],
+        "potency": "200C",
+        "dose": "4 pills every hour for 3 doses, then every 3-4 hours.",
+        "diagnosis": "Acute acute laryngotracheitis (croup) with mucosal dryness and inspiratory stridor.",
+        "rationale": "Keynotes: great dryness of all air passages; harsh, hollow, dry barking cough sounding like a saw driven through a pine board; suffocative awakenings before midnight; amelioration by warm drinks.",
+        "coverage": "Dry barking croupy cough like a saw through wood, larynx sensitive to touch, relieved by warm drinks",
+        "base_score": 95,
+        "diff_reason": "croupy cough and fever, but characterized by saw-through-wood dry harshness and relief from warm fluids",
+        "citations": [{"remedy": "Spongia", "source": "Boericke's Materia Medica", "quote": "Cough dry, barking, croupy; sounds like a saw driven through a pine board. Worse before midnight. Better by warm food/drinks.", "text": "Cough dry, barking, croupy; sounds like a saw driven through a pine board. Worse before midnight. Better by warm food/drinks."}]
+    },
+    {
+        "name": "Ipecacuanha",
+        "keywords": ["nausea", "persistent nausea", "constant nausea", "vomiting no relief", "clean tongue", "thirstless nausea", "salivation nausea", "gasping cough", "bright red hemorrhage"],
+        "potency": "200C",
+        "dose": "4 pills every 2 hours until nausea abates.",
+        "diagnosis": "Acute vagal gastric and respiratory hyper-reflexia with unremitting nausea and clean oral mucosa.",
+        "rationale": "Keynote triad: incessant, violent nausea and vomiting with no relief whatsoever after vomiting; completely clean, uncoated red tongue; absence of thirst with profuse watery salivation.",
+        "coverage": "Persistent constant nausea unrelieved by vomiting, clean uncoated tongue, thirstless, profuse salivation",
+        "base_score": 94,
+        "diff_reason": "nausea and gastro-intestinal distress, but tongue remains clean and nausea is completely unrelieved by vomiting",
+        "citations": [{"remedy": "Ipecac", "source": "Boericke's Materia Medica", "quote": "Persistent nausea and vomiting with a completely clean tongue. Thirstless with profuse saliva. Not relieved by vomiting.", "text": "Persistent nausea and vomiting with a completely clean tongue. Thirstless with profuse saliva. Not relieved by vomiting."}]
+    },
+    {
+        "name": "Arnica Montana",
+        "keywords": ["trauma", "blunt trauma", "bruised soreness", "sore bruised", "bed feels hard", "says well", "leave me alone", "fall injury", "hematoma", "sprain", "ecchymosis"],
+        "potency": "200C",
+        "dose": "4 pills immediately after injury, then 3 times daily for 2 days.",
+        "diagnosis": "Acute post-traumatic mechanical contusion with capillary extravasation, muscular ecchymosis, and somato-sensory soreness.",
+        "rationale": "Keynotes: ailments from blunt mechanical trauma, falls, or severe muscular overexertion; feeling of generalized soreness as if bruised or beaten; bed feels too hard; patient claims nothing is wrong and desires to be left alone.",
+        "coverage": "Post-traumatic contusion, bruised muscular soreness, bed feels too hard, capillary extravasation",
+        "base_score": 96,
+        "diff_reason": "soreness and prostration, but history of mechanical blunt trauma with sore bruised feeling and hard bed sensation",
+        "citations": [{"remedy": "Arnica", "source": "Boericke's Materia Medica", "quote": "Trauma in all its varieties. Sore, lame, bruised feeling. Bed feels too hard. States he is well when very sick.", "text": "Trauma in all its varieties. Sore, lame, bruised feeling. Bed feels too hard. States he is well when very sick."}]
+    },
+    {
+        "name": "Hypericum Perforatum",
+        "keywords": ["nerve injury", "crushed finger", "tailbone", "coccyx", "splinter under nail", "shooting pain upward", "lacerated wounds", "animal bite", "fall on spine"],
+        "potency": "200C",
+        "dose": "4 pills every 2 hours for acute nerve trauma, then three times daily.",
+        "diagnosis": "Acute neural trauma and peripheral axonotmesis of nerve-rich extremities with ascending hyperalgesia.",
+        "rationale": "The supreme 'Arnica of the nerves': mechanical crushing or lacerating injuries to nerve-rich areas (fingertips, matrix of nails, toes, coccyx); sharp shooting, burning pains traveling centripetally upward along nerve trunk.",
+        "coverage": "Nerve-rich crushing injuries to fingers/toes/coccyx, shooting pains traveling upward along nerve tract",
+        "base_score": 96,
+        "diff_reason": "traumatic pain, but localized to nerve-rich tissues with shooting pains traveling centripetally upward",
+        "citations": [{"remedy": "Hypericum", "source": "Boericke's Materia Medica", "quote": "The great remedy for mechanical injuries of nerves. Crushed fingers, punctured wounds, falls on coccyx. Pain shoots upward along nerve.", "text": "The great remedy for mechanical injuries of nerves. Crushed fingers, punctured wounds, falls on coccyx. Pain shoots upward along nerve."}]
+    },
+    {
+        "name": "Causticum",
+        "keywords": ["incontinence coughing", "urine cough", "urine sneeze", "sympathetic", "injustice", "burns old", "cicatrices", "hoarseness singers", "palsy", "facial paralysis", "drooping eyelids"],
+        "potency": "200C",
+        "dose": "Single dose 200C; observe for 3-4 weeks.",
+        "diagnosis": "Chronic paralytic-neurological diathesis with sphincter motor paresis and deep moral empathy for injustice.",
+        "rationale": "Keynotes: involuntary spurt of urine when coughing, sneezing, or walking; intense moral sympathy for the sufferings of others; chronic hoarseness with morning aphonia in singers; local motor paralyses (facial palsy, ptosis).",
+        "coverage": "Involuntary urination on coughing/sneezing, paralysis of single parts, extreme sympathy for others, morning hoarseness",
+        "base_score": 94,
+        "diff_reason": "neurological paresis and hoarseness, but marked by involuntary urination on coughing and intense sensitivity to injustice",
+        "citations": [{"remedy": "Causticum", "source": "Nash's Leaders in Homoeopathic Therapeutics", "quote": "Involuntary spurting of urine when coughing or sneezing. Intense sympathy for others. Paralysis of single parts.", "text": "Involuntary spurting of urine when coughing or sneezing. Intense sympathy for others. Paralysis of single parts."}]
+    },
+    {
+        "name": "Carbo Vegetabilis",
+        "keywords": ["air hunger", "fanned", "wants to be fanned", "collapse", "cold breath", "cold tongue", "cyanotic", "bluish skin", "flatulence upper abdomen", "eructations relief", "vital exhaustion"],
+        "potency": "200C",
+        "dose": "4 pills dissolved in water given every 15 minutes in collapse.",
+        "diagnosis": "Terminal capillary-venous stagnation with hypoxia, cardiovascular collapse, and profound vital exhaustion.",
+        "rationale": "The great reviver of dying vitality: profound collapse with ice-cold breath, cold tongue, and cyanotic extremities; desperate air hunger demanding windows open and fans turned on close to face; upper abdominal tympanites relieved by eructations.",
+        "coverage": "Air hunger demanding rapid fanning, extreme collapse with cold breath and skin, upper abdominal tympanites",
+        "base_score": 96,
+        "diff_reason": "vital collapse and prostration, but characterized by air hunger, desire to be fanned vigorously, and ice-cold breath",
+        "citations": [{"remedy": "Carbo Veg", "source": "Boericke's Materia Medica", "quote": "Desire to be fanned; must have fresh air. Cold breath, cold tongue. Vital forces nearly exhausted; complete collapse.", "text": "Desire to be fanned; must have fresh air. Cold breath, cold tongue. Vital forces nearly exhausted; complete collapse."}]
+    },
+    {
+        "name": "Kali Carbonicum",
+        "keywords": ["2 to 4 am", "3 am asthma", "stitching pain", "bag-like swelling", "swelling upper eyelid", "backache sweeps into thighs", "chilly backache", "cannot bear touched", "startled touch"],
+        "potency": "200C",
+        "dose": "Single dose 200C early morning; observe for 4 weeks.",
+        "diagnosis": "Chronic cardio-pulmonary and connective tissue dyscrasia with paroxysmal nocturnal asthma and characteristic periorbital edema.",
+        "rationale": "Keynotes: respiratory and arthritic aggravation sharply between 2:00 AM and 4:00 AM; sharp stitching pains; sac-like bag swelling between upper eyelid and eyebrow; severe low backache with sensation of weakness forcing patient to sit down.",
+        "coverage": "Paroxysmal asthma/cough at 2-4 AM, stitching pains, bag-like swelling of upper eyelids, backache giving out",
+        "base_score": 94,
+        "diff_reason": "respiratory asthma and backache, but sharp aggravation 2-4 AM with upper eyelid bag swelling and stitching pains",
+        "citations": [{"remedy": "Kali Carb", "source": "Kent's Lectures on Homoeopathic Materia Medica", "quote": "Aggravation from 2 to 4 AM. Stitching pains. Bag-like swelling between upper eyelid and eyebrow. Great backache.", "text": "Aggravation from 2 to 4 AM. Stitching pains. Bag-like swelling between upper eyelid and eyebrow. Great backache."}]
     }
 ]
 
