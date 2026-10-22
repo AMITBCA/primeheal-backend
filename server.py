@@ -10,7 +10,7 @@ import database
 import ai_engine
 import materia_medica
 
-app = FastAPI(title="Prime Heal Unlimited Hospital Backend", version="1.5.0")
+app = FastAPI(title="Prime Heal Unlimited Hospital Backend", version="1.5.1")
 
 # Enable CORS for React Native and web clients
 app.add_middleware(
