@@ -156,9 +156,13 @@ def migrate_sqlite_to_pg_if_needed():
                     id, patient_name, age, sex, occupation, address, phone, email,
                     weight, height, complaints, associated_complaints, history,
                     mentals, vitals, general_exam, systemic_exam, local_exam,
-                    modalities, reports, notes, result, doctor_override, archived,
+                    modalities, reports, notes,
+                    appetite, cravings, aversions, thirst, thermal, perspiration,
+                    stool, urine, sleep, sleep_position, past_history,
+                    vaccination, family_history, diet, marital_status, raw_data,
+                    result, doctor_override, archived,
                     created_at, updated_at
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 ON CONFLICT (id) DO NOTHING
                 """, (
                     c.get("id"), c.get("patient_name"), str(c.get("age", "")), c.get("sex"),
@@ -167,7 +171,14 @@ def migrate_sqlite_to_pg_if_needed():
                     c.get("associated_complaints"), c.get("history"), c.get("mentals"),
                     c.get("vitals"), c.get("general_exam"), c.get("systemic_exam"),
                     c.get("local_exam"), c.get("modalities"), c.get("reports"),
-                    c.get("notes"), c.get("result"), c.get("doctor_override"),
+                    c.get("notes"),
+                    c.get("appetite", ""), c.get("cravings", ""), c.get("aversions", ""),
+                    c.get("thirst", ""), c.get("thermal", ""), c.get("perspiration", ""),
+                    c.get("stool", ""), c.get("urine", ""), c.get("sleep", ""),
+                    c.get("sleep_position", ""), c.get("past_history", ""),
+                    c.get("vaccination", ""), c.get("family_history", ""),
+                    c.get("diet", ""), c.get("marital_status", ""), c.get("raw_data", ""),
+                    c.get("result"), c.get("doctor_override"),
                     1 if c.get("archived") else 0, c.get("created_at"), c.get("updated_at")
                 ))
             
@@ -190,6 +201,70 @@ def migrate_sqlite_to_pg_if_needed():
         pg_conn.close()
     except Exception as e:
         print(f"[Database] Migration note: {e}")
+
+
+NEW_CASE_COLUMNS = [
+    ("appetite", "TEXT"),
+    ("cravings", "TEXT"),
+    ("aversions", "TEXT"),
+    ("thirst", "TEXT"),
+    ("thermal", "TEXT"),
+    ("perspiration", "TEXT"),
+    ("stool", "TEXT"),
+    ("urine", "TEXT"),
+    ("sleep", "TEXT"),
+    ("sleep_position", "TEXT"),
+    ("past_history", "TEXT"),
+    ("vaccination", "TEXT"),
+    ("family_history", "TEXT"),
+    ("diet", "TEXT"),
+    ("marital_status", "TEXT"),
+    ("raw_data", "TEXT")
+]
+
+
+def ensure_case_columns(conn):
+    """Ensures all clinical and case summary columns exist in SQLite or PostgreSQL."""
+    try:
+        cursor = conn.cursor()
+        existing_cols = set()
+        
+        # Try SQLite pragma first
+        try:
+            cursor.execute("PRAGMA table_info(cases)")
+            rows = cursor.fetchall()
+            for r in rows:
+                if isinstance(r, dict):
+                    existing_cols.add(r.get("name", "").lower())
+                else:
+                    existing_cols.add(r[1].lower())
+        except:
+            pass
+            
+        # If no columns found from PRAGMA, try PostgreSQL information_schema
+        if not existing_cols:
+            try:
+                cursor.execute("SELECT column_name FROM information_schema.columns WHERE table_name = 'cases'")
+                rows = cursor.fetchall()
+                for r in rows:
+                    if isinstance(r, dict):
+                        existing_cols.add(r.get("column_name", "").lower())
+                    else:
+                        existing_cols.add(r[0].lower())
+            except:
+                pass
+                
+        for col_name, col_type in NEW_CASE_COLUMNS:
+            if col_name.lower() not in existing_cols:
+                try:
+                    cursor.execute(f"ALTER TABLE cases ADD COLUMN {col_name} {col_type}")
+                    print(f"[Database] Added column '{col_name}' to cases table.")
+                except Exception as ex:
+                    # Ignore if column already exists
+                    pass
+        conn.commit()
+    except Exception as e:
+        print(f"[Database] Column migration note: {e}")
 
 
 def init_db():
@@ -220,6 +295,22 @@ def init_db():
         modalities TEXT,
         reports TEXT,
         notes TEXT,
+        appetite TEXT,
+        cravings TEXT,
+        aversions TEXT,
+        thirst TEXT,
+        thermal TEXT,
+        perspiration TEXT,
+        stool TEXT,
+        urine TEXT,
+        sleep TEXT,
+        sleep_position TEXT,
+        past_history TEXT,
+        vaccination TEXT,
+        family_history TEXT,
+        diet TEXT,
+        marital_status TEXT,
+        raw_data TEXT,
         result TEXT,
         doctor_override TEXT,
         archived INTEGER DEFAULT 0,
@@ -227,6 +318,10 @@ def init_db():
         updated_at TEXT
     )
     """)
+    conn.commit()
+    
+    # Ensure any missing columns in pre-existing DB are added
+    ensure_case_columns(conn)
     
     # Followups table
     cursor.execute("""
@@ -288,16 +383,16 @@ def export_all_data():
     cursor = conn.cursor()
     
     cursor.execute("SELECT * FROM cases ORDER BY created_at DESC")
-    cases = cursor.fetchall()
+    cases = [dict(r) for r in cursor.fetchall()]
     
     cursor.execute("SELECT * FROM followups ORDER BY created_at ASC")
-    followups = cursor.fetchall()
+    followups = [dict(r) for r in cursor.fetchall()]
     
     cursor.execute("SELECT * FROM case_chats ORDER BY created_at ASC")
-    case_chats = cursor.fetchall()
+    case_chats = [dict(r) for r in cursor.fetchall()]
     
     cursor.execute("SELECT * FROM general_chats ORDER BY created_at ASC")
-    general_chats = cursor.fetchall()
+    general_chats = [dict(r) for r in cursor.fetchall()]
     
     conn.close()
     
@@ -330,9 +425,13 @@ def import_all_data(data: dict) -> int:
             id, patient_name, age, sex, occupation, address, phone, email,
             weight, height, complaints, associated_complaints, history,
             mentals, vitals, general_exam, systemic_exam, local_exam,
-            modalities, reports, notes, result, doctor_override, archived,
+            modalities, reports, notes,
+            appetite, cravings, aversions, thirst, thermal, perspiration,
+            stool, urine, sleep, sleep_position, past_history,
+            vaccination, family_history, diet, marital_status, raw_data,
+            result, doctor_override, archived,
             created_at, updated_at
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
             c_dict.get("id"), c_dict.get("patient_name") or c_dict.get("name"), str(c_dict.get("age", "")),
             c_dict.get("sex", ""), c_dict.get("occupation", ""), c_dict.get("address", ""),
@@ -341,6 +440,12 @@ def import_all_data(data: dict) -> int:
             c_dict.get("history", ""), c_dict.get("mentals", ""), c_dict.get("vitals", ""),
             c_dict.get("general_exam", ""), c_dict.get("systemic_exam", ""), c_dict.get("local_exam", ""),
             c_dict.get("modalities", ""), c_dict.get("reports", ""), c_dict.get("notes", ""),
+            c_dict.get("appetite", ""), c_dict.get("cravings", ""), c_dict.get("aversions", ""),
+            c_dict.get("thirst", ""), c_dict.get("thermal", ""), c_dict.get("perspiration", ""),
+            c_dict.get("stool", ""), c_dict.get("urine", ""), c_dict.get("sleep", ""),
+            c_dict.get("sleep_position", ""), c_dict.get("past_history", ""),
+            c_dict.get("vaccination", ""), c_dict.get("family_history", ""),
+            c_dict.get("diet", ""), c_dict.get("marital_status", ""), c_dict.get("raw_data", ""),
             json.dumps(c_dict.get("result")) if isinstance(c_dict.get("result"), dict) else c_dict.get("result", "{}"),
             json.dumps(c_dict.get("doctor_override")) if isinstance(c_dict.get("doctor_override"), dict) else c_dict.get("doctor_override"),
             1 if c_dict.get("archived") else 0,

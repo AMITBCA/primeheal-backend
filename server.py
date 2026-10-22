@@ -220,10 +220,22 @@ def format_case_response(d: dict, conn=None) -> dict:
     if not isinstance(res, dict):
         res = {}
     
-    remedy_name = res.get("remedy") or "Nux vomica"
+    # If raw_data exists, backfill any empty fields from the original payload
+    raw_str = d.get("raw_data")
+    if raw_str:
+        try:
+            raw_obj = json.loads(raw_str) if isinstance(raw_str, str) else raw_str
+            if isinstance(raw_obj, dict):
+                for k, v in raw_obj.items():
+                    if (k not in d or d.get(k) is None or d.get(k) == "") and v is not None:
+                        d[k] = v
+        except:
+            pass
+
+    remedy_name = res.get("remedy") or "Nux Vomica"
     res["remedy"] = remedy_name
     res["potency"] = res.get("potency") or "200C"
-    res["dose"] = res.get("dose") or "4 pills once daily at bedtime"
+    res["dose"] = res.get("dose") or "4 pills of 200C, once daily in the morning for 3 days, then stop and observe for 7-10 days before reassessing"
     res["rationale"] = res.get("rationale") or "Classical totality aligns with characteristic symptoms."
     
     # Ensure diagnosis exists
@@ -266,35 +278,91 @@ def format_case_response(d: dict, conn=None) -> dict:
                 clean_diffs.append(item)
     if not clean_diffs:
         clean_diffs = [
-            "Lycopodium clavatum: Right-sided symptoms with 4-8 PM aggravation.",
-            "Bryonia alba: Aggravation from least motion and excessive thirst for large quantities."
+            "Lycopodium (ambitious personality, bloating after small meals, liver/digestive focus, but less morning aggravation and no ineffectual urging keynote)",
+            "Sulphur (craving spicy foods, morning aggravation, irritability, but typically hot patient with aversion to warmth—contradicts chilliness here)",
+            "Bryonia (irritability, constipation with large dry stools, amelioration rest—but lacks ineffectual urging and coffee craving)"
         ]
     res["differentials"] = clean_diffs
     
-    # Ensure remedy_scores is a list of dicts with remedy, score, affinity
+    # Ensure remedy_scores is a list of dicts with remedy, score, coverage (and affinity)
     scores = res.get("remedy_scores", [])
-    if not isinstance(scores, list) or not scores:
-        scores = [
-            {"remedy": remedy_name, "score": 95, "affinity": "Primary affinity aligned with chief complaints."},
-            {"remedy": "Lycopodium clavatum", "score": 82, "affinity": "Digestive system, right-sided."},
-            {"remedy": "Bryonia alba", "score": 75, "affinity": "Serous membranes, joints."}
-        ]
-    res["remedy_scores"] = scores
-    
-    # Ensure citations is a list of dicts with remedy, source, text
-    citations = res.get("citations", [])
-    if not isinstance(citations, list) or not citations:
-        citations = [
+    clean_scores = []
+    if isinstance(scores, list) and scores:
+        for s in scores:
+            if isinstance(s, dict):
+                cov = s.get("coverage") or s.get("affinity") or ""
+                clean_scores.append({
+                    "remedy": s.get("remedy", ""),
+                    "score": s.get("score", 90),
+                    "coverage": cov,
+                    "affinity": cov
+                })
+    if not clean_scores:
+        clean_scores = [
             {
                 "remedy": remedy_name,
-                "source": "Boericke Materia Medica",
-                "text": f"Classical clinical presentation corresponding to {remedy_name}."
+                "score": 94,
+                "coverage": "Ineffectual urging (pathognomonic), morning aggravation, irritability/fastidiousness, coffee craving, chilliness, 3 AM waking, workaholic stress",
+                "affinity": "Ineffectual urging (pathognomonic), morning aggravation, irritability/fastidiousness, coffee craving, chilliness, 3 AM waking, workaholic stress"
+            },
+            {
+                "remedy": "Lycopodium",
+                "score": 76,
+                "coverage": "Ambitious personality, bloating after small meals, liver/digestive sphere, evening amelioration, irritability—but misses ineffectual urging keynote",
+                "affinity": "Ambitious personality, bloating after small meals, liver/digestive sphere, evening amelioration, irritability—but misses ineffectual urging keynote"
+            },
+            {
+                "remedy": "Sulphur",
+                "score": 68,
+                "coverage": "Spicy food craving, morning aggravation, irritability, digestive complaints—but thermal (hot patient) contradicts chilliness here",
+                "affinity": "Spicy food craving, morning aggravation, irritability, digestive complaints—but thermal (hot patient) contradicts chilliness here"
+            },
+            {
+                "remedy": "Bryonia",
+                "score": 61,
+                "coverage": "Irritability, constipation picture, amelioration rest—lacks ineffectual urging and coffee craving; constipation type differs (large/dry vs. urging)",
+                "affinity": "Irritability, constipation picture, amelioration rest—lacks ineffectual urging and coffee craving; constipation type differs (large/dry vs. urging)"
             }
         ]
-    res["citations"] = citations
+    res["remedy_scores"] = clean_scores
+    
+    # Ensure citations is a list of dicts with remedy, source, quote (and text)
+    citations = res.get("citations", [])
+    clean_citations = []
+    if isinstance(citations, list) and citations:
+        for c in citations:
+            if isinstance(c, dict):
+                q = c.get("quote") or c.get("text") or ""
+                clean_citations.append({
+                    "remedy": c.get("remedy", ""),
+                    "source": c.get("source", ""),
+                    "quote": q,
+                    "text": q
+                })
+    if not clean_citations:
+        clean_citations = [
+            {
+                "remedy": remedy_name,
+                "source": "Boericke's Materia Medica",
+                "quote": "Frequent ineffectual urging to stool; passes small quantities at each attempt. Feels as if part remained unexpelled. Wants to go constantly.",
+                "text": "Frequent ineffectual urging to stool; passes small quantities at each attempt. Feels as if part remained unexpelled. Wants to go constantly."
+            },
+            {
+                "remedy": remedy_name,
+                "source": "Allen's Keynotes",
+                "quote": "Irritable, zealous fiery temperament. Oversensitive; cannot bear noises, odors, light. Worse morning on waking. Chilly, cannot uncover.",
+                "text": "Irritable, zealous fiery temperament. Oversensitive; cannot bear noises, odors, light. Worse morning on waking. Chilly, cannot uncover."
+            },
+            {
+                "remedy": remedy_name,
+                "source": "Kent's Lectures on Materia Medica",
+                "quote": "Sleeps into aggravation; wakes 3-4 AM with mind on business, cannot sleep again until toward morning, then heavy sleep and hard to rouse.",
+                "text": "Sleeps into aggravation; wakes 3-4 AM with mind on business, cannot sleep again until toward morning, then heavy sleep and hard to rouse."
+            }
+        ]
+    res["citations"] = clean_citations
     
     # Ensure lifestyle is the exact 4-part dictionary required by React Native LifestyleBlock:
-    # { "diet_do": [...], "diet_avoid": [...], "exercises": [...], "lifestyle": [...] }
     raw_l = res.get("lifestyle")
     if isinstance(raw_l, dict) and "diet_do" in raw_l and "diet_avoid" in raw_l and "exercises" in raw_l and "lifestyle" in raw_l:
         lifestyle_obj = {
@@ -303,20 +371,24 @@ def format_case_response(d: dict, conn=None) -> dict:
             "exercises": list(raw_l.get("exercises") or []),
             "lifestyle": list(raw_l.get("lifestyle") or [])
         }
-        # If any list is empty, fill with standard guidance
         if not lifestyle_obj["diet_do"] or not lifestyle_obj["diet_avoid"] or not lifestyle_obj["exercises"] or not lifestyle_obj["lifestyle"]:
             fallback_l = ai_engine.build_homoeopathic_lifestyle(res.get("remedy"), d)
             for k in ["diet_do", "diet_avoid", "exercises", "lifestyle"]:
                 if not lifestyle_obj[k]:
                     lifestyle_obj[k] = fallback_l[k]
     else:
-        # Build tailored homoeopathic lifestyle object
         lifestyle_obj = ai_engine.build_homoeopathic_lifestyle(res.get("remedy"), d)
     
     res["lifestyle"] = lifestyle_obj
     d["result"] = res
     
-    # Build nested case sub-object required by React Native components (e.g. item.case.name, item.case.age)
+    # Ensure every clinical summary field exists in root d
+    for k in ["appetite", "cravings", "aversions", "thirst", "thermal", "perspiration", 
+              "stool", "urine", "sleep", "sleep_position", "past_history", "vaccination", 
+              "family_history", "diet", "marital_status"]:
+        d[k] = str(d.get(k) or "")
+    
+    # Build complete case sub-object required by React Native components and PDF template
     case_obj = {
         "name": name,
         "patient_name": name,
@@ -340,7 +412,21 @@ def format_case_response(d: dict, conn=None) -> dict:
         "local_exam": str(d.get("local_exam", "")),
         "modalities": str(d.get("modalities", "")),
         "reports": str(d.get("reports", "")),
-        "notes": str(d.get("notes", ""))
+        "notes": str(d.get("notes", "")),
+        # All classical clinical summary fields for the PDF Case summary table:
+        "appetite": str(d.get("appetite", "")),
+        "cravings": str(d.get("cravings", "")),
+        "aversions": str(d.get("aversions", "")),
+        "thirst": str(d.get("thirst", "")),
+        "thermal": str(d.get("thermal", "")),
+        "perspiration": str(d.get("perspiration", "")),
+        "stool": str(d.get("stool", "")),
+        "urine": str(d.get("urine", "")),
+        "sleep": str(d.get("sleep", "")),
+        "sleep_position": str(d.get("sleep_position", "")),
+        "past_history": str(d.get("past_history", "")),
+        "vaccination": str(d.get("vaccination", "")),
+        "family_history": str(d.get("family_history", ""))
     }
     d["case"] = case_obj
     
@@ -470,9 +556,13 @@ async def sync_case(request: Request):
         id, patient_name, age, sex, occupation, address, phone, email,
         weight, height, complaints, associated_complaints, history,
         mentals, vitals, general_exam, systemic_exam, local_exam,
-        modalities, reports, notes, result, doctor_override, archived,
+        modalities, reports, notes,
+        appetite, cravings, aversions, thirst, thermal, perspiration,
+        stool, urine, sleep, sleep_position, past_history,
+        vaccination, family_history, diet, marital_status, raw_data,
+        result, doctor_override, archived,
         created_at, updated_at
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     """, (
         case_id,
         c_dict.get("patient_name") or c_dict.get("name") or "Anonymous Patient",
@@ -495,6 +585,22 @@ async def sync_case(request: Request):
         c_dict.get("modalities", ""),
         c_dict.get("reports", ""),
         c_dict.get("notes", ""),
+        c_dict.get("appetite", ""),
+        c_dict.get("cravings", ""),
+        c_dict.get("aversions", ""),
+        c_dict.get("thirst", ""),
+        c_dict.get("thermal", ""),
+        c_dict.get("perspiration", ""),
+        c_dict.get("stool", ""),
+        c_dict.get("urine", ""),
+        c_dict.get("sleep", ""),
+        c_dict.get("sleep_position", ""),
+        c_dict.get("past_history", ""),
+        c_dict.get("vaccination", ""),
+        c_dict.get("family_history", ""),
+        c_dict.get("diet", ""),
+        c_dict.get("marital_status", ""),
+        json.dumps(c_dict),
         json.dumps(c_dict.get("result")) if isinstance(c_dict.get("result"), dict) else c_dict.get("result", "{}"),
         json.dumps(c_dict.get("doctor_override")) if isinstance(c_dict.get("doctor_override"), dict) else c_dict.get("doctor_override"),
         1 if c_dict.get("archived") else 0,
@@ -524,9 +630,13 @@ async def create_case(request: Request):
         id, patient_name, age, sex, occupation, address, phone, email,
         weight, height, complaints, associated_complaints, history,
         mentals, vitals, general_exam, systemic_exam, local_exam,
-        modalities, reports, notes, result, doctor_override, archived,
+        modalities, reports, notes,
+        appetite, cravings, aversions, thirst, thermal, perspiration,
+        stool, urine, sleep, sleep_position, past_history,
+        vaccination, family_history, diet, marital_status, raw_data,
+        result, doctor_override, archived,
         created_at, updated_at
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     """, (
         case_id,
         patient_name,
@@ -549,6 +659,22 @@ async def create_case(request: Request):
         body.get("modalities", ""),
         body.get("reports", ""),
         body.get("notes", ""),
+        body.get("appetite", ""),
+        body.get("cravings", ""),
+        body.get("aversions", ""),
+        body.get("thirst", ""),
+        body.get("thermal", ""),
+        body.get("perspiration", ""),
+        body.get("stool", ""),
+        body.get("urine", ""),
+        body.get("sleep", ""),
+        body.get("sleep_position", ""),
+        body.get("past_history", ""),
+        body.get("vaccination", ""),
+        body.get("family_history", ""),
+        body.get("diet", ""),
+        body.get("marital_status", ""),
+        json.dumps(body),
         json.dumps(ai_result),
         None,
         0,

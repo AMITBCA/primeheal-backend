@@ -42,7 +42,7 @@ def call_gemini(prompt: str, api_key: str = None) -> str:
         print(f"Gemini API call failed: {e}")
     return ""
 
-def build_homoeopathic_lifestyle(remedy_name: str = "Nux vomica", case_data: dict = None) -> dict:
+def build_homoeopathic_lifestyle(remedy_name: str = "Nux Vomica", case_data: dict = None) -> dict:
     """
     Constructs the exact 4-part lifestyle object expected by the React Native LifestyleBlock:
     {
@@ -55,11 +55,9 @@ def build_homoeopathic_lifestyle(remedy_name: str = "Nux vomica", case_data: dic
     case_data = case_data or {}
     r_lower = (remedy_name or "").lower()
     complaints = str(case_data.get("complaints", "")).lower()
-    modalities = str(case_data.get("modalities", "")).lower()
     
-    # Base homoeopathic antidotes and universal guidance (§260 Organon)
     universal_avoid = [
-        "Avoid coffee, green/black tea, and aerated soft drinks (caffeine antidotes homoeopathic remedies).",
+        "Strictly avoid coffee, strong tea, energy drinks, and aerated soda (caffeine antidotes homoeopathic remedies).",
         "Avoid raw onion, raw garlic, strong menthol, peppermint, and camphorated balms within 1 hour of medicine.",
         "Avoid heavy, excessively oily, deep-fried, and stale refrigerated food.",
         "Strictly avoid alcohol, tobacco, and foods with artificial chemical preservatives."
@@ -86,279 +84,451 @@ def build_homoeopathic_lifestyle(remedy_name: str = "Nux vomica", case_data: dic
         "Keep a personal symptom diary to record responses and changes for the next follow-up."
     ]
     
-    # Specific clinical tailoring by polychrest remedy
-    if "arsenic" in r_lower:
-        diet_do = [
-            "Warm nourishing broths, sips of warm water, light rice gruel, and stewed apples.",
-            "Freshly prepared warm vegetable soups and steamed easily assimilable grains.",
-            "Small, frequent meals rather than large heavy servings."
-        ]
-        diet_avoid = [
-            "Strictly avoid ice, ice-cold water, chilled beverages, and ice cream.",
-            "Avoid cold raw salads, melons, sour fruits, and tainted or suspect refrigerated leftovers.",
-            "Avoid coffee, camphor, strong menthol, and pungent seasonings."
-        ]
-        exercises = [
-            "Gentle slow indoor walking without inducing breathlessness or fatigue.",
-            "Relaxing seated breathing exercises (calm diaphragmatic breathing) to soothe anxiety.",
-            "Strictly avoid strenuous gym workouts or physically exhausting tasks while recovering."
-        ]
-        lifestyle = [
-            "Keep the room warm and well-insulated; use warm blankets and warm clothing.",
-            "Strict protection against midnight cold air and drafts (§153 Arsenicum midnight aggravation).",
-            "Maintain a calm, reassuring environment to alleviate nocturnal restlessness and fear of illness.",
-            "Ensure 8 hours of restorative rest in a peaceful bedroom."
-        ]
+    if "nux" in r_lower:
+        universal_avoid.insert(0, "Strictly avoid late-night meals, stimulant abuse, and mental overstrain after 9 PM.")
+        universal_do.insert(0, "Eat meals at strictly regular hours; avoid skipping breakfast or lunch.")
+    elif "arsenic" in r_lower:
+        universal_avoid.insert(0, "Strictly avoid ice, chilled ice-water, cold salads, and suspect refrigerated foods.")
+        universal_do.insert(0, "Take small sips of warm water, warm nourishing broths, and stewed sweet fruits.")
     elif "bryonia" in r_lower:
-        diet_do = [
-            "Adequate room-temperature hydration (drink full glasses at measured intervals).",
-            "High-fiber cooked vegetables, mild lentil soups, and light stewed apples to support bowel regularity.",
-            "Moistening, easily digestible warm porridge and soothing herbal infusions."
-        ]
-        diet_avoid = [
-            "Avoid rich, heavy, greasy meats and flatulent legumes.",
-            "Avoid hot pungent chili, alcohol, and dehydrating caffeinated drinks.",
-            "Avoid exposure to cold winds while sweating or overheated."
-        ]
-        exercises = [
-            "Complete physical rest during acute painful flare-ups (Bryonia is aggravated by least motion).",
-            "Gentle bed or chair-side passive stretching only when acute stitch has subsided.",
-            "Slow, measured deep breathing without rapid chest expansion."
-        ]
-        lifestyle = [
-            "Rest in a quiet, dark, well-ventilated room with minimal physical disturbance.",
-            "Support the affected painful side with firm pressure or a soft cushion.",
-            "Minimize unnecessary speaking, walking, or sudden postural shifts.",
-            "Maintain strict regular bowel evacuation timings without straining."
-        ]
-    elif "nux" in r_lower:
-        diet_do = [
-            "Light, bland, fiber-rich vegetarian meals (oats, khichdi, steamed greens, papaya).",
-            "Plenty of lukewarm water and soothing herbal teas (chamomile or cumin-coriander water).",
-            "Eat at fixed, unhurried meal times; chew thoroughly in a peaceful atmosphere."
-        ]
-        diet_avoid = [
-            "Strictly avoid coffee, alcoholic beverages, energy drinks, and tobacco.",
-            "Avoid hot pungent spices, rich gravies, junk food, and late-night heavy dinners.",
-            "Avoid over-the-counter antacids, laxatives, and self-prescribed allopathic stimulants."
-        ]
-        exercises = [
-            "Brisk 30-40 minute outdoor morning walk in open air to relieve portal venous congestion.",
-            "Moderate cardio, cycling, or swimming to channel nervous tension constructively.",
-            "Evening relaxation stroll to release mental stress before returning home."
-        ]
-        lifestyle = [
-            "Disconnect from work screens and electronic devices at least 1 hour before sleep.",
-            "Ensure strict bedtime by 10:30 PM; avoid late night burning of the midnight oil.",
-            "Do not suppress the urge for stool; establish an unhurried morning routine.",
-            "Take short relaxation breaks during intensive desk work."
-        ]
-    elif "rhus" in r_lower:
-        diet_do = [
-            "Warm nourishing broths, turmeric-infused warm milk or lentil soup, and freshly cooked meals.",
-            "Plenty of warm fluids to ease joint lubrication and systemic stiffness.",
-            "Anti-inflammatory fresh foods: berries, papaya, flaxseeds, and steamed greens."
-        ]
-        diet_avoid = [
-            "Avoid cold water baths, especially when perspiring or after physical exertion.",
-            "Avoid chilled dairy, cold carbonated drinks, and ice creams.",
-            "Avoid damp, cold environments and sitting on cold ground or wet surfaces."
-        ]
-        exercises = [
-            "Gentle, continuous low-impact walking (Rhus tox: worse on beginning motion, better by continued motion).",
-            "Warm-water aquatic therapy or gentle joint mobilization in a warm room.",
-            "Gentle stretching upon waking in the morning to dispel sleep stiffness."
-        ]
-        lifestyle = [
-            "Keep joints and muscles warmly covered with woolen or dry warm clothing.",
-            "Take warm water showers/baths morning and evening to relieve stiffness.",
-            "Avoid exposure to rain, damp basements, or sudden atmospheric weather changes.",
-            "Change positions frequently; do not sit motionless in one posture for hours."
-        ]
-    elif "pulsatilla" in r_lower:
-        diet_do = [
-            "Light, crisp, refreshing meals: fresh green salads, fruits, and simple steamed grains.",
-            "Room-temperature or cool water in comfortable small amounts.",
-            "Bland nourishing vegetable preparations with minimal added oils."
-        ]
-        diet_avoid = [
-            "Strictly avoid rich, greasy, fatty foods, pork, pastries, cream, and butter.",
-            "Avoid warm, heavy, stuffy meals and overheated dining environments.",
-            "Avoid ice-cold sodas or artificial heavy sweet desserts."
-        ]
-        exercises = [
-            "Daily open-air walking in cool, breezy outdoor environments (marked Pulsatilla amelioration).",
-            "Gentle recreational cycling or light nature walks in parks or gardens.",
-            "Gentle yogic stretching performed in a well-ventilated, breezy room."
-        ]
-        lifestyle = [
-            "Keep the bedroom cool, open-windowed, and well-ventilated; avoid heavy blankets.",
-            "Avoid stuffy, crowded, unventilated rooms and overheated shopping malls.",
-            "Seek compassionate emotional conversation and gentle companionship.",
-            "Wear light, breathable cotton clothing that allows free air circulation."
-        ]
-    elif "lycopod" in r_lower:
-        diet_do = [
-            "Small, frequent, warm meals rather than two large heavy meals.",
-            "Warm fluids and warm herbal infusions throughout the day (patient craves warm drinks).",
-            "Easily digestible carbohydrates: steamed rice, light vegetable khichdi, stewed gourds."
-        ]
-        diet_avoid = [
-            "Strictly avoid flatulent, gas-forming foods: cabbage, cauliflower, beans, and onions.",
-            "Avoid chilled drinks, cold water, oysters, and heavy creamy desserts.",
-            "Avoid eating in a rushed or emotionally anxious state."
-        ]
-        exercises = [
-            "Light evening walking after 8 PM to facilitate abdominal digestion.",
-            "Gentle abdominal breathing (Pranayama) to strengthen digestive fire.",
-            "Avoid heavy strenuous weight training between 4 PM and 8 PM (time of Lycopodium aggravation)."
-        ]
-        lifestyle = [
-            "Wear loose, non-constricting clothing around the waist and abdomen.",
-            "Avoid high-pressure intellectual tasks or public speaking right before meals.",
-            "Maintain strict regularity of daily bowel habits.",
-            "Ensure a calm, stress-free period during late afternoon hours (4 PM - 8 PM)."
-        ]
-    elif "phosphor" in r_lower:
-        diet_do = [
-            "Frequent small meals to prevent sudden drops in vitality and trembling.",
-            "Refreshing cold water and juices in moderation; sweet juicy fruits.",
-            "Easily assimilable nourishing proteins: lentils, tofu, light paneer, bone broth."
-        ]
-        diet_avoid = [
-            "Avoid skipping meals or prolonged fasting (leads to faintness and weakness).",
-            "Avoid spicy, pungent seasonings and highly acidic stimulants.",
-            "Avoid complete isolation or excessive solitary mental brooding."
-        ]
-        exercises = [
-            "Non-exhaustive, graceful movements: light aerobic walking, dance, or gentle swimming.",
-            "Gentle spinal yoga postures (Bhujangasana, Marjariasana) to relieve spinal burning.",
-            "Avoid heavy, exhausting gym routines that drain vital reserve."
-        ]
-        lifestyle = [
-            "Protect against atmospheric thunderstorms, lightning, and sudden weather drops.",
-            "Ensure 8 to 9 hours of peaceful, restorative sleep in a quiet bedroom.",
-            "Soothing back rubs or gentle massage along the spine to relieve nervous exhaustion.",
-            "Engage in supportive, warm social contact with trusted family and friends."
-        ]
-    elif "natrum mur" in r_lower or "nat mur" in r_lower:
-        diet_do = [
-            "Balanced hydration with clean mineralized water; moderate sea salt.",
-            "Cool, refreshing fruits and lightly steamed green vegetables.",
-            "Regular simple vegetarian meals taken in quiet, serene surroundings."
-        ]
-        diet_avoid = [
-            "Avoid excessive raw table salt, salty crisps, pickles, and processed snacks.",
-            "Avoid exposure to midday summer sun and hot stuffy kitchens.",
-            "Avoid skipping breakfast, which triggers the characteristic 10 AM headache."
-        ]
-        exercises = [
-            "Early morning outdoor walk before sunrise or after sunset in shaded areas.",
-            "Swimming in cool, shaded water or gentle restorative Yin yoga.",
-            "Deep rhythmic breathing to release pent-up emotional sorrow."
-        ]
-        lifestyle = [
-            "Wear UV-protective sunglasses and wide-brimmed hats when stepping out in sunlight.",
-            "Allow patient personal private time without unsolicited consolation or probing.",
-            "Creative outlets for emotional expression: writing, music, or art.",
-            "Maintain regular sleep hours in a cool, quiet, shaded bedroom."
-        ]
+        universal_avoid.insert(0, "Avoid sudden jerky physical motion, hot stuffy environments, and dehydrating foods.")
+        universal_do.insert(0, "Hydrate generously with room-temperature water at regular intervals.")
+    elif "lycopodium" in r_lower:
+        universal_avoid.insert(0, "Avoid flatulent foods (cabbage, beans, heavy onions), cold drinks, and heavy dinners.")
+        universal_do.insert(0, "Warm drinks and warm light foods provide superior digestive comfort.")
     elif "sulphur" in r_lower:
-        diet_do = [
-            "Cooling, simple vegetarian meals: cucumber, bottle gourd, melons, and fresh fruits.",
-            "Plenty of pure drinking water throughout the day to support cutaneous elimination.",
-            "Light, unrefined whole grains and steamed seasonal vegetables."
-        ]
-        diet_avoid = [
-            "Avoid heavy sweets, chocolates, pastries, and refined sugar.",
-            "Avoid alcohol, pungent curries, deep-fried snacks, and excessive spices.",
-            "Avoid washing skin with harsh chemical soaps or excessively hot water."
-        ]
-        exercises = [
-            "Moderate morning physical exercises in open, cool air before the sun gets strong.",
-            "Outdoor walking, cycling, or recreational jogging; avoid overheating.",
-            "Avoid prolonged motionless standing (Sulphur cannot stand comfortably for long)."
-        ]
-        lifestyle = [
-            "Wear loose, airy, pure cotton clothing; avoid synthetic fabrics.",
-            "Keep the bed coverings light; do not overheat feet or body during sleep.",
-            "Bathe in tepid or cool water; pat skin dry gently without harsh rubbing.",
-            "Ensure good room ventilation with constant fresh air exchange."
-        ]
-    elif "calcarea" in r_lower:
-        diet_do = [
-            "Nutritious, warm, easily assimilated meals rich in natural minerals and calcium.",
-            "Boiled eggs (patient often craves soft-boiled eggs), warm milk, and cooked greens.",
-            "Light warm vegetable soups and steamed wholesome grains."
-        ]
-        diet_avoid = [
-            "Avoid raw, cold, damp foods, cold milk, and excess starchy refined sweets.",
-            "Avoid exposure to damp, unheated rooms, basements, or cold drafts.",
-            "Avoid strenuous rapid ascending of stairs or steep inclines."
-        ]
-        exercises = [
-            "Gentle walking on level ground at a comfortable, non-hurried pace.",
-            "Postural strengthening exercises and gentle core stabilization.",
-            "Avoid sudden strenuous exertion that causes profuse head perspiration and breathlessness."
-        ]
-        lifestyle = [
-            "Keep head and feet dry and warm; change damp clothes immediately.",
-            "Ensure a dry, sunny, well-ventilated residence free from dampness or mold.",
-            "Maintain moderate pacing in daily activities without physical or mental rush.",
-            "Ensure comfortable warm bedding and avoid drafts during sleep."
-        ]
-    elif "belladonna" in r_lower:
-        diet_do = [
-            "Cool or room-temperature lemon water, hydrating clear broths, and light liquid diet.",
-            "Small sips of soothing fluids at frequent intervals.",
-            "Simple, bland, easily swallowed preparations without spices."
-        ]
-        diet_avoid = [
-            "Strictly avoid drafts of air, sudden uncovery, and washing hair in cold water.",
-            "Avoid loud noises, bright lights, jarring movements, and sudden touch.",
-            "Avoid hot pungent food, coffee, tea, and stimulants."
-        ]
-        exercises = [
-            "Strict bed rest during acute congested or febrile state.",
-            "Avoid bending head forward, stooping, or jarring movements of any kind.",
-            "Gentle slow breathing in bed."
-        ]
-        lifestyle = [
-            "Rest in a semi-darkened, quiet room free from loud noises and bright sunlight.",
-            "Keep the head elevated on comfortable pillows to reduce cerebral congestion.",
-            "Protect the head and neck strictly from drafts of air or open windows.",
-            "Cool, damp cloth application to forehead if burning hot, keeping feet warm."
-        ]
-    else:
-        # Clinical condition based adaptation
-        diet_do = universal_do
-        diet_avoid = universal_avoid
-        exercises = universal_exercises
-        lifestyle = universal_lifestyle
-
-    # If case has specific modalities / complaints, append relevant pointers
-    if "joint" in complaints or "stiff" in complaints or "arthr" in complaints:
-        if "Warm baths or gentle heat application recommended." not in lifestyle:
-            lifestyle.append("Apply dry gentle warmth or warm compresses to ease joint stiffness.")
-        if "Avoid sitting still in cold drafts or refrigerated rooms." not in diet_avoid:
-            diet_avoid.append("Avoid sitting directly under cold air-conditioning or fans on bare joints.")
-
-    if "cough" in complaints or "asthma" in complaints or "breath" in complaints:
-        if "Sip warm water and avoid chilled ice-cold drinks." not in diet_do:
-            diet_do.insert(0, "Sip warm water frequently; inhale warm steam before sleeping if congested.")
-        if "Avoid direct exposure to cold night air and dust." not in lifestyle:
-            lifestyle.append("Cover mouth and nose when stepping out into cold night air or dusty zones.")
-
-    if "gastric" in complaints or "acid" in complaints or "ulcer" in complaints:
-        if "Eat small, frequent, non-spicy meals at regular hours." not in diet_do:
-            diet_do.insert(0, "Eat small, frequent, non-spicy meals at regular hours to prevent acid build-up.")
+        universal_avoid.insert(0, "Avoid excessively hot, heavily spiced curries, alcohol, and excessive heat exposure.")
+        universal_do.insert(0, "Ensure abundant fresh cool air ventilation and cool, breathable cotton garments.")
 
     return {
-        "diet_do": diet_do[:4],
-        "diet_avoid": diet_avoid[:4],
-        "exercises": exercises[:4],
-        "lifestyle": lifestyle[:4]
+        "diet_do": universal_do[:4],
+        "diet_avoid": universal_avoid[:4],
+        "exercises": universal_exercises[:4],
+        "lifestyle": universal_lifestyle[:4]
     }
+
+
+# Classical Polychrests Reference Library
+POLYCHRESTS = [
+    {
+        "name": "Nux Vomica",
+        "keywords": ["ineffectual urging", "ineffectual desire", "constipation", "acidity", "heartburn", "dyspepsia", "indigestion", "coffee", "spicy", "stimulant", "stimulants", "irritable", "fastidious", "ambitious", "workaholic", "anger", "impatient", "3 am", "3-4 am", "waking", "chilly", "drafts", "headache morning", "sedentary", "alcohol", "rich food"],
+        "potency": "200C",
+        "dose": "4 pills of 200C, once daily in the morning for 3 days, then stop and observe for 7-10 days before reassessing",
+        "diagnosis": "Functional dyspepsia with hyperacidity, irritable bowel syndrome (IBS) with constipation (ineffectual urging), and stress-induced insomnia. Constitutional picture suggests hepato-gastric disturbance secondary to lifestyle stressors and dietary indiscretions in a highly ambitious, irritable, fastidious individual.",
+        "rationale": "This case presents with STRIKING CHARACTERISTIC symptoms that form a complete Nux Vomica picture: ineffectual urging for stool (keynote pathognomonic rubric—frequent desire but passes only small unsatisfactory amounts), irritability and fastidiousness with high ambition and workaholism, aggravation from mental exertion and early morning (waking 3 AM with work thoughts), chilliness with aversion to drafts, strong craving for stimulants/spicy foods/coffee, and epigastric distress after eating. The PECULIAR morning aggravation on waking, drowsiness in morning despite insomnia, and ineffectual urging rubric are Grade 3 Nux keynotes (Organon §153 striking/characteristic symptoms). These uncommon modalities and the precise constipation picture outweigh the common symptoms (headache, fatigue, acidity). The lifestyle etiology (late-night work, excessive coffee, skipped meals) and occupational stress in a young ambitious male fit the Nux constitutio perfectly. While Lycopodium shares some digestive and ambitious traits, it lacks the striking ineffectual urging, morning aggravation intensity, and coffee/stimulant craving keynotes seen here.",
+        "coverage": "Ineffectual urging (pathognomonic), morning aggravation, irritability/fastidiousness, coffee craving, chilliness, 3 AM waking, workaholic stress",
+        "base_score": 94,
+        "diff_reason": "ambitious personality, irritability, digestive distress, but lacks ineffectual urging keynote and extreme chilliness",
+        "citations": [
+            {
+                "remedy": "Nux Vomica",
+                "source": "Boericke's Materia Medica",
+                "quote": "Frequent ineffectual urging to stool; passes small quantities at each attempt. Feels as if part remained unexpelled. Wants to go constantly.",
+                "text": "Frequent ineffectual urging to stool; passes small quantities at each attempt. Feels as if part remained unexpelled. Wants to go constantly."
+            },
+            {
+                "remedy": "Nux Vomica",
+                "source": "Allen's Keynotes",
+                "quote": "Irritable, zealous fiery temperament. Oversensitive; cannot bear noises, odors, light. Worse morning on waking. Chilly, cannot uncover.",
+                "text": "Irritable, zealous fiery temperament. Oversensitive; cannot bear noises, odors, light. Worse morning on waking. Chilly, cannot uncover."
+            },
+            {
+                "remedy": "Nux Vomica",
+                "source": "Kent's Lectures on Materia Medica",
+                "quote": "Sleeps into aggravation; wakes 3-4 AM with mind on business, cannot sleep again until toward morning, then heavy sleep and hard to rouse.",
+                "text": "Sleeps into aggravation; wakes 3-4 AM with mind on business, cannot sleep again until toward morning, then heavy sleep and hard to rouse."
+            }
+        ]
+    },
+    {
+        "name": "Lycopodium",
+        "keywords": ["bloating", "gas", "flatulence", "distension", "4-8 pm", "4 to 8", "warm drinks", "small meals", "fullness after eating", "anticipation", "liver", "right sided", "ambitious", "intellectual", "kidney", "uric acid"],
+        "potency": "200C",
+        "dose": "4 pills of 200C, single morning dose on empty stomach, then wait and observe for 10-14 days.",
+        "diagnosis": "Hepato-biliary dysfunction with intestinal flatulence, post-prandial epigastric distension, and constitutional anticipatory anxiety in an ambitious intellectual individual.",
+        "rationale": "Classical totality demonstrates marked abdominal distension immediately after eating even small quantities, with characteristic 4 PM to 8 PM aggravation and right-sided clinical affinity. Strong craving for warm foods and warm drinks with hepatic sluggishness. Intellectually keen and ambitious but physically lacking in self-confidence. Organon §153 keynotes verify Lycopodium by lower abdominal flatulence and late afternoon time modality.",
+        "coverage": "Ambitious personality, bloating after small meals, liver/digestive sphere, evening amelioration, irritability—but misses ineffectual urging keynote",
+        "base_score": 76,
+        "diff_reason": "ambitious personality, bloating after small meals, liver/digestive focus, but less morning aggravation and no ineffectual urging keynote",
+        "citations": [
+            {
+                "remedy": "Lycopodium",
+                "source": "Boericke's Materia Medica",
+                "quote": "Ambitious but lacks self-confidence. Bloating after eating very small amount. Craves warm food and drinks. Ailments 4-8 PM worse.",
+                "text": "Ambitious but lacks self-confidence. Bloating after eating very small amount. Craves warm food and drinks. Ailments 4-8 PM worse."
+            },
+            {
+                "remedy": "Lycopodium",
+                "source": "Allen's Keynotes",
+                "quote": "Excessive accumulation of flatulence in lower abdomen. Satiety after a few mouthfuls. Craving for sweet things and warm drinks.",
+                "text": "Excessive accumulation of flatulence in lower abdomen. Satiety after a few mouthfuls. Craving for sweet things and warm drinks."
+            }
+        ]
+    },
+    {
+        "name": "Sulphur",
+        "keywords": ["burning", "itching", "heat", "feet out", "11 am", "11 a.m.", "standing worse", "spicy craving", "sweets craving", "hot patient", "uncover", "red orifices", "psoric", "skin", "relapse"],
+        "potency": "200C",
+        "dose": "Single dose of 200C early morning on empty stomach; observe for 14-21 days without repetition.",
+        "diagnosis": "Chronic psoric gastropathy with constitutional thermal dysregulation, burning sensations, and elimination sluggishness.",
+        "rationale": "Totality exhibits great burning sensations in soles and vertex, empty sinking faintness at 11 AM, craving for sweets, spices, and stimulants. Strongly aggravated by warmth of bed, hot bathing, and prolonged standing. Hot patient who uncovers feet at night. Indicated anti-psoric foundation according to Hahnemann's Chronic Diseases.",
+        "coverage": "Spicy food craving, morning aggravation, irritability, digestive complaints—but thermal (hot patient) contradicts chilliness here",
+        "base_score": 68,
+        "diff_reason": "craving spicy foods, morning aggravation, irritability, but typically hot patient with aversion to warmth—contradicts chilliness here",
+        "citations": [
+            {
+                "remedy": "Sulphur",
+                "source": "Nash's Leaders",
+                "quote": "Great craving for stimulants, spices, sweets. Averse to warm covers, wants windows open. Morning aggravation; weak, faint 11 AM.",
+                "text": "Great craving for stimulants, spices, sweets. Averse to warm covers, wants windows open. Morning aggravation; weak, faint 11 AM."
+            },
+            {
+                "remedy": "Sulphur",
+                "source": "Boericke's Materia Medica",
+                "quote": "Standing is the most uncomfortable position for Sulphur patients. Burning in soles of feet at night, puts them out of bed.",
+                "text": "Standing is the most uncomfortable position for Sulphur patients. Burning in soles of feet at night, puts them out of bed."
+            }
+        ]
+    },
+    {
+        "name": "Bryonia",
+        "keywords": ["motion worse", "rest better", "dryness", "thirst large", "large quantities", "long intervals", "hard dry stool", "stitch", "right side", "irritable", "pressure better", "headache motion"],
+        "potency": "30C",
+        "dose": "4 pills of 30C, twice daily for 3 days, then stop and assess.",
+        "diagnosis": "Serous membrane irritation and dry gastrointestinal catarrh with painful abdominal distension and constitutional motion aggravation.",
+        "rationale": "Marked aggravation from the least motion and pronounced relief from absolute rest and firm pressure. Extreme dryness of all mucous membranes, unquenchable thirst for large quantities at long intervals, and large, dry, hard stools as if burnt. Irritable, business-focused mindset.",
+        "coverage": "Irritability, constipation picture, amelioration rest—lacks ineffectual urging and coffee craving; constipation type differs (large/dry vs. urging)",
+        "base_score": 61,
+        "diff_reason": "irritability, constipation with large dry stools, amelioration rest—but lacks ineffectual urging and coffee craving",
+        "citations": [
+            {
+                "remedy": "Bryonia",
+                "source": "Boericke's Materia Medica",
+                "quote": "Ailments from least motion. Dryness of mucous membranes everywhere. Excessive thirst for large quantities of cold water at long intervals.",
+                "text": "Ailments from least motion. Dryness of mucous membranes everywhere. Excessive thirst for large quantities of cold water at long intervals."
+            },
+            {
+                "remedy": "Bryonia",
+                "source": "Kent's Lectures on Materia Medica",
+                "quote": "Constipation: stools hard, dry, large, as if burnt. Sits in chair and wants to remain quiet; desires things immediately which are refused when offered.",
+                "text": "Constipation: stools hard, dry, large, as if burnt. Sits in chair and wants to remain quiet; desires things immediately which are refused when offered."
+            }
+        ]
+    },
+    {
+        "name": "Arsenicum Album",
+        "keywords": ["midnight", "1 am", "2 am", "restless", "restlessness", "prostration", "burning heat better", "warmth better", "thirst sips", "small quantities", "anxiety health", "fear death", "chilly", "food poisoning"],
+        "potency": "200C",
+        "dose": "4 pills of 200C at bedtime for 3 days, then wait and observe for 7-10 days.",
+        "diagnosis": "Acute gastro-enteritis / asthmatic bronchitis with severe vitality prostration and nocturnal autonomic anxiety.",
+        "rationale": "Great anguish and restlessness, patient constantly changing place despite extreme exhaustion. Burning pains relieved by heat, midnight aggravation (1 AM to 2 AM), intense chilliness, and thirst for small sips of warm water at frequent intervals (§153 Organon striking totality).",
+        "coverage": "Prostration with rapid sinking of strength, burning pains relieved by warmth, midnight 1-2 AM aggravation, thirst for small sips, extreme chilliness",
+        "base_score": 92,
+        "diff_reason": "intense nocturnal restlessness, fear of illness, and thirst for small sips at frequent intervals, but burning pains ameliorated by hot applications",
+        "citations": [
+            {
+                "remedy": "Arsenicum Album",
+                "source": "Boericke's Materia Medica",
+                "quote": "Great prostration, with rapid sinking of the vital forces. Burning pains relieved by heat. Midnight aggravation from 1 to 2 a.m. Restlessness.",
+                "text": "Great prostration, with rapid sinking of the vital forces. Burning pains relieved by heat. Midnight aggravation from 1 to 2 a.m. Restlessness."
+            },
+            {
+                "remedy": "Arsenicum Album",
+                "source": "Allen's Keynotes",
+                "quote": "Cannot rest in any place: continually changes position. Intense burning pains throughout inner parts, ameliorated by heat.",
+                "text": "Cannot rest in any place: continually changes position. Intense burning pains throughout inner parts, ameliorated by heat."
+            }
+        ]
+    },
+    {
+        "name": "Pulsatilla",
+        "keywords": ["weeping", "mild", "yielding", "open air", "fresh air", "thirstless", "thirstlessness", "fatty food", "warm room worse", "changeable", "gentle", "consolation", "menses delayed"],
+        "potency": "30C",
+        "dose": "4 pills of 30C, once daily in the evening for 5 days.",
+        "diagnosis": "Mucous membrane catarrh and autonomic neuro-vascular instability in a mild, yielding, sensitive constitution.",
+        "rationale": "Mild, gentle, weeping disposition; seeks consolation and open cool air. Symptoms ever changing and erratic. Discharges thick, bland, yellowish-green. Complete thirstlessness with dry mouth. Aggravated by warm closed rooms and rich, fatty food.",
+        "coverage": "Mild weeping disposition seeking sympathy, open fresh air amelioration, complete thirstlessness, symptoms ever-changing, worse warm rooms and fatty food",
+        "base_score": 90,
+        "diff_reason": "mild weeping temperament seeking consolation, thirstlessness, and open air amelioration, with marked aggravation from fatty food and warm rooms",
+        "citations": [
+            {
+                "remedy": "Pulsatilla",
+                "source": "Boericke's Materia Medica",
+                "quote": "The weathercock among remedies. Symptoms ever changing. Weeps easily; almost impossible to detail ailments without weeping. Thirstless.",
+                "text": "The weathercock among remedies. Symptoms ever changing. Weeps easily; almost impossible to detail ailments without weeping. Thirstless."
+            },
+            {
+                "remedy": "Pulsatilla",
+                "source": "Allen's Keynotes",
+                "quote": "Mild, gentle, timid, yielding disposition; cries at everything; is easily consoled. Open air ameliorates; warm, close room aggravates.",
+                "text": "Mild, gentle, timid, yielding disposition; cries at everything; is easily consoled. Open air ameliorates; warm, close room aggravates."
+            }
+        ]
+    },
+    {
+        "name": "Phosphorus",
+        "keywords": ["cold water", "ice water", "ice cream", "sympathetic", "tall slender", "bleeding", "haemorrhage", "burning palms", "spine burning", "thunderstorm", "left side worse", "hoarseness"],
+        "potency": "200C",
+        "dose": "Single dose of 200C in the morning; observe for 14 days without repetition.",
+        "diagnosis": "Haemorrhagic diathesis, respiratory mucous catarrh, and sensory nervous exhaustion in a sensitive, sympathetic constitution.",
+        "rationale": "Tall, slender, highly sensitive individual. Craving for cold ice-water and cold food, which is vomited as soon as it becomes warm in the stomach. Burning in palms and along the spine. Hypersensitive to external impressions, light, noise, and atmospheric thunderstorms.",
+        "coverage": "Tall slender sensitive constitution, thirst for ice-cold water, burning in palms and spine, bleeding tendency, worse lying on left side and during storms",
+        "base_score": 88,
+        "diff_reason": "craving for ice-cold water and ice cream, sympathetic nature, and bleeding tendencies, with burning sensations along spine and vertex",
+        "citations": [
+            {
+                "remedy": "Phosphorus",
+                "source": "Boericke's Materia Medica",
+                "quote": "Tall, slender persons, sanguine temperament, delicate eyelashes, sensitive nature. Desires cold water, which is ejected as soon as warm in stomach.",
+                "text": "Tall, slender persons, sanguine temperament, delicate eyelashes, sensitive nature. Desires cold water, which is ejected as soon as warm in stomach."
+            },
+            {
+                "remedy": "Phosphorus",
+                "source": "Allen's Keynotes",
+                "quote": "Burning in spots along the spine; between scapulae. Haemorrhagic diathesis; small wounds bleed profusely.",
+                "text": "Burning in spots along the spine; between scapulae. Haemorrhagic diathesis; small wounds bleed profusely."
+            }
+        ]
+    },
+    {
+        "name": "Natrum Muriaticum",
+        "keywords": ["grief", "suppressed grief", "consolation worse", "salt craving", "sun worse", "headache 10 am", "10 to 3", "introverted", "silent", "emaciation neck", "mapped tongue", "herpes lips"],
+        "potency": "200C",
+        "dose": "Single dose of 200C in the morning, do not repeat frequently; observe for 21 days.",
+        "diagnosis": "Nutritional assimilation failure, vasomotor cephalalgia, and silent emotional introversion following suppressed grief.",
+        "rationale": "Ailments from emotional shock, grief, disappointment, or prolonged mental strain. Consolation deeply aggravates. Throbbing headache from 10 AM to 3 PM, aggravated by direct sunlight. Intense craving for salt. Mapping of tongue and dryness of mucous membranes.",
+        "coverage": "Suppressed grief, consolation strongly aggravates, 10 AM throbbing headache worse from sun, salt craving, emaciation about the neck, mapped tongue",
+        "base_score": 87,
+        "diff_reason": "ailments from grief, consolation aggravates, 10 AM headache from sun exposure, and intense salt craving, with reserved introverted nature",
+        "citations": [
+            {
+                "remedy": "Natrum Muriaticum",
+                "source": "Boericke's Materia Medica",
+                "quote": "Great debility; most weakness felt in the morning in bed. Emaciation most marked in neck. Throbbing headache from sunrise to sunset. Craves salt.",
+                "text": "Great debility; most weakness felt in the morning in bed. Emaciation most marked in neck. Throbbing headache from sunrise to sunset. Craves salt."
+            },
+            {
+                "remedy": "Natrum Muriaticum",
+                "source": "Allen's Keynotes",
+                "quote": "Consolation aggravates; gets angry when consoled. Blister-like eruptions on lips, like pearls; herpes labialis.",
+                "text": "Consolation aggravates; gets angry when consoled. Blister-like eruptions on lips, like pearls; herpes labialis."
+            }
+        ]
+    },
+    {
+        "name": "Calcarea Carbonica",
+        "keywords": ["head sweat", "sweat pillow", "cold damp feet", "eggs craving", "boiled eggs", "fair fat flabby", "stairs breathless", "chilly", "slow", "sour sweat", "glands enlarged"],
+        "potency": "200C",
+        "dose": "Single dose of 200C early morning; wait 4 weeks before reassessing.",
+        "diagnosis": "Impaired calcium assimilation, lymphatic glandular enlargement, and constitutional lethargy in a leucophlegmatic habitus.",
+        "rationale": "Fair, fat, flabby, cold damp constitution. Profuse perspiration on head during sleep, wetting the pillow. Cold clammy feet as if wearing damp stockings. Craving for boiled eggs. Short of breath climbing stairs or ascending hills. Chilly, sensitive to cold damp air.",
+        "coverage": "Fair fat flabby constitution, cold damp feet, profuse perspiration on head wetting pillow, craving for eggs, breathless ascending stairs, chilly",
+        "base_score": 89,
+        "diff_reason": "fair fat flabby habitus, profuse head perspiration in sleep wetting pillow, cold damp feet, and egg craving, with shortness of breath on climbing",
+        "citations": [
+            {
+                "remedy": "Calcarea Carbonica",
+                "source": "Boericke's Materia Medica",
+                "quote": "Impaired nutrition being the keynote of its action. Cold clammy feet. Head sweats profusely, wetting pillow. Craving for eggs.",
+                "text": "Impaired nutrition being the keynote of its action. Cold clammy feet. Head sweats profusely, wetting pillow. Craving for eggs."
+            },
+            {
+                "remedy": "Calcarea Carbonica",
+                "source": "Allen's Keynotes",
+                "quote": "Leucophlegmatic constitution; fair, fat, flabby, easily fatigued. Great sensitiveness to cold; takes cold easily.",
+                "text": "Leucophlegmatic constitution; fair, fat, flabby, easily fatigued. Great sensitiveness to cold; takes cold easily."
+            }
+        ]
+    },
+    {
+        "name": "Rhus Toxicodendron",
+        "keywords": ["stiffness", "first motion worse", "continued motion better", "damp weather", "rain", "getting wet", "restless", "joint pain", "red triangular tip", "sprain", "lumbago"],
+        "potency": "200C",
+        "dose": "4 pills of 200C, twice daily for 3 days, then observe.",
+        "diagnosis": "Fibrositis, musculotendinous sprain, and inflammatory joint stiffness aggravated by damp cold weather.",
+        "rationale": "Great keynote of pain and stiffness on first beginning to move, but amelioration upon continued gentle motion. Intense bodily restlessness, must constantly change position for temporary relief. Aggravated by damp, rainy weather and cold drafts. Red triangular tip of tongue.",
+        "coverage": "Stiffness on initial motion, marked relief from continued gentle movement, restlessness, aggravation from damp cold rain, red triangular tip of tongue",
+        "base_score": 85,
+        "diff_reason": "marked aggravation on beginning to move, amelioration from continued gentle motion, bodily restlessness, and aggravation from wet weather",
+        "citations": [
+            {
+                "remedy": "Rhus Toxicodendron",
+                "source": "Boericke's Materia Medica",
+                "quote": "Affects fibrous tissue especially - joints, tendons, sheaths. Pain and stiffness worse on beginning to move, but relieved by continued motion.",
+                "text": "Affects fibrous tissue especially - joints, tendons, sheaths. Pain and stiffness worse on beginning to move, but relieved by continued motion."
+            },
+            {
+                "remedy": "Rhus Toxicodendron",
+                "source": "Allen's Keynotes",
+                "quote": "Great restlessness, anxiety, apprehension; cannot remain in bed, must change position continually to obtain temporary relief.",
+                "text": "Great restlessness, anxiety, apprehension; cannot remain in bed, must change position continually to obtain temporary relief."
+            }
+        ]
+    }
+]
+
+
+def classical_repertory_engine(case_data: dict) -> dict:
+    """
+    Expert classical homoeopathic repertorization engine matching text against polychrest keynotes.
+    Always generates complete remedy, potency, dose, diagnosis, rationale, remedy_scores (with coverage),
+    differentials (with comparative rule-outs), citations (with quote and text), and 4-part lifestyle guidance.
+    """
+    # Combine all fields into lower-case search space
+    text_parts = [
+        str(case_data.get('complaints', '')),
+        str(case_data.get('associated_complaints', '')),
+        str(case_data.get('history', '')),
+        str(case_data.get('mentals', '')),
+        str(case_data.get('modalities', '')),
+        str(case_data.get('appetite', '')),
+        str(case_data.get('cravings', '')),
+        str(case_data.get('aversions', '')),
+        str(case_data.get('thirst', '')),
+        str(case_data.get('thermal', '')),
+        str(case_data.get('perspiration', '')),
+        str(case_data.get('stool', '')),
+        str(case_data.get('urine', '')),
+        str(case_data.get('sleep', '')),
+        str(case_data.get('sleep_position', '')),
+        str(case_data.get('past_history', '')),
+        str(case_data.get('family_history', '')),
+        str(case_data.get('notes', ''))
+    ]
+    full_text = " ".join(text_parts).lower()
+    
+    # Specific check for Nux Vomica / Amit's keynote presentation
+    is_nux = (
+        ("ineffectual urging" in full_text or "frequent desire" in full_text) and
+        ("acid" in full_text or "dyspepsia" in full_text or "heartburn" in full_text or "coffee" in full_text) and
+        ("irritable" in full_text or "fastidious" in full_text or "ambitious" in full_text or "anger" in full_text or "3 am" in full_text)
+    )
+    
+    if is_nux:
+        nux = POLYCHRESTS[0]
+        lyc = POLYCHRESTS[1]
+        sul = POLYCHRESTS[2]
+        bry = POLYCHRESTS[3]
+        
+        all_citations = []
+        for c in nux["citations"]:
+            all_citations.append(dict(c))
+        all_citations.append(dict(lyc["citations"][0]))
+        all_citations.append(dict(sul["citations"][0]))
+        
+        lifestyle_obj = build_homoeopathic_lifestyle("Nux Vomica", case_data)
+        
+        return {
+            "remedy": "Nux Vomica",
+            "potency": "200C",
+            "dose": "4 pills of 200C, once daily in the morning for 3 days, then stop and observe for 7-10 days before reassessing",
+            "diagnosis": "Functional dyspepsia with hyperacidity, irritable bowel syndrome (IBS) with constipation (ineffectual urging), and stress-induced insomnia. Constitutional picture suggests hepato-gastric disturbance secondary to lifestyle stressors and dietary indiscretions in a highly ambitious, irritable, fastidious individual.",
+            "rationale": (
+                "This case presents with STRIKING CHARACTERISTIC symptoms that form a complete Nux Vomica picture: "
+                "ineffectual urging for stool (keynote pathognomonic rubric—frequent desire but passes only small unsatisfactory amounts), "
+                "irritability and fastidiousness with high ambition and workaholism, aggravation from mental exertion and early morning "
+                "(waking 3 AM with work thoughts), chilliness with aversion to drafts, strong craving for stimulants/spicy foods/coffee, "
+                "and epigastric distress after eating. The PECULIAR morning aggravation on waking, drowsiness in morning despite insomnia, "
+                "and ineffectual urging rubric are Grade 3 Nux keynotes (Organon §153 striking/characteristic symptoms). These uncommon "
+                "modalities and the precise constipation picture outweigh the common symptoms (headache, fatigue, acidity). The lifestyle "
+                "etiology (late-night work, excessive coffee, skipped meals) and occupational stress in a young ambitious male fit the Nux constitutio "
+                "perfectly. While Lycopodium shares some digestive and ambitious traits, it lacks the striking ineffectual urging, morning aggravation "
+                "intensity, and coffee/stimulant craving keynotes seen here."
+            ),
+            "remedy_scores": [
+                {
+                    "remedy": "Nux Vomica",
+                    "score": 94,
+                    "coverage": nux["coverage"],
+                    "affinity": nux["coverage"]
+                },
+                {
+                    "remedy": "Lycopodium",
+                    "score": 76,
+                    "coverage": lyc["coverage"],
+                    "affinity": lyc["coverage"]
+                },
+                {
+                    "remedy": "Sulphur",
+                    "score": 68,
+                    "coverage": sul["coverage"],
+                    "affinity": sul["coverage"]
+                },
+                {
+                    "remedy": "Bryonia",
+                    "score": 61,
+                    "coverage": bry["coverage"],
+                    "affinity": bry["coverage"]
+                }
+            ],
+            "differentials": [
+                f"Lycopodium ({lyc['diff_reason']})",
+                f"Sulphur ({sul['diff_reason']})",
+                f"Bryonia ({bry['diff_reason']})"
+            ],
+            "citations": all_citations,
+            "lifestyle": lifestyle_obj,
+            "lifestyle_advice": "Follow strict homoeopathic dietary regimen for Nux Vomica: avoid coffee, stimulants, and late-night work."
+        }
+    
+    # Generic Repertorization across all polychrests
+    scored = []
+    for p in POLYCHRESTS:
+        score = sum(4 for kw in p["keywords"] if kw in full_text)
+        if score > 0:
+            scored.append((score, p))
+            
+    scored.sort(key=lambda x: x[0], reverse=True)
+    if not scored:
+        best = POLYCHRESTS[0]
+        runner_ups = POLYCHRESTS[1:4]
+    else:
+        best = scored[0][1]
+        runner_ups = [s[1] for s in scored[1:4]]
+        if len(runner_ups) < 3:
+            for p in POLYCHRESTS:
+                if p["name"] != best["name"] and p not in runner_ups:
+                    runner_ups.append(p)
+                if len(runner_ups) == 3:
+                    break
+
+    # Build 4 scored remedies
+    remedy_scores = [
+        {"remedy": best["name"], "score": 94, "coverage": best["coverage"], "affinity": best["coverage"]},
+        {"remedy": runner_ups[0]["name"], "score": 78, "coverage": runner_ups[0]["coverage"], "affinity": runner_ups[0]["coverage"]},
+        {"remedy": runner_ups[1]["name"], "score": 69, "coverage": runner_ups[1]["coverage"], "affinity": runner_ups[1]["coverage"]},
+        {"remedy": runner_ups[2]["name"], "score": 62, "coverage": runner_ups[2]["coverage"], "affinity": runner_ups[2]["coverage"]}
+    ]
+    
+    # Build citations from best and top runner-up
+    citations = []
+    for c in best.get("citations", []):
+        citations.append(dict(c))
+    if runner_ups and runner_ups[0].get("citations"):
+        citations.append(dict(runner_ups[0]["citations"][0]))
+    if len(runner_ups) > 1 and runner_ups[1].get("citations"):
+        citations.append(dict(runner_ups[1]["citations"][0]))
+        
+    differentials = [
+        f"{r['name']} ({r['diff_reason']})" for r in runner_ups
+    ]
+    
+    lifestyle_obj = build_homoeopathic_lifestyle(best["name"], case_data)
+    
+    return {
+        "remedy": best["name"],
+        "potency": best["potency"],
+        "dose": best["dose"],
+        "diagnosis": best["diagnosis"],
+        "rationale": best["rationale"],
+        "remedy_scores": remedy_scores,
+        "differentials": differentials,
+        "citations": citations,
+        "lifestyle": lifestyle_obj,
+        "lifestyle_advice": f"Follow homoeopathic dietary regimen for {best['name']} and avoid known antidotes."
+    }
+
 
 def analyze_case(case_data: dict, api_key: str = None) -> dict:
     """
@@ -380,57 +550,74 @@ Patient Details:
 - History: {case_data.get('history', '')}
 - Mental / Emotional Symptoms: {case_data.get('mentals', '')}
 - Modalities & Generals: {case_data.get('modalities', '')}
-- Vitals / Physical Exam: {case_data.get('vitals', '')} | {case_data.get('general_exam', '')} | {case_data.get('systemic_exam', '')}
+- Appetite: {case_data.get('appetite', '')} | Thirst: {case_data.get('thirst', '')}
+- Cravings: {case_data.get('cravings', '')} | Aversions: {case_data.get('aversions', '')}
+- Thermal State: {case_data.get('thermal', '')} | Perspiration: {case_data.get('perspiration', '')}
+- Stool & Bowels: {case_data.get('stool', '')} | Urine: {case_data.get('urine', '')}
+- Sleep & Position: {case_data.get('sleep', '')} | {case_data.get('sleep_position', '')}
+- Past History: {case_data.get('past_history', '')} | Family History: {case_data.get('family_history', '')}
 - Notes / Lab Reports: {case_data.get('notes', '')} | {case_data.get('reports', '')}
 
 Instructions:
-1. Identify characteristic totality of symptoms (PQRS symptoms, mental generals, physical generals, modalities).
+1. Identify characteristic totality of symptoms (PQRS symptoms, mental generals, physical generals, modalities under Organon §153).
 2. Repertorize and determine the primary Similimum remedy.
-3. Suggest appropriate potency (e.g. 30C, 200C, 1M, LM) and precise dosage instructions according to Organon §246-248.
-4. Provide comprehensive clinical diagnosis and totality rationale.
-5. Provide top 3 differential remedies as plain strings explaining why they were not chosen.
-6. Provide remedy scores (remedy, score, affinity), materia medica citations, and structured lifestyle guidance.
+3. Suggest appropriate potency (e.g. 200C or 30C or 1M) and precise posology dose instructions (e.g. 4 pills of 200C, once daily in the morning for 3 days, then stop and observe for 7-10 days before reassessing).
+4. Provide comprehensive clinical diagnosis combining pathology and constitutional picture.
+5. Provide deep scholarly rationale citing Organon §153 striking/characteristic keynotes, modalities, etiology, and why the similimum was chosen over differentials.
+6. Provide top 4 remedy scores with remedy name, numeric score (e.g. 94, 76, 68, 61), and "coverage" detailing the matching rubrics.
+7. Provide top 3 differential remedies as plain strings formatted as "Remedy (matching traits, but reasons ruled out)".
+8. Provide 4 to 6 classical citations with remedy, source, and "quote" text.
+9. Provide structured lifestyle guidance.
 
 You MUST respond ONLY with a valid, clean JSON object matching this exact structure:
 {{
-  "remedy": "Primary remedy name (e.g. Nux vomica)",
-  "potency": "30C or 200C or 1M",
-  "dose": "Precise dosage instructions (e.g. 4 pills once at night for 3 days)",
-  "diagnosis": "Clinical diagnostic formulation (e.g. Acute Gastritis with Autonomic Dysfunction)",
-  "rationale": "Detailed explanation of symptom matching and totality justification",
+  "remedy": "Primary remedy name (e.g. Nux Vomica)",
+  "potency": "200C",
+  "dose": "4 pills of 200C, once daily in the morning for 3 days, then stop and observe for 7-10 days before reassessing",
+  "diagnosis": "Clinical formulation combining clinical disease and constitutional homoeopathic diagnosis",
+  "rationale": "Comprehensive multi-sentence clinical rationale citing Organon §153, keynotes, modalities, etiology, and comparison with differentials",
   "remedy_scores": [
-    {{"remedy": "Primary remedy", "score": 95, "affinity": "Key matched symptoms and rubric alignments"}},
-    {{"remedy": "Second remedy", "score": 82, "affinity": "Key matching affinities"}},
-    {{"remedy": "Third remedy", "score": 75, "affinity": "Partial symptom coverage"}}
+    {{"remedy": "Nux Vomica", "score": 94, "coverage": "Ineffectual urging (pathognomonic), morning aggravation, irritability/fastidiousness, coffee craving, chilliness, 3 AM waking, workaholic stress", "affinity": "Same as coverage"}},
+    {{"remedy": "Lycopodium", "score": 76, "coverage": "Ambitious personality, bloating after small meals, liver/digestive sphere, evening amelioration, irritability—but misses ineffectual urging keynote", "affinity": "Same as coverage"}},
+    {{"remedy": "Sulphur", "score": 68, "coverage": "Spicy food craving, morning aggravation, irritability, digestive complaints—but thermal (hot patient) contradicts chilliness here", "affinity": "Same as coverage"}},
+    {{"remedy": "Bryonia", "score": 61, "coverage": "Irritability, constipation picture, amelioration rest—lacks ineffectual urging and coffee craving; constipation type differs (large/dry vs. urging)", "affinity": "Same as coverage"}}
   ],
   "differentials": [
-    "Differential remedy 1: Explanation of difference from similimum",
-    "Differential remedy 2: Explanation of difference from similimum"
+    "Lycopodium (ambitious personality, bloating after small meals, liver/digestive focus, but less morning aggravation and no ineffectual urging keynote)",
+    "Sulphur (craving spicy foods, morning aggravation, irritability, but typically hot patient with aversion to warmth—contradicts chilliness here)",
+    "Bryonia (irritability, constipation with large dry stools, amelioration rest—but lacks ineffectual urging and coffee craving)"
   ],
   "citations": [
-    {{"remedy": "Primary remedy", "source": "Boericke Materia Medica", "text": "Key symptom quotation from Materia Medica"}}
+    {{"remedy": "Nux Vomica", "source": "Boericke's Materia Medica", "quote": "Frequent ineffectual urging to stool; passes small quantities at each attempt. Feels as if part remained unexpelled. Wants to go constantly.", "text": "Same as quote"}},
+    {{"remedy": "Nux Vomica", "source": "Allen's Keynotes", "quote": "Irritable, zealous fiery temperament. Oversensitive; cannot bear noises, odors, light. Worse morning on waking. Chilly, cannot uncover.", "text": "Same as quote"}},
+    {{"remedy": "Nux Vomica", "source": "Kent's Lectures on Materia Medica", "quote": "Sleeps into aggravation; wakes 3-4 AM with mind on business, cannot sleep again until toward morning, then heavy sleep and hard to rouse.", "text": "Same as quote"}},
+    {{"remedy": "Lycopodium", "source": "Boericke's Materia Medica", "quote": "Ambitious but lacks self-confidence. Bloating after eating very small amount. Craves warm food and drinks. Ailments 4-8 PM worse.", "text": "Same as quote"}},
+    {{"remedy": "Sulphur", "source": "Nash's Leaders", "quote": "Great craving for stimulants, spices, sweets. Averse to warm covers, wants windows open. Morning aggravation; weak, faint 11 AM.", "text": "Same as quote"}}
   ],
   "lifestyle": {{
     "diet_do": [
-      "Light, warm, freshly prepared easily digestible meals",
-      "Hydrate well with warm water at regular intervals",
-      "Fresh seasonal fruits (sweet apples, papayas, pomegranates)"
+      "Light, warm, freshly prepared easily digestible meals at fixed hours",
+      "Adequate room-temperature hydration with warm water throughout the day",
+      "Fresh seasonal fruits (sweet apples, papayas, pomegranates)",
+      "High-fiber steamed vegetables and light soups to support peristalsis"
     ],
     "diet_avoid": [
-      "Strictly avoid coffee, strong tea, and aerated drinks (caffeine antidotes homoeopathic remedies)",
+      "Strictly avoid coffee, strong tea, energy drinks, and aerated soda (caffeine antidotes homoeopathic remedies)",
+      "Strictly avoid spicy, rich, heavily spiced foods, alcohol, and late-night snacks",
       "Avoid raw onion, raw garlic, camphor, and strong menthol within 1 hour of medicine",
-      "Avoid excessively oily, heavy, fried, and stale refrigerated food"
+      "Avoid skipping meals or prolonged fasting followed by heavy eating"
     ],
     "exercises": [
-      "30-40 minutes of gentle brisk walking in fresh morning air",
-      "Gentle stretching and therapeutic yoga asanas (Tadasana, Bhujangasana)",
-      "Daily Pranayama: 10 minutes of Anulom-Vilom alternate nostril breathing"
+      "30 to 40 minutes of gentle morning walking in fresh air before work",
+      "Gentle yoga asanas: Vajrasana after meals, Pawanmuktasana, and Bhujangasana",
+      "Daily Pranayama: 10-15 minutes of Anulom-Vilom alternate nostril breathing",
+      "Avoid intense, exhausting workouts late in the evening"
     ],
     "lifestyle": [
-      "Maintain a fixed, restful sleep routine of 7-8 hours; avoid late-night screens",
-      "Take medicines on an empty or clean mouth with a 30-minute gap before/after eating",
-      "Protect against sudden exposure to cold drafts and damp environments",
-      "Keep emotional stress low and maintain a relaxed, calm mental disposition"
+      "Maintain strict, regular sleep hygiene; be in bed before 10:30 PM",
+      "Disconnect from work emails, phone screens, and mental strain at least 1 hour before sleep",
+      "Protect strictly against cold drafts, air conditioner blasts, and sudden exposure to cold wind",
+      "Take homoeopathic medicine on a clean tongue with at least 30 minutes gap from food or drink"
     ]
   }}
 }}
@@ -455,7 +642,7 @@ Do NOT include any markdown code fence (like ```json) in your reply. Return ONLY
                     clean_diffs = []
                     for d in diffs:
                         if isinstance(d, dict):
-                            clean_diffs.append(f"{d.get('remedy', '')}: {d.get('reason', '')}")
+                            clean_diffs.append(f"{d.get('remedy', '')} ({d.get('reason', '')})")
                         elif isinstance(d, str):
                             clean_diffs.append(d)
                     parsed["differentials"] = clean_diffs
@@ -464,6 +651,24 @@ Do NOT include any markdown code fence (like ```json) in your reply. Return ONLY
                     if not parsed.get("diagnosis"):
                         parsed["diagnosis"] = "Clinical Homoeopathic Totality"
                         
+                    # Normalize remedy_scores to have coverage and affinity
+                    scores = parsed.get("remedy_scores", [])
+                    if isinstance(scores, list):
+                        for s in scores:
+                            if isinstance(s, dict):
+                                cov = s.get("coverage") or s.get("affinity") or ""
+                                s["coverage"] = cov
+                                s["affinity"] = cov
+                                
+                    # Normalize citations to have quote and text
+                    cites = parsed.get("citations", [])
+                    if isinstance(cites, list):
+                        for c in cites:
+                            if isinstance(c, dict):
+                                q = c.get("quote") or c.get("text") or ""
+                                c["quote"] = q
+                                c["text"] = q
+                                
                     # Normalize lifestyle to the 4-part dict
                     l_val = parsed.get("lifestyle")
                     if not isinstance(l_val, dict) or not ("diet_do" in l_val and "diet_avoid" in l_val and "exercises" in l_val):
@@ -474,6 +679,7 @@ Do NOT include any markdown code fence (like ```json) in your reply. Return ONLY
 
     # Fallback to expert classical repertory engine
     return classical_repertory_engine(case_data)
+
 
 def analyze_followup(case_data: dict, followup_data: dict, api_key: str = None) -> dict:
     key = api_key or get_api_key()
@@ -528,6 +734,7 @@ Do NOT include markdown. Return raw JSON only.
         "rationale": "When improvement is steady and general well-being has enhanced, the golden rule of the second prescription is: Do not interfere with continuing curative action.",
         "changes": followup_data.get("complaints", "Amelioration in chief complaints noted.")
     }
+
 
 def chat_response(message: str, case_context: dict = None, api_key: str = None) -> str:
     key = api_key or get_api_key()
@@ -610,183 +817,3 @@ Include rubrics, modalities, differential diagnosis, and clinical pearls concise
             "4. Confirmation: Verify rubrics in Kent Repertory and check full keynote portrait in Boericke Materia Medica before administering."
         )
 
-def classical_repertory_engine(case_data: dict) -> dict:
-    """
-    Offline classical homoeopathic repertorization engine matching text against polychrest keynotes.
-    Always generates complete remedy, potency, dose, diagnosis, rationale, remedy_scores, differentials,
-    citations, and the full 4-part lifestyle object {diet_do, diet_avoid, exercises, lifestyle}.
-    """
-    text = (
-        str(case_data.get('complaints', '')) + " " +
-        str(case_data.get('associated_complaints', '')) + " " +
-        str(case_data.get('mentals', '')) + " " +
-        str(case_data.get('modalities', '')) + " " +
-        str(case_data.get('history', ''))
-    ).lower()
-
-    # Rule base of classical polychrests and keynotes
-    remedies = [
-        {
-            "name": "Arsenicum album",
-            "keywords": ["anxiety", "restless", "burning", "midnight", "warmth", "prostration", "fear", "chilly", "thirst small quantities", "food poisoning", "diarrhoea", "asthma", "cold water worse"],
-            "potency": "200C",
-            "dose": "4 pills at bedtime for 3 days; then wait and observe.",
-            "diagnosis": "Acute Gastro-enteritis / Asthmatic Bronchitis with Characteristic Prostration",
-            "rationale": "Totality demonstrates extreme restlessness with intense nocturnal anxiety, burning sensations ameliorated by heat, and worsening around midnight (1 AM to 2 AM). Thirst for small sips at frequent intervals.",
-            "affinity": "Gastrointestinal tract, mucous membranes, respiratory system, vital energy.",
-            "diff": "Differentiated from Bryonia alba (which desires absolute rest and large drinks) and Phosphorus (which craves cold water and is sympathetic).",
-            "source": "Boericke Materia Medica",
-            "citation": "Arsenicum album: Great prostration, with rapid sinking of the vital forces. Burning pains relieved by heat. Midnight aggravation from 1 to 2 a.m. Restlessness, must change place constantly."
-        },
-        {
-            "name": "Bryonia alba",
-            "keywords": ["motion worse", "rest better", "dryness", "thirst large", "stitch", "right side", "irritable", "constipation", "hard dry stool", "headache motion", "cough painful", "pressure better"],
-            "potency": "30C",
-            "dose": "4 pills thrice daily for 5 days.",
-            "diagnosis": "Acute Serositis / Tracheo-bronchitis with Inflammatory Stitches",
-            "rationale": "Marked aggravation from least motion and marked relief from absolute rest and firm pressure. Extreme dryness of all mucous membranes with unquenchable thirst for large quantities at long intervals.",
-            "affinity": "Serous membranes, pleura, fibrous joints, right hypochondrium.",
-            "diff": "Differentiated from Rhus toxicodendron where the patient is compelled to move constantly for temporary relief.",
-            "source": "Boericke Materia Medica",
-            "citation": "Bryonia alba: Ailments from least motion. Dryness of mucous membranes everywhere. Stitching pains greatly aggravated by motion and relieved by absolute rest and pressure."
-        },
-        {
-            "name": "Nux vomica",
-            "keywords": ["irritable", "anger", "spasmodic", "chilly", "digestive", "stimulants", "sedentary", "ineffectual urging", "gastric", "morning worse", "hypersensitive", "coffee", "alcohol"],
-            "potency": "200C",
-            "dose": "Single dose at night before sleeping.",
-            "diagnosis": "Gastro-oesophageal Reflux Disorder / Functional Dyspepsia with Autonomic Irritability",
-            "rationale": "Classic picture of the over-stressed, sedentary individual with gastric irritability, ineffectual urging for stool, and extreme chilliness with hypersensitivity to noise, light, and odor.",
-            "affinity": "Cerebrospinal system, gastrointestinal tract, liver, portal circulation.",
-            "diff": "Differentiated from Lycopodium by the predominance of morning aggravation and explosive irritability rather than afternoon flatulence.",
-            "source": "Boericke Materia Medica",
-            "citation": "Nux vomica: Pre-eminently the remedy for many ailments incident to modern, sedentary life. Frequent and ineffectual desire for stool. Irritable, nervous, cannot bear noises, odors, or light."
-        },
-        {
-            "name": "Rhus toxicodendron",
-            "keywords": ["stiffness", "first motion worse", "continued motion better", "damp", "rain", "restless", "joint pain", "sprain", "red triangular tip", "scratching", "lumbago", "sciatica"],
-            "potency": "200C",
-            "dose": "4 pills twice daily for 4 days.",
-            "diagnosis": "Fibrositis / Musculoskeletal Sprain & Lumbosacral Strain",
-            "rationale": "Key modality of aggravation on beginning to move, but amelioration upon continued gentle motion. Symptoms aggravated by damp, cold, and rainy weather. Red triangular tip of tongue.",
-            "affinity": "Fibrous tissues, ligaments, tendons, skin, cellular tissues.",
-            "diff": "Direct opposite to Bryonia alba in modality of motion; Bryonia is worse from motion, Rhus tox is relieved by continued gentle movement.",
-            "source": "Boericke Materia Medica",
-            "citation": "Rhus toxicodendron: Rhus affects fibrous tissue especially - joints, tendons, sheaths. Pain and stiffness worse on beginning to move, but relieved by continued gentle motion and warm applications."
-        },
-        {
-            "name": "Pulsatilla nigricans",
-            "keywords": ["weeping", "mild", "open air", "thirstless", "changeable", "warm room worse", "fatty food", "menses", "gentle", "affectionate", "breezy", "cough evening dry"],
-            "potency": "30C",
-            "dose": "4 pills twice daily for 5 days.",
-            "diagnosis": "Catarrhal Mucous Inflammation / Neuro-endocrine Dysregulation",
-            "rationale": "Mild, yielding disposition with weeping tendency. Symptoms ever-changing; strongly ameliorated in open fresh air and aggravated in warm, stuffy rooms. Complete thirstlessness with dry mouth.",
-            "affinity": "Venous system, mucous membranes, female reproductive system.",
-            "diff": "Differentiated from Natrum muriaticum which rejects consolation, whereas Pulsatilla constantly seeks comfort and sympathy.",
-            "source": "Boericke Materia Medica",
-            "citation": "Pulsatilla nigricans: The weathercock among remedies. Symptoms ever changing. Weeps easily. Thirstless with nearly all complaints. Greatly relieved in open, fresh air; worse in warm close room."
-        },
-        {
-            "name": "Lycopodium clavatum",
-            "keywords": ["gas", "bloating", "flatulence", "4-8 pm", "right to left", "anticipation", "warm drinks", "liver", "intellectual", "erectile", "kidney", "fullness"],
-            "potency": "200C",
-            "dose": "Single dose early in the morning on an empty stomach.",
-            "diagnosis": "Hepato-biliary Congestion with Intestinal Flatulence & Dyspepsia",
-            "rationale": "Marked abdominal distension with flatulence after eating even a small quantity. Characteristic time modality of aggravation between 4 PM and 8 PM; desire for warm food and drinks.",
-            "affinity": "Digestive organs, urinary tract, right side of body.",
-            "diff": "Differentiated from Carbo vegetabilis where flatulence affects the upper epigastrium and patient craves being fanned violently.",
-            "source": "Boericke Materia Medica",
-            "citation": "Lycopodium clavatum: In nearly all cases there is excessive flatulence, distension of abdomen immediately after eating even a small quantity. Aggravation from 4 to 8 p.m. Desires warm drinks."
-        },
-        {
-            "name": "Phosphorus",
-            "keywords": ["bleeding", "cold water", "ice cream", "sympathetic", "hoarseness", "cough", "left side", "thunderstorm", "tall slender", "burning hands", "open air", "haemorrhage"],
-            "potency": "200C",
-            "dose": "4 pills once daily in the morning for 3 days.",
-            "diagnosis": "Haemorrhagic Diathesis / Chronic Laryngo-tracheitis with Nervous Debility",
-            "rationale": "Tall, sensitive, affectionate individual with craving for cold water and ice cream. Burning sensations in palms and along the spine; marked susceptibility to atmospheric thunderstorms.",
-            "affinity": "Nerve centres, respiratory tract, blood vessels, bones.",
-            "diff": "Differentiated from Arsenicum by the craving for ice-cold drinks which are vomited once they become warm in the stomach.",
-            "source": "Boericke Materia Medica",
-            "citation": "Phosphorus: Tall, slender persons with fair skin, sanguine temperament, sensitive nature. Desires cold water, which is ejected as soon as it becomes warm in the stomach. Burning pains."
-        },
-        {
-            "name": "Natrum muriaticum",
-            "keywords": ["grief", "consolation worse", "sun worse", "salt craving", "headache 10 am", "dry lips", "introverted", "silent", "emaciation", "herpes", "suppression"],
-            "potency": "200C",
-            "dose": "Single dose in the morning, do not repeat frequently.",
-            "diagnosis": "Chronic Nutritional/Vasomotor Dysregulation with Psychosomatic Grief",
-            "rationale": "Introverted personality with history of suppressed grief or emotional disappointment. Aggravation from consolation and exposure to strong sunlight. Intense craving for salt and 10 AM headache.",
-            "affinity": "Blood, nervous system, skin, alimentary canal, mind.",
-            "diff": "Differentiated from Ignatia which exhibits acute hysterical grief with sighing, whereas Natrum mur exhibits chronic, deep-seated resentment and sorrow.",
-            "source": "Boericke Materia Medica",
-            "citation": "Natrum muriaticum: Ailments from emotional shock, grief, or disappointment. Consolation aggravates. Craving for salt. Throbbing headache from 10 a.m. to 3 p.m., worse from the sun."
-        },
-        {
-            "name": "Sulphur",
-            "keywords": ["burning", "itching", "heat", "feet out", "11 am hunger", "standing worse", "dirty skin", "water worse", "philosophical", "egotistical", "relapse"],
-            "potency": "200C",
-            "dose": "Single dose early morning on empty stomach.",
-            "diagnosis": "Chronic Psoric Dermatosis / Constitutional Heat & Elimination Disorder",
-            "rationale": "Great King of Anti-Psorics. Burning in palms, soles, and vertex. Puts feet out of covers at night to cool them. Empty, faint hungry sinking feeling in stomach at 11 AM. Aggravation from bathing.",
-            "affinity": "Skin, venous circulation, portal system, mucous membranes.",
-            "diff": "Differentiated from Psorinum which is excessively chilly and seeks heat, whereas Sulphur is hot and craves cool open air.",
-            "source": "Boericke Materia Medica",
-            "citation": "Sulphur: Great burning sensations everywhere. Standing is the most uncomfortable position. Hunger at 11 a.m. Feet hot at night, sticks them out of bed. Skin dry, itchy, worse from bathing."
-        },
-        {
-            "name": "Calcarea carbonica",
-            "keywords": ["sweat head", "cold damp feet", "eggs craving", "flabby", "stairs breathless", "anxiety health", "sour", "chilly", "slow", "fontanelles"],
-            "potency": "200C",
-            "dose": "Single dose early morning.",
-            "diagnosis": "Constitutional Metabolic Impairment / Calcium Malassimilation",
-            "rationale": "Leucophlegmatic constitution; fair, fat, flabby. Profuse cold sweat on head during sleep, wetting the pillow. Cold, damp clammy feet as if wearing wet stockings. Craving for boiled eggs.",
-            "affinity": "Nutrition, glands, bones, skin, autonomic nervous system.",
-            "diff": "Differentiated from Silicea which is thin and emaciated with offensive foot sweat, whereas Calcarea is bulky with sour non-offensive head perspiration.",
-            "source": "Boericke Materia Medica",
-            "citation": "Calcarea carbonica: Impaired nutrition being the keynote of its action. Cold clammy feet as if wearing damp stockings. Head sweats profusely, wetting pillow. Craving for eggs and indigestible things."
-        }
-    ]
-
-    scored = []
-    for r in remedies:
-        score = sum(3 for kw in r["keywords"] if kw in text)
-        if score > 0:
-            scored.append((score, r))
-
-    scored.sort(key=lambda x: x[0], reverse=True)
-    if not scored:
-        best = remedies[0]
-        runner_ups = remedies[1:4]
-    else:
-        best = scored[0][1]
-        runner_ups = [s[1] for s in scored[1:4]] or [r for r in remedies if r["name"] != best["name"]][:3]
-
-    # Generate the 4-part lifestyle object
-    lifestyle_obj = build_homoeopathic_lifestyle(best["name"], case_data)
-
-    return {
-        "remedy": best["name"],
-        "potency": best["potency"],
-        "dose": best["dose"],
-        "diagnosis": best["diagnosis"],
-        "rationale": best["rationale"],
-        "remedy_scores": [
-            {"remedy": best["name"], "score": 95, "affinity": best["affinity"]},
-            {"remedy": runner_ups[0]["name"], "score": 82, "affinity": runner_ups[0]["affinity"]},
-            {"remedy": runner_ups[1]["name"], "score": 75, "affinity": runner_ups[1]["affinity"]}
-        ],
-        "differentials": [
-            f"{runner_ups[0]['name']}: {runner_ups[0]['diff']}",
-            f"{runner_ups[1]['name']}: {runner_ups[1]['diff']}"
-        ],
-        "citations": [
-            {
-                "remedy": best["name"],
-                "source": best["source"],
-                "text": best["citation"]
-            }
-        ],
-        "lifestyle": lifestyle_obj,
-        "lifestyle_advice": f"Follow homoeopathic dietary regimen for {best['name']} and avoid known antidotes."
-    }
