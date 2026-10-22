@@ -37,6 +37,48 @@ database.init_db()
 
 # ----------------- AUTH & PLAN ENDPOINTS -----------------
 
+HOSPITAL_UNLIMITED_USAGE = {
+    "plan": "hospital_unlimited",
+    "status": "active",
+    "needs_plan": False,
+    "plan_started_at": "2026-01-01T00:00:00Z",
+    "plan_ends_at": None,
+    "period_start": "2026-01-01T00:00:00Z",
+    "period_end": None,
+    "limits": {
+        "cases": 999999,
+        "followups": 999999,
+        "chats": 999999,
+        "ask_ai": 999999
+    },
+    "used": {
+        "cases_used": 0,
+        "followups_used": 0,
+        "chats_used": 0,
+        "ask_ai_used": 0
+    },
+    "remaining": {
+        "cases": 999999,
+        "followups": 999999,
+        "chats": 999999,
+        "ask_ai": 999999
+    },
+    "device_limit": 999,
+    "unlimited": True,
+    "cases_used": 0,
+    "cases_limit": 999999,
+    "followups_used": 0,
+    "followups_limit": 999999,
+    "chats_used": 0,
+    "chats_limit": 999999,
+    "ask_ai_used": 0,
+    "ask_ai_limit": 999999,
+    "case_chats_used": 0,
+    "case_chats_limit": 999999,
+    "chat_turns_used": 0,
+    "chat_turns_limit": 999999
+}
+
 @app.get("/api/auth/me")
 @app.post("/api/auth/me")
 @app.get("/auth/me")
@@ -51,27 +93,13 @@ def get_auth_me():
         "email": "doctor@hospital.local",
         "is_admin": True,
         "needs_consent": False,
-        "plan": "lifetime_unlimited",
+        "plan": "hospital_unlimited",
         "plan_status": "active",
         "needs_plan": False,
         "plan_started_at": "2026-01-01T00:00:00Z",
         "plan_ends_at": None,
         "plan_payment_status": "paid",
-        "usage": {
-            "unlimited": True,
-            "cases_used": 0,
-            "cases_limit": 999999,
-            "followups_used": 0,
-            "followups_limit": 999999,
-            "chats_used": 0,
-            "chats_limit": 999999,
-            "ask_ai_used": 0,
-            "ask_ai_limit": 999999,
-            "case_chats_used": 0,
-            "case_chats_limit": 999999,
-            "chat_turns_used": 0,
-            "chat_turns_limit": 999999
-        }
+        "usage": HOSPITAL_UNLIMITED_USAGE
     }
 
 @app.post("/api/auth/consent")
@@ -134,23 +162,7 @@ async def select_plan(request: Request):
 @app.get("/api/me/usage")
 @app.get("/me/usage")
 def get_usage():
-    return {
-        "plan": "lifetime_unlimited",
-        "plan_status": "active",
-        "unlimited": True,
-        "cases_used": 0,
-        "cases_limit": 999999,
-        "followups_used": 0,
-        "followups_limit": 999999,
-        "chats_used": 0,
-        "chats_limit": 999999,
-        "ask_ai_used": 0,
-        "ask_ai_limit": 999999,
-        "case_chats_used": 0,
-        "case_chats_limit": 999999,
-        "chat_turns_used": 0,
-        "chat_turns_limit": 999999
-    }
+    return HOSPITAL_UNLIMITED_USAGE
 
 @app.get("/api/app/latest-version")
 @app.get("/app/latest-version")
@@ -967,6 +979,7 @@ async def general_chat(request: Request):
     conn.close()
     
     return {
+        "session_id": session_id,
         "messages": messages,
         "reply": reply,
         "message": reply,
@@ -992,7 +1005,7 @@ def get_general_chat(session_id: str):
             "created_at": rd.get("created_at") or datetime.datetime.now(datetime.timezone.utc).isoformat()
         })
     conn.close()
-    return {"messages": messages}
+    return {"session_id": session_id, "messages": messages}
 
 @app.delete("/api/chat/general/{session_id}")
 @app.delete("/chat/general/{session_id}")
@@ -1002,7 +1015,7 @@ def clear_general_chat(session_id: str):
     cursor.execute("DELETE FROM general_chats WHERE session_id = ?", (session_id,))
     conn.commit()
     conn.close()
-    return {"ok": True, "messages": []}
+    return {"session_id": session_id, "ok": True, "messages": []}
 
 
 # ----------------- MATERIA MEDICA ENDPOINTS -----------------
