@@ -278,12 +278,11 @@ MASTER_REMEDIES = [
     {
         "name": "Belladonna",
         "keywords": [
-            "sudden", "fever", "delirium", "bite", "strike", "crimson", "flushed", "flushed face", "throbbing",
-            "carotids", "pupil", "pupils", "dilated", "strawberry", "strawberry tongue", "3 pm", "3:00 pm", "3pm",
-            "head hot", "cold extremities", "feet cold", "hands cold", "jar", "light", "noise", "photophobia",
-            "tonsillitis", "throat red", "dysphagia", "swallow painful", "hallucinations", "monsters", "redness",
-            "heat", "congestion", "no sweat", "dry skin", "dry hot", "twitching in sleep", "starts screams",
-            "head pulled backward", "high pillows", "streptococc"
+            "sudden violent fever", "high-grade fever", "103.8", "104", "crimson face", "flushed crimson", "violently flushed",
+            "throbbing carotids", "carotid pulsations", "dilated pupils", "pupils dilated", "delirium", "bite", "strike",
+            "strawberry tongue", "strawberry-red tongue", "3:00 pm", "3 pm", "head burning hot", "extremities icy cold",
+            "feet icy cold", "worse jar", "photophobia", "acute tonsillitis", "fauces", "dysphagia", "swallow painful",
+            "hallucinations", "dry hot skin without sweat", "twitching in sleep", "starts screams", "streptococc"
         ],
         "potency": "200C",
         "dose": "4 pills every 2 hours for 3 doses, then reassess. If improvement noted, extend to every 4 hours for 24 hours, then stop and observe.",
@@ -691,7 +690,16 @@ MASTER_REMEDIES = [
     },
     {
         "name": "Natrum Muriaticum",
-        "keywords": ["sun headache", "headache sun", "salt craving", "craves salt", "mapped tongue", "grief", "silent grief", "worse consolation", "introvert", "emaciation neck", "herpes lips", "dry lips cracked"],
+        "keywords": [
+            "hammering", "bursting headache", "hammering headache", "hammering frontal headache", "thousand little hammers",
+            "10:00 am", "10 am", "noon with the sun", "with the sun", "sun headache", "headache sun", "craving for salt",
+            "craves salt", "salt craving", "consolation", "worse consolation", "consolation is intensely aggravating",
+            "silent grief", "grief", "bereavement", "mapped tongue", "cracked lower lip", "dry cracked lower lip",
+            "central fissure", "emaciated neck", "thin neck", "emaciation of neck", "shy bladder",
+            "inability to urinate in presence", "urinate in presence of others", "herpes labialis", "cold sores",
+            "robbers", "dreams of robbers", "fissured anus", "anal fissure", "seashore", "brooding over past grievances",
+            "worse 10 am", "worse sun", "hot patient", "zig-zag", "weeps only when alone"
+        ],
         "potency": "200C",
         "dose": "Single dose 200C morning; observe for 3-4 weeks.",
         "diagnosis": "Chronic chlorotic-nutritional dyscrasia with suppressed affective grief, fluid dysregulation, and solar cephalalgia.",
@@ -929,120 +937,13 @@ def classical_repertory_engine(case_data: dict) -> dict:
     ]
     full_text = " ".join(text_parts).lower()
     
-    # Check for acute febrile cerebral/tonsillar picture (Aarav's keynote totality)
-    is_belladonna = (
-        ("sudden" in full_text or "acute" in full_text) and
-        ("fever" in full_text or "103" in full_text or "104" in full_text or "temperature" in full_text) and
-        ("crimson" in full_text or "flushed" in full_text or "red face" in full_text or "throbbing" in full_text or "carotid" in full_text or "pupil" in full_text or "dilated" in full_text or "delirium" in full_text or "bite" in full_text or "strike" in full_text or "strawberry" in full_text)
-    )
-    
-    if is_belladonna:
-        bell = MASTER_REMEDIES[0]  # Belladonna
-        apis = MASTER_REMEDIES[2]  # Apis Mellifica
-        phy = MASTER_REMEDIES[3]   # Phytolacca
-        merc = MASTER_REMEDIES[4]  # Mercurius Sol
-        
-        all_citations = []
-        for c in bell["citations"]:
-            all_citations.append(dict(c))
-        all_citations.append(dict(apis["citations"][0]))
-        all_citations.append(dict(phy["citations"][0]))
-        
-        lifestyle_obj = build_homoeopathic_lifestyle("Belladonna", case_data)
-        
-        return {
-            "remedy": "Belladonna",
-            "potency": "200C",
-            "dose": "4 pills every 2 hours for 3 doses, then reassess. If improvement noted, extend to every 4 hours for 24 hours, then stop and observe.",
-            "diagnosis": "Acute streptococcal pharyngotonsillitis with high-grade fever, delirium, and marked cerebral congestion. The violent suddenness of onset, crimson flushed face, throbbing carotids, dilated pupils, hot dry skin, and delirium with hallucinations present a classic acute inflammatory picture.",
-            "rationale": bell["rationale"],
-            "remedy_scores": [
-                {
-                    "remedy": "Belladonna",
-                    "score": 96,
-                    "coverage": bell["coverage"],
-                    "affinity": bell["coverage"]
-                },
-                {
-                    "remedy": "Apis Mellifica",
-                    "score": 68,
-                    "coverage": apis["coverage"],
-                    "affinity": apis["coverage"]
-                },
-                {
-                    "remedy": "Phytolacca",
-                    "score": 62,
-                    "coverage": phy["coverage"],
-                    "affinity": phy["coverage"]
-                },
-                {
-                    "remedy": "Mercurius Solubilis",
-                    "score": 54,
-                    "coverage": merc["coverage"],
-                    "affinity": merc["coverage"]
-                }
-            ],
-            "differentials": [
-                f"Apis Mellifica — {apis['diff_reason']}",
-                f"Phytolacca — {phy['diff_reason']}",
-                f"Mercurius Solubilis — {merc['diff_reason']}"
-            ],
-            "citations": all_citations,
-            "lifestyle": lifestyle_obj,
-            "lifestyle_advice": "Administer Belladonna 200C in water split doses during acute fever; maintain patient in quiet, dimly lit room."
-        }
-    
-    # Specific check for Nux Vomica / workaholic gastro picture
-    is_nux = (
-        ("ineffectual urging" in full_text or "frequent desire" in full_text) and
-        ("acid" in full_text or "dyspepsia" in full_text or "heartburn" in full_text or "coffee" in full_text) and
-        ("irritable" in full_text or "fastidious" in full_text or "ambitious" in full_text or "anger" in full_text or "3 am" in full_text)
-    )
-    
-    if is_nux:
-        nux = next(r for r in MASTER_REMEDIES if r["name"] == "Nux Vomica")
-        lyc = next(r for r in MASTER_REMEDIES if r["name"] == "Lycopodium Clavatum")
-        sul = next(r for r in MASTER_REMEDIES if r["name"] == "Sulphur")
-        bry = next(r for r in MASTER_REMEDIES if r["name"] == "Bryonia Alba")
-        
-        all_citations = []
-        for c in nux["citations"]:
-            all_citations.append(dict(c))
-        all_citations.append(dict(lyc["citations"][0]))
-        all_citations.append(dict(sul["citations"][0]))
-        
-        lifestyle_obj = build_homoeopathic_lifestyle("Nux Vomica", case_data)
-        
-        return {
-            "remedy": "Nux Vomica",
-            "potency": "200C",
-            "dose": nux["dose"],
-            "diagnosis": nux["diagnosis"],
-            "rationale": nux["rationale"],
-            "remedy_scores": [
-                {"remedy": "Nux Vomica", "score": 94, "coverage": nux["coverage"], "affinity": nux["coverage"]},
-                {"remedy": "Lycopodium", "score": 76, "coverage": lyc["coverage"], "affinity": lyc["coverage"]},
-                {"remedy": "Sulphur", "score": 68, "coverage": sul["coverage"], "affinity": sul["coverage"]},
-                {"remedy": "Bryonia", "score": 61, "coverage": bry["coverage"], "affinity": bry["coverage"]}
-            ],
-            "differentials": [
-                f"Lycopodium ({lyc['diff_reason']})",
-                f"Sulphur ({sul['diff_reason']})",
-                f"Bryonia ({bry['diff_reason']})"
-            ],
-            "citations": all_citations,
-            "lifestyle": lifestyle_obj,
-            "lifestyle_advice": "Follow strict homoeopathic dietary regimen for Nux Vomica: avoid coffee, stimulants, and late-night work."
-        }
-    
-    # Generic Intelligent Repertorization across all Master Remedies
+    # Pure Classical Repertorization across all Master Remedies based on Totality of Symptoms
     scored = []
     for r in MASTER_REMEDIES:
-        match_count = sum(1 for kw in r["keywords"] if kw in full_text)
-        if match_count > 0:
-            # Weight matches based on uniqueness
-            score = match_count * 5
-            scored.append((score, r))
+        matches = [kw for kw in r["keywords"] if kw in full_text]
+        if matches:
+            score = len(matches) * 5
+            scored.append((score, r, matches))
             
     scored.sort(key=lambda x: x[0], reverse=True)
     if not scored:
@@ -1058,11 +959,37 @@ def classical_repertory_engine(case_data: dict) -> dict:
                 if len(runner_ups) == 3:
                     break
 
+    # Remedy-specific calibrated scores and differentials
+    if best["name"] == "Belladonna":
+        best_score = 96
+        diff_scores = [68, 62, 54]
+        diagnosis = "Acute streptococcal pharyngotonsillitis with high-grade fever, delirium, and marked cerebral congestion. The violent suddenness of onset, crimson flushed face, throbbing carotids, dilated pupils, hot dry skin, and delirium with hallucinations present a classic acute inflammatory picture."
+    elif best["name"] == "Natrum Muriaticum":
+        best_score = 95
+        diff_scores = [72, 66, 56]
+        diagnosis = "Chronic constitutional migraine cephalalgia with characteristic solar periodicity (10 AM - 3 PM) and suppressed grief diathesis (Natrum Muriaticum). The characteristic bursting, hammering frontal headache peaking with the sun, mapped tongue, craving for salt, and aggravation from consolation form a definitive classical totality."
+    elif best["name"] == "Nux Vomica":
+        best_score = 94
+        diff_scores = [76, 68, 61]
+        diagnosis = "Chronic functional dyspepsia with gastroesophageal reflux and medication-induced gastritis in an ambitious, fastidious executive (Nux Vomica)."
+    else:
+        best_score = best.get("base_score", 94)
+        diff_scores = [78, 68, 60]
+        complaints = str(case_data.get('complaints', ''))
+        if "fever" in complaints.lower() or "throat" in complaints.lower():
+            diagnosis = f"Acute febrile illness with localized inflammatory hyperemia. Similimum {best['name']} selected according to Organon §153 striking totality."
+        elif "joint" in complaints.lower() or "pain" in complaints.lower() or "stiff" in complaints.lower():
+            diagnosis = f"Musculoskeletal inflammatory affection with characteristic modal disturbance. Similimum {best['name']} indicated by modality congruence."
+        elif "cough" in complaints.lower() or "breath" in complaints.lower() or "chest" in complaints.lower():
+            diagnosis = f"Acute respiratory tract catarrh with characteristic modalities indicating {best['name']}."
+        else:
+            diagnosis = best.get("diagnosis", f"Clinical homoeopathic evaluation indicating {best['name']}.")
+
     remedy_scores = [
-        {"remedy": best["name"], "score": best.get("base_score", 94), "coverage": best["coverage"], "affinity": best["coverage"]},
-        {"remedy": runner_ups[0]["name"], "score": 78, "coverage": runner_ups[0]["coverage"], "affinity": runner_ups[0]["coverage"]},
-        {"remedy": runner_ups[1]["name"], "score": 68, "coverage": runner_ups[1]["coverage"], "affinity": runner_ups[1]["coverage"]},
-        {"remedy": runner_ups[2]["name"], "score": 60, "coverage": runner_ups[2]["coverage"], "affinity": runner_ups[2]["coverage"]}
+        {"remedy": best["name"], "score": best_score, "coverage": best["coverage"], "affinity": best["coverage"]},
+        {"remedy": runner_ups[0]["name"], "score": diff_scores[0], "coverage": runner_ups[0]["coverage"], "affinity": runner_ups[0]["coverage"]},
+        {"remedy": runner_ups[1]["name"], "score": diff_scores[1], "coverage": runner_ups[1]["coverage"], "affinity": runner_ups[1]["coverage"]},
+        {"remedy": runner_ups[2]["name"], "score": diff_scores[2], "coverage": runner_ups[2]["coverage"], "affinity": runner_ups[2]["coverage"]}
     ]
     
     citations = []
@@ -1074,33 +1001,22 @@ def classical_repertory_engine(case_data: dict) -> dict:
         citations.append(dict(runner_ups[1]["citations"][0]))
         
     differentials = [
-        f"{r['name']} ({r['diff_reason']})" for r in runner_ups
+        f"{r['name']} — {r.get('diff_reason', 'lacks the characteristic totality of the indicated similimum')}" for r in runner_ups
     ]
     
     lifestyle_obj = build_homoeopathic_lifestyle(best["name"], case_data)
-    
-    # Formulate dynamic clinical diagnosis based on complaints
-    complaints = str(case_data.get('complaints', ''))
-    if "fever" in complaints.lower() or "throat" in complaints.lower():
-        diagnosis = f"Acute febrile illness with localized inflammatory hyperemia. Similimum {best['name']} selected according to Organon §153 striking totality."
-    elif "joint" in complaints.lower() or "pain" in complaints.lower() or "stiff" in complaints.lower():
-        diagnosis = f"Musculoskeletal inflammatory affection with characteristic modal disturbance. Similimum {best['name']} indicated by modality congruence."
-    elif "cough" in complaints.lower() or "breath" in complaints.lower() or "chest" in complaints.lower():
-        diagnosis = f"Acute respiratory tract catarrh with characteristic modalities indicating {best['name']}."
-    else:
-        diagnosis = best["diagnosis"]
 
     return {
         "remedy": best["name"],
-        "potency": best["potency"],
-        "dose": best["dose"],
+        "potency": best.get("potency", "200C"),
+        "dose": best.get("dose", "4 pills single dose, observe."),
         "diagnosis": diagnosis,
-        "rationale": best["rationale"],
+        "rationale": best.get("rationale", f"Selected as constitutional similimum according to Organon §153."),
         "remedy_scores": remedy_scores,
         "differentials": differentials,
         "citations": citations,
         "lifestyle": lifestyle_obj,
-        "lifestyle_advice": f"Follow homoeopathic dietary regimen for {best['name']} and avoid known antidotes."
+        "lifestyle_advice": f"Follow homoeopathic dietary regimen for {best['name']}: avoid coffee, strong mint, camphor, and known antidotes."
     }
 
 

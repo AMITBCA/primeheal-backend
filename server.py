@@ -10,7 +10,7 @@ import database
 import ai_engine
 import materia_medica
 
-app = FastAPI(title="Prime Heal Unlimited Hospital Backend", version="1.5.1")
+app = FastAPI(title="Prime Heal Unlimited Hospital Backend", version="1.5.2")
 
 # Enable CORS for React Native and web clients
 app.add_middleware(
@@ -806,6 +806,18 @@ def unarchive_case(case_id: str):
     conn = database.get_db()
     cursor = conn.cursor()
     cursor.execute("UPDATE cases SET archived = 0 WHERE id = ?", (case_id,))
+    conn.commit()
+    conn.close()
+    return get_case(case_id)
+
+@app.post("/api/cases/{case_id}/reanalyze")
+@app.get("/api/cases/{case_id}/reanalyze")
+def reanalyze_case_endpoint(case_id: str):
+    case = get_case(case_id)
+    new_res = ai_engine.analyze_case(case)
+    conn = database.get_db()
+    cursor = conn.cursor()
+    cursor.execute("UPDATE cases SET result = ? WHERE id = ?", (json.dumps(new_res), case_id))
     conn.commit()
     conn.close()
     return get_case(case_id)
