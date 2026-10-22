@@ -889,57 +889,7 @@ def delete_followup(case_id: str, followup_id: str):
 
 # ----------------- CHAT ENDPOINTS -----------------
 
-@app.get("/api/cases/{case_id}/chat")
-@app.get("/cases/{case_id}/chat")
-@app.get("/api/chat/{case_id}")
-@app.get("/chat/{case_id}")
-def get_case_chat_endpoint(case_id: str):
-    case = get_case(case_id)
-    return case
-
-@app.post("/api/cases/{case_id}/chat")
-@app.post("/cases/{case_id}/chat")
-@app.post("/api/chat/{case_id}")
-@app.post("/chat/{case_id}")
-async def case_chat(case_id: str, request: Request):
-    body = await request.json()
-    message = body.get("message") or body.get("content") or ""
-    case = get_case(case_id)
-    reply = ai_engine.chat_response(message, case)
-    
-    conn = database.get_db()
-    cursor = conn.cursor()
-    now = datetime.datetime.now(datetime.timezone.utc).isoformat()
-    if message.strip():
-        cursor.execute("INSERT INTO case_chats (id, case_id, role, message, created_at) VALUES (?, ?, ?, ?, ?)",
-                       (str(uuid.uuid4()), case_id, "user", message, now))
-    cursor.execute("INSERT INTO case_chats (id, case_id, role, message, created_at) VALUES (?, ?, ?, ?, ?)",
-                   (str(uuid.uuid4()), case_id, "assistant", reply, now))
-    conn.commit()
-    conn.close()
-    
-    # Return updated case object with messages included
-    updated_case = get_case(case_id)
-    updated_case["reply"] = reply
-    updated_case["message"] = reply
-    updated_case["ok"] = True
-    return updated_case
-
-@app.delete("/api/cases/{case_id}/chat")
-@app.delete("/cases/{case_id}/chat")
-@app.delete("/api/chat/{case_id}")
-@app.delete("/chat/{case_id}")
-def clear_case_chat(case_id: str):
-    conn = database.get_db()
-    cursor = conn.cursor()
-    cursor.execute("DELETE FROM case_chats WHERE case_id = ?", (case_id,))
-    conn.commit()
-    conn.close()
-    updated_case = get_case(case_id)
-    updated_case["messages"] = []
-    updated_case["ok"] = True
-    return updated_case
-
+# Static General Chat Endpoints FIRST to prevent path param shadowing
 @app.post("/api/chat/general")
 @app.post("/chat/general")
 async def general_chat(request: Request):
@@ -988,7 +938,9 @@ async def general_chat(request: Request):
 
 @app.get("/api/chat/general/{session_id}")
 @app.get("/chat/general/{session_id}")
-def get_general_chat(session_id: str):
+@app.get("/api/chat/general")
+@app.get("/chat/general")
+def get_general_chat(session_id: str = "default"):
     conn = database.get_db()
     cursor = conn.cursor()
     cursor.execute("SELECT id, session_id, role, message, created_at FROM general_chats WHERE session_id = ? ORDER BY created_at ASC", (session_id,))
@@ -1009,13 +961,74 @@ def get_general_chat(session_id: str):
 
 @app.delete("/api/chat/general/{session_id}")
 @app.delete("/chat/general/{session_id}")
-def clear_general_chat(session_id: str):
+@app.delete("/api/chat/general")
+@app.delete("/chat/general")
+def clear_general_chat(session_id: str = "default"):
     conn = database.get_db()
     cursor = conn.cursor()
     cursor.execute("DELETE FROM general_chats WHERE session_id = ?", (session_id,))
     conn.commit()
     conn.close()
     return {"session_id": session_id, "ok": True, "messages": []}
+
+# Case-Specific Chat Endpoints
+@app.get("/api/cases/{case_id}/chat")
+@app.get("/cases/{case_id}/chat")
+@app.get("/api/chat/{case_id}")
+@app.get("/chat/{case_id}")
+def get_case_chat_endpoint(case_id: str):
+    if case_id.lower() in ("general", "default"):
+        return get_general_chat(case_id)
+    case = get_case(case_id)
+    return case
+
+@app.post("/api/cases/{case_id}/chat")
+@app.post("/cases/{case_id}/chat")
+@app.post("/api/chat/{case_id}")
+@app.post("/chat/{case_id}")
+async def case_chat(case_id: str, request: Request):
+    if case_id.lower() in ("general", "default"):
+        return await general_chat(request)
+        
+    body = await request.json()
+    message = body.get("message") or body.get("content") or ""
+    case = get_case(case_id)
+    reply = ai_engine.chat_response(message, case)
+    
+    conn = database.get_db()
+    cursor = conn.cursor()
+    now = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    if message.strip():
+        cursor.execute("INSERT INTO case_chats (id, case_id, role, message, created_at) VALUES (?, ?, ?, ?, ?)",
+                       (str(uuid.uuid4()), case_id, "user", message, now))
+    cursor.execute("INSERT INTO case_chats (id, case_id, role, message, created_at) VALUES (?, ?, ?, ?, ?)",
+                   (str(uuid.uuid4()), case_id, "assistant", reply, now))
+    conn.commit()
+    conn.close()
+    
+    # Return updated case object with messages included
+    updated_case = get_case(case_id)
+    updated_case["reply"] = reply
+    updated_case["message"] = reply
+    updated_case["ok"] = True
+    return updated_case
+
+@app.delete("/api/cases/{case_id}/chat")
+@app.delete("/cases/{case_id}/chat")
+@app.delete("/api/chat/{case_id}")
+@app.delete("/chat/{case_id}")
+def clear_case_chat(case_id: str):
+    if case_id.lower() in ("general", "default"):
+        return clear_general_chat(case_id)
+    conn = database.get_db()
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM case_chats WHERE case_id = ?", (case_id,))
+    conn.commit()
+    conn.close()
+    updated_case = get_case(case_id)
+    updated_case["messages"] = []
+    updated_case["ok"] = True
+    return updated_case
 
 
 # ----------------- MATERIA MEDICA ENDPOINTS -----------------
