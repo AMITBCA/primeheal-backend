@@ -66,7 +66,11 @@ def get_auth_me():
             "chats_used": 0,
             "chats_limit": 999999,
             "ask_ai_used": 0,
-            "ask_ai_limit": 999999
+            "ask_ai_limit": 999999,
+            "case_chats_used": 0,
+            "case_chats_limit": 999999,
+            "chat_turns_used": 0,
+            "chat_turns_limit": 999999
         }
     }
 
@@ -141,7 +145,11 @@ def get_usage():
         "chats_used": 0,
         "chats_limit": 999999,
         "ask_ai_used": 0,
-        "ask_ai_limit": 999999
+        "ask_ai_limit": 999999,
+        "case_chats_used": 0,
+        "case_chats_limit": 999999,
+        "chat_turns_used": 0,
+        "chat_turns_limit": 999999
     }
 
 @app.get("/api/app/latest-version")
@@ -273,9 +281,16 @@ def format_case_response(d: dict, conn=None) -> dict:
     if isinstance(diffs, list):
         for item in diffs:
             if isinstance(item, dict):
-                clean_diffs.append(f"{item.get('remedy', '')}: {item.get('reason', '')}")
-            elif isinstance(item, str):
-                clean_diffs.append(item)
+                r_name = str(item.get("remedy") or "").strip()
+                r_reason = str(item.get("reason") or item.get("coverage") or "").strip()
+                if r_name and r_reason:
+                    clean_diffs.append(f"{r_name} ({r_reason})")
+                elif r_name:
+                    clean_diffs.append(r_name)
+                elif r_reason:
+                    clean_diffs.append(r_reason)
+            elif isinstance(item, str) and item.strip():
+                clean_diffs.append(item.strip())
     if not clean_diffs:
         clean_diffs = [
             "Lycopodium (ambitious personality, bloating after small meals, liver/digestive focus, but less morning aggravation and no ineffectual urging keynote)",
@@ -443,18 +458,25 @@ def format_case_response(d: dict, conn=None) -> dict:
             c_msgs = []
             for cr in c_rows:
                 crd = dict(cr)
-                content = crd.get("message") or crd.get("content") or ""
+                content = str(crd.get("message") or crd.get("content") or "")
                 c_msgs.append({
-                    "id": crd.get("id") or str(uuid.uuid4()),
-                    "role": crd.get("role", "assistant"),
+                    "id": str(crd.get("id") or uuid.uuid4()),
+                    "case_id": str(case_id),
+                    "role": str(crd.get("role") or "assistant"),
                     "content": content,
                     "message": content,
-                    "created_at": crd.get("created_at") or datetime.datetime.now(datetime.timezone.utc).isoformat()
+                    "created_at": str(crd.get("created_at") or datetime.datetime.now(datetime.timezone.utc).isoformat())
                 })
             d["messages"] = c_msgs
+        except Exception as e:
+            print(f"[format_case_response] note reading case_chats: {e}")
+            d["messages"] = []
         finally:
             if should_close:
-                conn.close()
+                try:
+                    conn.close()
+                except:
+                    pass
     else:
         d["messages"] = []
         
@@ -855,8 +877,18 @@ def delete_followup(case_id: str, followup_id: str):
 
 # ----------------- CHAT ENDPOINTS -----------------
 
+@app.get("/api/cases/{case_id}/chat")
+@app.get("/cases/{case_id}/chat")
+@app.get("/api/chat/{case_id}")
+@app.get("/chat/{case_id}")
+def get_case_chat_endpoint(case_id: str):
+    case = get_case(case_id)
+    return case
+
 @app.post("/api/cases/{case_id}/chat")
 @app.post("/cases/{case_id}/chat")
+@app.post("/api/chat/{case_id}")
+@app.post("/chat/{case_id}")
 async def case_chat(case_id: str, request: Request):
     body = await request.json()
     message = body.get("message") or body.get("content") or ""
@@ -878,10 +910,13 @@ async def case_chat(case_id: str, request: Request):
     updated_case = get_case(case_id)
     updated_case["reply"] = reply
     updated_case["message"] = reply
+    updated_case["ok"] = True
     return updated_case
 
 @app.delete("/api/cases/{case_id}/chat")
 @app.delete("/cases/{case_id}/chat")
+@app.delete("/api/chat/{case_id}")
+@app.delete("/chat/{case_id}")
 def clear_case_chat(case_id: str):
     conn = database.get_db()
     cursor = conn.cursor()
@@ -890,6 +925,7 @@ def clear_case_chat(case_id: str):
     conn.close()
     updated_case = get_case(case_id)
     updated_case["messages"] = []
+    updated_case["ok"] = True
     return updated_case
 
 @app.post("/api/chat/general")
