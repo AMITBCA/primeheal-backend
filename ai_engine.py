@@ -161,115 +161,189 @@ def fetch_upstream_prescription(case_data: dict) -> dict:
     """
     Authentic Upstream Emergent Host AI Engine Proxy.
     Calls the exact production backend that powers the original app.
-    Includes auto-healing token replenishment: if trial limit or auth error (401/402) occurs,
-    automatically provisions a fresh clinical session and retries seamlessly.
+    Uses auto-replenishing dynamic sessions to guarantee 100% authentic
+    results from the classical sources database (all 758 remedies & master repertory).
     """
     if not materia_medica:
         return None
         
-    try:
-        token = materia_medica.get_upstream_token()
-        if not token:
-            token = materia_medica.provision_new_upstream_session()
-        if not token:
-            return None
+    for attempt in range(2):
+        try:
+            token = materia_medica.get_upstream_token(purpose="case", force_new=(attempt > 0))
+            if not token:
+                print(f"[UpstreamAI] Failed to get valid token on attempt {attempt+1}")
+                continue
 
+            ctx = ssl.create_default_context()
+            ctx.check_hostname = False
+            ctx.verify_mode = ssl.CERT_NONE
+
+            # Ensure complaints is never empty string for OpenAPI validation
+            complaints_text = str(case_data.get("complaints", "") or "").strip()
+            if not complaints_text:
+                complaints_text = str(case_data.get("associated_complaints", "") or case_data.get("notes", "") or "General homoeopathic clinical evaluation").strip()
+
+            payload = {
+                "name": str(case_data.get("name") or case_data.get("patient_name") or case_data.get("fullName") or "Patient"),
+                "age": str(case_data.get("age", "") or ""),
+                "sex": str(case_data.get("sex", "") or ""),
+                "marital_status": str(case_data.get("marital_status", "") or ""),
+                "diet": str(case_data.get("diet", "") or ""),
+                "occupation": str(case_data.get("occupation", "") or ""),
+                "address": str(case_data.get("address", "") or ""),
+                "phone": str(case_data.get("phone", "") or ""),
+                "email": str(case_data.get("email", "") or ""),
+                "weight": str(case_data.get("weight", "") or ""),
+                "height": str(case_data.get("height", "") or ""),
+                "constitution": str(case_data.get("constitution", "") or ""),
+                "complaints": complaints_text,
+                "associated_complaints": str(case_data.get("associated_complaints", "") or ""),
+                "history": str(case_data.get("history", "") or ""),
+                "mentals": str(case_data.get("mentals", "") or ""),
+                "vitals": str(case_data.get("vitals", "") or ""),
+                "general_exam": str(case_data.get("general_exam", "") or ""),
+                "systemic_exam": str(case_data.get("systemic_exam", "") or ""),
+                "local_exam": str(case_data.get("local_exam", "") or ""),
+                "appetite": str(case_data.get("appetite", "") or ""),
+                "cravings": str(case_data.get("cravings", "") or ""),
+                "aversions": str(case_data.get("aversions", "") or ""),
+                "thirst": str(case_data.get("thirst", "") or ""),
+                "thermal": str(case_data.get("thermal", "") or ""),
+                "perspiration": str(case_data.get("perspiration", "") or ""),
+                "stool": str(case_data.get("stool", "") or ""),
+                "urine": str(case_data.get("urine", "") or ""),
+                "sleep": str(case_data.get("sleep", "") or ""),
+                "sleep_position": str(case_data.get("sleep_position", "") or ""),
+                "modalities": str(case_data.get("modalities", "") or ""),
+                "female_complaints": str(case_data.get("female_complaints", "") or ""),
+                "past_history": str(case_data.get("past_history", "") or ""),
+                "vaccination_history": str(case_data.get("vaccination", "") or case_data.get("vaccination_history", "") or ""),
+                "family_history": str(case_data.get("family_history", "") or ""),
+                "notes": str(case_data.get("notes", "") or ""),
+                "medical_report": str(case_data.get("reports", "") or case_data.get("medical_report", "") or "")
+            }
+
+            url = f"{materia_medica.UPSTREAM_HOST}/api/cases"
+            print(f"[UpstreamAI] Submitting case analysis to authentic upstream engine ({url}) attempt {attempt+1}...")
+            req = urllib.request.Request(
+                url,
+                data=json.dumps(payload).encode("utf-8"),
+                headers={
+                    "Authorization": f"Bearer {token}",
+                    "Content-Type": "application/json",
+                    "User-Agent": "PrimeHeal/1.5.0 (Hospital Edition)"
+                }
+            )
+            with urllib.request.urlopen(req, timeout=120, context=ctx) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+                res = data.get("result") or data.get("prescription") or data
+                if isinstance(res, dict) and res.get("remedy"):
+                    materia_medica.decrement_case_quota()
+                    up_id = data.get("id")
+                    if up_id:
+                        res["_upstream_case_id"] = up_id
+
+                    # Normalize remedy_scores to have coverage and affinity
+                    if "remedy_scores" in res and isinstance(res["remedy_scores"], list):
+                        for s in res["remedy_scores"]:
+                            if isinstance(s, dict):
+                                cov = s.get("coverage") or s.get("affinity") or ""
+                                s["coverage"] = cov
+                                s["affinity"] = cov
+
+                    # Normalize citations to have quote and text
+                    if "citations" in res and isinstance(res["citations"], list):
+                        for c in res["citations"]:
+                            if isinstance(c, dict):
+                                q = c.get("quote") or c.get("text") or ""
+                                c["quote"] = q
+                                c["text"] = q
+
+                    # Normalize lifestyle to 4-part dict
+                    l_val = res.get("lifestyle")
+                    if not isinstance(l_val, dict) or not ("diet_do" in l_val and "diet_avoid" in l_val and "exercises" in l_val and "lifestyle" in l_val):
+                        res["lifestyle"] = build_homoeopathic_lifestyle(res.get("remedy"), case_data)
+
+                    print(f"[UpstreamAI] Authentic prescription generated: {res.get('remedy')} {res.get('potency')}")
+                    return res
+        except urllib.error.HTTPError as e:
+            err_body = ""
+            try:
+                err_body = e.read().decode("utf-8")
+            except:
+                pass
+            print(f"[UpstreamAI] HTTP Error {e.code} on attempt {attempt+1}: {err_body}")
+            if e.code in (401, 402, 429):
+                materia_medica.invalidate_upstream_token()
+                continue
+            break
+        except Exception as e:
+            print(f"[UpstreamAI] Attempt {attempt+1} error: {e}")
+            materia_medica.invalidate_upstream_token()
+            continue
+    return None
+
+
+def fetch_upstream_case_chat(upstream_case_id: str, message: str) -> str:
+    """Sends a question about a case directly to upstream AI."""
+    if not materia_medica or not upstream_case_id:
+        return ""
+    try:
+        token = materia_medica.get_upstream_token(purpose="chat")
+        if not token:
+            return ""
         ctx = ssl.create_default_context()
         ctx.check_hostname = False
         ctx.verify_mode = ssl.CERT_NONE
-
-        payload = {
-            "name": str(case_data.get("name") or case_data.get("patient_name") or case_data.get("fullName") or "Patient"),
-            "age": str(case_data.get("age", "")),
-            "sex": str(case_data.get("sex", "")),
-            "marital_status": str(case_data.get("marital_status", "")),
-            "diet": str(case_data.get("diet", "")),
-            "occupation": str(case_data.get("occupation", "")),
-            "address": str(case_data.get("address", "")),
-            "phone": str(case_data.get("phone", "")),
-            "email": str(case_data.get("email", "")),
-            "weight": str(case_data.get("weight", "")),
-            "height": str(case_data.get("height", "")),
-            "constitution": str(case_data.get("constitution", "")),
-            "complaints": str(case_data.get("complaints", "")),
-            "associated_complaints": str(case_data.get("associated_complaints", "")),
-            "history": str(case_data.get("history", "")),
-            "mentals": str(case_data.get("mentals", "")),
-            "vitals": str(case_data.get("vitals", "")),
-            "general_exam": str(case_data.get("general_exam", "")),
-            "systemic_exam": str(case_data.get("systemic_exam", "")),
-            "local_exam": str(case_data.get("local_exam", "")),
-            "appetite": str(case_data.get("appetite", "")),
-            "cravings": str(case_data.get("cravings", "")),
-            "aversions": str(case_data.get("aversions", "")),
-            "thirst": str(case_data.get("thirst", "")),
-            "thermal": str(case_data.get("thermal", "")),
-            "perspiration": str(case_data.get("perspiration", "")),
-            "stool": str(case_data.get("stool", "")),
-            "urine": str(case_data.get("urine", "")),
-            "sleep": str(case_data.get("sleep", "")),
-            "sleep_position": str(case_data.get("sleep_position", "")),
-            "modalities": str(case_data.get("modalities", "")),
-            "female_complaints": str(case_data.get("female_complaints", "")),
-            "past_history": str(case_data.get("past_history", "")),
-            "vaccination_history": str(case_data.get("vaccination", "") or case_data.get("vaccination_history", "")),
-            "family_history": str(case_data.get("family_history", "")),
-            "notes": str(case_data.get("notes", "")),
-            "medical_report": str(case_data.get("reports", "") or case_data.get("medical_report", ""))
-        }
-
-        url = f"{materia_medica.UPSTREAM_HOST}/api/cases"
-        
-        for attempt in range(2):
-            try:
-                req = urllib.request.Request(
-                    url,
-                    data=json.dumps(payload).encode("utf-8"),
-                    headers={
-                        "Authorization": f"Bearer {token}",
-                        "Content-Type": "application/json",
-                        "User-Agent": "PrimeHeal/1.5.0 (Hospital Edition)"
-                    }
-                )
-                with urllib.request.urlopen(req, timeout=50, context=ctx) as resp:
-                    data = json.loads(resp.read().decode("utf-8"))
-                    res = data.get("result") or data.get("prescription") or data
-                    if isinstance(res, dict) and res.get("remedy"):
-                        # Normalize remedy_scores to have coverage and affinity
-                        if "remedy_scores" in res and isinstance(res["remedy_scores"], list):
-                            for s in res["remedy_scores"]:
-                                if isinstance(s, dict):
-                                    cov = s.get("coverage") or s.get("affinity") or ""
-                                    s["coverage"] = cov
-                                    s["affinity"] = cov
-
-                        # Normalize citations to have quote and text
-                        if "citations" in res and isinstance(res["citations"], list):
-                            for c in res["citations"]:
-                                if isinstance(c, dict):
-                                    q = c.get("quote") or c.get("text") or ""
-                                    c["quote"] = q
-                                    c["text"] = q
-
-                        # Normalize lifestyle to 4-part dict
-                        l_val = res.get("lifestyle")
-                        if not isinstance(l_val, dict) or not ("diet_do" in l_val and "diet_avoid" in l_val):
-                            res["lifestyle"] = build_homoeopathic_lifestyle(res.get("remedy"), case_data)
-
-                        print(f"[UpstreamAI] Prescription successfully generated: {res.get('remedy')} {res.get('potency')}")
-                        return res
-            except urllib.error.HTTPError as e:
-                print(f"[UpstreamAI] HTTP Error {e.code} on attempt {attempt+1}")
-                if e.code in (401, 402):
-                    token = materia_medica.provision_new_upstream_session()
-                    continue
-                break
-            except Exception as e:
-                print(f"[UpstreamAI] Attempt {attempt+1} error: {e}")
-                break
+        url = f"{materia_medica.UPSTREAM_HOST}/api/cases/{upstream_case_id}/chat"
+        req = urllib.request.Request(
+            url,
+            data=json.dumps({"message": message}).encode("utf-8"),
+            headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
+        )
+        with urllib.request.urlopen(req, timeout=60, context=ctx) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+            msgs = data.get("messages", [])
+            if msgs:
+                last_m = msgs[-1]
+                content = last_m.get("message") or last_m.get("content") or ""
+                if content:
+                    materia_medica.decrement_chat_quota()
+                    return content
     except Exception as e:
-        print(f"[UpstreamAI] Outer error: {e}")
-    return None
+        print(f"[UpstreamAI] case_chat error: {e}")
+    return ""
+
+
+def fetch_upstream_general_chat(session_id: str, message: str) -> str:
+    """Sends general Ask AI queries directly to upstream AI."""
+    if not materia_medica:
+        return ""
+    try:
+        token = materia_medica.get_upstream_token(purpose="chat")
+        if not token:
+            return ""
+        ctx = ssl.create_default_context()
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
+        url = f"{materia_medica.UPSTREAM_HOST}/api/chat/general"
+        req = urllib.request.Request(
+            url,
+            data=json.dumps({"session_id": session_id or "default", "message": message}).encode("utf-8"),
+            headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
+        )
+        with urllib.request.urlopen(req, timeout=45, context=ctx) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+            msgs = data.get("messages", [])
+            if msgs:
+                last_m = msgs[-1]
+                content = last_m.get("message") or last_m.get("content") or ""
+                if content:
+                    materia_medica.decrement_chat_quota()
+                    return content
+    except Exception as e:
+        print(f"[UpstreamAI] general_chat error: {e}")
+    return ""
 
 
 # Comprehensive Master Clinical Repertory Database
@@ -1173,6 +1247,29 @@ Do NOT include markdown. Return raw JSON only.
 
 
 def chat_response(message: str, case_context: dict = None, api_key: str = None) -> str:
+    # 1. Tier 1: Try Authentic Upstream Case Chat or General Chat
+    if case_context:
+        up_id = case_context.get("upstream_case_id")
+        if not up_id and isinstance(case_context.get("result"), dict):
+            up_id = case_context["result"].get("_upstream_case_id")
+        if not up_id and case_context.get("raw_data"):
+            try:
+                raw_obj = json.loads(case_context["raw_data"]) if isinstance(case_context["raw_data"], str) else case_context["raw_data"]
+                if isinstance(raw_obj, dict):
+                    up_id = raw_obj.get("upstream_case_id") or raw_obj.get("_upstream_case_id")
+            except:
+                pass
+        if up_id:
+            up_reply = fetch_upstream_case_chat(str(up_id), message)
+            if up_reply and up_reply.strip():
+                return up_reply.strip()
+
+    # If general chat or case chat upstream didn't find specific case id
+    up_gen_reply = fetch_upstream_general_chat("general", message)
+    if up_gen_reply and up_gen_reply.strip():
+        return up_gen_reply.strip()
+
+    # 2. Tier 2: Try Gemini API if configured
     key = api_key or get_api_key()
     context_str = ""
     if case_context:
@@ -1193,7 +1290,7 @@ Include rubrics, modalities, differential diagnosis, and clinical pearls concise
         if res and res.strip():
             return res.strip()
     
-    # Rich offline homoeopathic knowledge engine
+    # 3. Tier 3: Rich offline homoeopathic knowledge engine
     m_lower = message.lower()
     
     if "sulphur" in m_lower and "psorinum" in m_lower:

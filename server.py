@@ -679,6 +679,9 @@ async def create_case(request: Request):
     
     # Run AI Repertorization on the case
     ai_result = ai_engine.analyze_case(body)
+    upstream_case_id = ai_result.pop("_upstream_case_id", None) if isinstance(ai_result, dict) else None
+    if upstream_case_id:
+        body["upstream_case_id"] = str(upstream_case_id)
     
     patient_name = body.get("name") or body.get("patient_name") or body.get("fullName") or "Anonymous Patient"
     
@@ -740,6 +743,11 @@ async def create_case(request: Request):
         now,
         now
     ))
+    if upstream_case_id:
+        try:
+            cursor.execute("UPDATE cases SET upstream_case_id = ? WHERE id = ?", (str(upstream_case_id), case_id))
+        except Exception:
+            pass
     conn.commit()
     conn.close()
     
@@ -815,9 +823,15 @@ def unarchive_case(case_id: str):
 def reanalyze_case_endpoint(case_id: str):
     case = get_case(case_id)
     new_res = ai_engine.analyze_case(case)
+    new_up_id = new_res.pop("_upstream_case_id", None) if isinstance(new_res, dict) else None
     conn = database.get_db()
     cursor = conn.cursor()
     cursor.execute("UPDATE cases SET result = ? WHERE id = ?", (json.dumps(new_res), case_id))
+    if new_up_id:
+        try:
+            cursor.execute("UPDATE cases SET upstream_case_id = ? WHERE id = ?", (str(new_up_id), case_id))
+        except Exception:
+            pass
     conn.commit()
     conn.close()
     return get_case(case_id)

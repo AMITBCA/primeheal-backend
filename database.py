@@ -219,7 +219,8 @@ NEW_CASE_COLUMNS = [
     ("family_history", "TEXT"),
     ("diet", "TEXT"),
     ("marital_status", "TEXT"),
-    ("raw_data", "TEXT")
+    ("raw_data", "TEXT"),
+    ("upstream_case_id", "TEXT")
 ]
 
 
