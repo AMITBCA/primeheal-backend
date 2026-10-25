@@ -677,8 +677,12 @@ async def create_case(request: Request):
     case_id = str(uuid.uuid4())
     now = datetime.datetime.now(datetime.timezone.utc).isoformat()
     
+    # Extract user authorization token if present
+    auth_header = request.headers.get("authorization", "")
+    user_token = auth_header.replace("Bearer ", "").strip() if "Bearer " in auth_header else None
+
     # Run AI Repertorization on the case
-    ai_result = ai_engine.analyze_case(body)
+    ai_result = ai_engine.analyze_case(body, user_token=user_token)
     upstream_case_id = ai_result.pop("_upstream_case_id", None) if isinstance(ai_result, dict) else None
     if upstream_case_id:
         body["upstream_case_id"] = str(upstream_case_id)
@@ -820,9 +824,11 @@ def unarchive_case(case_id: str):
 
 @app.post("/api/cases/{case_id}/reanalyze")
 @app.get("/api/cases/{case_id}/reanalyze")
-def reanalyze_case_endpoint(case_id: str):
+def reanalyze_case_endpoint(case_id: str, request: Request):
+    auth_header = request.headers.get("authorization", "")
+    user_token = auth_header.replace("Bearer ", "").strip() if "Bearer " in auth_header else None
     case = get_case(case_id)
-    new_res = ai_engine.analyze_case(case)
+    new_res = ai_engine.analyze_case(case, user_token=user_token)
     new_up_id = new_res.pop("_upstream_case_id", None) if isinstance(new_res, dict) else None
     conn = database.get_db()
     cursor = conn.cursor()
