@@ -376,15 +376,6 @@ def init_db():
     
     # Run auto-migration if PG is active
     migrate_sqlite_to_pg_if_needed()
-    
-    # Ensure all golden reference cases exist
-    try:
-        import seed_cases
-        c_seed = get_db()
-        seed_cases.seed(c_seed)
-        c_seed.close()
-    except Exception as e:
-        print(f"[Database] Golden seeding note: {e}")
 
 
 def export_all_data():
