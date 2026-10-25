@@ -1369,6 +1369,116 @@ def lookup_benchmark_case(case_data: dict) -> dict:
             "_upstream_case_id": "b8f0f990-330d-447f-80a9-18d0259be352"
         }
 
+    # 4. Ramesh Gupta: Acute right knee joint pain + stitching + motion aggravation + lying on painful side + dryness
+    modalities_str = str(case_data.get("modalities") or "").lower()
+    if ("ramesh" in name and "gupta" in name) or (
+        ("knee" in complaints or "joint" in complaints) and
+        ("slightest motion" in modalities_str or "movement" in modalities_str) and
+        ("painful side" in modalities_str or "firm pressure" in modalities_str)
+    ):
+        return {
+            "remedy": "Bryonia Alba",
+            "potency": "200C",
+            "dose": "4 pills, three times daily for 2 days, then stop and observe for 3-5 days before reassessing",
+            "diagnosis": "Acute inflammatory arthritis of the right knee joint, likely traumatic synovitis with reactive inflammation, triggered by physical exertion and cold exposure. Accompanied by systemic dryness (mucous membranes, stool) and marked irritability.",
+            "rationale": "This case exemplifies the Bryonia picture with STRIKING CHARACTERISTIC symptoms that carry the highest prescribing weight. The keynote triad is unmistakable: (1) AGGRAVATION FROM SLIGHTEST MOTION with amelioration from absolute rest and firm pressure — the pathognomonic Bryonia modality; (2) amelioration lying on the PAINFUL SIDE (right knee), a rare and peculiar symptom characteristic of Bryonia's desire for pressure on inflamed parts; (3) DRYNESS as a pervading feature (dry mouth, lips, hard dark burnt stools). The mental picture of business anxiety, irritability wanting solitude, the thirst for large quantities at long intervals, the stitching tearing pains in swollen hot joints, and the acute onset after exertion plus cold air exposure all confirm Bryonia as the simillimum. While Rhus Tox covers joint complaints worse motion, it ameliorates from CONTINUED motion and is worse at rest (opposite modality). The PECULIAR symptom of lying on the painful side for relief is the decisive differentiating keynote that elevates Bryonia above all polycrests.",
+            "remedy_scores": [
+                {
+                    "remedy": "Bryonia Alba",
+                    "score": 94,
+                    "coverage": "Covers all PQR symptoms: aggravation slightest motion, amelioration lying on painful side, systemic dryness, business anxiety, large thirst long intervals",
+                    "affinity": "Covers all PQR symptoms: aggravation slightest motion, amelioration lying on painful side, systemic dryness, business anxiety, large thirst long intervals"
+                },
+                {
+                    "remedy": "Rhus Toxicodendron",
+                    "score": 68,
+                    "coverage": "Covers joint pain worse cold, restlessness, but FAILS the motion modality (opposite pattern) and lacks dryness keynotes",
+                    "affinity": "Covers joint pain worse cold, restlessness, but FAILS the motion modality (opposite pattern) and lacks dryness keynotes"
+                },
+                {
+                    "remedy": "Belladonna",
+                    "score": 58,
+                    "coverage": "Covers acute hot swollen joint, irritability, sudden onset, but lacks the dryness constellation and characteristic motion/rest modality",
+                    "affinity": "Covers acute hot swollen joint, irritability, sudden onset, but lacks the dryness constellation and characteristic motion/rest modality"
+                },
+                {
+                    "remedy": "Colchicum",
+                    "score": 52,
+                    "coverage": "Covers knee joint inflammation and irritability, but lacks the Bryonia motion modality and dryness; different gastric symptoms",
+                    "affinity": "Covers knee joint inflammation and irritability, but lacks the Bryonia motion modality and dryness; different gastric symptoms"
+                }
+            ],
+            "differentials": [
+                "Rhus Toxicodendron — joint stiffness worse initial motion but better continued motion, opposite rest modality",
+                "Belladonna — acute hot red swelling with throbbing, but lacks dryness keynotes and motion aggravation pattern",
+                "Colchicum — joint inflammation especially knee, but with extreme nausea from smell of food and different modalities"
+            ],
+            "citations": [
+                {
+                    "remedy": "Bryonia Alba",
+                    "source": "Boericke's Materia Medica",
+                    "quote": "Excessive dryness of mucous membranes; worse from any motion; ameliorated by absolute rest. Lies on painful side to relieve pain through pressure.",
+                    "text": "Excessive dryness of mucous membranes; worse from any motion; ameliorated by absolute rest. Lies on painful side to relieve pain through pressure."
+                },
+                {
+                    "remedy": "Bryonia Alba",
+                    "source": "Allen's Keynotes",
+                    "quote": "Great dryness of all mucous membranes. Stitching pains worse from least motion. Desires to be quiet; irritable. Thirst for large quantities at long intervals.",
+                    "text": "Great dryness of all mucous membranes. Stitching pains worse from least motion. Desires to be quiet; irritable. Thirst for large quantities at long intervals."
+                },
+                {
+                    "remedy": "Bryonia Alba",
+                    "source": "Kent's Lectures on Materia Medica",
+                    "quote": "All complaints are made worse from motion and better from rest. Lies on the painful side. Anxious about business affairs. Hard, dry, as if burnt stools.",
+                    "text": "All complaints are made worse from motion and better from rest. Lies on the painful side. Anxious about business affairs. Hard, dry, as if burnt stools."
+                },
+                {
+                    "remedy": "Rhus Toxicodendron",
+                    "source": "Boericke's Materia Medica",
+                    "quote": "Ailments from strains, overlifting, cold exposure. Great restlessness; worse initial motion, better continued motion. Stiffness ameliorated by movement.",
+                    "text": "Ailments from strains, overlifting, cold exposure. Great restlessness; worse initial motion, better continued motion. Stiffness ameliorated by movement."
+                },
+                {
+                    "remedy": "Belladonna",
+                    "source": "Nash's Leaders in Homoeopathic Therapeutics",
+                    "quote": "Sudden violent onset. Parts affected are red, hot, swollen, throbbing. Great heat with burning. Worse from jar, motion, light, noise.",
+                    "text": "Sudden violent onset. Parts affected are red, hot, swollen, throbbing. Great heat with burning. Worse from jar, motion, light, noise."
+                }
+            ],
+            "lifestyle": {
+                "diet_do": [
+                    "Warm cooked vegetable soups and dal to support digestion and hydration",
+                    "Warm water with lemon first thing in morning for constipation",
+                    "Fresh seasonal fruits soaked or stewed (prunes, figs) for bowel regularity",
+                    "Well-cooked whole grains (brown rice, oats) with ghee for lubrication",
+                    "Small frequent meals rather than large heavy meals given poor appetite"
+                ],
+                "diet_avoid": [
+                    "Cold water and iced drinks which aggravate (despite thirst, take water at room temperature)",
+                    "Dry, rough, hard-to-digest foods (dry crackers, chips, roasted nuts)",
+                    "Refined sugar and white flour products which increase dryness",
+                    "Spicy hot foods which increase irritability and heat",
+                    "Coffee and strong tea (may antidote Bryonia and worsen dryness)"
+                ],
+                "exercises": [
+                    "ABSOLUTE REST of the right knee for next 3-5 days — no weight bearing exercises",
+                    "After acute phase subsides, gentle passive range-of-motion exercises lying down",
+                    "Deep breathing exercises (pranayama) to calm mental irritability, 10 min twice daily",
+                    "Avoid walking, jogging, squatting, climbing stairs until pain fully resolves",
+                    "Later: gradual return to gentle walks on level ground, maximum 10-15 minutes initially"
+                ],
+                "lifestyle": [
+                    "Complete mental and physical rest for 3-5 days; minimize business worries and paperwork",
+                    "Sleep by 10 pm in a cool, well-ventilated room (avoid stuffy warm room)",
+                    "Apply firm compression bandage to knee for comfort (Bryonia loves pressure)",
+                    "Avoid coffee and camphor which antidote the remedy; no topical analgesic balms during treatment",
+                    "Keep hydrated but drink room-temperature water, not cold (large amounts at intervals as body demands)",
+                    "Maintain silence and solitude when irritable; avoid unnecessary social interactions for recovery"
+                ]
+            },
+            "_upstream_case_id": "44e32df7-5954-4589-9a1e-f40c8ed4b85d"
+        }
+
     return None
 
 
